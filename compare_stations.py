@@ -17,6 +17,16 @@ TUBE_LINES = [
     'bakerloo', 'central', 'circle', 'district', 'hammersmith-city',
     'jubilee', 'metropolitan', 'northern', 'piccadilly', 'victoria', 'waterloo-city'
 ]
+# List of all overground lines - each line must be fetched separately
+# These are the traditional line codes used by TfL
+OVERGROUND_LINES = [
+    'mildmay',      # Richmond/Clapham Junction to Stratford
+    'windrush',     # Highbury & Islington to New Cross/Clapham Junction/Crystal Palace/West Croydon
+    'lioness',      # Watford Junction to Euston
+    'weaver',       # Liverpool Street to Enfield Town/Cheshunt/Chingford
+    'suffragette',  # Gospel Oak to Barking Riverside
+    'liberty'       # Romford to Upminster
+]
 
 def make_api_request(url, params, max_retries=3, timeout=30):
     """
@@ -54,17 +64,13 @@ def get_tfl_stations(mode):
     """
     Fetches stations from TfL API for a specific transport mode.
     
-    Different handling for tube vs other modes:
-    - Tube stations need to be fetched line by line (more API calls but complete data)
-    - Other modes can be fetched in one call using the StopPoint endpoint
-    
-    We store stations in a set because:
-    - Sets automatically handle duplicates (stations served by multiple lines)
-    - Set operations (union, difference) are very efficient
-    - Order doesn't matter for our comparison
+    Different handling for different modes:
+    - Tube: Fetched line by line for complete data
+    - Overground: Uses single line ID as TfL API hasn't updated to new line names yet
+    - DLR and Elizabeth Line: Uses Line endpoint as they're single-line systems
     
     Parameters:
-    - mode: Transport mode to fetch ('tube', 'dlr', 'overground', 'elizabeth-line')
+    - mode: Transport mode to load ('tube', 'dlr', 'overground', 'elizabeth-line')
     
     Returns:
     - Set of station names in lowercase (for easier comparison)
@@ -82,19 +88,33 @@ def get_tfl_stations(mode):
             data = make_api_request(url, params={'app_key': api_key})
             if data:
                 for station in data:
-                    # Store both common name and alternate names
+                    stations.add(station.get('commonName', '').lower())
+                    for other_name in station.get('additionalProperties', []):
+                        if other_name.get('key') == 'AlternateName':
+                            stations.add(other_name.get('value', '').lower())
+    elif mode == 'overground':
+        # Fetch overground stations line by line to avoid duplicates
+        for line in OVERGROUND_LINES:
+            url = f"{TFL_BASE_URL}/Line/{line}/StopPoints"
+            data = make_api_request(url, params={'app_key': api_key})
+            if data:
+                for station in data:
                     stations.add(station.get('commonName', '').lower())
                     for other_name in station.get('additionalProperties', []):
                         if other_name.get('key') == 'AlternateName':
                             stations.add(other_name.get('value', '').lower())
     else:
-        # For other modes, use the StopPoint endpoint which is more reliable
-        url = f"{TFL_BASE_URL}/StopPoint/Mode/{mode}"
-        data = make_api_request(url, params={'app_key': api_key})
-        if data and 'stopPoints' in data:
-            for station in data['stopPoints']:
-                # Only add stations that actually serve this mode
-                if mode in [m.lower() for m in station.get('modes', [])]:
+        # DLR and Elizabeth Line use Line endpoint as they're single-line systems
+        mode_mapping = {
+            'dlr': 'dlr',
+            'elizabeth-line': 'elizabeth'
+        }
+        line = mode_mapping.get(mode)
+        if line:
+            url = f"{TFL_BASE_URL}/Line/{line}/StopPoints"
+            data = make_api_request(url, params={'app_key': api_key})
+            if data:
+                for station in data:
                     stations.add(station.get('commonName', '').lower())
                     for other_name in station.get('additionalProperties', []):
                         if other_name.get('key') == 'AlternateName':
