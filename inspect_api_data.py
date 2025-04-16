@@ -13,7 +13,7 @@ VALID_MODES = {'tube', 'overground', 'dlr', 'elizabeth-line'}
 
 def get_station_identifier(station):
     """
-    Get the best identifier for a station, prioritizing hubNaptanCode and parent station IDs (940G).
+    Get the best identifier for a station, prioritizing hubNaptanCode and parent station IDs.
     Returns tuple of (identifier, source) where source indicates what was used.
     """
     hub_code = station.get('hubNaptanCode')
@@ -24,13 +24,14 @@ def get_station_identifier(station):
     if hub_code:
         return (hub_code, 'hub')
     
-    # Second priority: Parent station IDs (940G)
-    if naptan_id and naptan_id.startswith('940G'):
-        return (naptan_id, 'parent_naptan')
-    
-    # Skip child stations (9400) as they should be grouped with their parent
-    if naptan_id and naptan_id.startswith('9400'):
-        return (None, 'child_station')
+    # Second priority: Parent station IDs (940G for Underground/DLR, 910G for Overground/Elizabeth)
+    if naptan_id:
+        if naptan_id.startswith('940G') or naptan_id.startswith('910G'):
+            return (naptan_id, 'parent_naptan')
+        
+        # Skip child stations (9400 for Underground/DLR, 9100 for Overground/Elizabeth)
+        if naptan_id.startswith('9400') or naptan_id.startswith('9100'):
+            return (None, 'child_station')
     
     # If no hub code or valid naptan_id pattern, try to use station name and coordinates
     lat = station.get('lat')
@@ -158,6 +159,30 @@ def inspect_station_data():
         for method, count in id_method_counts.items():
             print(f"- Using {method}: {count} stations")
 
+        # After mode distribution but before entry counts
+        print("\nAnalyzing NaptanID patterns by mode:")
+        mode_patterns = defaultdict(set)
+        for station in filtered_stations:
+            naptan_id = station.get('naptanId', '')
+            if naptan_id:
+                prefix = naptan_id[:4] if len(naptan_id) >= 4 else naptan_id
+                for mode in station.get('modes', []):
+                    if mode in VALID_MODES:
+                        mode_patterns[mode].add(prefix)
+        
+        for mode in sorted(mode_patterns.keys()):
+            print(f"\n{mode} ID patterns:")
+            for pattern in sorted(mode_patterns[mode]):
+                print(f"- {pattern}")
+            
+            # Print example stations for this mode
+            print(f"\nExample {mode} stations:")
+            examples = [s for s in filtered_stations if mode in s.get('modes', []) and s.get('naptanId')][:3]
+            for station in examples:
+                print(f"- {station['commonName']}: {station.get('naptanId')}")
+
+        print("\n" + "-" * 50 + "\n")
+
         # Print analysis
         print("\nStation Duplication Analysis:")
         print("-" * 50)
@@ -191,25 +216,6 @@ def inspect_station_data():
         print("\nDistribution of entries per station:")
         for count in sorted(entry_counts.keys()):
             print(f"{count} entries: {entry_counts[count]} stations")
-
-        # Show some examples of heavily duplicated stations
-        print("\nExample of heavily duplicated stations:")
-        heavily_duplicated = [(id, entries) for id, entries in stations_by_id.items() if len(entries) > 3]
-        heavily_duplicated.sort(key=lambda x: len(x[1]), reverse=True)
-        
-        for station_id, entries in heavily_duplicated[:3]:  # Show top 3
-            first_station = entries[0]
-            print(f"\nStation: {first_station['commonName']}")
-            print(f"Identifier: {station_id}")
-            print(f"Number of entries: {len(entries)}")
-            print("Modes:", set().union(*[set(entry.get('modes', [])) for entry in entries]) & VALID_MODES)
-            all_lines = set().union(*[{line.get('name', '') for line in entry.get('lines', [])} for entry in entries])
-            # Filter out bus routes from display
-            filtered_lines = {line for line in all_lines 
-                            if not (line.isdigit() or line.startswith('N') or 'bus' in line.lower())}
-            print("Lines:", filtered_lines)
-            # Print NaptanIDs to help debug
-            print("NaptanIDs:", [entry.get('naptanId') for entry in entries])
 
         # Save unique station data for potential local database
         unique_stations_data = []
