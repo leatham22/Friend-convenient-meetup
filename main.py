@@ -404,7 +404,7 @@ def main():
 
     # Add a buffer to the radius just in case the optimal meeting point is slightly outside
     # the circle encompassing the start stations. Adjust buffer as needed.
-    SEARCH_RADIUS_BUFFER_KM = 2.0
+    SEARCH_RADIUS_BUFFER_KM = 1.0
     search_radius_km = max_distance + SEARCH_RADIUS_BUFFER_KM
     print(f"  Centroid of start stations: ({centroid_lat:.4f}, {centroid_lon:.4f})")
     print(f"  Max distance from centroid: {max_distance:.2f} km")

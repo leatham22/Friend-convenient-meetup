@@ -1,182 +1,125 @@
-# London Meeting Point Finder
+# London Transport Meeting Point Finder
 
-A Python application that helps friends find the most convenient London station to meet, using the Transport for London (TfL) API. The program calculates the best meeting point by minimizing total travel time for all participants.
+A tool that helps groups of people find the most convenient London station to meet at, by analyzing everyone's nearest stations and calculating optimal meeting points that minimize total travel time.
 
-## What We've Done
+## Project Overview
 
-1. **Initial Setup**
-   - Created a Python program using the TfL API
-   - Set up environment variables for API key security
-   - Created proper project structure with requirements.txt
+This project solves the common problem of finding a convenient place to meet in London when people are coming from different locations. It works by:
+1. Taking each person's nearest station and walking time
+2. Calculating journey times between all possible stations
+3. Finding optimal meeting points that minimize total travel time for everyone
 
-2. **API Integration**
-   - Successfully connected to TfL API
-   - Updated API endpoints to use current TfL preferred format
-   - Created test script to verify API connection
+The project includes sophisticated station data management to ensure accurate station matching and journey time calculations.
 
-3. **Version Control**
-   - Initialized Git repository
-   - Set up proper .gitignore for Python project
-   - Connected to GitHub repository
+## Key Features
 
-4. **Data Processing Improvements**
-   - Created inspection script to analyze TfL station data
-   - Implemented initial station de-duplication using hubNaptanCode
-   - Added mode filtering for relevant transport types
-   - Added station name normalization
+1. **Station Data Management**
+   - Automatic station data synchronization with TfL API
+   - Proper handling of multi-entrance stations
+   - Support for all London rail modes (Tube, DLR, Overground, Elizabeth Line)
 
-## Current Challenges
+2. **Data Organization**
+   - Raw station data with full TfL API information
+   - Slim station data for efficient processing
+   - Child station tracking for better station matching
 
-1. **Station De-duplication**
-   - Current station identification shows:
-     - 534 stations using hubNaptanCode
-     - 1017 stations using composite keys (name + coordinates)
-     - 1027 unique stations after de-duplication (higher than expected)
-   - Some stations still appearing as duplicates (e.g., Abbey Road/All Saints DLR)
-   - Need to improve composite key generation and name normalization
+3. **API Integration**
+   - Reliable Line-based station fetching
+   - Automatic retries with exponential backoff
+   - Proper error handling
 
-2. **Data Volume**
-   - Initial API response includes more stations than needed
-   - Need to optimize filtering of relevant stations
-   - Current mode filtering needs refinement
+## Directory Structure
 
-## Next Steps
+```
+project/
+├── raw_stations/              # Raw station data from TfL API
+│   ├── unique_stations.json   # All stations
+│   └── unique_stations_*.json # Mode-specific stations
+├── slim_stations/             # Minimal station data for processing
+│   ├── unique_stations.json   # All stations
+│   └── unique_stations_*.json # Mode-specific stations
+├── scripts/
+│   ├── collect_initial_stations.py  # Fetch raw station data
+│   ├── slim_stations.py            # Create minimal station data
+│   ├── sync_stations.py            # Keep data in sync with TfL
+│   └── compare_station_versions.py # Compare data versions
+├── requirements.txt           # Python dependencies
+├── .env                      # API key (not in repo)
+└── .gitignore               # Git ignore rules
+```
 
-1. **Station Identification Improvements**
-   - Debug specific cases of station duplication
-   - Refine coordinate precision in composite keys
-   - Enhance station name normalization
-   - Consider additional methods for station matching
+## Setup
 
-2. **Performance Optimization**
-   - Implement local station database
-   - Add fuzzy matching for station names
-   - Reduce unnecessary API calls
-
-## How to Use
-
-1. **Setup**
+1. **Clone and Install**
    ```bash
-   # Clone the repository
    git clone [your-repo-url]
-   
-   # Install requirements
    python3 -m pip install -r requirements.txt
    ```
 
 2. **API Key**
-   - Get a free API key from TfL: [TfL API Portal](https://api-portal.tfl.gov.uk/)
-   - Create a `.env` file in the project root
-   - Add your API key: `TFL_API_KEY=your_api_key_here`
+   - Get a free API key from [TfL API Portal](https://api-portal.tfl.gov.uk/)
+   - Create `.env` file: `TFL_API_KEY=your_key_here`
 
-3. **Test API Connection**
+3. **Initial Setup**
    ```bash
-   python3 test_api.py
+   # Collect station data
+   python3 collect_initial_stations.py
+   
+   # Create slim versions
+   python3 slim_stations.py
    ```
 
-4. **Run the Program**
+## Usage
+
+1. **Find Meeting Points**
    ```bash
    python3 main.py
    ```
-   - Enter at least 2 people's nearest stations
-   - For each person, provide:
-     - Their nearest station name
-     - Walking time to that station
-   - Type 'done' when finished entering people
+   - Enter each person's nearest station
+   - Enter walking time to that station
+   - Type 'done' when finished
 
-## Key Files
-
-- `main.py`: Main program for finding optimal meeting points
-- `inspect_api_data.py`: Script for analyzing TfL station data
-- `test_api.py`: Script to test TfL API connection
-- `requirements.txt`: Python package dependencies
-- `.env`: Local file for API key (not in repository)
-- `.gitignore`: Specifies which files Git should ignore
-
-## Learning Points
-
-1. **API Usage**
-   - Working with RESTful APIs
-   - Managing API keys securely
-   - Understanding API endpoints and parameters
-
-2. **Python Development**
-   - Environment variables
-   - Package management
-   - API requests and responses
-   - Data structure manipulation
-   - String normalization techniques
-
-3. **Version Control**
-   - Git basics
-   - GitHub repository management
-   - Proper .gitignore setup
+2. **Update Station Data**
+   ```bash
+   python3 sync_stations.py
+   ```
 
 ## Technical Details
 
-### API Endpoints Used
-- Main endpoint: `https://api.tfl.gov.uk/StopPoint/Mode/tube,overground,dlr,elizabeth-line`
-- Test endpoint (Victoria station): `https://api.tfl.gov.uk/StopPoint/940GZZLUVIC`
+### Station Data Structure
+1. **Raw Data**
+   - Full station information from TfL
+   - Includes modes, lines, etc.
+   - Used for debugging and future features
 
-### Current Implementation Details
-1. **Station Identification Methods**
-   - Primary: hubNaptanCode (when available)
-   - Secondary: composite key (normalized station name + rounded coordinates)
-   - Last resort: naptanId
-   
-2. **Data Processing Pipeline**
-   - Initial API fetch (all stations)
-   - Mode filtering (tube, overground, dlr, elizabeth-line)
-   - Station de-duplication
-   - Travel time calculation
+2. **Slim Data**
+   - Only essential fields:
+     - name
+     - lat/lon (for journey times)
+     - child_stations (for matching)
 
-3. **Current Debugging Focus**
-   - Investigating duplicate stations (e.g., Abbey Road/All Saints DLR)
-   - Added debug logging for problematic stations
-   - Testing different coordinate precision levels
-   - Implementing stricter name normalization
+### Station Matching
+1. **Primary Method**: HubNaptanCode
+   - Groups related stations (e.g., different entrances)
+   - Most reliable for multi-mode stations
 
-4. **Key Statistics (Last Run)**
-   - Total API response: ~2600 stations
-   - After mode filtering: Still processing all stations
-   - Using hubNaptanCode: 534 stations
-   - Using composite keys: 1017 stations
-   - Final unique stations: 1027 (needs optimization)
+2. **Fallback Method**: Location
+   - Groups stations by coordinates
+   - ~11m accuracy (4 decimal places)
 
-### Project Structure
-```
-project/
-├── main.py           # Main application
-├── inspect_api_data.py # Station data analyzer
-├── test_api.py       # API connection tester
-├── requirements.txt  # Dependencies
-├── .env             # API key (not in repo)
-└── .gitignore       # Git ignore rules
-```
+### API Endpoints
+- Primary: `/Line/{line}/StopPoints`
+  - More reliable than StopPoint endpoint
+  - Better data organization
+  - Automatic retries on failure
 
-### Dependencies
-- requests
-- python-dotenv
+## Contributing
 
-### Current Features
-- Fetches all London stations (Tube, Overground, DLR, Elizabeth Line)
-- Filters stations by transport mode
-- Attempts station de-duplication
-- Calculates optimal meeting point based on:
-  - Walking time to starting stations
-  - TfL journey times between stations
-  - Total combined travel time for all participants
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-### Known Limitations
-- Requires valid station names exactly as in TfL database
-- Minimum 2 people required for calculation
-- Currently command-line interface only
-- Station de-duplication needs improvement
-- Some duplicate stations still present in results
+## License
 
-## Next Steps
-- Improve station de-duplication logic
-- Implement station name suggestions
-- Add support for additional transport modes
-- Create a web interface 
-- Optimize API calls and data processing 
+[Your chosen license] 

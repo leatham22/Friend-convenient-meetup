@@ -9,42 +9,59 @@ import time
 load_dotenv()
 
 # Define our target modes and lines
+# Using a set for O(1) lookup time when checking if a mode is valid
 VALID_MODES = {'tube', 'overground', 'dlr', 'elizabeth-line'}
 
 def get_station_identifier(station):
     """
-    Get the best identifier for a station, prioritizing hubNaptanCode and parent station IDs.
-    Returns tuple of (identifier, source) where source indicates what was used.
+    Get the best identifier for a station using a priority system:
+    1. hubNaptanCode (most reliable unique identifier)
+    2. Parent station IDs (940G for Underground/DLR, 910G for Overground/Elizabeth)
+    3. Skip child stations (9400/9100 prefixes)
+    4. Fallback to composite key of name and location
+    
+    The NaptanID patterns explained:
+    - 940G/910G: Parent station IDs (main station entry)
+    - 9400/9100: Child station IDs (usually platforms or entrances)
+    
+    Parameters:
+    - station: Dictionary containing station data from TfL API
+    
+    Returns:
+    - Tuple of (identifier, source) where source indicates what was used
     """
     hub_code = station.get('hubNaptanCode')
     name = station.get('commonName', '').strip()
     naptan_id = station.get('naptanId', '')
     
-    # First priority: hubNaptanCode
+    # First priority: hubNaptanCode (most reliable)
     if hub_code:
         return (hub_code, 'hub')
     
-    # Second priority: Parent station IDs (940G for Underground/DLR, 910G for Overground/Elizabeth)
+    # Second priority: Parent station IDs
+    # We check for parent IDs first to ensure we use the main station entry
     if naptan_id:
         if naptan_id.startswith('940G') or naptan_id.startswith('910G'):
             return (naptan_id, 'parent_naptan')
         
-        # Skip child stations (9400 for Underground/DLR, 9100 for Overground/Elizabeth)
+        # Skip child stations to avoid duplicates
+        # Child stations are usually platforms or different entrances
         if naptan_id.startswith('9400') or naptan_id.startswith('9100'):
             return (None, 'child_station')
     
-    # If no hub code or valid naptan_id pattern, try to use station name and coordinates
+    # Fallback: Create a composite key from name and location
     lat = station.get('lat')
     lon = station.get('lon')
     
     if name and lat and lon:
-        # Normalize station name by removing common suffixes and converting to lowercase
+        # Normalize station name for consistent comparison
         normalized_name = name.lower()
+        # Remove common suffixes that don't affect station identity
         for suffix in [' dlr station', ' underground station', ' station', ' dlr']:
             normalized_name = normalized_name.replace(suffix, '')
         normalized_name = normalized_name.strip()
         
-        # Create a composite key using normalized name and rounded coordinates
+        # Create composite key with 4 decimal place precision (~11m accuracy)
         return (f"{normalized_name}_{round(lat,4)}_{round(lon,4)}", 'composite')
     
     # Last resort: use original naptanId if it's not a child station
@@ -53,11 +70,25 @@ def get_station_identifier(station):
 def is_valid_station(station):
     """
     Determine if a station should be included based on its modes and lines.
+    
+    We filter stations based on two criteria:
+    1. Must have at least one valid transport mode
+    2. Must not be exclusively a bus station
+    
+    Using set operations for efficient mode checking:
+    - & (intersection) to check if any modes match
+    - all() with generator expression for bus line checking
+    
+    Parameters:
+    - station: Dictionary containing station data from TfL API
+    
+    Returns:
+    - Boolean indicating if station should be included
     """
-    # Get the station's modes
+    # Get the station's modes as a set for O(1) lookup
     station_modes = set(station.get('modes', []))
     
-    # Check if the station has at least one of our valid modes
+    # Check if the station has at least one valid mode using set intersection
     has_valid_mode = bool(station_modes & VALID_MODES)
     
     # Get the station's lines
@@ -65,6 +96,10 @@ def is_valid_station(station):
     line_names = {line.get('name', '').lower() for line in station_lines}
     
     # Filter out stations that only have bus lines
+    # A station is a bus-only station if ALL its lines are either:
+    # - Contain 'bus' in the name
+    # - Are purely numeric (bus route numbers)
+    # - Start with 'N' (night bus routes)
     has_only_bus_lines = all(
         'bus' in line.lower() or line.isdigit() or line.startswith('N') 
         for line in line_names if line
@@ -217,12 +252,14 @@ def inspect_station_data():
         for count in sorted(entry_counts.keys()):
             print(f"{count} entries: {entry_counts[count]} stations")
 
-        # Save unique station data for potential local database
-        unique_stations_data = []
+        # Save stations by mode
+        stations_by_mode = defaultdict(list)
+        
         for station_id, entries in stations_by_id.items():
             # Take the first entry as representative for name and location
             main_entry = entries[0]
-            # Combine all modes and lines from all entries
+            
+            # Get all modes and lines from all entries
             all_modes = set()
             all_lines = set()
             for entry in entries:
@@ -233,6 +270,7 @@ def inspect_station_data():
             filtered_lines = {line for line in all_lines 
                             if not (line.isdigit() or line.startswith('N') or 'bus' in line.lower())}
             
+            # Create station data object
             station_data = {
                 'name': main_entry['commonName'],
                 'stationId': station_id,
@@ -242,12 +280,32 @@ def inspect_station_data():
                 'lat': main_entry['lat'],
                 'lon': main_entry['lon']
             }
-            unique_stations_data.append(station_data)
+            
+            # Add station to each mode's list
+            for mode in (all_modes & VALID_MODES):
+                stations_by_mode[mode].append(station_data)
 
-        # Save unique stations to a file
-        print("\nSaving unique stations to 'unique_stations.json'...")
+        # Save mode-specific files and print summaries
+        print("\nSaving mode-specific station files:")
+        mode_file_mapping = {
+            'tube': 'unique_stations_tube1.json',
+            'dlr': 'unique_stations_dlr1.json',
+            'overground': 'unique_stations_overground1.json',
+            'elizabeth-line': 'unique_stations_elizabeth1.json'
+        }
+        
+        for mode, filename in mode_file_mapping.items():
+            stations = sorted(stations_by_mode[mode], key=lambda x: x['name'])
+            print(f"- {mode}: {len(stations)} stations saved to {filename}")
+            with open(filename, 'w') as f:
+                json.dump(stations, f, indent=2)
+
+        # Also save the complete unique stations file as before
+        print("\nSaving complete unique stations list to 'unique_stations.json'")
         with open('unique_stations.json', 'w') as f:
-            json.dump(unique_stations_data, f, indent=2)
+            json.dump(list(stations_by_mode.values()), f, indent=2)
+            
+        print("\nAll files saved successfully!")
 
 if __name__ == "__main__":
     inspect_station_data() 

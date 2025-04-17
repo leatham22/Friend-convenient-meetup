@@ -1,0 +1,1530 @@
+[
+  {
+    "name": "Acton Central Rail Station",
+    "lat": 51.508716,
+    "lon": -0.262971,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Anerley Rail Station",
+    "lat": 51.412153,
+    "lon": -0.065886,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Barking Riverside",
+    "lat": 51.51953,
+    "lon": 0.11596,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Barking Underground Station",
+    "lat": 51.539321,
+    "lon": 0.081053,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Suffragette",
+      "c2c",
+      "District",
+      "Hammersmith & City"
+    ],
+    "child_stations": [
+      "Barking Rail Station"
+    ]
+  },
+  {
+    "name": "Bethnal Green Rail Station",
+    "lat": 51.523917,
+    "lon": -0.059568,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Blackhorse Road Underground Station",
+    "lat": 51.586919,
+    "lon": -0.04115,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Victoria",
+      "Suffragette"
+    ],
+    "child_stations": [
+      "Blackhorse Road Rail Station"
+    ]
+  },
+  {
+    "name": "Brockley Rail Station",
+    "lat": 51.464649,
+    "lon": -0.037537,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Brondesbury Park Rail Station",
+    "lat": 51.540734,
+    "lon": -0.210054,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Brondesbury Rail Station",
+    "lat": 51.545166,
+    "lon": -0.202309,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Bruce Grove Rail Station",
+    "lat": 51.593959,
+    "lon": -0.069867,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Bush Hill Park Rail Station",
+    "lat": 51.641519,
+    "lon": -0.069221,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Bushey Rail Station",
+    "lat": 51.645402,
+    "lon": -0.384799,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Caledonian Road & Barnsbury Rail Station",
+    "lat": 51.543041,
+    "lon": -0.116729,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Cambridge Heath (London) Rail Station",
+    "lat": 51.531973,
+    "lon": -0.057279,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Camden Road Rail Station",
+    "lat": 51.541791,
+    "lon": -0.138701,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Canada Water Underground Station",
+    "lat": 51.497931,
+    "lon": -0.049405,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "Jubilee"
+    ],
+    "child_stations": [
+      "Canada Water Rail Station"
+    ]
+  },
+  {
+    "name": "Canonbury Rail Station",
+    "lat": 51.548732,
+    "lon": -0.092191,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Carpenders Park Rail Station",
+    "lat": 51.628351,
+    "lon": -0.385939,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Cheshunt Rail Station",
+    "lat": 51.702876,
+    "lon": -0.02396,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Chingford Rail Station",
+    "lat": 51.633087,
+    "lon": 0.009897,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Clapham High Street Rail Station",
+    "lat": 51.465481,
+    "lon": -0.132522,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Clapham Junction Rail Station",
+    "lat": 51.464187,
+    "lon": -0.170221,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush",
+      "Mildmay",
+      "South Western Railway"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Clapton Rail Station",
+    "lat": 51.561644,
+    "lon": -0.057025,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Crouch Hill Rail Station",
+    "lat": 51.571302,
+    "lon": -0.117149,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Crystal Palace Rail Station",
+    "lat": 51.418109,
+    "lon": -0.07261,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Dalston Junction Rail Station",
+    "lat": 51.546116,
+    "lon": -0.075137,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Dalston Kingsland Rail Station",
+    "lat": 51.548148,
+    "lon": -0.075701,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Denmark Hill Rail Station",
+    "lat": 51.468203,
+    "lon": -0.089361,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "Thameslink",
+      "Southeastern"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Edmonton Green Rail Station",
+    "lat": 51.624929,
+    "lon": -0.061112,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Emerson Park Rail Station",
+    "lat": 51.568642,
+    "lon": 0.220113,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Liberty"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Enfield Town Rail Station",
+    "lat": 51.652026,
+    "lon": -0.079328,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Euston Underground Station",
+    "lat": 51.528186,
+    "lon": -0.134239,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Victoria",
+      "Avanti West Coast",
+      "Lioness",
+      "West Midlands Trains"
+    ],
+    "child_stations": [
+      "London Euston Rail Station"
+    ]
+  },
+  {
+    "name": "Finchley Road & Frognal Rail Station",
+    "lat": 51.550266,
+    "lon": -0.183141,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Forest Hill Rail Station",
+    "lat": 51.43928,
+    "lon": -0.053157,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Gospel Oak Rail Station",
+    "lat": 51.555335,
+    "lon": -0.15077,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette",
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Gunnersbury Underground Station",
+    "lat": 51.491803,
+    "lon": -0.275267,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "District"
+    ],
+    "child_stations": [
+      "Gunnersbury Rail Station"
+    ]
+  },
+  {
+    "name": "Hackney Central Rail Station",
+    "lat": 51.547105,
+    "lon": -0.056058,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Hackney Downs Rail Station",
+    "lat": 51.548757,
+    "lon": -0.060819,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Hackney Wick Rail Station",
+    "lat": 51.54341,
+    "lon": -0.02492,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Haggerston Rail Station",
+    "lat": 51.538705,
+    "lon": -0.075666,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Hampstead Heath Rail Station",
+    "lat": 51.55521,
+    "lon": -0.165705,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Harlesden Underground Station",
+    "lat": 51.53631,
+    "lon": -0.257883,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Harlesden Rail Station"
+    ]
+  },
+  {
+    "name": "Harringay Green Lanes Rail Station",
+    "lat": 51.577182,
+    "lon": -0.098144,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Harrow & Wealdstone Underground Station",
+    "lat": 51.592268,
+    "lon": -0.335217,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "West Midlands Trains",
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Harrow & Wealdstone Rail Station"
+    ]
+  },
+  {
+    "name": "Hatch End Rail Station",
+    "lat": 51.609417,
+    "lon": -0.368601,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Headstone Lane Rail Station",
+    "lat": 51.602649,
+    "lon": -0.35722,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Highams Park Rail Station",
+    "lat": 51.60835,
+    "lon": -0.000222,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Highbury & Islington Underground Station",
+    "lat": 51.54635,
+    "lon": -0.103324,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Victoria",
+      "Great Northern",
+      "Windrush",
+      "Mildmay"
+    ],
+    "child_stations": [
+      "Highbury & Islington Rail Station"
+    ]
+  },
+  {
+    "name": "Homerton Rail Station",
+    "lat": 51.547012,
+    "lon": -0.04236,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Honor Oak Park Rail Station",
+    "lat": 51.449989,
+    "lon": -0.045505,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Hoxton Rail Station",
+    "lat": 51.531512,
+    "lon": -0.075681,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Imperial Wharf Rail Station",
+    "lat": 51.474949,
+    "lon": -0.182823,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Kensal Green Underground Station",
+    "lat": 51.530539,
+    "lon": -0.225016,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Kensal Green Rail Station"
+    ]
+  },
+  {
+    "name": "Kensal Rise Rail Station",
+    "lat": 51.534554,
+    "lon": -0.219957,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Kensington (Olympia) Underground Station",
+    "lat": 51.497624,
+    "lon": -0.210015,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "District"
+    ],
+    "child_stations": [
+      "Kensington (Olympia) Rail Station"
+    ]
+  },
+  {
+    "name": "Kentish Town West Rail Station",
+    "lat": 51.546548,
+    "lon": -0.146655,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Kenton Underground Station",
+    "lat": 51.581756,
+    "lon": -0.31691,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Kenton Rail Station"
+    ]
+  },
+  {
+    "name": "Kew Gardens Underground Station",
+    "lat": 51.477058,
+    "lon": -0.285241,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "District"
+    ],
+    "child_stations": [
+      "Kew Gardens Rail Station"
+    ]
+  },
+  {
+    "name": "Kilburn High Road Rail Station",
+    "lat": 51.537277,
+    "lon": -0.192237,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Leyton Midland Road Rail Station",
+    "lat": 51.569725,
+    "lon": -0.008051,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Leytonstone High Road Rail Station",
+    "lat": 51.563554,
+    "lon": 0.008416,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Liverpool Street Underground Station",
+    "lat": 51.517372,
+    "lon": -0.083182,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Central",
+      "c2c",
+      "Weaver",
+      "Circle",
+      "Elizabeth line",
+      "Greater Anglia",
+      "Metropolitan",
+      "Hammersmith & City"
+    ],
+    "child_stations": [
+      "London Liverpool Street Rail Station"
+    ]
+  },
+  {
+    "name": "London Fields Rail Station",
+    "lat": 51.541153,
+    "lon": -0.057753,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "New Cross ELL Rail Station",
+    "lat": 51.476344,
+    "lon": -0.032441,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "Southeastern"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "New Cross Gate Rail Station",
+    "lat": 51.475128,
+    "lon": -0.040399,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "North Wembley Underground Station",
+    "lat": 51.562551,
+    "lon": -0.304,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "North Wembley Rail Station"
+    ]
+  },
+  {
+    "name": "Norwood Junction Rail Station",
+    "lat": 51.397019,
+    "lon": -0.075221,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Thameslink",
+      "Windrush",
+      "Southeastern"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Peckham Rye Rail Station",
+    "lat": 51.470034,
+    "lon": -0.069414,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Thameslink",
+      "Windrush",
+      "Southeastern"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Penge West Rail Station",
+    "lat": 51.417555,
+    "lon": -0.06084,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Queen's Park Underground Station",
+    "lat": 51.534158,
+    "lon": -0.204574,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Queens Park (London) Rail Station"
+    ]
+  },
+  {
+    "name": "Queens Road Peckham Rail Station",
+    "lat": 51.473566,
+    "lon": -0.057313,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Rectory Road Rail Station",
+    "lat": 51.558502,
+    "lon": -0.068267,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Richmond Underground Station",
+    "lat": 51.463237,
+    "lon": -0.301336,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "District",
+      "South Western Railway"
+    ],
+    "child_stations": [
+      "Richmond (London) Rail Station"
+    ]
+  },
+  {
+    "name": "Romford Rail Station",
+    "lat": 51.574829,
+    "lon": 0.183237,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Liberty",
+      "Greater Anglia",
+      "Elizabeth line"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Rotherhithe Rail Station",
+    "lat": 51.500817,
+    "lon": -0.052048,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Seven Sisters Underground Station",
+    "lat": 51.58333,
+    "lon": -0.072584,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Victoria",
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": [
+      "Seven Sisters Rail Station"
+    ]
+  },
+  {
+    "name": "Shadwell DLR Station",
+    "lat": 51.511693,
+    "lon": -0.056643,
+    "modes": [
+      "dlr",
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "DLR"
+    ],
+    "child_stations": [
+      "Shadwell Rail Station"
+    ]
+  },
+  {
+    "name": "Shepherd's Bush (Central) Underground Station",
+    "lat": 51.504376,
+    "lon": -0.218813,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "Central"
+    ],
+    "child_stations": [
+      "Shepherds Bush Rail Station"
+    ]
+  },
+  {
+    "name": "Shoreditch High Street Rail Station",
+    "lat": 51.523375,
+    "lon": -0.075246,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Silver Street Rail Station",
+    "lat": 51.614688,
+    "lon": -0.06724,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "South Acton Rail Station",
+    "lat": 51.499695,
+    "lon": -0.270157,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Mildmay"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "South Hampstead Rail Station",
+    "lat": 51.541432,
+    "lon": -0.178878,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "South Kenton Underground Station",
+    "lat": 51.570232,
+    "lon": -0.308433,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "South Kenton Rail Station"
+    ]
+  },
+  {
+    "name": "South Tottenham Rail Station",
+    "lat": 51.580372,
+    "lon": -0.072103,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Southbury Rail Station",
+    "lat": 51.648705,
+    "lon": -0.052437,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "St James Street (London) Rail Station",
+    "lat": 51.580981,
+    "lon": -0.032918,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Stamford Hill Rail Station",
+    "lat": 51.574467,
+    "lon": -0.076682,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Stoke Newington Rail Station",
+    "lat": 51.565233,
+    "lon": -0.072887,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Stonebridge Park Underground Station",
+    "lat": 51.543959,
+    "lon": -0.275892,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Stonebridge Park Rail Station"
+    ]
+  },
+  {
+    "name": "Stratford Underground Station",
+    "lat": 51.541806,
+    "lon": -0.003458,
+    "modes": [
+      "tube",
+      "dlr",
+      "overground"
+    ],
+    "lines": [
+      "Jubilee",
+      "Central",
+      "c2c",
+      "Elizabeth line",
+      "Greater Anglia",
+      "Mildmay",
+      "DLR"
+    ],
+    "child_stations": [
+      "Stratford (London) Rail Station",
+      "Stratford DLR Station"
+    ]
+  },
+  {
+    "name": "Surrey Quays Rail Station",
+    "lat": 51.493196,
+    "lon": -0.047519,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Sydenham Rail Station",
+    "lat": 51.427248,
+    "lon": -0.054244,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Theobalds Grove Rail Station",
+    "lat": 51.692457,
+    "lon": -0.034831,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Turkey Street Rail Station",
+    "lat": 51.672628,
+    "lon": -0.047217,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Upminster Underground Station",
+    "lat": 51.559063,
+    "lon": 0.250882,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Liberty",
+      "c2c",
+      "District"
+    ],
+    "child_stations": [
+      "Upminster Rail Station"
+    ]
+  },
+  {
+    "name": "Upper Holloway Rail Station",
+    "lat": 51.563631,
+    "lon": -0.129513,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Walthamstow Central Underground Station",
+    "lat": 51.582965,
+    "lon": -0.019885,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Victoria",
+      "Weaver"
+    ],
+    "child_stations": [
+      "Walthamstow Central Rail Station"
+    ]
+  },
+  {
+    "name": "Walthamstow Queens Road Rail Station",
+    "lat": 51.581503,
+    "lon": -0.023846,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Wandsworth Road Rail Station",
+    "lat": 51.470216,
+    "lon": -0.13852,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Wanstead Park Rail Station",
+    "lat": 51.551693,
+    "lon": 0.026213,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Wapping Rail Station",
+    "lat": 51.504388,
+    "lon": -0.055931,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "D3"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Watford High Street Rail Station",
+    "lat": 51.652655,
+    "lon": -0.391711,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Watford Junction Rail Station",
+    "lat": 51.663529,
+    "lon": -0.396517,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Lioness"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Wembley Central Underground Station",
+    "lat": 51.552304,
+    "lon": -0.296852,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Wembley Central Rail Station"
+    ]
+  },
+  {
+    "name": "West Brompton Underground Station",
+    "lat": 51.487268,
+    "lon": -0.195599,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "District"
+    ],
+    "child_stations": [
+      "West Brompton Rail Station"
+    ]
+  },
+  {
+    "name": "West Croydon Rail Station",
+    "lat": 51.378428,
+    "lon": -0.102585,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Southern",
+      "Windrush"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "West Hampstead Underground Station",
+    "lat": 51.546638,
+    "lon": -0.191059,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Mildmay",
+      "Jubilee"
+    ],
+    "child_stations": [
+      "West Hampstead Rail Station"
+    ]
+  },
+  {
+    "name": "White Hart Lane Rail Station",
+    "lat": 51.605037,
+    "lon": -0.070914,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver",
+      "Greater Anglia"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Whitechapel Underground Station",
+    "lat": 51.519518,
+    "lon": -0.059971,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Windrush",
+      "District",
+      "Hammersmith & City"
+    ],
+    "child_stations": [
+      "Whitechapel Rail Station"
+    ]
+  },
+  {
+    "name": "Willesden Junction Underground Station",
+    "lat": 51.532259,
+    "lon": -0.244283,
+    "modes": [
+      "tube",
+      "overground"
+    ],
+    "lines": [
+      "Lioness",
+      "Mildmay",
+      "Bakerloo"
+    ],
+    "child_stations": [
+      "Willesden Junction Rail Station"
+    ]
+  },
+  {
+    "name": "Wood Street Rail Station",
+    "lat": 51.58658,
+    "lon": -0.002405,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Weaver"
+    ],
+    "child_stations": []
+  },
+  {
+    "name": "Woodgrange Park Rail Station",
+    "lat": 51.549264,
+    "lon": 0.044423,
+    "modes": [
+      "overground"
+    ],
+    "lines": [
+      "Suffragette"
+    ],
+    "child_stations": []
+  }
+]
