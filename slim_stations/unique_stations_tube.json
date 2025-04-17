@@ -1,4639 +1,1626 @@
 [
   {
     "name": "Acton Town Underground Station",
-    "stationId": "940GZZLUACT",
-    "naptanIds": [
-      "940GZZLUACT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.503057,
-    "lon": -0.280462
+    "lon": -0.280462,
+    "child_stations": []
   },
   {
     "name": "Aldgate East Underground Station",
-    "stationId": "940GZZLUADE",
-    "naptanIds": [
-      "940GZZLUADE"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.515037,
-    "lon": -0.072384
+    "lon": -0.072384,
+    "child_stations": []
   },
   {
     "name": "Aldgate Underground Station",
-    "stationId": "940GZZLUALD",
-    "naptanIds": [
-      "940GZZLUALD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Metropolitan"
-    ],
     "lat": 51.514246,
-    "lon": -0.075689
+    "lon": -0.075689,
+    "child_stations": []
   },
   {
     "name": "Alperton Underground Station",
-    "stationId": "940GZZLUALP",
-    "naptanIds": [
-      "940GZZLUALP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.540627,
-    "lon": -0.29961
+    "lon": -0.29961,
+    "child_stations": []
   },
   {
     "name": "Amersham Underground Station",
-    "stationId": "HUBAMR",
-    "naptanIds": [
-      "9400ZZLUAMS1",
-      "9400ZZLUAMS2",
-      "940GZZLUAMS",
-      "HUBAMR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Metropolitan"
-    ],
-    "lat": 51.673926,
-    "lon": -0.607489
+    "lat": 51.674126,
+    "lon": -0.607714,
+    "child_stations": []
   },
   {
     "name": "Angel Underground Station",
-    "stationId": "940GZZLUAGL",
-    "naptanIds": [
-      "940GZZLUAGL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.532624,
-    "lon": -0.105898
+    "lon": -0.105898,
+    "child_stations": []
   },
   {
     "name": "Archway Underground Station",
-    "stationId": "940GZZLUACY",
-    "naptanIds": [
-      "940GZZLUACY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.565478,
-    "lon": -0.134819
+    "lon": -0.134819,
+    "child_stations": []
   },
   {
     "name": "Arnos Grove Underground Station",
-    "stationId": "940GZZLUASG",
-    "naptanIds": [
-      "940GZZLUASG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.616446,
-    "lon": -0.133062
+    "lon": -0.133062,
+    "child_stations": []
   },
   {
     "name": "Arsenal Underground Station",
-    "stationId": "940GZZLUASL",
-    "naptanIds": [
-      "940GZZLUASL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.558655,
-    "lon": -0.107457
+    "lon": -0.107457,
+    "child_stations": []
   },
   {
     "name": "Baker Street Underground Station",
-    "stationId": "940GZZLUBST",
-    "naptanIds": [
-      "940GZZLUBST"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Jubilee",
-      "Hammersmith & City",
-      "Circle",
-      "Metropolitan"
-    ],
     "lat": 51.522883,
-    "lon": -0.15713
+    "lon": -0.15713,
+    "child_stations": []
   },
   {
     "name": "Balham Underground Station",
-    "stationId": "HUBBAL",
-    "naptanIds": [
-      "9400ZZLUBLM1",
-      "9400ZZLUBLM2",
-      "940GZZLUBLM",
-      "HUBBAL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Southern"
-    ],
-    "lat": 51.443969,
-    "lon": -0.152265
+    "lat": 51.443288,
+    "lon": -0.152997,
+    "child_stations": []
   },
   {
-    "name": "Bank DLR Station",
-    "stationId": "HUBBAN",
-    "naptanIds": [
-      "9400ZZDLBNK1",
-      "9400ZZDLBNK2",
-      "9400ZZLUBNK1",
-      "9400ZZLUBNK2",
-      "9400ZZLUBNK3",
-      "9400ZZLUBNK4",
-      "9400ZZLUBNK5",
-      "9400ZZLUBNK8",
-      "940GZZDLBNK",
-      "940GZZLUBNK",
-      "HUBBAN"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "DLR",
-      "Central",
-      "Waterloo & City"
-    ],
-    "lat": 51.512171,
-    "lon": -0.087911
+    "name": "Bank Underground Station",
+    "lat": 51.513132,
+    "lon": -0.090047,
+    "child_stations": []
   },
   {
     "name": "Barbican Underground Station",
-    "stationId": "940GZZLUBBN",
-    "naptanIds": [
-      "940GZZLUBBN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Metropolitan",
-      "Hammersmith & City"
-    ],
     "lat": 51.520275,
-    "lon": -0.097993
+    "lon": -0.097993,
+    "child_stations": []
   },
   {
-    "name": "Barking Station",
-    "stationId": "HUBBKG",
-    "naptanIds": [
-      "9100BARKING1",
-      "910GBARKING",
-      "9400ZZLUBKG1",
-      "9400ZZLUBKG2",
-      "9400ZZLUBKG3",
-      "940GZZLUBKG",
-      "HUBBKG"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "c2c",
-      "Hammersmith & City",
-      "Suffragette"
-    ],
-    "lat": 51.539674,
-    "lon": 0.080406
+    "name": "Barking Underground Station",
+    "lat": 51.539321,
+    "lon": 0.081053,
+    "child_stations": []
   },
   {
     "name": "Barkingside Underground Station",
-    "stationId": "940GZZLUBKE",
-    "naptanIds": [
-      "940GZZLUBKE"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.585689,
-    "lon": 0.088585
+    "lon": 0.088585,
+    "child_stations": []
   },
   {
     "name": "Barons Court Underground Station",
-    "stationId": "940GZZLUBSC",
-    "naptanIds": [
-      "940GZZLUBSC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.490311,
-    "lon": -0.213427
+    "lon": -0.213427,
+    "child_stations": []
   },
   {
     "name": "Battersea Power Station Underground Station",
-    "stationId": "940GZZBPSUST",
-    "naptanIds": [
-      "940GZZBPSUST"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.479932,
-    "lon": -0.142142
+    "lon": -0.142142,
+    "child_stations": []
   },
   {
     "name": "Bayswater Underground Station",
-    "stationId": "940GZZLUBWT",
-    "naptanIds": [
-      "940GZZLUBWT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.512284,
-    "lon": -0.187938
+    "lon": -0.187938,
+    "child_stations": []
   },
   {
     "name": "Becontree Underground Station",
-    "stationId": "940GZZLUBEC",
-    "naptanIds": [
-      "940GZZLUBEC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.540331,
-    "lon": 0.127016
+    "lon": 0.127016,
+    "child_stations": []
   },
   {
     "name": "Belsize Park Underground Station",
-    "stationId": "940GZZLUBZP",
-    "naptanIds": [
-      "940GZZLUBZP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.550529,
-    "lon": -0.164783
+    "lon": -0.164783,
+    "child_stations": []
   },
   {
     "name": "Bermondsey Underground Station",
-    "stationId": "940GZZLUBMY",
-    "naptanIds": [
-      "940GZZLUBMY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.49775,
-    "lon": -0.063993
+    "lon": -0.063993,
+    "child_stations": []
   },
   {
     "name": "Bethnal Green Underground Station",
-    "stationId": "940GZZLUBLG",
-    "naptanIds": [
-      "940GZZLUBLG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.527222,
-    "lon": -0.055506
+    "lon": -0.055506,
+    "child_stations": []
   },
   {
     "name": "Blackfriars Underground Station",
-    "stationId": "HUBBFR",
-    "naptanIds": [
-      "9400ZZLUBKF1",
-      "9400ZZLUBKF2",
-      "940GZZLUBKF",
-      "HUBBFR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.511603,
-    "lon": -0.103341
+    "lat": 51.511581,
+    "lon": -0.103659,
+    "child_stations": []
   },
   {
-    "name": "Blackhorse Road Station",
-    "stationId": "HUBBHO",
-    "naptanIds": [
-      "9100BLCHSRD0",
-      "9100BLCHSRD1",
-      "910GBLCHSRD",
-      "9400ZZLUBLR1",
-      "9400ZZLUBLR2",
-      "940GZZLUBLR",
-      "HUBBHO"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Victoria",
-      "Suffragette"
-    ],
-    "lat": 51.586538,
-    "lon": -0.041498
+    "name": "Blackhorse Road Underground Station",
+    "lat": 51.586919,
+    "lon": -0.04115,
+    "child_stations": []
   },
   {
-    "name": "Bond Street Station",
-    "stationId": "HUBBDS",
-    "naptanIds": [
-      "9100BONDST0",
-      "9100BONDST1",
-      "910GBONDST",
-      "9400ZZLUBND1",
-      "9400ZZLUBND2",
-      "9400ZZLUBND3",
-      "9400ZZLUBND4",
-      "940GZZLUBND",
-      "HUBBDS"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Central",
-      "Jubilee"
-    ],
-    "lat": 51.51369,
-    "lon": -0.149517
+    "name": "Bond Street Underground Station",
+    "lat": 51.514304,
+    "lon": -0.149723,
+    "child_stations": []
   },
   {
     "name": "Borough Underground Station",
-    "stationId": "940GZZLUBOR",
-    "naptanIds": [
-      "940GZZLUBOR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.501199,
-    "lon": -0.09337
+    "lon": -0.09337,
+    "child_stations": []
   },
   {
     "name": "Boston Manor Underground Station",
-    "stationId": "940GZZLUBOS",
-    "naptanIds": [
-      "940GZZLUBOS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.495635,
-    "lon": -0.324939
+    "lon": -0.324939,
+    "child_stations": []
   },
   {
     "name": "Bounds Green Underground Station",
-    "stationId": "940GZZLUBDS",
-    "naptanIds": [
-      "940GZZLUBDS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.607034,
-    "lon": -0.124235
+    "lon": -0.124235,
+    "child_stations": []
   },
   {
     "name": "Bow Road Underground Station",
-    "stationId": "940GZZLUBWR",
-    "naptanIds": [
-      "940GZZLUBWR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.52694,
-    "lon": -0.025128
+    "lon": -0.025128,
+    "child_stations": []
   },
   {
     "name": "Brent Cross Underground Station",
-    "stationId": "940GZZLUBTX",
-    "naptanIds": [
-      "940GZZLUBTX"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.57665,
-    "lon": -0.213622
+    "lon": -0.213622,
+    "child_stations": []
   },
   {
     "name": "Brixton Underground Station",
-    "stationId": "HUBBRX",
-    "naptanIds": [
-      "9400ZZLUBXN1",
-      "940GZZLUBXN",
-      "HUBBRX"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Victoria",
-      "Southeastern"
-    ],
-    "lat": 51.462477,
-    "lon": -0.113987
+    "lat": 51.462618,
+    "lon": -0.114888,
+    "child_stations": []
   },
   {
     "name": "Bromley-by-Bow Underground Station",
-    "stationId": "940GZZLUBBB",
-    "naptanIds": [
-      "940GZZLUBBB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.524839,
-    "lon": -0.011538
+    "lon": -0.011538,
+    "child_stations": []
   },
   {
     "name": "Buckhurst Hill Underground Station",
-    "stationId": "940GZZLUBKH",
-    "naptanIds": [
-      "940GZZLUBKH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "W14",
-      "Central"
-    ],
     "lat": 51.626605,
-    "lon": 0.046757
+    "lon": 0.046757,
+    "child_stations": []
   },
   {
     "name": "Burnt Oak Underground Station",
-    "stationId": "940GZZLUBTK",
-    "naptanIds": [
-      "940GZZLUBTK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.602774,
-    "lon": -0.264048
+    "lon": -0.264048,
+    "child_stations": []
   },
   {
     "name": "Caledonian Road Underground Station",
-    "stationId": "940GZZLUCAR",
-    "naptanIds": [
-      "940GZZLUCAR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.548519,
-    "lon": -0.118493
+    "lon": -0.118493,
+    "child_stations": []
   },
   {
     "name": "Camden Town Underground Station",
-    "stationId": "940GZZLUCTN",
-    "naptanIds": [
-      "940GZZLUCTN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.539292,
-    "lon": -0.14274
+    "lon": -0.14274,
+    "child_stations": []
   },
   {
-    "name": "Canada Water Station",
-    "stationId": "HUBZCW",
-    "naptanIds": [
-      "9100CNDAW1",
-      "9100CNDAW2",
-      "910GCNDAW",
-      "9400ZZLUCWR2",
-      "9400ZZLUCWR3",
-      "940GZZLUCWR",
-      "HUBZCW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "C10",
-      "Windrush",
-      "P12"
-    ],
-    "lat": 51.49799,
-    "lon": -0.04972
+    "name": "Canada Water Underground Station",
+    "lat": 51.497931,
+    "lon": -0.049405,
+    "child_stations": []
   },
   {
-    "name": "Canary Wharf Rail Station",
-    "stationId": "HUBCAW",
-    "naptanIds": [
-      "9100CANWHRF0",
-      "9100CANWHRF1",
-      "910GCANWHRF",
-      "9400ZZDLCAN1",
-      "9400ZZDLCAN2",
-      "9400ZZLUCYF1",
-      "9400ZZLUCYF2",
-      "940GZZDLCAN",
-      "940GZZLUCYF",
-      "HUBCAW"
-    ],
-    "modes": [
-      "dlr",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D7",
-      "Elizabeth line"
-    ],
-    "lat": 51.506321,
-    "lon": -0.018815
+    "name": "Canary Wharf Underground Station",
+    "lat": 51.503488,
+    "lon": -0.018246,
+    "child_stations": []
   },
   {
-    "name": "Canning Town DLR Station",
-    "stationId": "HUBCAN",
-    "naptanIds": [
-      "9400ZZDLCGT1",
-      "9400ZZDLCGT2",
-      "9400ZZDLCGT3",
-      "9400ZZDLCGT4",
-      "9400ZZLUCGT1",
-      "9400ZZLUCGT2",
-      "940GZZDLCGT",
-      "940GZZLUCGT",
-      "HUBCAN"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR"
-    ],
-    "lat": 51.514464,
-    "lon": 0.007856
+    "name": "Canning Town Underground Station",
+    "lat": 51.513584,
+    "lon": 0.008322,
+    "child_stations": []
   },
   {
     "name": "Cannon Street Underground Station",
-    "stationId": "HUBCST",
-    "naptanIds": [
-      "9400ZZLUCST1",
-      "9400ZZLUCST2",
-      "940GZZLUCST",
-      "HUBCST"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Southeastern"
-    ],
-    "lat": 51.511366,
-    "lon": -0.090423
+    "lat": 51.51151,
+    "lon": -0.090432,
+    "child_stations": []
   },
   {
     "name": "Canons Park Underground Station",
-    "stationId": "940GZZLUCPK",
-    "naptanIds": [
-      "940GZZLUCPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.607701,
-    "lon": -0.294693
+    "lon": -0.294693,
+    "child_stations": []
   },
   {
     "name": "Chalfont & Latimer Underground Station",
-    "stationId": "HUBCFO",
-    "naptanIds": [
-      "9400ZZLUCAL1",
-      "9400ZZLUCAL2",
-      "940GZZLUCAL",
-      "HUBCFO"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Metropolitan"
-    ],
-    "lat": 51.667966,
-    "lon": -0.560647
+    "lat": 51.667985,
+    "lon": -0.560689,
+    "child_stations": []
   },
   {
     "name": "Chalk Farm Underground Station",
-    "stationId": "940GZZLUCFM",
-    "naptanIds": [
-      "940GZZLUCFM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.544118,
-    "lon": -0.153388
+    "lon": -0.153388,
+    "child_stations": []
   },
   {
     "name": "Chancery Lane Underground Station",
-    "stationId": "940GZZLUCHL",
-    "naptanIds": [
-      "940GZZLUCHL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.518247,
-    "lon": -0.111583
+    "lon": -0.111583,
+    "child_stations": []
   },
   {
     "name": "Charing Cross Underground Station",
-    "stationId": "HUBCHX",
-    "naptanIds": [
-      "9400ZZLUCHX1",
-      "9400ZZLUCHX2",
-      "9400ZZLUCHX4",
-      "9400ZZLUCHX5",
-      "940GZZLUCHX",
-      "HUBCHX"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Southeastern"
-    ],
-    "lat": 51.507451,
-    "lon": -0.128097
+    "lat": 51.50741,
+    "lon": -0.127277,
+    "child_stations": []
   },
   {
     "name": "Chesham Underground Station",
-    "stationId": "940GZZLUCSM",
-    "naptanIds": [
-      "940GZZLUCSM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.705208,
-    "lon": -0.611247
+    "lon": -0.611247,
+    "child_stations": []
   },
   {
     "name": "Chigwell Underground Station",
-    "stationId": "940GZZLUCWL",
-    "naptanIds": [
-      "940GZZLUCWL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.617916,
-    "lon": 0.075041
+    "lon": 0.075041,
+    "child_stations": []
   },
   {
     "name": "Chiswick Park Underground Station",
-    "stationId": "940GZZLUCWP",
-    "naptanIds": [
-      "940GZZLUCWP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.494627,
-    "lon": -0.267972
+    "lon": -0.267972,
+    "child_stations": []
   },
   {
     "name": "Chorleywood Underground Station",
-    "stationId": "HUBCLW",
-    "naptanIds": [
-      "9400ZZLUCYD1",
-      "9400ZZLUCYD2",
-      "940GZZLUCYD",
-      "HUBCLW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Metropolitan"
-    ],
-    "lat": 51.653835,
-    "lon": -0.51829
+    "lat": 51.654358,
+    "lon": -0.518461,
+    "child_stations": []
   },
   {
     "name": "Clapham Common Underground Station",
-    "stationId": "940GZZLUCPC",
-    "naptanIds": [
-      "940GZZLUCPC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.461742,
-    "lon": -0.138317
+    "lon": -0.138317,
+    "child_stations": []
   },
   {
     "name": "Clapham North Underground Station",
-    "stationId": "940GZZLUCPN",
-    "naptanIds": [
-      "940GZZLUCPN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.465135,
-    "lon": -0.130016
+    "lon": -0.130016,
+    "child_stations": []
   },
   {
     "name": "Clapham South Underground Station",
-    "stationId": "940GZZLUCPS",
-    "naptanIds": [
-      "940GZZLUCPS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.452654,
-    "lon": -0.147582
+    "lon": -0.147582,
+    "child_stations": []
   },
   {
     "name": "Cockfosters Underground Station",
-    "stationId": "940GZZLUCKS",
-    "naptanIds": [
-      "940GZZLUCKS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.65152,
-    "lon": -0.149171
+    "lon": -0.149171,
+    "child_stations": []
   },
   {
     "name": "Colindale Underground Station",
-    "stationId": "940GZZLUCND",
-    "naptanIds": [
-      "940GZZLUCND"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.595424,
-    "lon": -0.249919
+    "lon": -0.249919,
+    "child_stations": []
   },
   {
     "name": "Colliers Wood Underground Station",
-    "stationId": "940GZZLUCSD",
-    "naptanIds": [
-      "940GZZLUCSD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.41816,
-    "lon": -0.178086
+    "lon": -0.178086,
+    "child_stations": []
   },
   {
     "name": "Covent Garden Underground Station",
-    "stationId": "940GZZLUCGN",
-    "naptanIds": [
-      "940GZZLUCGN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.513093,
-    "lon": -0.124436
+    "lon": -0.124436,
+    "child_stations": []
   },
   {
     "name": "Croxley Underground Station",
-    "stationId": "940GZZLUCXY",
-    "naptanIds": [
-      "940GZZLUCXY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.647044,
-    "lon": -0.441718
+    "lon": -0.441718,
+    "child_stations": []
   },
   {
     "name": "Dagenham East Underground Station",
-    "stationId": "940GZZLUDGE",
-    "naptanIds": [
-      "940GZZLUDGE"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.544096,
-    "lon": 0.166017
+    "lon": 0.166017,
+    "child_stations": []
   },
   {
     "name": "Dagenham Heathway Underground Station",
-    "stationId": "940GZZLUDGY",
-    "naptanIds": [
-      "940GZZLUDGY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.541639,
-    "lon": 0.147527
+    "lon": 0.147527,
+    "child_stations": []
   },
   {
     "name": "Debden Underground Station",
-    "stationId": "940GZZLUDBN",
-    "naptanIds": [
-      "940GZZLUDBN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.645386,
-    "lon": 0.083782
+    "lon": 0.083782,
+    "child_stations": []
   },
   {
     "name": "Dollis Hill Underground Station",
-    "stationId": "940GZZLUDOH",
-    "naptanIds": [
-      "940GZZLUDOH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.551955,
-    "lon": -0.239068
+    "lon": -0.239068,
+    "child_stations": []
   },
   {
-    "name": "Ealing Broadway Station",
-    "stationId": "HUBEAL",
-    "naptanIds": [
-      "9100EALINGB0",
-      "9100EALINGB1",
-      "910GEALINGB",
-      "9400ZZLUEBY1",
-      "9400ZZLUEBY3",
-      "9400ZZLUEBY4",
-      "940GZZLUEBY",
-      "HUBEAL"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "E1",
-      "E9",
-      "Great Western Railway",
-      "E10",
-      "Elizabeth line",
-      "Central"
-    ],
-    "lat": 51.514643,
-    "lon": -0.30173
+    "name": "Ealing Broadway Underground Station",
+    "lat": 51.515017,
+    "lon": -0.301457,
+    "child_stations": []
   },
   {
     "name": "Ealing Common Underground Station",
-    "stationId": "940GZZLUECM",
-    "naptanIds": [
-      "940GZZLUECM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.51014,
-    "lon": -0.288265
+    "lon": -0.288265,
+    "child_stations": []
   },
   {
     "name": "Earl's Court Underground Station",
-    "stationId": "940GZZLUECT",
-    "naptanIds": [
-      "940GZZLUECT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.492063,
-    "lon": -0.193378
+    "lon": -0.193378,
+    "child_stations": []
   },
   {
     "name": "East Acton Underground Station",
-    "stationId": "940GZZLUEAN",
-    "naptanIds": [
-      "940GZZLUEAN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.516612,
-    "lon": -0.247248
+    "lon": -0.247248,
+    "child_stations": []
   },
   {
     "name": "East Finchley Underground Station",
-    "stationId": "940GZZLUEFY",
-    "naptanIds": [
-      "940GZZLUEFY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.587131,
-    "lon": -0.165012
+    "lon": -0.165012,
+    "child_stations": []
   },
   {
     "name": "East Ham Underground Station",
-    "stationId": "940GZZLUEHM",
-    "naptanIds": [
-      "940GZZLUEHM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.538948,
-    "lon": 0.051186
+    "lon": 0.051186,
+    "child_stations": []
   },
   {
     "name": "East Putney Underground Station",
-    "stationId": "940GZZLUEPY",
-    "naptanIds": [
-      "940GZZLUEPY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.459205,
-    "lon": -0.211
+    "lon": -0.211,
+    "child_stations": []
   },
   {
     "name": "Eastcote Underground Station",
-    "stationId": "940GZZLUEAE",
-    "naptanIds": [
-      "940GZZLUEAE"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan",
-      "Piccadilly"
-    ],
     "lat": 51.576506,
-    "lon": -0.397373
+    "lon": -0.397373,
+    "child_stations": []
   },
   {
     "name": "Edgware Road (Bakerloo) Underground Station",
-    "stationId": "940GZZLUERB",
-    "naptanIds": [
-      "940GZZLUERB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.520299,
-    "lon": -0.17015
+    "lon": -0.17015,
+    "child_stations": []
   },
   {
     "name": "Edgware Road (Circle Line) Underground Station",
-    "stationId": "940GZZLUERC",
-    "naptanIds": [
-      "940GZZLUERC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.519858,
-    "lon": -0.167832
+    "lon": -0.167832,
+    "child_stations": []
   },
   {
     "name": "Edgware Underground Station",
-    "stationId": "940GZZLUEGW",
-    "naptanIds": [
-      "940GZZLUEGW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.613653,
-    "lon": -0.274928
+    "lon": -0.274928,
+    "child_stations": []
   },
   {
     "name": "Elephant & Castle Underground Station",
-    "stationId": "HUBEPH",
-    "naptanIds": [
-      "9400ZZLUEAC1",
-      "9400ZZLUEAC2",
-      "9400ZZLUEAC3",
-      "9400ZZLUEAC4",
-      "940GZZLUEAC",
-      "HUBEPH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.49581,
-    "lon": -0.100985
+    "lat": 51.494536,
+    "lon": -0.100606,
+    "child_stations": []
   },
   {
     "name": "Elm Park Underground Station",
-    "stationId": "940GZZLUEPK",
-    "naptanIds": [
-      "940GZZLUEPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.549775,
-    "lon": 0.19864
+    "lon": 0.19864,
+    "child_stations": []
   },
   {
     "name": "Embankment Underground Station",
-    "stationId": "940GZZLUEMB",
-    "naptanIds": [
-      "940GZZLUEMB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Bakerloo"
-    ],
     "lat": 51.507058,
-    "lon": -0.122666
+    "lon": -0.122666,
+    "child_stations": []
   },
   {
     "name": "Epping Underground Station",
-    "stationId": "940GZZLUEPG",
-    "naptanIds": [
-      "940GZZLUEPG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.69368,
-    "lon": 0.113767
+    "lon": 0.113767,
+    "child_stations": []
   },
   {
     "name": "Euston Square Underground Station",
-    "stationId": "940GZZLUESQ",
-    "naptanIds": [
-      "940GZZLUESQ"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Metropolitan",
-      "Hammersmith & City"
-    ],
     "lat": 51.525604,
-    "lon": -0.135829
+    "lon": -0.135829,
+    "child_stations": []
   },
   {
-    "name": "Euston Station",
-    "stationId": "HUBEUS",
-    "naptanIds": [
-      "9100EUSTON0",
-      "910GEUSTON",
-      "9400ZZLUEUS1",
-      "9400ZZLUEUS2",
-      "9400ZZLUEUS3",
-      "9400ZZLUEUS4",
-      "9400ZZLUEUS5",
-      "9400ZZLUEUS6",
-      "940GZZLUEUS",
-      "HUBEUS"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "West Midlands Trains",
-      "Lioness",
-      "Avanti West Coast",
-      "Victoria"
-    ],
-    "lat": 51.528954,
-    "lon": -0.135
+    "name": "Euston Underground Station",
+    "lat": 51.528186,
+    "lon": -0.134239,
+    "child_stations": []
   },
   {
     "name": "Fairlop Underground Station",
-    "stationId": "940GZZLUFLP",
-    "naptanIds": [
-      "940GZZLUFLP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.595618,
-    "lon": 0.091004
+    "lon": 0.091004,
+    "child_stations": []
   },
   {
-    "name": "Farringdon Station",
-    "stationId": "HUBZFD",
-    "naptanIds": [
-      "9100FRNDXR0",
-      "9100FRNDXR1",
-      "910GFRNDXR",
-      "9400ZZLUFCN1",
-      "9400ZZLUFCN2",
-      "940GZZLUFCN",
-      "HUBZFD"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Thameslink",
-      "Hammersmith & City",
-      "Circle",
-      "Metropolitan",
-      "Elizabeth line"
-    ],
-    "lat": 51.519961,
-    "lon": -0.103051
+    "name": "Farringdon Underground Station",
+    "lat": 51.520252,
+    "lon": -0.104913,
+    "child_stations": []
   },
   {
     "name": "Finchley Central Underground Station",
-    "stationId": "940GZZLUFYC",
-    "naptanIds": [
-      "940GZZLUFYC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.600921,
-    "lon": -0.192527
+    "lon": -0.192527,
+    "child_stations": []
   },
   {
     "name": "Finchley Road Underground Station",
-    "stationId": "940GZZLUFYR",
-    "naptanIds": [
-      "940GZZLUFYR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Metropolitan"
-    ],
     "lat": 51.546825,
-    "lon": -0.179845
+    "lon": -0.179845,
+    "child_stations": []
   },
   {
     "name": "Finsbury Park Underground Station",
-    "stationId": "HUBFPK",
-    "naptanIds": [
-      "9400ZZLUFPK1",
-      "9400ZZLUFPK2",
-      "9400ZZLUFPK3",
-      "9400ZZLUFPK4",
-      "940GZZLUFPK",
-      "HUBFPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly",
-      "Victoria",
-      "Thameslink",
-      "Great Northern"
-    ],
-    "lat": 51.564388,
-    "lon": -0.106036
+    "lat": 51.564158,
+    "lon": -0.106825,
+    "child_stations": []
   },
   {
     "name": "Fulham Broadway Underground Station",
-    "stationId": "940GZZLUFBY",
-    "naptanIds": [
-      "940GZZLUFBY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.480081,
-    "lon": -0.195422
+    "lon": -0.195422,
+    "child_stations": []
   },
   {
     "name": "Gants Hill Underground Station",
-    "stationId": "940GZZLUGTH",
-    "naptanIds": [
-      "940GZZLUGTH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.576544,
-    "lon": 0.066185
+    "lon": 0.066185,
+    "child_stations": []
   },
   {
     "name": "Gloucester Road Underground Station",
-    "stationId": "940GZZLUGTR",
-    "naptanIds": [
-      "940GZZLUGTR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.494316,
-    "lon": -0.182658
+    "lon": -0.182658,
+    "child_stations": []
   },
   {
     "name": "Golders Green Underground Station",
-    "stationId": "940GZZLUGGN",
-    "naptanIds": [
-      "940GZZLUGGN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.572259,
-    "lon": -0.194039
+    "lon": -0.194039,
+    "child_stations": []
   },
   {
     "name": "Goldhawk Road Underground Station",
-    "stationId": "940GZZLUGHK",
-    "naptanIds": [
-      "940GZZLUGHK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.502005,
-    "lon": -0.226715
+    "lon": -0.226715,
+    "child_stations": []
   },
   {
     "name": "Goodge Street Underground Station",
-    "stationId": "940GZZLUGDG",
-    "naptanIds": [
-      "940GZZLUGDG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.520599,
-    "lon": -0.134361
+    "lon": -0.134361,
+    "child_stations": []
   },
   {
     "name": "Grange Hill Underground Station",
-    "stationId": "940GZZLUGGH",
-    "naptanIds": [
-      "940GZZLUGGH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.613378,
-    "lon": 0.092066
+    "lon": 0.092066,
+    "child_stations": []
   },
   {
     "name": "Great Portland Street Underground Station",
-    "stationId": "940GZZLUGPS",
-    "naptanIds": [
-      "940GZZLUGPS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Metropolitan",
-      "Hammersmith & City"
-    ],
     "lat": 51.52384,
-    "lon": -0.144262
+    "lon": -0.144262,
+    "child_stations": []
   },
   {
     "name": "Green Park Underground Station",
-    "stationId": "940GZZLUGPK",
-    "naptanIds": [
-      "940GZZLUGPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Piccadilly",
-      "Victoria"
-    ],
     "lat": 51.506947,
-    "lon": -0.142787
+    "lon": -0.142787,
+    "child_stations": []
   },
   {
     "name": "Greenford Underground Station",
-    "stationId": "HUBGFD",
-    "naptanIds": [
-      "9400ZZLUGFD1",
-      "9400ZZLUGFD2",
-      "940GZZLUGFD",
-      "HUBGFD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central",
-      "Great Western Railway"
-    ],
-    "lat": 51.542466,
-    "lon": -0.345212
+    "lat": 51.542424,
+    "lon": -0.34605,
+    "child_stations": []
   },
   {
-    "name": "Gunnersbury Station",
-    "stationId": "HUBGUN",
-    "naptanIds": [
-      "9100GNRSBRY0",
-      "910GGNRSBRY",
-      "9400ZZLUGBY1",
-      "9400ZZLUGBY2",
-      "940GZZLUGBY",
-      "HUBGUN"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.491386,
-    "lon": -0.275614
+    "name": "Gunnersbury Underground Station",
+    "lat": 51.491803,
+    "lon": -0.275267,
+    "child_stations": []
   },
   {
     "name": "Hainault Underground Station",
-    "stationId": "940GZZLUHLT",
-    "naptanIds": [
-      "940GZZLUHLT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.603659,
-    "lon": 0.093482
+    "lon": 0.093482,
+    "child_stations": []
   },
   {
     "name": "Hammersmith (H&C Line) Underground Station",
-    "stationId": "HUBHMS",
-    "naptanIds": [
-      "9400ZZLUHSC1",
-      "9400ZZLUHSD1",
-      "9400ZZLUHSD2",
-      "9400ZZLUHSD3",
-      "9400ZZLUHSD4",
-      "940GZZLUHSC",
-      "940GZZLUHSD",
-      "HUBHMS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City",
-      "Circle",
-      "Piccadilly",
-      "H91"
-    ],
-    "lat": 51.493843,
-    "lon": -0.22513
+    "lat": 51.49331,
+    "lon": -0.2243,
+    "child_stations": [
+      "Hammersmith (Dist&Picc Line) Underground Station"
+    ]
   },
   {
     "name": "Hampstead Underground Station",
-    "stationId": "940GZZLUHTD",
-    "naptanIds": [
-      "940GZZLUHTD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.556239,
-    "lon": -0.177464
+    "lon": -0.177464,
+    "child_stations": []
   },
   {
     "name": "Hanger Lane Underground Station",
-    "stationId": "940GZZLUHGR",
-    "naptanIds": [
-      "940GZZLUHGR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.530177,
-    "lon": -0.292704
+    "lon": -0.292704,
+    "child_stations": []
   },
   {
-    "name": "Harlesden Station",
-    "stationId": "HUBHDN",
-    "naptanIds": [
-      "9100HARLSDN0",
-      "9100HARLSDN1",
-      "910GHARLSDN",
-      "9400ZZLUHSN1",
-      "9400ZZLUHSN2",
-      "940GZZLUHSN",
-      "HUBHDN"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.536241,
-    "lon": -0.257467
+    "name": "Harlesden Underground Station",
+    "lat": 51.53631,
+    "lon": -0.257883,
+    "child_stations": []
   },
   {
-    "name": "Harrow & Wealdstone Station",
-    "stationId": "HUBHRW",
-    "naptanIds": [
-      "9100HROWDC1",
-      "9100HROWDC2",
-      "910GHROW",
-      "9400ZZLUHAW1",
-      "9400ZZLUHAW2",
-      "940GZZLUHAW",
-      "HUBHRW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness",
-      "West Midlands Trains"
-    ],
-    "lat": 51.59223,
-    "lon": -0.335103
+    "name": "Harrow & Wealdstone Underground Station",
+    "lat": 51.592268,
+    "lon": -0.335217,
+    "child_stations": []
   },
   {
     "name": "Harrow-on-the-Hill Underground Station",
-    "stationId": "HUBHOH",
-    "naptanIds": [
-      "9400ZZLUHOH1",
-      "9400ZZLUHOH2",
-      "940GZZLUHOH",
-      "HUBHOH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "H10",
-      "H18",
-      "H19",
-      "H14",
-      "SL9",
-      "H9",
-      "Metropolitan",
-      "H17",
-      "Chiltern Railways",
-      "H11",
-      "SL10"
-    ],
-    "lat": 51.579086,
-    "lon": -0.336565
+    "lat": 51.579195,
+    "lon": -0.337225,
+    "child_stations": []
   },
   {
     "name": "Hatton Cross Underground Station",
-    "stationId": "940GZZLUHNX",
-    "naptanIds": [
-      "940GZZLUHNX"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.466747,
-    "lon": -0.423191
+    "lon": -0.423191,
+    "child_stations": []
   },
   {
-    "name": "Heathrow Terminal 4",
-    "stationId": "HUBHX4",
-    "naptanIds": [
-      "9100HTRWTM40",
-      "910GHTRWTM4",
-      "9400ZZLUHR41",
-      "940GZZLUHR4",
-      "HUBHX4"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Piccadilly"
-    ],
-    "lat": 51.458674,
-    "lon": -0.446256
+    "name": "Heathrow Terminal 4 Underground Station",
+    "lat": 51.458524,
+    "lon": -0.445771,
+    "child_stations": []
   },
   {
-    "name": "Heathrow Terminal 5",
-    "stationId": "HUBHX5",
-    "naptanIds": [
-      "9100HTRWTM50",
-      "910GHTRWTM5",
-      "9400ZZLUHR51",
-      "940GZZLUHR5",
-      "HUBHX5"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Piccadilly",
-      "Heathrow Express"
-    ],
-    "lat": 51.472193,
-    "lon": -0.4864
+    "name": "Heathrow Terminal 5 Underground Station",
+    "lat": 51.470052,
+    "lon": -0.49056,
+    "child_stations": []
   },
   {
-    "name": "Heathrow Terminals 2 & 3 Rail Station",
-    "stationId": "HUBH13",
-    "naptanIds": [
-      "9100HTRWAPT0",
-      "910GHTRWAPT",
-      "9400ZZLUHRC1",
-      "9400ZZLUHRC2",
-      "940GZZLUHRC",
-      "HUBH13"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "A10",
-      "Heathrow Express",
-      "SL9",
-      "U3",
-      "SL7",
-      "Piccadilly"
-    ],
-    "lat": 51.471987,
-    "lon": -0.454788
+    "name": "Heathrow Terminals 2 & 3 Underground Station",
+    "lat": 51.471235,
+    "lon": -0.452265,
+    "child_stations": []
   },
   {
     "name": "Hendon Central Underground Station",
-    "stationId": "940GZZLUHCL",
-    "naptanIds": [
-      "940GZZLUHCL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.583301,
-    "lon": -0.226424
+    "lon": -0.226424,
+    "child_stations": []
   },
   {
     "name": "High Barnet Underground Station",
-    "stationId": "940GZZLUHBT",
-    "naptanIds": [
-      "940GZZLUHBT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.650541,
-    "lon": -0.194298
+    "lon": -0.194298,
+    "child_stations": []
   },
   {
     "name": "High Street Kensington Underground Station",
-    "stationId": "940GZZLUHSK",
-    "naptanIds": [
-      "940GZZLUHSK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.501055,
-    "lon": -0.192792
+    "lon": -0.192792,
+    "child_stations": []
   },
   {
-    "name": "Highbury & Islington Station",
-    "stationId": "HUBHHY",
-    "naptanIds": [
-      "9100HIGBYA3",
-      "9100HIGHBYA1",
-      "9100HIGHBYA2",
-      "910GHGHI",
-      "9400ZZLUHAI1",
-      "9400ZZLUHAI2",
-      "940GZZLUHAI",
-      "HUBHHY"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Mildmay",
-      "Windrush",
-      "Victoria",
-      "Great Northern"
-    ],
-    "lat": 51.546032,
-    "lon": -0.104246
+    "name": "Highbury & Islington Underground Station",
+    "lat": 51.54635,
+    "lon": -0.103324,
+    "child_stations": []
   },
   {
     "name": "Highgate Underground Station",
-    "stationId": "940GZZLUHGT",
-    "naptanIds": [
-      "940GZZLUHGT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.577532,
-    "lon": -0.145857
+    "lon": -0.145857,
+    "child_stations": []
   },
   {
     "name": "Hillingdon Underground Station",
-    "stationId": "940GZZLUHGD",
-    "naptanIds": [
-      "940GZZLUHGD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan",
-      "Piccadilly"
-    ],
     "lat": 51.553715,
-    "lon": -0.449828
+    "lon": -0.449828,
+    "child_stations": []
   },
   {
     "name": "Holborn Underground Station",
-    "stationId": "940GZZLUHBN",
-    "naptanIds": [
-      "940GZZLUHBN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly",
-      "Central"
-    ],
     "lat": 51.51758,
-    "lon": -0.120475
+    "lon": -0.120475,
+    "child_stations": []
   },
   {
     "name": "Holland Park Underground Station",
-    "stationId": "940GZZLUHPK",
-    "naptanIds": [
-      "940GZZLUHPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.507143,
-    "lon": -0.205679
+    "lon": -0.205679,
+    "child_stations": []
   },
   {
     "name": "Holloway Road Underground Station",
-    "stationId": "940GZZLUHWY",
-    "naptanIds": [
-      "940GZZLUHWY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.552697,
-    "lon": -0.113244
+    "lon": -0.113244,
+    "child_stations": []
   },
   {
     "name": "Hornchurch Underground Station",
-    "stationId": "940GZZLUHCH",
-    "naptanIds": [
-      "940GZZLUHCH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.554093,
-    "lon": 0.219116
+    "lon": 0.219116,
+    "child_stations": []
   },
   {
     "name": "Hounslow Central Underground Station",
-    "stationId": "940GZZLUHWC",
-    "naptanIds": [
-      "940GZZLUHWC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.471295,
-    "lon": -0.366578
+    "lon": -0.366578,
+    "child_stations": []
   },
   {
     "name": "Hounslow East Underground Station",
-    "stationId": "940GZZLUHWE",
-    "naptanIds": [
-      "940GZZLUHWE"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.473213,
-    "lon": -0.356474
+    "lon": -0.356474,
+    "child_stations": []
   },
   {
     "name": "Hounslow West Underground Station",
-    "stationId": "940GZZLUHWT",
-    "naptanIds": [
-      "940GZZLUHWT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.473469,
-    "lon": -0.386544
+    "lon": -0.386544,
+    "child_stations": []
   },
   {
     "name": "Hyde Park Corner Underground Station",
-    "stationId": "940GZZLUHPC",
-    "naptanIds": [
-      "940GZZLUHPC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.503035,
-    "lon": -0.152441
+    "lon": -0.152441,
+    "child_stations": []
   },
   {
     "name": "Ickenham Underground Station",
-    "stationId": "940GZZLUICK",
-    "naptanIds": [
-      "940GZZLUICK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly",
-      "Metropolitan"
-    ],
     "lat": 51.561992,
-    "lon": -0.442001
+    "lon": -0.442001,
+    "child_stations": []
   },
   {
     "name": "Kennington Underground Station",
-    "stationId": "940GZZLUKNG",
-    "naptanIds": [
-      "940GZZLUKNG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.488337,
-    "lon": -0.105963
+    "lon": -0.105963,
+    "child_stations": []
   },
   {
-    "name": "Kensal Green Station",
-    "stationId": "HUBKNL",
-    "naptanIds": [
-      "9100KENSLG0",
-      "9100KENSLG1",
-      "910GKENSLG",
-      "9400ZZLUKSL1",
-      "9400ZZLUKSL2",
-      "940GZZLUKSL",
-      "HUBKNL"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.53056,
-    "lon": -0.224597
+    "name": "Kensal Green Underground Station",
+    "lat": 51.530539,
+    "lon": -0.225016,
+    "child_stations": []
   },
   {
-    "name": "Kensington (Olympia) Station",
-    "stationId": "HUBKPA",
-    "naptanIds": [
-      "9100KENOLYM0",
-      "9100KENOLYM1",
-      "910GKENOLYM",
-      "9400ZZLUKOY1",
-      "940GZZLUKOY",
-      "HUBKPA"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.49788,
-    "lon": -0.210293
+    "name": "Kensington (Olympia) Underground Station",
+    "lat": 51.497624,
+    "lon": -0.210015,
+    "child_stations": []
   },
   {
     "name": "Kentish Town Underground Station",
-    "stationId": "HUBKTN",
-    "naptanIds": [
-      "9400ZZLUKSH1",
-      "9400ZZLUKSH2",
-      "940GZZLUKSH",
-      "HUBKTN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "East Midlands Railway",
-      "Thameslink"
-    ],
-    "lat": 51.550356,
-    "lon": -0.140702
+    "lat": 51.550312,
+    "lon": -0.140733,
+    "child_stations": []
   },
   {
-    "name": "Kenton Station",
-    "stationId": "HUBKNT",
-    "naptanIds": [
-      "9100KTON0",
-      "9100KTON1",
-      "910GKTON",
-      "9400ZZLUKEN1",
-      "9400ZZLUKEN2",
-      "940GZZLUKEN",
-      "HUBKNT"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.58162,
-    "lon": -0.316829
+    "name": "Kenton Underground Station",
+    "lat": 51.581756,
+    "lon": -0.31691,
+    "child_stations": []
   },
   {
-    "name": "Kew Gardens Station",
-    "stationId": "HUBKWG",
-    "naptanIds": [
-      "9100KEWGRDN0",
-      "9100KEWGRDN1",
-      "910GKEWGRDN",
-      "9400ZZLUKWG1",
-      "9400ZZLUKWG2",
-      "940GZZLUKWG",
-      "HUBKWG"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.476868,
-    "lon": -0.285133
+    "name": "Kew Gardens Underground Station",
+    "lat": 51.477058,
+    "lon": -0.285241,
+    "child_stations": []
   },
   {
     "name": "Kilburn Park Underground Station",
-    "stationId": "940GZZLUKPK",
-    "naptanIds": [
-      "940GZZLUKPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.534979,
-    "lon": -0.194232
+    "lon": -0.194232,
+    "child_stations": []
   },
   {
     "name": "Kilburn Underground Station",
-    "stationId": "940GZZLUKBN",
-    "naptanIds": [
-      "940GZZLUKBN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.547183,
-    "lon": -0.204248
+    "lon": -0.204248,
+    "child_stations": []
   },
   {
     "name": "King's Cross St. Pancras Underground Station",
-    "stationId": "HUBKGX",
-    "naptanIds": [
-      "9400ZZLUKSX1",
-      "9400ZZLUKSX2",
-      "9400ZZLUKSX3",
-      "9400ZZLUKSX4",
-      "9400ZZLUKSX5",
-      "9400ZZLUKSX6",
-      "9400ZZLUKSX7",
-      "9400ZZLUKSX8",
-      "940GZZLUKSX",
-      "HUBKGX"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Thameslink",
-      "Grand Central",
-      "East Midlands Railway",
-      "Victoria",
-      "Hammersmith & City",
-      "Circle",
-      "Metropolitan",
-      "London North Eastern Railway",
-      "Hull Trains",
-      "Lumo",
-      "Piccadilly",
-      "Great Northern",
-      "Southeastern"
-    ],
-    "lat": 51.530433,
-    "lon": -0.12231
+    "lat": 51.530663,
+    "lon": -0.123194,
+    "child_stations": []
   },
   {
     "name": "Kingsbury Underground Station",
-    "stationId": "940GZZLUKBY",
-    "naptanIds": [
-      "940GZZLUKBY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.584845,
-    "lon": -0.27879
+    "lon": -0.27879,
+    "child_stations": []
   },
   {
     "name": "Knightsbridge Underground Station",
-    "stationId": "940GZZLUKNB",
-    "naptanIds": [
-      "940GZZLUKNB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "C1",
-      "Piccadilly"
-    ],
     "lat": 51.501669,
-    "lon": -0.160508
+    "lon": -0.160508,
+    "child_stations": []
   },
   {
     "name": "Ladbroke Grove Underground Station",
-    "stationId": "940GZZLULAD",
-    "naptanIds": [
-      "940GZZLULAD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.517449,
-    "lon": -0.210391
+    "lon": -0.210391,
+    "child_stations": []
   },
   {
     "name": "Lambeth North Underground Station",
-    "stationId": "940GZZLULBN",
-    "naptanIds": [
-      "940GZZLULBN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.498808,
-    "lon": -0.112315
+    "lon": -0.112315,
+    "child_stations": []
   },
   {
     "name": "Lancaster Gate Underground Station",
-    "stationId": "940GZZLULGT",
-    "naptanIds": [
-      "940GZZLULGT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.511723,
-    "lon": -0.175494
+    "lon": -0.175494,
+    "child_stations": []
   },
   {
     "name": "Latimer Road Underground Station",
-    "stationId": "940GZZLULRD",
-    "naptanIds": [
-      "940GZZLULRD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.513389,
-    "lon": -0.217799
+    "lon": -0.217799,
+    "child_stations": []
   },
   {
     "name": "Leicester Square Underground Station",
-    "stationId": "940GZZLULSQ",
-    "naptanIds": [
-      "940GZZLULSQ"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.511386,
-    "lon": -0.128426
+    "lon": -0.128426,
+    "child_stations": []
   },
   {
     "name": "Leyton Underground Station",
-    "stationId": "940GZZLULYN",
-    "naptanIds": [
-      "940GZZLULYN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.556589,
-    "lon": -0.005523
+    "lon": -0.005523,
+    "child_stations": []
   },
   {
     "name": "Leytonstone Underground Station",
-    "stationId": "940GZZLULYS",
-    "naptanIds": [
-      "940GZZLULYS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.568324,
-    "lon": 0.008194
+    "lon": 0.008194,
+    "child_stations": []
   },
   {
-    "name": "Liverpool Street Station",
-    "stationId": "HUBLST",
-    "naptanIds": [
-      "9100LIVST0",
-      "9100LIVSTLL0",
-      "9100LIVSTLL1",
-      "910GLIVST",
-      "910GLIVSTLL",
-      "9400ZZLULVT1",
-      "9400ZZLULVT2",
-      "9400ZZLULVT3",
-      "9400ZZLULVT4",
-      "940GZZLULVT",
-      "HUBLST"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Weaver",
-      "Hammersmith & City",
-      "Circle",
-      "Greater Anglia",
-      "Metropolitan",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.518381,
-    "lon": -0.081092
+    "name": "Liverpool Street Underground Station",
+    "lat": 51.517372,
+    "lon": -0.083182,
+    "child_stations": []
   },
   {
     "name": "London Bridge Underground Station",
-    "stationId": "HUBLBG",
-    "naptanIds": [
-      "9400ZZLULNB1",
-      "9400ZZLULNB2",
-      "9400ZZLULNB3",
-      "9400ZZLULNB4",
-      "940GZZLULNB",
-      "HUBLBG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Southern",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.505716,
-    "lon": -0.088599
+    "lat": 51.505721,
+    "lon": -0.088873,
+    "child_stations": []
   },
   {
     "name": "Loughton Underground Station",
-    "stationId": "940GZZLULGN",
-    "naptanIds": [
-      "940GZZLULGN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "W14",
-      "Central"
-    ],
     "lat": 51.641443,
-    "lon": 0.055476
+    "lon": 0.055476,
+    "child_stations": []
   },
   {
     "name": "Maida Vale Underground Station",
-    "stationId": "940GZZLUMVL",
-    "naptanIds": [
-      "940GZZLUMVL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.529777,
-    "lon": -0.185758
+    "lon": -0.185758,
+    "child_stations": []
   },
   {
     "name": "Manor House Underground Station",
-    "stationId": "940GZZLUMRH",
-    "naptanIds": [
-      "940GZZLUMRH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.570738,
-    "lon": -0.096118
+    "lon": -0.096118,
+    "child_stations": []
   },
   {
     "name": "Mansion House Underground Station",
-    "stationId": "940GZZLUMSH",
-    "naptanIds": [
-      "940GZZLUMSH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.512117,
-    "lon": -0.094009
+    "lon": -0.094009,
+    "child_stations": []
   },
   {
     "name": "Marble Arch Underground Station",
-    "stationId": "940GZZLUMBA",
-    "naptanIds": [
-      "940GZZLUMBA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.513424,
-    "lon": -0.158953
+    "lon": -0.158953,
+    "child_stations": []
   },
   {
     "name": "Marylebone Underground Station",
-    "stationId": "HUBMYB",
-    "naptanIds": [
-      "9400ZZLUMYB1",
-      "9400ZZLUMYB2",
-      "940GZZLUMYB",
-      "HUBMYB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Chiltern Railways"
-    ],
-    "lat": 51.522119,
-    "lon": -0.163475
+    "lat": 51.522322,
+    "lon": -0.163207,
+    "child_stations": []
   },
   {
     "name": "Mile End Underground Station",
-    "stationId": "940GZZLUMED",
-    "naptanIds": [
-      "940GZZLUMED"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Central",
-      "Hammersmith & City"
-    ],
     "lat": 51.525122,
-    "lon": -0.03364
+    "lon": -0.03364,
+    "child_stations": []
   },
   {
     "name": "Mill Hill East Underground Station",
-    "stationId": "940GZZLUMHL",
-    "naptanIds": [
-      "940GZZLUMHL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.608229,
-    "lon": -0.209986
+    "lon": -0.209986,
+    "child_stations": []
   },
   {
     "name": "Monument Underground Station",
-    "stationId": "940GZZLUMMT",
-    "naptanIds": [
-      "940GZZLUMMT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.5107,
-    "lon": -0.085969
+    "lon": -0.085969,
+    "child_stations": []
   },
   {
     "name": "Moor Park Underground Station",
-    "stationId": "940GZZLUMPK",
-    "naptanIds": [
-      "940GZZLUMPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.629845,
-    "lon": -0.432454
+    "lon": -0.432454,
+    "child_stations": []
   },
   {
     "name": "Moorgate Underground Station",
-    "stationId": "HUBZMG",
-    "naptanIds": [
-      "9400ZZLUMGT1",
-      "9400ZZLUMGT2",
-      "9400ZZLUMGT3",
-      "9400ZZLUMGT4",
-      "940GZZLUMGT",
-      "HUBZMG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Metropolitan",
-      "Great Northern",
-      "Hammersmith & City"
-    ],
-    "lat": 51.518463,
-    "lon": -0.089406
+    "lat": 51.518176,
+    "lon": -0.088322,
+    "child_stations": []
   },
   {
     "name": "Morden Underground Station",
-    "stationId": "940GZZLUMDN",
-    "naptanIds": [
-      "940GZZLUMDN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.402142,
-    "lon": -0.194839
+    "lon": -0.194839,
+    "child_stations": []
   },
   {
     "name": "Mornington Crescent Underground Station",
-    "stationId": "940GZZLUMTC",
-    "naptanIds": [
-      "940GZZLUMTC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.534679,
-    "lon": -0.138789
+    "lon": -0.138789,
+    "child_stations": []
   },
   {
     "name": "Neasden Underground Station",
-    "stationId": "940GZZLUNDN",
-    "naptanIds": [
-      "940GZZLUNDN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.553986,
-    "lon": -0.249837
+    "lon": -0.249837,
+    "child_stations": []
   },
   {
     "name": "Newbury Park Underground Station",
-    "stationId": "940GZZLUNBP",
-    "naptanIds": [
-      "940GZZLUNBP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.575726,
-    "lon": 0.090004
+    "lon": 0.090004,
+    "child_stations": []
   },
   {
     "name": "Nine Elms Underground Station",
-    "stationId": "940GZZNEUGST",
-    "naptanIds": [
-      "940GZZNEUGST"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.479912,
-    "lon": -0.128476
+    "lon": -0.128476,
+    "child_stations": []
   },
   {
     "name": "North Acton Underground Station",
-    "stationId": "940GZZLUNAN",
-    "naptanIds": [
-      "940GZZLUNAN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.523524,
-    "lon": -0.259755
+    "lon": -0.259755,
+    "child_stations": []
   },
   {
     "name": "North Ealing Underground Station",
-    "stationId": "940GZZLUNEN",
-    "naptanIds": [
-      "940GZZLUNEN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.517505,
-    "lon": -0.288868
+    "lon": -0.288868,
+    "child_stations": []
   },
   {
     "name": "North Greenwich Underground Station",
-    "stationId": "HUBNGW",
-    "naptanIds": [
-      "9400ZZLUNGW1",
-      "9400ZZLUNGW2",
-      "940GZZLUNGW",
-      "HUBNGW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "London Cable Car"
-    ],
-    "lat": 51.500382,
-    "lon": 0.005191
+    "lat": 51.50047,
+    "lon": 0.004287,
+    "child_stations": []
   },
   {
     "name": "North Harrow Underground Station",
-    "stationId": "940GZZLUNHA",
-    "naptanIds": [
-      "940GZZLUNHA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.584872,
-    "lon": -0.362408
+    "lon": -0.362408,
+    "child_stations": []
   },
   {
-    "name": "North Wembley Station",
-    "stationId": "HUBNWB",
-    "naptanIds": [
-      "9100NWEMBLY1",
-      "9100NWEMBLY2",
-      "910GNWEMBLY",
-      "9400ZZLUNWY1",
-      "9400ZZLUNWY2",
-      "940GZZLUNWY",
-      "HUBNWB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.562504,
-    "lon": -0.303858
+    "name": "North Wembley Underground Station",
+    "lat": 51.562551,
+    "lon": -0.304,
+    "child_stations": []
   },
   {
     "name": "Northfields Underground Station",
-    "stationId": "940GZZLUNFD",
-    "naptanIds": [
-      "940GZZLUNFD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.499319,
-    "lon": -0.314719
+    "lon": -0.314719,
+    "child_stations": []
   },
   {
     "name": "Northolt Underground Station",
-    "stationId": "940GZZLUNHT",
-    "naptanIds": [
-      "940GZZLUNHT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.548236,
-    "lon": -0.368699
+    "lon": -0.368699,
+    "child_stations": []
   },
   {
     "name": "Northwick Park Underground Station",
-    "stationId": "940GZZLUNKP",
-    "naptanIds": [
-      "940GZZLUNKP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.578481,
-    "lon": -0.318056
+    "lon": -0.318056,
+    "child_stations": []
   },
   {
     "name": "Northwood Hills Underground Station",
-    "stationId": "940GZZLUNWH",
-    "naptanIds": [
-      "940GZZLUNWH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.600572,
-    "lon": -0.409464
+    "lon": -0.409464,
+    "child_stations": []
   },
   {
     "name": "Northwood Underground Station",
-    "stationId": "940GZZLUNOW",
-    "naptanIds": [
-      "940GZZLUNOW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.611053,
-    "lon": -0.423829
+    "lon": -0.423829,
+    "child_stations": []
   },
   {
     "name": "Notting Hill Gate Underground Station",
-    "stationId": "940GZZLUNHG",
-    "naptanIds": [
-      "940GZZLUNHG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Central"
-    ],
     "lat": 51.509128,
-    "lon": -0.196104
+    "lon": -0.196104,
+    "child_stations": []
   },
   {
     "name": "Oakwood Underground Station",
-    "stationId": "940GZZLUOAK",
-    "naptanIds": [
-      "940GZZLUOAK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.647726,
-    "lon": -0.132182
+    "lon": -0.132182,
+    "child_stations": []
   },
   {
     "name": "Old Street Underground Station",
-    "stationId": "HUBOLD",
-    "naptanIds": [
-      "9400ZZLUODS1",
-      "9400ZZLUODS2",
-      "940GZZLUODS",
-      "HUBOLD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Great Northern"
-    ],
-    "lat": 51.524988,
-    "lon": -0.087547
+    "lat": 51.525864,
+    "lon": -0.08777,
+    "child_stations": []
   },
   {
     "name": "Osterley Underground Station",
-    "stationId": "940GZZLUOSY",
-    "naptanIds": [
-      "940GZZLUOSY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.481274,
-    "lon": -0.352224
+    "lon": -0.352224,
+    "child_stations": []
   },
   {
     "name": "Oval Underground Station",
-    "stationId": "940GZZLUOVL",
-    "naptanIds": [
-      "940GZZLUOVL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.48185,
-    "lon": -0.112439
+    "lon": -0.112439,
+    "child_stations": []
   },
   {
     "name": "Oxford Circus Underground Station",
-    "stationId": "940GZZLUOXC",
-    "naptanIds": [
-      "940GZZLUOXC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Victoria",
-      "Central"
-    ],
     "lat": 51.515224,
-    "lon": -0.141903
+    "lon": -0.141903,
+    "child_stations": []
   },
   {
-    "name": "Paddington Rail Station",
-    "stationId": "HUBPAD",
-    "naptanIds": [
-      "9100PADTLL0",
-      "9100PADTLL1",
-      "9100PADTON0",
-      "910GPADTLL",
-      "910GPADTON",
-      "9400ZZLUPAC1",
-      "9400ZZLUPAC2",
-      "9400ZZLUPAC3",
-      "9400ZZLUPAC4",
-      "9400ZZLUPAH1",
-      "9400ZZLUPAH2",
-      "940GZZLUPAC",
-      "940GZZLUPAH",
-      "HUBPAD"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "District",
-      "Heathrow Express",
-      "Hammersmith & City",
-      "Great Western Railway",
-      "Circle",
-      "Elizabeth line"
-    ],
-    "lat": 51.515721,
-    "lon": -0.177021
+    "name": "Paddington Underground Station",
+    "lat": 51.516581,
+    "lon": -0.175689,
+    "child_stations": [
+      "Paddington (H&C Line)-Underground"
+    ]
   },
   {
     "name": "Park Royal Underground Station",
-    "stationId": "940GZZLUPKR",
-    "naptanIds": [
-      "940GZZLUPKR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.527123,
-    "lon": -0.284341
+    "lon": -0.284341,
+    "child_stations": []
   },
   {
     "name": "Parsons Green Underground Station",
-    "stationId": "940GZZLUPSG",
-    "naptanIds": [
-      "940GZZLUPSG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.475277,
-    "lon": -0.20117
+    "lon": -0.20117,
+    "child_stations": []
   },
   {
     "name": "Perivale Underground Station",
-    "stationId": "940GZZLUPVL",
-    "naptanIds": [
-      "940GZZLUPVL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.536717,
-    "lon": -0.323446
+    "lon": -0.323446,
+    "child_stations": []
   },
   {
     "name": "Piccadilly Circus Underground Station",
-    "stationId": "940GZZLUPCC",
-    "naptanIds": [
-      "940GZZLUPCC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Piccadilly"
-    ],
     "lat": 51.51005,
-    "lon": -0.133798
+    "lon": -0.133798,
+    "child_stations": []
   },
   {
     "name": "Pimlico Underground Station",
-    "stationId": "940GZZLUPCO",
-    "naptanIds": [
-      "940GZZLUPCO"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Victoria"
-    ],
     "lat": 51.489097,
-    "lon": -0.133761
+    "lon": -0.133761,
+    "child_stations": []
   },
   {
     "name": "Pinner Underground Station",
-    "stationId": "940GZZLUPNR",
-    "naptanIds": [
-      "940GZZLUPNR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.592901,
-    "lon": -0.381161
+    "lon": -0.381161,
+    "child_stations": []
   },
   {
     "name": "Plaistow Underground Station",
-    "stationId": "940GZZLUPLW",
-    "naptanIds": [
-      "940GZZLUPLW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.531341,
-    "lon": 0.017451
+    "lon": 0.017451,
+    "child_stations": []
   },
   {
     "name": "Preston Road Underground Station",
-    "stationId": "940GZZLUPRD",
-    "naptanIds": [
-      "940GZZLUPRD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.571972,
-    "lon": -0.295107
+    "lon": -0.295107,
+    "child_stations": []
   },
   {
     "name": "Putney Bridge Underground Station",
-    "stationId": "940GZZLUPYB",
-    "naptanIds": [
-      "940GZZLUPYB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.468262,
-    "lon": -0.208731
+    "lon": -0.208731,
+    "child_stations": []
   },
   {
-    "name": "Queen's Park Station (London)",
-    "stationId": "HUBQPW",
-    "naptanIds": [
-      "9100QPRK1",
-      "9100QPRK2",
-      "910GQPRK",
-      "9400ZZLUQPS1",
-      "9400ZZLUQPS2",
-      "940GZZLUQPS",
-      "HUBQPW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.534043,
-    "lon": -0.205285
+    "name": "Queen's Park Underground Station",
+    "lat": 51.534158,
+    "lon": -0.204574,
+    "child_stations": []
   },
   {
     "name": "Queensbury Underground Station",
-    "stationId": "940GZZLUQBY",
-    "naptanIds": [
-      "940GZZLUQBY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.594188,
-    "lon": -0.286219
+    "lon": -0.286219,
+    "child_stations": []
   },
   {
     "name": "Queensway Underground Station",
-    "stationId": "940GZZLUQWY",
-    "naptanIds": [
-      "940GZZLUQWY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.510312,
-    "lon": -0.187152
+    "lon": -0.187152,
+    "child_stations": []
   },
   {
     "name": "Ravenscourt Park Underground Station",
-    "stationId": "940GZZLURVP",
-    "naptanIds": [
-      "940GZZLURVP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.494122,
-    "lon": -0.235881
+    "lon": -0.235881,
+    "child_stations": []
   },
   {
     "name": "Rayners Lane Underground Station",
-    "stationId": "940GZZLURYL",
-    "naptanIds": [
-      "940GZZLURYL"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan",
-      "Piccadilly"
-    ],
     "lat": 51.575147,
-    "lon": -0.371127
+    "lon": -0.371127,
+    "child_stations": []
   },
   {
     "name": "Redbridge Underground Station",
-    "stationId": "940GZZLURBG",
-    "naptanIds": [
-      "940GZZLURBG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.576243,
-    "lon": 0.04536
+    "lon": 0.04536,
+    "child_stations": []
   },
   {
     "name": "Regent's Park Underground Station",
-    "stationId": "940GZZLURGP",
-    "naptanIds": [
-      "940GZZLURGP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.523344,
-    "lon": -0.146444
+    "lon": -0.146444,
+    "child_stations": []
   },
   {
-    "name": "Richmond Station",
-    "stationId": "HUBRMD",
-    "naptanIds": [
-      "9100RICHNLL0",
-      "910GRICHMND",
-      "9400ZZLURMD1",
-      "940GZZLURMD",
-      "HUBRMD"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "South Western Railway",
-      "Mildmay"
-    ],
-    "lat": 51.463164,
-    "lon": -0.301238
+    "name": "Richmond Underground Station",
+    "lat": 51.463237,
+    "lon": -0.301336,
+    "child_stations": []
   },
   {
     "name": "Rickmansworth Underground Station",
-    "stationId": "HUBRIC",
-    "naptanIds": [
-      "9400ZZLURKW1",
-      "9400ZZLURKW2",
-      "940GZZLURKW",
-      "HUBRIC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Metropolitan"
-    ],
-    "lat": 51.640198,
-    "lon": -0.47366
+    "lat": 51.640207,
+    "lon": -0.473703,
+    "child_stations": []
   },
   {
     "name": "Roding Valley Underground Station",
-    "stationId": "940GZZLURVY",
-    "naptanIds": [
-      "940GZZLURVY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.617199,
-    "lon": 0.043647
+    "lon": 0.043647,
+    "child_stations": []
   },
   {
     "name": "Royal Oak Underground Station",
-    "stationId": "940GZZLURYO",
-    "naptanIds": [
-      "940GZZLURYO"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.519113,
-    "lon": -0.188748
+    "lon": -0.188748,
+    "child_stations": []
   },
   {
     "name": "Ruislip Gardens Underground Station",
-    "stationId": "940GZZLURSG",
-    "naptanIds": [
-      "940GZZLURSG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.560736,
-    "lon": -0.41071
+    "lon": -0.41071,
+    "child_stations": []
   },
   {
     "name": "Ruislip Manor Underground Station",
-    "stationId": "940GZZLURSM",
-    "naptanIds": [
-      "940GZZLURSM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan",
-      "Piccadilly"
-    ],
     "lat": 51.573202,
-    "lon": -0.412973
+    "lon": -0.412973,
+    "child_stations": []
   },
   {
     "name": "Ruislip Underground Station",
-    "stationId": "940GZZLURSP",
-    "naptanIds": [
-      "940GZZLURSP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly",
-      "Metropolitan"
-    ],
     "lat": 51.571354,
-    "lon": -0.421898
+    "lon": -0.421898,
+    "child_stations": []
   },
   {
     "name": "Russell Square Underground Station",
-    "stationId": "940GZZLURSQ",
-    "naptanIds": [
-      "940GZZLURSQ"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.523073,
-    "lon": -0.124285
+    "lon": -0.124285,
+    "child_stations": []
   },
   {
-    "name": "Seven Sisters Station",
-    "stationId": "HUBSVS",
-    "naptanIds": [
-      "9100SEVNSIS0",
-      "9100SEVNSIS1",
-      "910GSEVNSIS",
-      "9400ZZLUSVS1",
-      "9400ZZLUSVS2",
-      "940GZZLUSVS",
-      "HUBSVS"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver",
-      "Victoria"
-    ],
-    "lat": 51.582602,
-    "lon": -0.075357
+    "name": "Seven Sisters Underground Station",
+    "lat": 51.58333,
+    "lon": -0.072584,
+    "child_stations": []
+  },
+  {
+    "name": "Shepherd's Bush (Central) Underground Station",
+    "lat": 51.504376,
+    "lon": -0.218813,
+    "child_stations": []
   },
   {
     "name": "Shepherd's Bush Market Underground Station",
-    "stationId": "940GZZLUSBM",
-    "naptanIds": [
-      "940GZZLUSBM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.505579,
-    "lon": -0.226375
-  },
-  {
-    "name": "Shepherd's Bush Rail Station",
-    "stationId": "HUBSPB",
-    "naptanIds": [
-      "9100SHPDSB0",
-      "9100SHPDSB1",
-      "910GSHPDSB",
-      "9400ZZLUSBC1",
-      "9400ZZLUSBC2",
-      "940GZZLUSBC",
-      "HUBSPB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Mildmay",
-      "Central"
-    ],
-    "lat": 51.505729,
-    "lon": -0.217867
+    "lon": -0.226375,
+    "child_stations": []
   },
   {
     "name": "Sloane Square Underground Station",
-    "stationId": "940GZZLUSSQ",
-    "naptanIds": [
-      "940GZZLUSSQ"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.49227,
-    "lon": -0.156377
+    "lon": -0.156377,
+    "child_stations": []
   },
   {
     "name": "Snaresbrook Underground Station",
-    "stationId": "940GZZLUSNB",
-    "naptanIds": [
-      "940GZZLUSNB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.580678,
-    "lon": 0.02144
+    "lon": 0.02144,
+    "child_stations": []
   },
   {
     "name": "South Ealing Underground Station",
-    "stationId": "940GZZLUSEA",
-    "naptanIds": [
-      "940GZZLUSEA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.501003,
-    "lon": -0.307424
+    "lon": -0.307424,
+    "child_stations": []
   },
   {
     "name": "South Harrow Underground Station",
-    "stationId": "940GZZLUSHH",
-    "naptanIds": [
-      "940GZZLUSHH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.564888,
-    "lon": -0.352492
+    "lon": -0.352492,
+    "child_stations": []
   },
   {
     "name": "South Kensington Underground Station",
-    "stationId": "940GZZLUSKS",
-    "naptanIds": [
-      "940GZZLUSKS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.494094,
-    "lon": -0.174138
+    "lon": -0.174138,
+    "child_stations": []
   },
   {
-    "name": "South Kenton Station",
-    "stationId": "HUBSOK",
-    "naptanIds": [
-      "9100SKENTON1",
-      "910GSKENTON",
-      "9400ZZLUSKT1",
-      "9400ZZLUSKT2",
-      "940GZZLUSKT",
-      "HUBSOK"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.570133,
-    "lon": -0.308451
+    "name": "South Kenton Underground Station",
+    "lat": 51.570232,
+    "lon": -0.308433,
+    "child_stations": []
   },
   {
     "name": "South Ruislip Underground Station",
-    "stationId": "HUBSRU",
-    "naptanIds": [
-      "9400ZZLUSRP1",
-      "9400ZZLUSRP2",
-      "940GZZLUSRP",
-      "HUBSRU"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Central"
-    ],
-    "lat": 51.556967,
-    "lon": -0.399373
+    "lat": 51.556853,
+    "lon": -0.398915,
+    "child_stations": []
   },
   {
     "name": "South Wimbledon Underground Station",
-    "stationId": "940GZZLUSWN",
-    "naptanIds": [
-      "940GZZLUSWN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.415309,
-    "lon": -0.192005
+    "lon": -0.192005,
+    "child_stations": []
   },
   {
     "name": "South Woodford Underground Station",
-    "stationId": "940GZZLUSWF",
-    "naptanIds": [
-      "940GZZLUSWF"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.591907,
-    "lon": 0.027338
+    "lon": 0.027338,
+    "child_stations": []
   },
   {
     "name": "Southfields Underground Station",
-    "stationId": "940GZZLUSFS",
-    "naptanIds": [
-      "940GZZLUSFS"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.445073,
-    "lon": -0.206602
+    "lon": -0.206602,
+    "child_stations": []
   },
   {
     "name": "Southgate Underground Station",
-    "stationId": "940GZZLUSGT",
-    "naptanIds": [
-      "940GZZLUSGT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.632315,
-    "lon": -0.127816
+    "lon": -0.127816,
+    "child_stations": []
   },
   {
     "name": "Southwark Underground Station",
-    "stationId": "940GZZLUSWK",
-    "naptanIds": [
-      "940GZZLUSWK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.50427,
-    "lon": -0.105331
+    "lon": -0.105331,
+    "child_stations": []
   },
   {
     "name": "St. James's Park Underground Station",
-    "stationId": "940GZZLUSJP",
-    "naptanIds": [
-      "940GZZLUSJP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.499544,
-    "lon": -0.133608
+    "lon": -0.133608,
+    "child_stations": []
   },
   {
     "name": "St. John's Wood Underground Station",
-    "stationId": "940GZZLUSJW",
-    "naptanIds": [
-      "940GZZLUSJW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.534521,
-    "lon": -0.173948
+    "lon": -0.173948,
+    "child_stations": []
   },
   {
     "name": "St. Paul's Underground Station",
-    "stationId": "940GZZLUSPU",
-    "naptanIds": [
-      "940GZZLUSPU"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.514936,
-    "lon": -0.097567
+    "lon": -0.097567,
+    "child_stations": []
   },
   {
     "name": "Stamford Brook Underground Station",
-    "stationId": "940GZZLUSFB",
-    "naptanIds": [
-      "940GZZLUSFB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.494917,
-    "lon": -0.245704
+    "lon": -0.245704,
+    "child_stations": []
   },
   {
     "name": "Stanmore Underground Station",
-    "stationId": "940GZZLUSTM",
-    "naptanIds": [
-      "940GZZLUSTM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.619839,
-    "lon": -0.303266
+    "lon": -0.303266,
+    "child_stations": []
   },
   {
     "name": "Stepney Green Underground Station",
-    "stationId": "940GZZLUSGN",
-    "naptanIds": [
-      "940GZZLUSGN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.521858,
-    "lon": -0.046596
+    "lon": -0.046596,
+    "child_stations": []
   },
   {
     "name": "Stockwell Underground Station",
-    "stationId": "940GZZLUSKW",
-    "naptanIds": [
-      "940GZZLUSKW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Victoria"
-    ],
     "lat": 51.472184,
-    "lon": -0.122644
+    "lon": -0.122644,
+    "child_stations": []
   },
   {
-    "name": "Stonebridge Park Station",
-    "stationId": "HUBSBP",
-    "naptanIds": [
-      "9100STNBGPK0",
-      "9100STNBGPK1",
-      "910GSTNBGPK",
-      "9400ZZLUSGP1",
-      "9400ZZLUSGP2",
-      "940GZZLUSGP",
-      "HUBSBP"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.544031,
-    "lon": -0.275903
+    "name": "Stonebridge Park Underground Station",
+    "lat": 51.543959,
+    "lon": -0.275892,
+    "child_stations": []
   },
   {
-    "name": "Stratford Station",
-    "stationId": "HUBSRA",
-    "naptanIds": [
-      "9100STFD4",
-      "9100STFD5",
-      "910GSTFD",
-      "9400ZZDLSTD1",
-      "9400ZZDLSTD3",
-      "9400ZZDLSTD4",
-      "9400ZZLUSTD1",
-      "9400ZZLUSTD2",
-      "9400ZZLUSTD3",
-      "940GZZDLSTD",
-      "940GZZLUSTD",
-      "HUBSRA"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D8",
-      "Greater Anglia",
-      "Mildmay",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.542847,
-    "lon": -0.003297
+    "name": "Stratford Underground Station",
+    "lat": 51.541806,
+    "lon": -0.003458,
+    "child_stations": []
   },
   {
     "name": "Sudbury Hill Underground Station",
-    "stationId": "940GZZLUSUH",
-    "naptanIds": [
-      "940GZZLUSUH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.556946,
-    "lon": -0.336435
+    "lon": -0.336435,
+    "child_stations": []
   },
   {
     "name": "Sudbury Town Underground Station",
-    "stationId": "940GZZLUSUT",
-    "naptanIds": [
-      "940GZZLUSUT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.550815,
-    "lon": -0.315745
+    "lon": -0.315745,
+    "child_stations": []
   },
   {
     "name": "Swiss Cottage Underground Station",
-    "stationId": "940GZZLUSWC",
-    "naptanIds": [
-      "940GZZLUSWC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.543681,
-    "lon": -0.174894
+    "lon": -0.174894,
+    "child_stations": []
   },
   {
     "name": "Temple Underground Station",
-    "stationId": "940GZZLUTMP",
-    "naptanIds": [
-      "940GZZLUTMP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.511006,
-    "lon": -0.11426
+    "lon": -0.11426,
+    "child_stations": []
   },
   {
     "name": "Theydon Bois Underground Station",
-    "stationId": "940GZZLUTHB",
-    "naptanIds": [
-      "940GZZLUTHB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.671759,
-    "lon": 0.103085
+    "lon": 0.103085,
+    "child_stations": []
   },
   {
     "name": "Tooting Bec Underground Station",
-    "stationId": "940GZZLUTBC",
-    "naptanIds": [
-      "940GZZLUTBC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.435678,
-    "lon": -0.159736
+    "lon": -0.159736,
+    "child_stations": []
   },
   {
     "name": "Tooting Broadway Underground Station",
-    "stationId": "940GZZLUTBY",
-    "naptanIds": [
-      "940GZZLUTBY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.42763,
-    "lon": -0.168374
+    "lon": -0.168374,
+    "child_stations": []
   },
   {
-    "name": "Tottenham Court Road Station",
-    "stationId": "HUBTCR",
-    "naptanIds": [
-      "9100TOTCTRD0",
-      "9100TOTCTRD1",
-      "910GTOTCTRD",
-      "9400ZZLUTCR1",
-      "9400ZZLUTCR2",
-      "9400ZZLUTCR3",
-      "9400ZZLUTCR4",
-      "940GZZLUTCR",
-      "HUBTCR"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Central"
-    ],
-    "lat": 51.515974,
-    "lon": -0.130241
+    "name": "Tottenham Court Road Underground Station",
+    "lat": 51.516426,
+    "lon": -0.13041,
+    "child_stations": []
   },
   {
     "name": "Tottenham Hale Underground Station",
-    "stationId": "HUBTOM",
-    "naptanIds": [
-      "9400ZZLUTMH1",
-      "9400ZZLUTMH2",
-      "940GZZLUTMH",
-      "HUBTOM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Victoria"
-    ],
-    "lat": 51.588309,
-    "lon": -0.061532
+    "lat": 51.588108,
+    "lon": -0.060241,
+    "child_stations": []
   },
   {
     "name": "Totteridge & Whetstone Underground Station",
-    "stationId": "940GZZLUTAW",
-    "naptanIds": [
-      "940GZZLUTAW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.630597,
-    "lon": -0.17921
+    "lon": -0.17921,
+    "child_stations": []
   },
   {
     "name": "Tower Hill Underground Station",
-    "stationId": "940GZZLUTWH",
-    "naptanIds": [
-      "940GZZLUTWH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District"
-    ],
     "lat": 51.509971,
-    "lon": -0.076546
+    "lon": -0.076546,
+    "child_stations": []
   },
   {
     "name": "Tufnell Park Underground Station",
-    "stationId": "940GZZLUTFP",
-    "naptanIds": [
-      "940GZZLUTFP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.556822,
-    "lon": -0.138433
+    "lon": -0.138433,
+    "child_stations": []
   },
   {
     "name": "Turnham Green Underground Station",
-    "stationId": "940GZZLUTNG",
-    "naptanIds": [
-      "940GZZLUTNG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Piccadilly"
-    ],
     "lat": 51.495148,
-    "lon": -0.254555
+    "lon": -0.254555,
+    "child_stations": []
   },
   {
     "name": "Turnpike Lane Underground Station",
-    "stationId": "940GZZLUTPN",
-    "naptanIds": [
-      "940GZZLUTPN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.590272,
-    "lon": -0.102953
+    "lon": -0.102953,
+    "child_stations": []
   },
   {
     "name": "Upminster Bridge Underground Station",
-    "stationId": "940GZZLUUPB",
-    "naptanIds": [
-      "940GZZLUUPB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.55856,
-    "lon": 0.235809
+    "lon": 0.235809,
+    "child_stations": []
   },
   {
-    "name": "Upminster Station",
-    "stationId": "HUBUPM",
-    "naptanIds": [
-      "9100UPMNSP61",
-      "910GUPMNSTR",
-      "9400ZZLUUPM1",
-      "940GZZLUUPM",
-      "HUBUPM"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Liberty",
-      "c2c"
-    ],
-    "lat": 51.559349,
-    "lon": 0.251473
+    "name": "Upminster Underground Station",
+    "lat": 51.559063,
+    "lon": 0.250882,
+    "child_stations": []
   },
   {
     "name": "Upney Underground Station",
-    "stationId": "940GZZLUUPY",
-    "naptanIds": [
-      "940GZZLUUPY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.538372,
-    "lon": 0.10153
+    "lon": 0.10153,
+    "child_stations": []
   },
   {
     "name": "Upton Park Underground Station",
-    "stationId": "940GZZLUUPK",
-    "naptanIds": [
-      "940GZZLUUPK"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Hammersmith & City"
-    ],
     "lat": 51.53534,
-    "lon": 0.035263
+    "lon": 0.035263,
+    "child_stations": []
   },
   {
     "name": "Uxbridge Underground Station",
-    "stationId": "940GZZLUUXB",
-    "naptanIds": [
-      "940GZZLUUXB"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan",
-      "Piccadilly"
-    ],
     "lat": 51.546565,
-    "lon": -0.477949
+    "lon": -0.477949,
+    "child_stations": []
   },
   {
     "name": "Vauxhall Underground Station",
-    "stationId": "HUBVXH",
-    "naptanIds": [
-      "9400ZZLUVXL1",
-      "9400ZZLUVXL2",
-      "940GZZLUVXL",
-      "HUBVXH"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "South Western Railway",
-      "Victoria"
-    ],
-    "lat": 51.486216,
-    "lon": -0.12453
+    "lat": 51.485743,
+    "lon": -0.124204,
+    "child_stations": []
   },
   {
     "name": "Victoria Underground Station",
-    "stationId": "HUBVIC",
-    "naptanIds": [
-      "9400ZZLUVIC1",
-      "9400ZZLUVIC2",
-      "9400ZZLUVIC3",
-      "9400ZZLUVIC4",
-      "940GZZLUVIC",
-      "HUBVIC"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Thameslink",
-      "Victoria",
-      "Circle",
-      "Gatwick Express",
-      "Southern",
-      "Southeastern"
-    ],
-    "lat": 51.49645,
-    "lon": -0.144899
+    "lat": 51.496359,
+    "lon": -0.143102,
+    "child_stations": []
   },
   {
-    "name": "Walthamstow Central Station",
-    "stationId": "HUBWHC",
-    "naptanIds": [
-      "9100WLTWCEN1",
-      "9100WLTWCEN2",
-      "910GWLTWCEN",
-      "9400ZZLUWWL1",
-      "940GZZLUWWL",
-      "HUBWHC"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Weaver",
-      "Victoria"
-    ],
-    "lat": 51.582898,
-    "lon": -0.020191
+    "name": "Walthamstow Central Underground Station",
+    "lat": 51.582965,
+    "lon": -0.019885,
+    "child_stations": []
   },
   {
     "name": "Wanstead Underground Station",
-    "stationId": "940GZZLUWSD",
-    "naptanIds": [
-      "940GZZLUWSD"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.575501,
-    "lon": 0.028527
+    "lon": 0.028527,
+    "child_stations": []
   },
   {
     "name": "Warren Street Underground Station",
-    "stationId": "940GZZLUWRR",
-    "naptanIds": [
-      "940GZZLUWRR"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Victoria"
-    ],
     "lat": 51.524951,
-    "lon": -0.138321
+    "lon": -0.138321,
+    "child_stations": []
   },
   {
     "name": "Warwick Avenue Underground Station",
-    "stationId": "940GZZLUWKA",
-    "naptanIds": [
-      "940GZZLUWKA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo"
-    ],
     "lat": 51.523263,
-    "lon": -0.183783
+    "lon": -0.183783,
+    "child_stations": []
   },
   {
     "name": "Waterloo Underground Station",
-    "stationId": "HUBWAT",
-    "naptanIds": [
-      "9400ZZLUWLO1",
-      "9400ZZLUWLO2",
-      "9400ZZLUWLO3",
-      "9400ZZLUWLO4",
-      "9400ZZLUWLO5",
-      "9400ZZLUWLO6",
-      "9400ZZLUWLO7",
-      "9400ZZLUWLO8",
-      "940GZZLUWLO",
-      "HUBWAT"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Jubilee",
-      "South Western Railway",
-      "C10",
-      "SL6",
-      "Waterloo & City"
-    ],
-    "lat": 51.503097,
-    "lon": -0.11512
+    "lat": 51.503299,
+    "lon": -0.11478,
+    "child_stations": []
   },
   {
     "name": "Watford Underground Station",
-    "stationId": "940GZZLUWAF",
-    "naptanIds": [
-      "940GZZLUWAF"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.657446,
-    "lon": -0.417377
+    "lon": -0.417377,
+    "child_stations": []
   },
   {
-    "name": "Wembley Central Station",
-    "stationId": "HUBWMB",
-    "naptanIds": [
-      "9100WMBYDC1",
-      "9100WMBYDC2",
-      "910GWMBY",
-      "9400ZZLUWYC1",
-      "9400ZZLUWYC2",
-      "940GZZLUWYC",
-      "HUBWMB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.55195,
-    "lon": -0.296591
+    "name": "Wembley Central Underground Station",
+    "lat": 51.552304,
+    "lon": -0.296852,
+    "child_stations": []
   },
   {
     "name": "Wembley Park Underground Station",
-    "stationId": "940GZZLUWYP",
-    "naptanIds": [
-      "940GZZLUWYP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Metropolitan"
-    ],
     "lat": 51.563198,
-    "lon": -0.279262
+    "lon": -0.279262,
+    "child_stations": []
   },
   {
     "name": "West Acton Underground Station",
-    "stationId": "940GZZLUWTA",
-    "naptanIds": [
-      "940GZZLUWTA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.518001,
-    "lon": -0.28098
+    "lon": -0.28098,
+    "child_stations": []
   },
   {
-    "name": "West Brompton Station",
-    "stationId": "HUBWBP",
-    "naptanIds": [
-      "9100WBRMPTN0",
-      "9100WBRMPTN1",
-      "910GWBRMPTN",
-      "9400ZZLUWBN1",
-      "9400ZZLUWBN2",
-      "940GZZLUWBN",
-      "HUBWBP"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.48672,
-    "lon": -0.195044
+    "name": "West Brompton Underground Station",
+    "lat": 51.487268,
+    "lon": -0.195599,
+    "child_stations": []
   },
   {
     "name": "West Finchley Underground Station",
-    "stationId": "940GZZLUWFN",
-    "naptanIds": [
-      "940GZZLUWFN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.609426,
-    "lon": -0.188362
+    "lon": -0.188362,
+    "child_stations": []
   },
   {
-    "name": "West Ham DLR Station",
-    "stationId": "HUBWEH",
-    "naptanIds": [
-      "9400ZZDLWHM1",
-      "9400ZZDLWHM2",
-      "9400ZZLUWHM1",
-      "9400ZZLUWHM2",
-      "9400ZZLUWHM3",
-      "9400ZZLUWHM4",
-      "940GZZDLWHM",
-      "940GZZLUWHM",
-      "HUBWEH"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "District",
-      "Hammersmith & City",
-      "DLR",
-      "c2c"
-    ],
-    "lat": 51.52776,
-    "lon": 0.004448
+    "name": "West Ham Underground Station",
+    "lat": 51.528136,
+    "lon": 0.005055,
+    "child_stations": []
   },
   {
-    "name": "West Hampstead Overground Station",
-    "stationId": "HUBWHD",
-    "naptanIds": [
-      "9100WHMDSTD0",
-      "9100WHMDSTD1",
-      "910GWHMDSTD",
-      "9400ZZLUWHP1",
-      "9400ZZLUWHP2",
-      "940GZZLUWHP",
-      "HUBWHD"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Thameslink",
-      "Mildmay"
-    ],
-    "lat": 51.547309,
-    "lon": -0.191998
+    "name": "West Hampstead Underground Station",
+    "lat": 51.546638,
+    "lon": -0.191059,
+    "child_stations": []
   },
   {
     "name": "West Harrow Underground Station",
-    "stationId": "940GZZLUWHW",
-    "naptanIds": [
-      "940GZZLUWHW"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Metropolitan"
-    ],
     "lat": 51.57971,
-    "lon": -0.3534
+    "lon": -0.3534,
+    "child_stations": []
   },
   {
     "name": "West Kensington Underground Station",
-    "stationId": "940GZZLUWKN",
-    "naptanIds": [
-      "940GZZLUWKN"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.490459,
-    "lon": -0.206636
+    "lon": -0.206636,
+    "child_stations": []
   },
   {
     "name": "West Ruislip Underground Station",
-    "stationId": "HUBWRU",
-    "naptanIds": [
-      "9400ZZLUWRP1",
-      "940GZZLUWRP",
-      "HUBWRU"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Chiltern Railways",
-      "Central"
-    ],
-    "lat": 51.56951,
-    "lon": -0.437343
+    "lat": 51.569688,
+    "lon": -0.437886,
+    "child_stations": []
   },
   {
     "name": "Westbourne Park Underground Station",
-    "stationId": "940GZZLUWSP",
-    "naptanIds": [
-      "940GZZLUWSP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.52111,
-    "lon": -0.201065
+    "lon": -0.201065,
+    "child_stations": []
   },
   {
     "name": "Westminster Underground Station",
-    "stationId": "HUBWSM",
-    "naptanIds": [
-      "9400ZZLUWSM1",
-      "9400ZZLUWSM2",
-      "9400ZZLUWSM3",
-      "9400ZZLUWSM4",
-      "940GZZLUWSM",
-      "HUBWSM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "District",
-      "Jubilee"
-    ],
-    "lat": 51.501284,
-    "lon": -0.124877
+    "lat": 51.50132,
+    "lon": -0.124861,
+    "child_stations": []
   },
   {
     "name": "White City Underground Station",
-    "stationId": "940GZZLUWCY",
-    "naptanIds": [
-      "940GZZLUWCY"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.511959,
-    "lon": -0.224297
+    "lon": -0.224297,
+    "child_stations": []
   },
   {
-    "name": "Whitechapel Station",
-    "stationId": "HUBZWL",
-    "naptanIds": [
-      "9100WCHAPEL1",
-      "9100WCHAPEL2",
-      "9100WCHAPXR0",
-      "9100WCHAPXR1",
-      "910GWCHAPEL",
-      "910GWCHAPXR",
-      "9400ZZLUWPL1",
-      "9400ZZLUWPL2",
-      "940GZZLUWPL",
-      "HUBZWL"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "District",
-      "Windrush",
-      "Hammersmith & City"
-    ],
-    "lat": 51.519469,
-    "lon": -0.059757
+    "name": "Whitechapel Underground Station",
+    "lat": 51.519518,
+    "lon": -0.059971,
+    "child_stations": []
   },
   {
     "name": "Willesden Green Underground Station",
-    "stationId": "940GZZLUWIG",
-    "naptanIds": [
-      "940GZZLUWIG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Jubilee"
-    ],
     "lat": 51.549146,
-    "lon": -0.221537
+    "lon": -0.221537,
+    "child_stations": []
   },
   {
-    "name": "Willesden Junction Station",
-    "stationId": "HUBWIJ",
-    "naptanIds": [
-      "9100WLSDJHL1",
-      "9100WLSDNJL1",
-      "910GWLSDJHL",
-      "9400ZZLUWJN1",
-      "9400ZZLUWJN2",
-      "940GZZLUWJN",
-      "HUBWIJ"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness",
-      "Mildmay"
-    ],
-    "lat": 51.531992,
-    "lon": -0.243284
+    "name": "Willesden Junction Underground Station",
+    "lat": 51.532259,
+    "lon": -0.244283,
+    "child_stations": []
   },
   {
     "name": "Wimbledon Park Underground Station",
-    "stationId": "940GZZLUWIP",
-    "naptanIds": [
-      "940GZZLUWIP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District"
-    ],
     "lat": 51.434573,
-    "lon": -0.199719
+    "lon": -0.199719,
+    "child_stations": []
   },
   {
     "name": "Wimbledon Underground Station",
-    "stationId": "HUBWIM",
-    "naptanIds": [
-      "9400ZZLUWIM1",
-      "940GZZLUWIM",
-      "HUBWIM"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "South Western Railway",
-      "Thameslink",
-      "Tram"
-    ],
-    "lat": 51.421342,
-    "lon": -0.206625
+    "lat": 51.421207,
+    "lon": -0.206573,
+    "child_stations": []
   },
   {
     "name": "Wood Green Underground Station",
-    "stationId": "940GZZLUWOG",
-    "naptanIds": [
-      "940GZZLUWOG"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Piccadilly"
-    ],
     "lat": 51.597479,
-    "lon": -0.109886
+    "lon": -0.109886,
+    "child_stations": []
   },
   {
     "name": "Wood Lane Underground Station",
-    "stationId": "940GZZLUWLA",
-    "naptanIds": [
-      "940GZZLUWLA"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Circle",
-      "Hammersmith & City"
-    ],
     "lat": 51.509669,
-    "lon": -0.22453
+    "lon": -0.22453,
+    "child_stations": []
   },
   {
     "name": "Woodford Underground Station",
-    "stationId": "940GZZLUWOF",
-    "naptanIds": [
-      "940GZZLUWOF"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [
-      "Central"
-    ],
     "lat": 51.606899,
-    "lon": 0.03397
+    "lon": 0.03397,
+    "child_stations": []
   },
   {
     "name": "Woodside Park Underground Station",
-    "stationId": "940GZZLUWOP",
-    "naptanIds": [
-      "940GZZLUWOP"
-    ],
-    "modes": [
-      "tube"
-    ],
-    "lines": [],
     "lat": 51.618014,
-    "lon": -0.18542
+    "lon": -0.18542,
+    "child_stations": []
   }
 ]

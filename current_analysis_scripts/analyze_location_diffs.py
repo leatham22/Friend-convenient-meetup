@@ -1,8 +1,13 @@
 import json
 import math
+import os
+
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def load_stations(filename):
-    with open(filename, 'r') as f:
+    filepath = os.path.join(PROJECT_ROOT, filename)
+    with open(filepath, 'r') as f:
         stations = json.load(f)
     return {s['name']: s for s in stations}
 
@@ -23,8 +28,8 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     return R * c
 
 def analyze_differences():
-    old_stations = load_stations('unique_stations.json')
-    new_stations = load_stations('unique_stations2.json')
+    old_stations = load_stations('raw_stations/unique_stations.json')
+    new_stations = load_stations('raw_stations/unique_stations2.json')
     
     differences = []
     for name in set(old_stations.keys()) & set(new_stations.keys()):

@@ -1,2035 +1,733 @@
 [
   {
     "name": "Acton Central Rail Station",
-    "stationId": "910GACTNCTL",
-    "naptanIds": [
-      "910GACTNCTL"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.508716,
-    "lon": -0.262971
+    "lon": -0.262971,
+    "child_stations": []
   },
   {
     "name": "Anerley Rail Station",
-    "stationId": "910GANERLEY",
-    "naptanIds": [
-      "910GANERLEY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.412153,
-    "lon": -0.065886
+    "lon": -0.065886,
+    "child_stations": []
   },
   {
     "name": "Barking Riverside",
-    "stationId": "910GBKRVS",
-    "naptanIds": [
-      "910GBKRVS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.51953,
-    "lon": 0.11596
+    "lon": 0.11596,
+    "child_stations": []
   },
   {
-    "name": "Barking Station",
-    "stationId": "HUBBKG",
-    "naptanIds": [
-      "9100BARKING1",
-      "910GBARKING",
-      "9400ZZLUBKG1",
-      "9400ZZLUBKG2",
-      "9400ZZLUBKG3",
-      "940GZZLUBKG",
-      "HUBBKG"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "c2c",
-      "Hammersmith & City",
-      "Suffragette"
-    ],
-    "lat": 51.539674,
-    "lon": 0.080406
+    "name": "Barking Underground Station",
+    "lat": 51.539321,
+    "lon": 0.081053,
+    "child_stations": [
+      "Barking Rail Station"
+    ]
   },
   {
     "name": "Bethnal Green Rail Station",
-    "stationId": "910GBTHNLGR",
-    "naptanIds": [
-      "910GBTHNLGR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.523917,
-    "lon": -0.059568
+    "lon": -0.059568,
+    "child_stations": []
   },
   {
-    "name": "Blackhorse Road Station",
-    "stationId": "HUBBHO",
-    "naptanIds": [
-      "9100BLCHSRD0",
-      "9100BLCHSRD1",
-      "910GBLCHSRD",
-      "9400ZZLUBLR1",
-      "9400ZZLUBLR2",
-      "940GZZLUBLR",
-      "HUBBHO"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Victoria",
-      "Suffragette"
-    ],
-    "lat": 51.586538,
-    "lon": -0.041498
+    "name": "Blackhorse Road Underground Station",
+    "lat": 51.586919,
+    "lon": -0.04115,
+    "child_stations": [
+      "Blackhorse Road Rail Station"
+    ]
   },
   {
     "name": "Brockley Rail Station",
-    "stationId": "910GBROCKLY",
-    "naptanIds": [
-      "910GBROCKLY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.464649,
-    "lon": -0.037537
+    "lon": -0.037537,
+    "child_stations": []
   },
   {
     "name": "Brondesbury Park Rail Station",
-    "stationId": "910GBRBYPK",
-    "naptanIds": [
-      "910GBRBYPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.540734,
-    "lon": -0.210054
+    "lon": -0.210054,
+    "child_stations": []
   },
   {
     "name": "Brondesbury Rail Station",
-    "stationId": "910GBRBY",
-    "naptanIds": [
-      "910GBRBY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.545166,
-    "lon": -0.202309
+    "lon": -0.202309,
+    "child_stations": []
   },
   {
     "name": "Bruce Grove Rail Station",
-    "stationId": "910GBRUCGRV",
-    "naptanIds": [
-      "910GBRUCGRV"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.593959,
-    "lon": -0.069867
+    "lon": -0.069867,
+    "child_stations": []
   },
   {
     "name": "Bush Hill Park Rail Station",
-    "stationId": "910GBHILLPK",
-    "naptanIds": [
-      "910GBHILLPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.641519,
-    "lon": -0.069221
+    "lon": -0.069221,
+    "child_stations": []
   },
   {
     "name": "Bushey Rail Station",
-    "stationId": "HUBBSH",
-    "naptanIds": [
-      "9100BUSHYDC1",
-      "9100BUSHYDC2",
-      "910GBUSHEY",
-      "910GBUSHYDC",
-      "HUBBSH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness",
-      "West Midlands Trains"
-    ],
-    "lat": 51.645877,
-    "lon": -0.385302
+    "lat": 51.645402,
+    "lon": -0.384799,
+    "child_stations": []
   },
   {
     "name": "Caledonian Road & Barnsbury Rail Station",
-    "stationId": "910GCLDNNRB",
-    "naptanIds": [
-      "910GCLDNNRB"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.543041,
-    "lon": -0.116729
+    "lon": -0.116729,
+    "child_stations": []
   },
   {
     "name": "Cambridge Heath (London) Rail Station",
-    "stationId": "910GCAMHTH",
-    "naptanIds": [
-      "910GCAMHTH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.531973,
-    "lon": -0.057279
+    "lon": -0.057279,
+    "child_stations": []
   },
   {
     "name": "Camden Road Rail Station",
-    "stationId": "910GCMDNRD",
-    "naptanIds": [
-      "910GCMDNRD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.541791,
-    "lon": -0.138701
+    "lon": -0.138701,
+    "child_stations": []
   },
   {
-    "name": "Canada Water Station",
-    "stationId": "HUBZCW",
-    "naptanIds": [
-      "9100CNDAW1",
-      "9100CNDAW2",
-      "910GCNDAW",
-      "9400ZZLUCWR2",
-      "9400ZZLUCWR3",
-      "940GZZLUCWR",
-      "HUBZCW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "C10",
-      "Windrush",
-      "P12"
-    ],
-    "lat": 51.49799,
-    "lon": -0.04972
+    "name": "Canada Water Underground Station",
+    "lat": 51.497931,
+    "lon": -0.049405,
+    "child_stations": [
+      "Canada Water Rail Station"
+    ]
   },
   {
     "name": "Canonbury Rail Station",
-    "stationId": "910GCNNB",
-    "naptanIds": [
-      "910GCNNB"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush",
-      "Mildmay"
-    ],
     "lat": 51.548732,
-    "lon": -0.092191
+    "lon": -0.092191,
+    "child_stations": []
   },
   {
     "name": "Carpenders Park Rail Station",
-    "stationId": "910GCRPNDPK",
-    "naptanIds": [
-      "910GCRPNDPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.628351,
-    "lon": -0.385939
+    "lon": -0.385939,
+    "child_stations": []
   },
   {
     "name": "Cheshunt Rail Station",
-    "stationId": "910GCHESHNT",
-    "naptanIds": [
-      "910GCHESHNT"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.702876,
-    "lon": -0.02396
+    "lon": -0.02396,
+    "child_stations": []
   },
   {
     "name": "Chingford Rail Station",
-    "stationId": "910GCHINGFD",
-    "naptanIds": [
-      "910GCHINGFD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.633087,
-    "lon": 0.009897
+    "lon": 0.009897,
+    "child_stations": []
   },
   {
     "name": "Clapham High Street Rail Station",
-    "stationId": "910GCLPHHS",
-    "naptanIds": [
-      "910GCLPHHS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.465481,
-    "lon": -0.132522
+    "lon": -0.132522,
+    "child_stations": []
   },
   {
     "name": "Clapham Junction Rail Station",
-    "stationId": "HUBCLJ",
-    "naptanIds": [
-      "9100CLPHMJ1",
-      "9100CLPHMJC1",
-      "910GCLPHMJ1",
-      "910GCLPHMJC",
-      "HUBCLJ"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "South Western Railway",
-      "Windrush",
-      "Mildmay",
-      "C3",
-      "G1",
-      "Southern"
-    ],
     "lat": 51.464187,
-    "lon": -0.170221
+    "lon": -0.170221,
+    "child_stations": []
   },
   {
     "name": "Clapton Rail Station",
-    "stationId": "910GCLAPTON",
-    "naptanIds": [
-      "910GCLAPTON"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.561644,
-    "lon": -0.057025
+    "lon": -0.057025,
+    "child_stations": []
   },
   {
     "name": "Crouch Hill Rail Station",
-    "stationId": "910GCROUCHH",
-    "naptanIds": [
-      "910GCROUCHH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.571302,
-    "lon": -0.117149
+    "lon": -0.117149,
+    "child_stations": []
   },
   {
-    "name": "Crystal Palace Station",
-    "stationId": "HUBCYP",
-    "naptanIds": [
-      "9100CRYSTLP5",
-      "910GCRYSTLP",
-      "HUBCYP"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
-    "lat": 51.417551,
-    "lon": -0.072015
+    "name": "Crystal Palace Rail Station",
+    "lat": 51.418109,
+    "lon": -0.07261,
+    "child_stations": []
   },
   {
     "name": "Dalston Junction Rail Station",
-    "stationId": "910GDALS",
-    "naptanIds": [
-      "910GDALS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.546116,
-    "lon": -0.075137
+    "lon": -0.075137,
+    "child_stations": []
   },
   {
     "name": "Dalston Kingsland Rail Station",
-    "stationId": "910GDALSKLD",
-    "naptanIds": [
-      "910GDALSKLD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.548148,
-    "lon": -0.075701
+    "lon": -0.075701,
+    "child_stations": []
   },
   {
     "name": "Denmark Hill Rail Station",
-    "stationId": "910GDENMRKH",
-    "naptanIds": [
-      "910GDENMRKH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Thameslink",
-      "Windrush",
-      "Southeastern"
-    ],
     "lat": 51.468203,
-    "lon": -0.089361
+    "lon": -0.089361,
+    "child_stations": []
   },
   {
     "name": "Edmonton Green Rail Station",
-    "stationId": "910GEDMNGRN",
-    "naptanIds": [
-      "910GEDMNGRN"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.624929,
-    "lon": -0.061112
+    "lon": -0.061112,
+    "child_stations": []
   },
   {
     "name": "Emerson Park Rail Station",
-    "stationId": "910GEMRSPKH",
-    "naptanIds": [
-      "910GEMRSPKH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Liberty"
-    ],
     "lat": 51.568642,
-    "lon": 0.220113
+    "lon": 0.220113,
+    "child_stations": []
   },
   {
     "name": "Enfield Town Rail Station",
-    "stationId": "910GENFLDTN",
-    "naptanIds": [
-      "910GENFLDTN"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.652026,
-    "lon": -0.079328
+    "lon": -0.079328,
+    "child_stations": []
   },
   {
-    "name": "Euston Station",
-    "stationId": "HUBEUS",
-    "naptanIds": [
-      "9100EUSTON0",
-      "910GEUSTON",
-      "9400ZZLUEUS1",
-      "9400ZZLUEUS2",
-      "9400ZZLUEUS3",
-      "9400ZZLUEUS4",
-      "9400ZZLUEUS5",
-      "9400ZZLUEUS6",
-      "940GZZLUEUS",
-      "HUBEUS"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "West Midlands Trains",
-      "Lioness",
-      "Avanti West Coast",
-      "Victoria"
-    ],
-    "lat": 51.528954,
-    "lon": -0.135
+    "name": "Euston Underground Station",
+    "lat": 51.528186,
+    "lon": -0.134239,
+    "child_stations": [
+      "London Euston Rail Station"
+    ]
   },
   {
     "name": "Finchley Road & Frognal Rail Station",
-    "stationId": "910GFNCHLYR",
-    "naptanIds": [
-      "910GFNCHLYR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.550266,
-    "lon": -0.183141
+    "lon": -0.183141,
+    "child_stations": []
   },
   {
     "name": "Forest Hill Rail Station",
-    "stationId": "910GFORESTH",
-    "naptanIds": [
-      "910GFORESTH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.43928,
-    "lon": -0.053157
+    "lon": -0.053157,
+    "child_stations": []
   },
   {
     "name": "Gospel Oak Rail Station",
-    "stationId": "910GGOSPLOK",
-    "naptanIds": [
-      "910GGOSPLOK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay",
-      "Suffragette"
-    ],
     "lat": 51.555335,
-    "lon": -0.15077
+    "lon": -0.15077,
+    "child_stations": []
   },
   {
-    "name": "Gunnersbury Station",
-    "stationId": "HUBGUN",
-    "naptanIds": [
-      "9100GNRSBRY0",
-      "910GGNRSBRY",
-      "9400ZZLUGBY1",
-      "9400ZZLUGBY2",
-      "940GZZLUGBY",
-      "HUBGUN"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.491386,
-    "lon": -0.275614
+    "name": "Gunnersbury Underground Station",
+    "lat": 51.491803,
+    "lon": -0.275267,
+    "child_stations": [
+      "Gunnersbury Rail Station"
+    ]
   },
   {
     "name": "Hackney Central Rail Station",
-    "stationId": "910GHACKNYC",
-    "naptanIds": [
-      "910GHACKNYC"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.547105,
-    "lon": -0.056058
+    "lon": -0.056058,
+    "child_stations": []
   },
   {
     "name": "Hackney Downs Rail Station",
-    "stationId": "910GHAKNYNM",
-    "naptanIds": [
-      "910GHAKNYNM"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.548757,
-    "lon": -0.060819
+    "lon": -0.060819,
+    "child_stations": []
   },
   {
     "name": "Hackney Wick Rail Station",
-    "stationId": "910GHACKNYW",
-    "naptanIds": [
-      "910GHACKNYW"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.54341,
-    "lon": -0.02492
+    "lon": -0.02492,
+    "child_stations": []
   },
   {
     "name": "Haggerston Rail Station",
-    "stationId": "910GHAGGERS",
-    "naptanIds": [
-      "910GHAGGERS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.538705,
-    "lon": -0.075666
+    "lon": -0.075666,
+    "child_stations": []
   },
   {
     "name": "Hampstead Heath Rail Station",
-    "stationId": "910GHMPSTDH",
-    "naptanIds": [
-      "910GHMPSTDH"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.55521,
-    "lon": -0.165705
+    "lon": -0.165705,
+    "child_stations": []
   },
   {
-    "name": "Harlesden Station",
-    "stationId": "HUBHDN",
-    "naptanIds": [
-      "9100HARLSDN0",
-      "9100HARLSDN1",
-      "910GHARLSDN",
-      "9400ZZLUHSN1",
-      "9400ZZLUHSN2",
-      "940GZZLUHSN",
-      "HUBHDN"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.536241,
-    "lon": -0.257467
+    "name": "Harlesden Underground Station",
+    "lat": 51.53631,
+    "lon": -0.257883,
+    "child_stations": [
+      "Harlesden Rail Station"
+    ]
   },
   {
     "name": "Harringay Green Lanes Rail Station",
-    "stationId": "910GHRGYGL",
-    "naptanIds": [
-      "910GHRGYGL"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.577182,
-    "lon": -0.098144
+    "lon": -0.098144,
+    "child_stations": []
   },
   {
-    "name": "Harrow & Wealdstone Station",
-    "stationId": "HUBHRW",
-    "naptanIds": [
-      "9100HROWDC1",
-      "9100HROWDC2",
-      "910GHROW",
-      "9400ZZLUHAW1",
-      "9400ZZLUHAW2",
-      "940GZZLUHAW",
-      "HUBHRW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness",
-      "West Midlands Trains"
-    ],
-    "lat": 51.59223,
-    "lon": -0.335103
+    "name": "Harrow & Wealdstone Underground Station",
+    "lat": 51.592268,
+    "lon": -0.335217,
+    "child_stations": [
+      "Harrow & Wealdstone Rail Station"
+    ]
   },
   {
     "name": "Hatch End Rail Station",
-    "stationId": "910GHTCHEND",
-    "naptanIds": [
-      "910GHTCHEND"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.609417,
-    "lon": -0.368601
+    "lon": -0.368601,
+    "child_stations": []
   },
   {
     "name": "Headstone Lane Rail Station",
-    "stationId": "910GHEDSTNL",
-    "naptanIds": [
-      "910GHEDSTNL"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.602649,
-    "lon": -0.35722
+    "lon": -0.35722,
+    "child_stations": []
   },
   {
     "name": "Highams Park Rail Station",
-    "stationId": "910GHGHMSPK",
-    "naptanIds": [
-      "910GHGHMSPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.60835,
-    "lon": -0.000222
+    "lon": -0.000222,
+    "child_stations": []
   },
   {
-    "name": "Highbury & Islington Station",
-    "stationId": "HUBHHY",
-    "naptanIds": [
-      "9100HIGBYA3",
-      "9100HIGHBYA1",
-      "9100HIGHBYA2",
-      "910GHGHI",
-      "9400ZZLUHAI1",
-      "9400ZZLUHAI2",
-      "940GZZLUHAI",
-      "HUBHHY"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Mildmay",
-      "Windrush",
-      "Victoria",
-      "Great Northern"
-    ],
-    "lat": 51.546032,
-    "lon": -0.104246
+    "name": "Highbury & Islington Underground Station",
+    "lat": 51.54635,
+    "lon": -0.103324,
+    "child_stations": [
+      "Highbury & Islington Rail Station"
+    ]
   },
   {
     "name": "Homerton Rail Station",
-    "stationId": "910GHOMRTON",
-    "naptanIds": [
-      "910GHOMRTON"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.547012,
-    "lon": -0.04236
+    "lon": -0.04236,
+    "child_stations": []
   },
   {
     "name": "Honor Oak Park Rail Station",
-    "stationId": "910GHONROPK",
-    "naptanIds": [
-      "910GHONROPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.449989,
-    "lon": -0.045505
+    "lon": -0.045505,
+    "child_stations": []
   },
   {
     "name": "Hoxton Rail Station",
-    "stationId": "910GHOXTON",
-    "naptanIds": [
-      "910GHOXTON"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.531512,
-    "lon": -0.075681
+    "lon": -0.075681,
+    "child_stations": []
   },
   {
-    "name": "Imperial Wharf Station",
-    "stationId": "HUBIMP",
-    "naptanIds": [
-      "9100CSEAH0",
-      "9100CSEAH1",
-      "910GCSEAH",
-      "HUBIMP"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
-    "lat": 51.475724,
-    "lon": -0.183512
+    "name": "Imperial Wharf Rail Station",
+    "lat": 51.474949,
+    "lon": -0.182823,
+    "child_stations": []
   },
   {
-    "name": "Kensal Green Station",
-    "stationId": "HUBKNL",
-    "naptanIds": [
-      "9100KENSLG0",
-      "9100KENSLG1",
-      "910GKENSLG",
-      "9400ZZLUKSL1",
-      "9400ZZLUKSL2",
-      "940GZZLUKSL",
-      "HUBKNL"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.53056,
-    "lon": -0.224597
+    "name": "Kensal Green Underground Station",
+    "lat": 51.530539,
+    "lon": -0.225016,
+    "child_stations": [
+      "Kensal Green Rail Station"
+    ]
   },
   {
     "name": "Kensal Rise Rail Station",
-    "stationId": "910GKENR",
-    "naptanIds": [
-      "910GKENR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.534554,
-    "lon": -0.219957
+    "lon": -0.219957,
+    "child_stations": []
   },
   {
-    "name": "Kensington (Olympia) Station",
-    "stationId": "HUBKPA",
-    "naptanIds": [
-      "9100KENOLYM0",
-      "9100KENOLYM1",
-      "910GKENOLYM",
-      "9400ZZLUKOY1",
-      "940GZZLUKOY",
-      "HUBKPA"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.49788,
-    "lon": -0.210293
+    "name": "Kensington (Olympia) Underground Station",
+    "lat": 51.497624,
+    "lon": -0.210015,
+    "child_stations": [
+      "Kensington (Olympia) Rail Station"
+    ]
   },
   {
     "name": "Kentish Town West Rail Station",
-    "stationId": "910GKNTSHTW",
-    "naptanIds": [
-      "910GKNTSHTW"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.546548,
-    "lon": -0.146655
+    "lon": -0.146655,
+    "child_stations": []
   },
   {
-    "name": "Kenton Station",
-    "stationId": "HUBKNT",
-    "naptanIds": [
-      "9100KTON0",
-      "9100KTON1",
-      "910GKTON",
-      "9400ZZLUKEN1",
-      "9400ZZLUKEN2",
-      "940GZZLUKEN",
-      "HUBKNT"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.58162,
-    "lon": -0.316829
+    "name": "Kenton Underground Station",
+    "lat": 51.581756,
+    "lon": -0.31691,
+    "child_stations": [
+      "Kenton Rail Station"
+    ]
   },
   {
-    "name": "Kew Gardens Station",
-    "stationId": "HUBKWG",
-    "naptanIds": [
-      "9100KEWGRDN0",
-      "9100KEWGRDN1",
-      "910GKEWGRDN",
-      "9400ZZLUKWG1",
-      "9400ZZLUKWG2",
-      "940GZZLUKWG",
-      "HUBKWG"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.476868,
-    "lon": -0.285133
+    "name": "Kew Gardens Underground Station",
+    "lat": 51.477058,
+    "lon": -0.285241,
+    "child_stations": [
+      "Kew Gardens Rail Station"
+    ]
   },
   {
     "name": "Kilburn High Road Rail Station",
-    "stationId": "910GKLBRNHR",
-    "naptanIds": [
-      "910GKLBRNHR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.537277,
-    "lon": -0.192237
+    "lon": -0.192237,
+    "child_stations": []
   },
   {
     "name": "Leyton Midland Road Rail Station",
-    "stationId": "910GLEYTNMR",
-    "naptanIds": [
-      "910GLEYTNMR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.569725,
-    "lon": -0.008051
+    "lon": -0.008051,
+    "child_stations": []
   },
   {
     "name": "Leytonstone High Road Rail Station",
-    "stationId": "910GLYTNSHR",
-    "naptanIds": [
-      "910GLYTNSHR"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.563554,
-    "lon": 0.008416
+    "lon": 0.008416,
+    "child_stations": []
   },
   {
-    "name": "Liverpool Street Station",
-    "stationId": "HUBLST",
-    "naptanIds": [
-      "9100LIVST0",
-      "9100LIVSTLL0",
-      "9100LIVSTLL1",
-      "910GLIVST",
-      "910GLIVSTLL",
-      "9400ZZLULVT1",
-      "9400ZZLULVT2",
-      "9400ZZLULVT3",
-      "9400ZZLULVT4",
-      "940GZZLULVT",
-      "HUBLST"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Weaver",
-      "Hammersmith & City",
-      "Circle",
-      "Greater Anglia",
-      "Metropolitan",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.518381,
-    "lon": -0.081092
+    "name": "Liverpool Street Underground Station",
+    "lat": 51.517372,
+    "lon": -0.083182,
+    "child_stations": [
+      "London Liverpool Street Rail Station"
+    ]
   },
   {
     "name": "London Fields Rail Station",
-    "stationId": "910GLONFLDS",
-    "naptanIds": [
-      "910GLONFLDS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.541153,
-    "lon": -0.057753
+    "lon": -0.057753,
+    "child_stations": []
   },
   {
-    "name": "New Cross Gate Station",
-    "stationId": "HUBNXG",
-    "naptanIds": [
-      "9100NEWXGTE0",
-      "9100NEWXGTE2",
-      "910GNEWXGTE",
-      "HUBNXG"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
+    "name": "New Cross ELL Rail Station",
+    "lat": 51.476344,
+    "lon": -0.032441,
+    "child_stations": []
+  },
+  {
+    "name": "New Cross Gate Rail Station",
     "lat": 51.475128,
-    "lon": -0.040399
+    "lon": -0.040399,
+    "child_stations": []
   },
   {
-    "name": "New Cross Station",
-    "stationId": "HUBNWX",
-    "naptanIds": [
-      "9100NWCRELL1",
-      "910GNWCRELL",
-      "HUBNWX"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush",
-      "Southeastern"
-    ],
-    "lat": 51.47684,
-    "lon": -0.033053
+    "name": "North Wembley Underground Station",
+    "lat": 51.562551,
+    "lon": -0.304,
+    "child_stations": [
+      "North Wembley Rail Station"
+    ]
   },
   {
-    "name": "North Wembley Station",
-    "stationId": "HUBNWB",
-    "naptanIds": [
-      "9100NWEMBLY1",
-      "9100NWEMBLY2",
-      "910GNWEMBLY",
-      "9400ZZLUNWY1",
-      "9400ZZLUNWY2",
-      "940GZZLUNWY",
-      "HUBNWB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.562504,
-    "lon": -0.303858
-  },
-  {
-    "name": "Norwood Junction Station",
-    "stationId": "HUBNWD",
-    "naptanIds": [
-      "9100NORWDJ0",
-      "9100NORWDJ2",
-      "910GNORWDJ",
-      "HUBNWD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.397341,
-    "lon": -0.074547
+    "name": "Norwood Junction Rail Station",
+    "lat": 51.397019,
+    "lon": -0.075221,
+    "child_stations": []
   },
   {
     "name": "Peckham Rye Rail Station",
-    "stationId": "910GPCKHMRY",
-    "naptanIds": [
-      "910GPCKHMRY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Thameslink",
-      "Southern",
-      "Windrush",
-      "Southeastern"
-    ],
     "lat": 51.470034,
-    "lon": -0.069414
+    "lon": -0.069414,
+    "child_stations": []
   },
   {
     "name": "Penge West Rail Station",
-    "stationId": "910GPENEW",
-    "naptanIds": [
-      "910GPENEW"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.417555,
-    "lon": -0.06084
+    "lon": -0.06084,
+    "child_stations": []
   },
   {
-    "name": "Queen's Park Station (London)",
-    "stationId": "HUBQPW",
-    "naptanIds": [
-      "9100QPRK1",
-      "9100QPRK2",
-      "910GQPRK",
-      "9400ZZLUQPS1",
-      "9400ZZLUQPS2",
-      "940GZZLUQPS",
-      "HUBQPW"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.534043,
-    "lon": -0.205285
+    "name": "Queen's Park Underground Station",
+    "lat": 51.534158,
+    "lon": -0.204574,
+    "child_stations": [
+      "Queens Park (London) Rail Station"
+    ]
   },
   {
     "name": "Queens Road Peckham Rail Station",
-    "stationId": "910GPCKHMQD",
-    "naptanIds": [
-      "910GPCKHMQD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
     "lat": 51.473566,
-    "lon": -0.057313
+    "lon": -0.057313,
+    "child_stations": []
   },
   {
     "name": "Rectory Road Rail Station",
-    "stationId": "910GRCTRYRD",
-    "naptanIds": [
-      "910GRCTRYRD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.558502,
-    "lon": -0.068267
+    "lon": -0.068267,
+    "child_stations": []
   },
   {
-    "name": "Richmond Station",
-    "stationId": "HUBRMD",
-    "naptanIds": [
-      "9100RICHNLL0",
-      "910GRICHMND",
-      "9400ZZLURMD1",
-      "940GZZLURMD",
-      "HUBRMD"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "South Western Railway",
-      "Mildmay"
-    ],
-    "lat": 51.463164,
-    "lon": -0.301238
+    "name": "Richmond Underground Station",
+    "lat": 51.463237,
+    "lon": -0.301336,
+    "child_stations": [
+      "Richmond (London) Rail Station"
+    ]
   },
   {
     "name": "Romford Rail Station",
-    "stationId": "910GROMFORD",
-    "naptanIds": [
-      "910GROMFORD"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia",
-      "Liberty"
-    ],
     "lat": 51.574829,
-    "lon": 0.183237
+    "lon": 0.183237,
+    "child_stations": []
   },
   {
     "name": "Rotherhithe Rail Station",
-    "stationId": "910GRTHERHI",
-    "naptanIds": [
-      "910GRTHERHI"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.500817,
-    "lon": -0.052048
+    "lon": -0.052048,
+    "child_stations": []
   },
   {
-    "name": "Seven Sisters Station",
-    "stationId": "HUBSVS",
-    "naptanIds": [
-      "9100SEVNSIS0",
-      "9100SEVNSIS1",
-      "910GSEVNSIS",
-      "9400ZZLUSVS1",
-      "9400ZZLUSVS2",
-      "940GZZLUSVS",
-      "HUBSVS"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver",
-      "Victoria"
-    ],
-    "lat": 51.582602,
-    "lon": -0.075357
+    "name": "Seven Sisters Underground Station",
+    "lat": 51.58333,
+    "lon": -0.072584,
+    "child_stations": [
+      "Seven Sisters Rail Station"
+    ]
   },
   {
-    "name": "Shadwell Rail Station",
-    "stationId": "HUBSDE",
-    "naptanIds": [
-      "9100SHADWEL1",
-      "9100SHADWEL2",
-      "910GSHADWEL",
-      "9400ZZDLSHA1",
-      "9400ZZDLSHA2",
-      "940GZZDLSHA",
-      "HUBSDE"
-    ],
-    "modes": [
-      "overground",
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "Windrush"
-    ],
-    "lat": 51.511284,
-    "lon": -0.056934
+    "name": "Shadwell DLR Station",
+    "lat": 51.511693,
+    "lon": -0.056643,
+    "child_stations": [
+      "Shadwell Rail Station"
+    ]
   },
   {
-    "name": "Shepherd's Bush Rail Station",
-    "stationId": "HUBSPB",
-    "naptanIds": [
-      "9100SHPDSB0",
-      "9100SHPDSB1",
-      "910GSHPDSB",
-      "9400ZZLUSBC1",
-      "9400ZZLUSBC2",
-      "940GZZLUSBC",
-      "HUBSPB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Mildmay",
-      "Central"
-    ],
-    "lat": 51.505729,
-    "lon": -0.217867
+    "name": "Shepherd's Bush (Central) Underground Station",
+    "lat": 51.504376,
+    "lon": -0.218813,
+    "child_stations": [
+      "Shepherds Bush Rail Station"
+    ]
   },
   {
     "name": "Shoreditch High Street Rail Station",
-    "stationId": "910GSHRDHST",
-    "naptanIds": [
-      "910GSHRDHST"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.523375,
-    "lon": -0.075246
+    "lon": -0.075246,
+    "child_stations": []
   },
   {
     "name": "Silver Street Rail Station",
-    "stationId": "910GSIVRST",
-    "naptanIds": [
-      "910GSIVRST"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.614688,
-    "lon": -0.06724
+    "lon": -0.06724,
+    "child_stations": []
   },
   {
     "name": "South Acton Rail Station",
-    "stationId": "910GSACTON",
-    "naptanIds": [
-      "910GSACTON"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Mildmay"
-    ],
     "lat": 51.499695,
-    "lon": -0.270157
+    "lon": -0.270157,
+    "child_stations": []
   },
   {
     "name": "South Hampstead Rail Station",
-    "stationId": "910GSHMPSTD",
-    "naptanIds": [
-      "910GSHMPSTD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.541432,
-    "lon": -0.178878
+    "lon": -0.178878,
+    "child_stations": []
   },
   {
-    "name": "South Kenton Station",
-    "stationId": "HUBSOK",
-    "naptanIds": [
-      "9100SKENTON1",
-      "910GSKENTON",
-      "9400ZZLUSKT1",
-      "9400ZZLUSKT2",
-      "940GZZLUSKT",
-      "HUBSOK"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.570133,
-    "lon": -0.308451
+    "name": "South Kenton Underground Station",
+    "lat": 51.570232,
+    "lon": -0.308433,
+    "child_stations": [
+      "South Kenton Rail Station"
+    ]
   },
   {
     "name": "South Tottenham Rail Station",
-    "stationId": "910GSTOTNHM",
-    "naptanIds": [
-      "910GSTOTNHM"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.580372,
-    "lon": -0.072103
+    "lon": -0.072103,
+    "child_stations": []
   },
   {
     "name": "Southbury Rail Station",
-    "stationId": "910GSBURY",
-    "naptanIds": [
-      "910GSBURY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.648705,
-    "lon": -0.052437
+    "lon": -0.052437,
+    "child_stations": []
   },
   {
     "name": "St James Street (London) Rail Station",
-    "stationId": "910GSTJMSST",
-    "naptanIds": [
-      "910GSTJMSST"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.580981,
-    "lon": -0.032918
+    "lon": -0.032918,
+    "child_stations": []
   },
   {
     "name": "Stamford Hill Rail Station",
-    "stationId": "910GSTMFDHL",
-    "naptanIds": [
-      "910GSTMFDHL"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.574467,
-    "lon": -0.076682
+    "lon": -0.076682,
+    "child_stations": []
   },
   {
     "name": "Stoke Newington Rail Station",
-    "stationId": "910GSTKNWNG",
-    "naptanIds": [
-      "910GSTKNWNG"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.565233,
-    "lon": -0.072887
+    "lon": -0.072887,
+    "child_stations": []
   },
   {
-    "name": "Stonebridge Park Station",
-    "stationId": "HUBSBP",
-    "naptanIds": [
-      "9100STNBGPK0",
-      "9100STNBGPK1",
-      "910GSTNBGPK",
-      "9400ZZLUSGP1",
-      "9400ZZLUSGP2",
-      "940GZZLUSGP",
-      "HUBSBP"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.544031,
-    "lon": -0.275903
+    "name": "Stonebridge Park Underground Station",
+    "lat": 51.543959,
+    "lon": -0.275892,
+    "child_stations": [
+      "Stonebridge Park Rail Station"
+    ]
   },
   {
-    "name": "Stratford Station",
-    "stationId": "HUBSRA",
-    "naptanIds": [
-      "9100STFD4",
-      "9100STFD5",
-      "910GSTFD",
-      "9400ZZDLSTD1",
-      "9400ZZDLSTD3",
-      "9400ZZDLSTD4",
-      "9400ZZLUSTD1",
-      "9400ZZLUSTD2",
-      "9400ZZLUSTD3",
-      "940GZZDLSTD",
-      "940GZZLUSTD",
-      "HUBSRA"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D8",
-      "Greater Anglia",
-      "Mildmay",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.542847,
-    "lon": -0.003297
+    "name": "Stratford Underground Station",
+    "lat": 51.541806,
+    "lon": -0.003458,
+    "child_stations": [
+      "Stratford (London) Rail Station",
+      "Stratford DLR Station"
+    ]
   },
   {
     "name": "Surrey Quays Rail Station",
-    "stationId": "910GSURREYQ",
-    "naptanIds": [
-      "910GSURREYQ"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.493196,
-    "lon": -0.047519
+    "lon": -0.047519,
+    "child_stations": []
   },
   {
-    "name": "Sydenham Station",
-    "stationId": "HUBSYD",
-    "naptanIds": [
-      "9100SYDENHM0",
-      "9100SYDENHM1",
-      "910GSYDENHM",
-      "HUBSYD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Southern",
-      "Windrush"
-    ],
-    "lat": 51.427661,
-    "lon": -0.054183
+    "name": "Sydenham Rail Station",
+    "lat": 51.427248,
+    "lon": -0.054244,
+    "child_stations": []
   },
   {
     "name": "Theobalds Grove Rail Station",
-    "stationId": "910GTHBLDSG",
-    "naptanIds": [
-      "910GTHBLDSG"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.692457,
-    "lon": -0.034831
+    "lon": -0.034831,
+    "child_stations": []
   },
   {
     "name": "Turkey Street Rail Station",
-    "stationId": "910GTURKYST",
-    "naptanIds": [
-      "910GTURKYST"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.672628,
-    "lon": -0.047217
+    "lon": -0.047217,
+    "child_stations": []
   },
   {
-    "name": "Upminster Station",
-    "stationId": "HUBUPM",
-    "naptanIds": [
-      "9100UPMNSP61",
-      "910GUPMNSTR",
-      "9400ZZLUUPM1",
-      "940GZZLUUPM",
-      "HUBUPM"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Liberty",
-      "c2c"
-    ],
-    "lat": 51.559349,
-    "lon": 0.251473
+    "name": "Upminster Underground Station",
+    "lat": 51.559063,
+    "lon": 0.250882,
+    "child_stations": [
+      "Upminster Rail Station"
+    ]
   },
   {
     "name": "Upper Holloway Rail Station",
-    "stationId": "910GUPRHLWY",
-    "naptanIds": [
-      "910GUPRHLWY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.563631,
-    "lon": -0.129513
+    "lon": -0.129513,
+    "child_stations": []
   },
   {
-    "name": "Walthamstow Central Station",
-    "stationId": "HUBWHC",
-    "naptanIds": [
-      "9100WLTWCEN1",
-      "9100WLTWCEN2",
-      "910GWLTWCEN",
-      "9400ZZLUWWL1",
-      "940GZZLUWWL",
-      "HUBWHC"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Weaver",
-      "Victoria"
-    ],
-    "lat": 51.582898,
-    "lon": -0.020191
+    "name": "Walthamstow Central Underground Station",
+    "lat": 51.582965,
+    "lon": -0.019885,
+    "child_stations": [
+      "Walthamstow Central Rail Station"
+    ]
   },
   {
     "name": "Walthamstow Queens Road Rail Station",
-    "stationId": "910GWLTHQRD",
-    "naptanIds": [
-      "910GWLTHQRD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.581503,
-    "lon": -0.023846
+    "lon": -0.023846,
+    "child_stations": []
   },
   {
     "name": "Wandsworth Road Rail Station",
-    "stationId": "910GWNDSWRD",
-    "naptanIds": [
-      "910GWNDSWRD"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Windrush"
-    ],
     "lat": 51.470216,
-    "lon": -0.13852
+    "lon": -0.13852,
+    "child_stations": []
   },
   {
     "name": "Wanstead Park Rail Station",
-    "stationId": "910GWNSTDPK",
-    "naptanIds": [
-      "910GWNSTDPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.551693,
-    "lon": 0.026213
+    "lon": 0.026213,
+    "child_stations": []
   },
   {
     "name": "Wapping Rail Station",
-    "stationId": "910GWAPPING",
-    "naptanIds": [
-      "910GWAPPING"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "D3",
-      "Windrush"
-    ],
     "lat": 51.504388,
-    "lon": -0.055931
+    "lon": -0.055931,
+    "child_stations": []
   },
   {
     "name": "Watford High Street Rail Station",
-    "stationId": "910GWATFDHS",
-    "naptanIds": [
-      "910GWATFDHS"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness"
-    ],
     "lat": 51.652655,
-    "lon": -0.391711
+    "lon": -0.391711,
+    "child_stations": []
   },
   {
     "name": "Watford Junction Rail Station",
-    "stationId": "HUBWFJ",
-    "naptanIds": [
-      "9100WATFJDC2",
-      "910GWATFDJ",
-      "910GWATFJDC",
-      "HUBWFJ"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Lioness",
-      "Avanti West Coast",
-      "West Midlands Trains"
-    ],
-    "lat": 51.663251,
-    "lon": -0.395891
+    "lat": 51.663529,
+    "lon": -0.396517,
+    "child_stations": []
   },
   {
-    "name": "Wembley Central Station",
-    "stationId": "HUBWMB",
-    "naptanIds": [
-      "9100WMBYDC1",
-      "9100WMBYDC2",
-      "910GWMBY",
-      "9400ZZLUWYC1",
-      "9400ZZLUWYC2",
-      "940GZZLUWYC",
-      "HUBWMB"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness"
-    ],
-    "lat": 51.55195,
-    "lon": -0.296591
+    "name": "Wembley Central Underground Station",
+    "lat": 51.552304,
+    "lon": -0.296852,
+    "child_stations": [
+      "Wembley Central Rail Station"
+    ]
   },
   {
-    "name": "West Brompton Station",
-    "stationId": "HUBWBP",
-    "naptanIds": [
-      "9100WBRMPTN0",
-      "9100WBRMPTN1",
-      "910GWBRMPTN",
-      "9400ZZLUWBN1",
-      "9400ZZLUWBN2",
-      "940GZZLUWBN",
-      "HUBWBP"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "Mildmay"
-    ],
-    "lat": 51.48672,
-    "lon": -0.195044
+    "name": "West Brompton Underground Station",
+    "lat": 51.487268,
+    "lon": -0.195599,
+    "child_stations": [
+      "West Brompton Rail Station"
+    ]
   },
   {
-    "name": "West Croydon Station",
-    "stationId": "HUBWCY",
-    "naptanIds": [
-      "9100WCROYDN2",
-      "910GWCROYDN",
-      "HUBWCY"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Tram",
-      "SL6",
-      "Windrush",
-      "SL7",
-      "Southern"
-    ],
-    "lat": 51.378605,
-    "lon": -0.102434
+    "name": "West Croydon Rail Station",
+    "lat": 51.378428,
+    "lon": -0.102585,
+    "child_stations": []
   },
   {
-    "name": "West Hampstead Overground Station",
-    "stationId": "HUBWHD",
-    "naptanIds": [
-      "9100WHMDSTD0",
-      "9100WHMDSTD1",
-      "910GWHMDSTD",
-      "9400ZZLUWHP1",
-      "9400ZZLUWHP2",
-      "940GZZLUWHP",
-      "HUBWHD"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "Thameslink",
-      "Mildmay"
-    ],
-    "lat": 51.547309,
-    "lon": -0.191998
+    "name": "West Hampstead Underground Station",
+    "lat": 51.546638,
+    "lon": -0.191059,
+    "child_stations": [
+      "West Hampstead Rail Station"
+    ]
   },
   {
     "name": "White Hart Lane Rail Station",
-    "stationId": "910GWHHRTLA",
-    "naptanIds": [
-      "910GWHHRTLA"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Greater Anglia",
-      "Weaver"
-    ],
     "lat": 51.605037,
-    "lon": -0.070914
+    "lon": -0.070914,
+    "child_stations": []
   },
   {
-    "name": "Whitechapel Station",
-    "stationId": "HUBZWL",
-    "naptanIds": [
-      "9100WCHAPEL1",
-      "9100WCHAPEL2",
-      "9100WCHAPXR0",
-      "9100WCHAPXR1",
-      "910GWCHAPEL",
-      "910GWCHAPXR",
-      "9400ZZLUWPL1",
-      "9400ZZLUWPL2",
-      "940GZZLUWPL",
-      "HUBZWL"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "District",
-      "Windrush",
-      "Hammersmith & City"
-    ],
-    "lat": 51.519469,
-    "lon": -0.059757
+    "name": "Whitechapel Underground Station",
+    "lat": 51.519518,
+    "lon": -0.059971,
+    "child_stations": [
+      "Whitechapel Rail Station"
+    ]
   },
   {
-    "name": "Willesden Junction Station",
-    "stationId": "HUBWIJ",
-    "naptanIds": [
-      "9100WLSDJHL1",
-      "9100WLSDNJL1",
-      "910GWLSDJHL",
-      "9400ZZLUWJN1",
-      "9400ZZLUWJN2",
-      "940GZZLUWJN",
-      "HUBWIJ"
-    ],
-    "modes": [
-      "overground",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "Lioness",
-      "Mildmay"
-    ],
-    "lat": 51.531992,
-    "lon": -0.243284
+    "name": "Willesden Junction Underground Station",
+    "lat": 51.532259,
+    "lon": -0.244283,
+    "child_stations": [
+      "Willesden Junction Rail Station"
+    ]
   },
   {
     "name": "Wood Street Rail Station",
-    "stationId": "910GWDST",
-    "naptanIds": [
-      "910GWDST"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Weaver"
-    ],
     "lat": 51.58658,
-    "lon": -0.002405
+    "lon": -0.002405,
+    "child_stations": []
   },
   {
     "name": "Woodgrange Park Rail Station",
-    "stationId": "910GWDGRNPK",
-    "naptanIds": [
-      "910GWDGRNPK"
-    ],
-    "modes": [
-      "overground"
-    ],
-    "lines": [
-      "Suffragette"
-    ],
     "lat": 51.549264,
-    "lon": 0.044423
+    "lon": 0.044423,
+    "child_stations": []
   }
 ]

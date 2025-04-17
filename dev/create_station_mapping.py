@@ -9,6 +9,9 @@ from collections import defaultdict
 # Load environment variables
 load_dotenv()
 
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def get_station_identifier(station):
     """
     Get the best identifier for a station using a priority system:
@@ -206,8 +209,7 @@ def create_station_mapping():
     filename = f'station_mapping_{timestamp}.json'
     
     # Save to file
-    with open(filename, 'w') as f:
-        json.dump(final_stations, f, indent=2)
+    save_stations(final_stations, filename)
     
     # Print statistics
     print(f"\nSaved {len(final_stations)} stations to {filename}")
@@ -218,6 +220,12 @@ def create_station_mapping():
     print(f"- Stations with child stations: {stations_with_children}")
     print(f"- Total child stations: {total_children}")
     print(f"- Average children per station: {total_children/len(final_stations):.2f}")
+
+def save_stations(stations, filename):
+    """Save stations to a JSON file"""
+    filepath = os.path.join(PROJECT_ROOT, filename)
+    with open(filepath, 'w') as f:
+        json.dump(stations, f, indent=2)
 
 if __name__ == "__main__":
     create_station_mapping() 

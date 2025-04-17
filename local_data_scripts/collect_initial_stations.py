@@ -9,6 +9,9 @@ from collections import defaultdict
 # Load environment variables
 load_dotenv()
 
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def make_api_request(url, params=None, max_retries=3, initial_timeout=60):
     """
     Make API request with retries and exponential backoff.
@@ -164,10 +167,7 @@ def collect_stations():
                 mode_stations.append(station_data)
         
         # Save mode-specific file
-        mode_filename = f'raw_stations/unique_stations2_{mode.replace("-", "")}.json'
-        with open(mode_filename, 'w') as f:
-            json.dump(sorted(mode_stations, key=lambda x: x['name']), f, indent=2)
-        print(f"Saved {len(mode_stations)} {mode} stations to {mode_filename}")
+        save_mode_stations(mode_stations, mode)
     
     # Create consolidated station list
     consolidated_stations = []
@@ -185,8 +185,7 @@ def collect_stations():
         consolidated_stations.append(station_data)
     
     # Save consolidated file
-    with open('raw_stations/unique_stations2.json', 'w') as f:
-        json.dump(sorted(consolidated_stations, key=lambda x: x['name']), f, indent=2)
+    save_all_stations(consolidated_stations)
     
     # Print statistics
     print(f"\nSaved {len(consolidated_stations)} total unique stations")
@@ -197,6 +196,22 @@ def collect_stations():
     print(f"- Stations with child stations: {stations_with_children}")
     print(f"- Total child stations: {total_children}")
     print(f"- Average children per station: {total_children/len(consolidated_stations):.2f}")
+
+def save_mode_stations(stations_by_mode, mode):
+    """Save stations for a specific mode to a file"""
+    mode_filename = os.path.join(PROJECT_ROOT, 'raw_stations', f'unique_stations2_{mode.replace("-", "")}.json')
+    os.makedirs(os.path.dirname(mode_filename), exist_ok=True)
+    with open(mode_filename, 'w') as f:
+        json.dump(stations_by_mode, f, indent=2)
+    print(f"Saved {len(stations_by_mode)} {mode} stations")
+
+def save_all_stations(all_stations):
+    """Save consolidated stations to a file"""
+    filename = os.path.join(PROJECT_ROOT, 'raw_stations', 'unique_stations2.json')
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, 'w') as f:
+        json.dump(all_stations, f, indent=2)
+    print(f"Saved {len(all_stations)} total stations")
 
 if __name__ == "__main__":
     collect_stations() 

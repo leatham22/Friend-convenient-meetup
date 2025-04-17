@@ -1,794 +1,282 @@
 [
   {
     "name": "Abbey Road DLR Station",
-    "stationId": "940GZZDLABR",
-    "naptanIds": [
-      "940GZZDLABR"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.531926,
-    "lon": 0.003737
+    "lon": 0.003737,
+    "child_stations": []
   },
   {
     "name": "All Saints DLR Station",
-    "stationId": "940GZZDLALL",
-    "naptanIds": [
-      "940GZZDLALL"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.511,
-    "lon": -0.013135
+    "lon": -0.013135,
+    "child_stations": []
   },
   {
-    "name": "Bank DLR Station",
-    "stationId": "HUBBAN",
-    "naptanIds": [
-      "9400ZZDLBNK1",
-      "9400ZZDLBNK2",
-      "9400ZZLUBNK1",
-      "9400ZZLUBNK2",
-      "9400ZZLUBNK3",
-      "9400ZZLUBNK4",
-      "9400ZZLUBNK5",
-      "9400ZZLUBNK8",
-      "940GZZDLBNK",
-      "940GZZLUBNK",
-      "HUBBAN"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "DLR",
-      "Central",
-      "Waterloo & City"
-    ],
-    "lat": 51.512171,
-    "lon": -0.087911
+    "name": "Bank Underground Station",
+    "lat": 51.513132,
+    "lon": -0.090047,
+    "child_stations": [
+      "Bank DLR Station"
+    ]
   },
   {
     "name": "Beckton DLR Station",
-    "stationId": "940GZZDLBEC",
-    "naptanIds": [
-      "940GZZDLBEC"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.514362,
-    "lon": 0.061453
+    "lon": 0.061453,
+    "child_stations": []
   },
   {
     "name": "Beckton Park DLR Station",
-    "stationId": "940GZZDLBPK",
-    "naptanIds": [
-      "940GZZDLBPK"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.508793,
-    "lon": 0.054932
+    "lon": 0.054932,
+    "child_stations": []
   },
   {
     "name": "Blackwall DLR Station",
-    "stationId": "940GZZDLBLA",
-    "naptanIds": [
-      "940GZZDLBLA"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.507991,
-    "lon": -0.006969
+    "lon": -0.006969,
+    "child_stations": []
   },
   {
     "name": "Bow Church DLR Station",
-    "stationId": "940GZZDLBOW",
-    "naptanIds": [
-      "940GZZDLBOW"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.527858,
-    "lon": -0.020936
+    "lon": -0.020936,
+    "child_stations": []
   },
   {
-    "name": "Canary Wharf Rail Station",
-    "stationId": "HUBCAW",
-    "naptanIds": [
-      "9100CANWHRF0",
-      "9100CANWHRF1",
-      "910GCANWHRF",
-      "9400ZZDLCAN1",
-      "9400ZZDLCAN2",
-      "9400ZZLUCYF1",
-      "9400ZZLUCYF2",
-      "940GZZDLCAN",
-      "940GZZLUCYF",
-      "HUBCAW"
-    ],
-    "modes": [
-      "dlr",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D7",
-      "Elizabeth line"
-    ],
-    "lat": 51.506321,
-    "lon": -0.018815
+    "name": "Canary Wharf Underground Station",
+    "lat": 51.503488,
+    "lon": -0.018246,
+    "child_stations": [
+      "Canary Wharf DLR Station"
+    ]
   },
   {
-    "name": "Canning Town DLR Station",
-    "stationId": "HUBCAN",
-    "naptanIds": [
-      "9400ZZDLCGT1",
-      "9400ZZDLCGT2",
-      "9400ZZDLCGT3",
-      "9400ZZDLCGT4",
-      "9400ZZLUCGT1",
-      "9400ZZLUCGT2",
-      "940GZZDLCGT",
-      "940GZZLUCGT",
-      "HUBCAN"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR"
-    ],
-    "lat": 51.514464,
-    "lon": 0.007856
+    "name": "Canning Town Underground Station",
+    "lat": 51.513584,
+    "lon": 0.008322,
+    "child_stations": [
+      "Canning Town DLR Station"
+    ]
   },
   {
     "name": "Crossharbour DLR Station",
-    "stationId": "940GZZDLCLA",
-    "naptanIds": [
-      "940GZZDLCLA"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.495728,
-    "lon": -0.014606
+    "lon": -0.014606,
+    "child_stations": []
   },
   {
-    "name": "Custom House",
-    "stationId": "HUBCUS",
-    "naptanIds": [
-      "9100CSTMHSXR",
-      "910GCSTMHSXR",
-      "9400ZZDLCUS1",
-      "9400ZZDLCUS2",
-      "940GZZDLCUS",
-      "HUBCUS"
-    ],
-    "modes": [
-      "dlr",
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "DLR"
-    ],
-    "lat": 51.509436,
-    "lon": 0.027681
+    "name": "Custom House (for ExCel) DLR Station",
+    "lat": 51.509716,
+    "lon": 0.026699,
+    "child_stations": []
   },
   {
     "name": "Cutty Sark (for Maritime Greenwich) DLR Station",
-    "stationId": "HUBCUT",
-    "naptanIds": [
-      "9400ZZDLCUT1",
-      "9400ZZDLCUT2",
-      "940GZZDLCUT",
-      "HUBCUT"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
-    "lat": 51.481615,
-    "lon": -0.010654
+    "lat": 51.481671,
+    "lon": -0.01081,
+    "child_stations": []
   },
   {
     "name": "Cyprus DLR Station",
-    "stationId": "940GZZDLCYP",
-    "naptanIds": [
-      "940GZZDLCYP"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.508473,
-    "lon": 0.063925
+    "lon": 0.063925,
+    "child_stations": []
   },
   {
     "name": "Deptford Bridge DLR Station",
-    "stationId": "940GZZDLDEP",
-    "naptanIds": [
-      "940GZZDLDEP"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.474215,
-    "lon": -0.022438
+    "lon": -0.022438,
+    "child_stations": []
   },
   {
     "name": "Devons Road DLR Station",
-    "stationId": "940GZZDLDEV",
-    "naptanIds": [
-      "940GZZDLDEV"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.522667,
-    "lon": -0.017615
+    "lon": -0.017615,
+    "child_stations": []
   },
   {
     "name": "East India DLR Station",
-    "stationId": "940GZZDLEIN",
-    "naptanIds": [
-      "940GZZDLEIN"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "D3",
-      "SL4"
-    ],
     "lat": 51.509359,
-    "lon": -0.002326
+    "lon": -0.002326,
+    "child_stations": []
   },
   {
     "name": "Elverson Road DLR Station",
-    "stationId": "940GZZDLELV",
-    "naptanIds": [
-      "940GZZDLELV"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.469074,
-    "lon": -0.016728
+    "lon": -0.016728,
+    "child_stations": []
   },
   {
     "name": "Gallions Reach DLR Station",
-    "stationId": "940GZZDLGAL",
-    "naptanIds": [
-      "940GZZDLGAL"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.508941,
-    "lon": 0.071555
+    "lon": 0.071555,
+    "child_stations": []
   },
   {
     "name": "Greenwich DLR Station",
-    "stationId": "HUBGNW",
-    "naptanIds": [
-      "9400ZZDLGRE1",
-      "940GZZDLGRE",
-      "HUBGNW"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.478162,
-    "lon": -0.016003
+    "lat": 51.478087,
+    "lon": -0.013673,
+    "child_stations": []
   },
   {
     "name": "Heron Quays DLR Station",
-    "stationId": "940GZZDLHEQ",
-    "naptanIds": [
-      "940GZZDLHEQ"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.503379,
-    "lon": -0.021421
+    "lon": -0.021421,
+    "child_stations": []
   },
   {
     "name": "Island Gardens DLR Station",
-    "stationId": "940GZZDLISL",
-    "naptanIds": [
-      "940GZZDLISL"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.487811,
-    "lon": -0.010139
+    "lon": -0.010139,
+    "child_stations": []
   },
   {
     "name": "King George V DLR Station",
-    "stationId": "940GZZDLKGV",
-    "naptanIds": [
-      "940GZZDLKGV"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.502003,
-    "lon": 0.062624
+    "lon": 0.062624,
+    "child_stations": []
   },
   {
     "name": "Langdon Park DLR Station",
-    "stationId": "940GZZDLLDP",
-    "naptanIds": [
-      "940GZZDLLDP"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.515172,
-    "lon": -0.01415
+    "lon": -0.01415,
+    "child_stations": []
   },
   {
     "name": "Lewisham DLR Station",
-    "stationId": "HUBLEW",
-    "naptanIds": [
-      "9400ZZDLLEW1",
-      "940GZZDLLEW",
-      "HUBLEW"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.465053,
-    "lon": -0.01244
+    "lat": 51.464665,
+    "lon": -0.012874,
+    "child_stations": []
   },
   {
     "name": "Limehouse DLR Station",
-    "stationId": "HUBLHS",
-    "naptanIds": [
-      "9400ZZDLLIM1",
-      "9400ZZDLLIM2",
-      "940GZZDLLIM",
-      "HUBLHS"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "c2c"
-    ],
-    "lat": 51.512336,
-    "lon": -0.03961
+    "lat": 51.512393,
+    "lon": -0.039809,
+    "child_stations": []
   },
   {
     "name": "London City Airport DLR Station",
-    "stationId": "HUBLCY",
-    "naptanIds": [
-      "9400ZZDLLCA1",
-      "9400ZZDLLCA2",
-      "940GZZDLLCA",
-      "HUBLCY"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
-    "lat": 51.503415,
-    "lon": 0.048754
+    "lat": 51.503416,
+    "lon": 0.048739,
+    "child_stations": []
   },
   {
     "name": "Mudchute DLR Station",
-    "stationId": "940GZZDLMUD",
-    "naptanIds": [
-      "940GZZDLMUD"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.490704,
-    "lon": -0.014738
+    "lon": -0.014738,
+    "child_stations": []
   },
   {
     "name": "Pontoon Dock DLR Station",
-    "stationId": "940GZZDLPDK",
-    "naptanIds": [
-      "940GZZDLPDK"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.502212,
-    "lon": 0.032115
+    "lon": 0.032115,
+    "child_stations": []
   },
   {
     "name": "Poplar DLR Station",
-    "stationId": "940GZZDLPOP",
-    "naptanIds": [
-      "940GZZDLPOP"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.507744,
-    "lon": -0.017384
+    "lon": -0.017384,
+    "child_stations": []
   },
   {
     "name": "Prince Regent DLR Station",
-    "stationId": "940GZZDLPRE",
-    "naptanIds": [
-      "940GZZDLPRE"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.509263,
-    "lon": 0.034158
+    "lon": 0.034158,
+    "child_stations": []
   },
   {
     "name": "Pudding Mill Lane DLR Station",
-    "stationId": "940GZZDLPUD",
-    "naptanIds": [
-      "940GZZDLPUD"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.534302,
-    "lon": -0.012755
+    "lon": -0.012755,
+    "child_stations": []
   },
   {
     "name": "Royal Albert DLR Station",
-    "stationId": "940GZZDLRAL",
-    "naptanIds": [
-      "940GZZDLRAL"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.508357,
-    "lon": 0.045935
+    "lon": 0.045935,
+    "child_stations": []
   },
   {
     "name": "Royal Victoria DLR Station",
-    "stationId": "HUBRVC",
-    "naptanIds": [
-      "9400ZZDLRVC1",
-      "9400ZZDLRVC2",
-      "940GZZDLRVC",
-      "HUBRVC"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "London Cable Car"
-    ],
-    "lat": 51.508927,
-    "lon": 0.018205
+    "lat": 51.509336,
+    "lon": 0.018497,
+    "child_stations": []
   },
   {
-    "name": "Shadwell Rail Station",
-    "stationId": "HUBSDE",
-    "naptanIds": [
-      "9100SHADWEL1",
-      "9100SHADWEL2",
-      "910GSHADWEL",
-      "9400ZZDLSHA1",
-      "9400ZZDLSHA2",
-      "940GZZDLSHA",
-      "HUBSDE"
-    ],
-    "modes": [
-      "overground",
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "Windrush"
-    ],
-    "lat": 51.511284,
-    "lon": -0.056934
+    "name": "Shadwell DLR Station",
+    "lat": 51.511693,
+    "lon": -0.056643,
+    "child_stations": []
   },
   {
     "name": "South Quay DLR Station",
-    "stationId": "940GZZDLSOQ",
-    "naptanIds": [
-      "940GZZDLSOQ"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.50005,
-    "lon": -0.01597
+    "lon": -0.01597,
+    "child_stations": []
   },
   {
     "name": "Star Lane DLR Station",
-    "stationId": "940GZZDLSTL",
-    "naptanIds": [
-      "940GZZDLSTL"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.520786,
-    "lon": 0.004156
+    "lon": 0.004156,
+    "child_stations": []
   },
   {
     "name": "Stratford High Street DLR Station",
-    "stationId": "940GZZDLSHS",
-    "naptanIds": [
-      "940GZZDLSHS"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.538196,
-    "lon": -0.001078
+    "lon": -0.001078,
+    "child_stations": []
   },
   {
     "name": "Stratford International DLR Station",
-    "stationId": "940GZZDLSIT",
-    "naptanIds": [
-      "940GZZDLSIT"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.545265,
-    "lon": -0.009638
+    "lon": -0.009638,
+    "child_stations": []
   },
   {
-    "name": "Stratford Station",
-    "stationId": "HUBSRA",
-    "naptanIds": [
-      "9100STFD4",
-      "9100STFD5",
-      "910GSTFD",
-      "9400ZZDLSTD1",
-      "9400ZZDLSTD3",
-      "9400ZZDLSTD4",
-      "9400ZZLUSTD1",
-      "9400ZZLUSTD2",
-      "9400ZZLUSTD3",
-      "940GZZDLSTD",
-      "940GZZLUSTD",
-      "HUBSRA"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D8",
-      "Greater Anglia",
-      "Mildmay",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.542847,
-    "lon": -0.003297
+    "name": "Stratford Underground Station",
+    "lat": 51.541806,
+    "lon": -0.003458,
+    "child_stations": [
+      "Stratford DLR Station"
+    ]
   },
   {
     "name": "Tower Gateway DLR Station",
-    "stationId": "HUBTOG",
-    "naptanIds": [
-      "9400ZZDLTWG1",
-      "9400ZZDLTWG2",
-      "940GZZDLTWG",
-      "HUBTOG"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
-    "lat": 51.510556,
-    "lon": -0.074389
+    "lat": 51.510617,
+    "lon": -0.074818,
+    "child_stations": []
   },
   {
-    "name": "West Ham DLR Station",
-    "stationId": "HUBWEH",
-    "naptanIds": [
-      "9400ZZDLWHM1",
-      "9400ZZDLWHM2",
-      "9400ZZLUWHM1",
-      "9400ZZLUWHM2",
-      "9400ZZLUWHM3",
-      "9400ZZLUWHM4",
-      "940GZZDLWHM",
-      "940GZZLUWHM",
-      "HUBWEH"
-    ],
-    "modes": [
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "District",
-      "Hammersmith & City",
-      "DLR",
-      "c2c"
-    ],
-    "lat": 51.52776,
-    "lon": 0.004448
+    "name": "West Ham Underground Station",
+    "lat": 51.528136,
+    "lon": 0.005055,
+    "child_stations": [
+      "West Ham DLR Station"
+    ]
   },
   {
     "name": "West India Quay DLR Station",
-    "stationId": "940GZZDLWIQ",
-    "naptanIds": [
-      "940GZZDLWIQ"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.50703,
-    "lon": -0.020311
+    "lon": -0.020311,
+    "child_stations": []
   },
   {
     "name": "West Silvertown DLR Station",
-    "stationId": "940GZZDLWSV",
-    "naptanIds": [
-      "940GZZDLWSV"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.502838,
-    "lon": 0.02246
+    "lon": 0.02246,
+    "child_stations": []
   },
   {
     "name": "Westferry DLR Station",
-    "stationId": "940GZZDLWFE",
-    "naptanIds": [
-      "940GZZDLWFE"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR"
-    ],
     "lat": 51.509431,
-    "lon": -0.02675
+    "lon": -0.02675,
+    "child_stations": []
   },
   {
     "name": "Woolwich Arsenal DLR Station",
-    "stationId": "HUBWWA",
-    "naptanIds": [
-      "9400ZZDLWLA1",
-      "940GZZDLWLA",
-      "HUBWWA"
-    ],
-    "modes": [
-      "dlr"
-    ],
-    "lines": [
-      "DLR",
-      "Thameslink",
-      "Southeastern"
-    ],
-    "lat": 51.490214,
-    "lon": 0.069208
+    "lat": 51.490009,
+    "lon": 0.069127,
+    "child_stations": []
   }
 ]

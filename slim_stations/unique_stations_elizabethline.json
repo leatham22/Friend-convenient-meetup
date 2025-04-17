@@ -1,810 +1,280 @@
 [
   {
-    "name": "Abbey Wood Station",
-    "stationId": "HUBABW",
-    "naptanIds": [
-      "9100ABWDXR0",
-      "9100ABWDXR1",
-      "910GABWDXR",
-      "HUBABW"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Thameslink",
-      "Southeastern"
-    ],
+    "name": "Abbey Wood",
     "lat": 51.491284,
-    "lon": 0.121087
+    "lon": 0.121087,
+    "child_stations": []
   },
   {
     "name": "Acton Main Line Rail Station",
-    "stationId": "910GACTONML",
-    "naptanIds": [
-      "910GACTONML"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.51718,
-    "lon": -0.266756
+    "lon": -0.266756,
+    "child_stations": []
   },
   {
-    "name": "Bond Street Station",
-    "stationId": "HUBBDS",
-    "naptanIds": [
-      "9100BONDST0",
-      "9100BONDST1",
-      "910GBONDST",
-      "9400ZZLUBND1",
-      "9400ZZLUBND2",
-      "9400ZZLUBND3",
-      "9400ZZLUBND4",
-      "940GZZLUBND",
-      "HUBBDS"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Central",
-      "Jubilee"
-    ],
-    "lat": 51.51369,
-    "lon": -0.149517
+    "name": "Bond Street Underground Station",
+    "lat": 51.514304,
+    "lon": -0.149723,
+    "child_stations": [
+      "Bond Street"
+    ]
   },
   {
     "name": "Brentwood Rail Station",
-    "stationId": "910GBRTWOOD",
-    "naptanIds": [
-      "910GBRTWOOD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.613605,
-    "lon": 0.299586
+    "lon": 0.299586,
+    "child_stations": []
   },
   {
     "name": "Burnham (Berks) Rail Station",
-    "stationId": "910GBNHAM",
-    "naptanIds": [
-      "910GBNHAM"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.523506,
-    "lon": -0.646374
+    "lon": -0.646374,
+    "child_stations": []
   },
   {
-    "name": "Canary Wharf Rail Station",
-    "stationId": "HUBCAW",
-    "naptanIds": [
-      "9100CANWHRF0",
-      "9100CANWHRF1",
-      "910GCANWHRF",
-      "9400ZZDLCAN1",
-      "9400ZZDLCAN2",
-      "9400ZZLUCYF1",
-      "9400ZZLUCYF2",
-      "940GZZDLCAN",
-      "940GZZLUCYF",
-      "HUBCAW"
-    ],
-    "modes": [
-      "dlr",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D7",
-      "Elizabeth line"
-    ],
-    "lat": 51.506321,
-    "lon": -0.018815
+    "name": "Canary Wharf Underground Station",
+    "lat": 51.503488,
+    "lon": -0.018246,
+    "child_stations": [
+      "Canary Wharf",
+      "Canary Wharf DLR Station"
+    ]
   },
   {
     "name": "Chadwell Heath Rail Station",
-    "stationId": "910GCHDWLHT",
-    "naptanIds": [
-      "910GCHDWLHT"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.568039,
-    "lon": 0.128958
+    "lon": 0.128958,
+    "child_stations": []
   },
   {
-    "name": "Custom House",
-    "stationId": "HUBCUS",
-    "naptanIds": [
-      "9100CSTMHSXR",
-      "910GCSTMHSXR",
-      "9400ZZDLCUS1",
-      "9400ZZDLCUS2",
-      "940GZZDLCUS",
-      "HUBCUS"
-    ],
-    "modes": [
-      "dlr",
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "DLR"
-    ],
-    "lat": 51.509436,
-    "lon": 0.027681
+    "name": "Custom House (for ExCel) DLR Station",
+    "lat": 51.509716,
+    "lon": 0.026699,
+    "child_stations": [
+      "Custom House"
+    ]
   },
   {
-    "name": "Ealing Broadway Station",
-    "stationId": "HUBEAL",
-    "naptanIds": [
-      "9100EALINGB0",
-      "9100EALINGB1",
-      "910GEALINGB",
-      "9400ZZLUEBY1",
-      "9400ZZLUEBY3",
-      "9400ZZLUEBY4",
-      "940GZZLUEBY",
-      "HUBEAL"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "District",
-      "E1",
-      "E9",
-      "Great Western Railway",
-      "E10",
-      "Elizabeth line",
-      "Central"
-    ],
-    "lat": 51.514643,
-    "lon": -0.30173
+    "name": "Ealing Broadway Underground Station",
+    "lat": 51.515017,
+    "lon": -0.301457,
+    "child_stations": [
+      "Ealing Broadway Rail Station"
+    ]
   },
   {
-    "name": "Farringdon Station",
-    "stationId": "HUBZFD",
-    "naptanIds": [
-      "9100FRNDXR0",
-      "9100FRNDXR1",
-      "910GFRNDXR",
-      "9400ZZLUFCN1",
-      "9400ZZLUFCN2",
-      "940GZZLUFCN",
-      "HUBZFD"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Thameslink",
-      "Hammersmith & City",
-      "Circle",
-      "Metropolitan",
-      "Elizabeth line"
-    ],
-    "lat": 51.519961,
-    "lon": -0.103051
+    "name": "Farringdon Underground Station",
+    "lat": 51.520252,
+    "lon": -0.104913,
+    "child_stations": [
+      "Farringdon"
+    ]
   },
   {
     "name": "Forest Gate Rail Station",
-    "stationId": "910GFRSTGT",
-    "naptanIds": [
-      "910GFRSTGT"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.549432,
-    "lon": 0.024353
+    "lon": 0.024353,
+    "child_stations": []
   },
   {
     "name": "Gidea Park Rail Station",
-    "stationId": "910GGIDEAPK",
-    "naptanIds": [
-      "910GGIDEAPK"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia"
-    ],
     "lat": 51.581904,
-    "lon": 0.205964
+    "lon": 0.205964,
+    "child_stations": []
   },
   {
     "name": "Goodmayes Rail Station",
-    "stationId": "910GGODMAYS",
-    "naptanIds": [
-      "910GGODMAYS"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.565579,
-    "lon": 0.110807
+    "lon": 0.110807,
+    "child_stations": []
   },
   {
     "name": "Hanwell Rail Station",
-    "stationId": "910GHANWELL",
-    "naptanIds": [
-      "910GHANWELL"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.511835,
-    "lon": -0.338583
+    "lon": -0.338583,
+    "child_stations": []
   },
   {
     "name": "Harold Wood Rail Station",
-    "stationId": "910GHRLDWOD",
-    "naptanIds": [
-      "910GHRLDWOD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.592766,
-    "lon": 0.233129
+    "lon": 0.233129,
+    "child_stations": []
   },
   {
     "name": "Hayes & Harlington Rail Station",
-    "stationId": "910GHAYESAH",
-    "naptanIds": [
-      "910GHAYESAH"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.503096,
-    "lon": -0.420683
+    "lon": -0.420683,
+    "child_stations": []
   },
   {
-    "name": "Heathrow Terminal 4",
-    "stationId": "HUBHX4",
-    "naptanIds": [
-      "9100HTRWTM40",
-      "910GHTRWTM4",
-      "9400ZZLUHR41",
-      "940GZZLUHR4",
-      "HUBHX4"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Piccadilly"
-    ],
-    "lat": 51.458674,
-    "lon": -0.446256
+    "name": "Heathrow Terminal 4 Underground Station",
+    "lat": 51.458524,
+    "lon": -0.445771,
+    "child_stations": [
+      "Heathrow Terminal 4 Rail Station"
+    ]
   },
   {
-    "name": "Heathrow Terminal 5",
-    "stationId": "HUBHX5",
-    "naptanIds": [
-      "9100HTRWTM50",
-      "910GHTRWTM5",
-      "9400ZZLUHR51",
-      "940GZZLUHR5",
-      "HUBHX5"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Piccadilly",
-      "Heathrow Express"
-    ],
-    "lat": 51.472193,
-    "lon": -0.4864
+    "name": "Heathrow Terminal 5 Underground Station",
+    "lat": 51.470052,
+    "lon": -0.49056,
+    "child_stations": [
+      "Heathrow Terminal 5 Rail Station"
+    ]
   },
   {
-    "name": "Heathrow Terminals 2 & 3 Rail Station",
-    "stationId": "HUBH13",
-    "naptanIds": [
-      "9100HTRWAPT0",
-      "910GHTRWAPT",
-      "9400ZZLUHRC1",
-      "9400ZZLUHRC2",
-      "940GZZLUHRC",
-      "HUBH13"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "A10",
-      "Heathrow Express",
-      "SL9",
-      "U3",
-      "SL7",
-      "Piccadilly"
-    ],
-    "lat": 51.471987,
-    "lon": -0.454788
+    "name": "Heathrow Terminals 2 & 3 Underground Station",
+    "lat": 51.471235,
+    "lon": -0.452265,
+    "child_stations": [
+      "Heathrow Terminals 2 & 3 Rail Station"
+    ]
   },
   {
     "name": "Ilford Rail Station",
-    "stationId": "910GILFORD",
-    "naptanIds": [
-      "910GILFORD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia"
-    ],
     "lat": 51.559118,
-    "lon": 0.06968
+    "lon": 0.06968,
+    "child_stations": []
   },
   {
     "name": "Iver Rail Station",
-    "stationId": "910GIVER",
-    "naptanIds": [
-      "910GIVER"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.508503,
-    "lon": -0.506726
+    "lon": -0.506726,
+    "child_stations": []
   },
   {
     "name": "Langley (Berks) Rail Station",
-    "stationId": "910GLANGLEY",
-    "naptanIds": [
-      "910GLANGLEY"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.508062,
-    "lon": -0.541756
+    "lon": -0.541756,
+    "child_stations": []
   },
   {
-    "name": "Liverpool Street Station",
-    "stationId": "HUBLST",
-    "naptanIds": [
-      "9100LIVST0",
-      "9100LIVSTLL0",
-      "9100LIVSTLL1",
-      "910GLIVST",
-      "910GLIVSTLL",
-      "9400ZZLULVT1",
-      "9400ZZLULVT2",
-      "9400ZZLULVT3",
-      "9400ZZLULVT4",
-      "940GZZLULVT",
-      "HUBLST"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Weaver",
-      "Hammersmith & City",
-      "Circle",
-      "Greater Anglia",
-      "Metropolitan",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.518381,
-    "lon": -0.081092
+    "name": "Liverpool Street Underground Station",
+    "lat": 51.517372,
+    "lon": -0.083182,
+    "child_stations": [
+      "Liverpool Street",
+      "London Liverpool Street Rail Station"
+    ]
   },
   {
     "name": "Maidenhead Rail Station",
-    "stationId": "910GMDNHEAD",
-    "naptanIds": [
-      "910GMDNHEAD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.518669,
-    "lon": -0.72266
+    "lon": -0.72266,
+    "child_stations": []
   },
   {
     "name": "Manor Park Rail Station",
-    "stationId": "910GMANRPK",
-    "naptanIds": [
-      "910GMANRPK"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.552477,
-    "lon": 0.046342
+    "lon": 0.046342,
+    "child_stations": []
   },
   {
     "name": "Maryland Rail Station",
-    "stationId": "910GMRYLAND",
-    "naptanIds": [
-      "910GMRYLAND"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.546081,
-    "lon": 0.005815
+    "lon": 0.005815,
+    "child_stations": []
   },
   {
-    "name": "Paddington Rail Station",
-    "stationId": "HUBPAD",
-    "naptanIds": [
-      "9100PADTLL0",
-      "9100PADTLL1",
-      "9100PADTON0",
-      "910GPADTLL",
-      "910GPADTON",
-      "9400ZZLUPAC1",
-      "9400ZZLUPAC2",
-      "9400ZZLUPAC3",
-      "9400ZZLUPAC4",
-      "9400ZZLUPAH1",
-      "9400ZZLUPAH2",
-      "940GZZLUPAC",
-      "940GZZLUPAH",
-      "HUBPAD"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Bakerloo",
-      "District",
-      "Heathrow Express",
-      "Hammersmith & City",
-      "Great Western Railway",
-      "Circle",
-      "Elizabeth line"
-    ],
-    "lat": 51.515721,
-    "lon": -0.177021
+    "name": "Paddington Underground Station",
+    "lat": 51.516581,
+    "lon": -0.175689,
+    "child_stations": [
+      "London Paddington Rail Station",
+      "Paddington",
+      "Paddington (H&C Line)-Underground"
+    ]
   },
   {
     "name": "Reading Rail Station",
-    "stationId": "910GRDNGSTN",
-    "naptanIds": [
-      "910GRDNGSTN"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "South Western Railway",
-      "Great Western Railway"
-    ],
     "lat": 51.458786,
-    "lon": -0.971863
+    "lon": -0.971863,
+    "child_stations": []
   },
   {
     "name": "Romford Rail Station",
-    "stationId": "910GROMFORD",
-    "naptanIds": [
-      "910GROMFORD"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia",
-      "Liberty"
-    ],
     "lat": 51.574829,
-    "lon": 0.183237
+    "lon": 0.183237,
+    "child_stations": []
   },
   {
     "name": "Seven Kings Rail Station",
-    "stationId": "910GSVNKNGS",
-    "naptanIds": [
-      "910GSVNKNGS"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia"
-    ],
     "lat": 51.564026,
-    "lon": 0.0971
+    "lon": 0.0971,
+    "child_stations": []
   },
   {
     "name": "Shenfield Rail Station",
-    "stationId": "910GSHENFLD",
-    "naptanIds": [
-      "910GSHENFLD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Greater Anglia"
-    ],
     "lat": 51.630877,
-    "lon": 0.329851
+    "lon": 0.329851,
+    "child_stations": []
   },
   {
     "name": "Slough Rail Station",
-    "stationId": "910GSLOUGH",
-    "naptanIds": [
-      "910GSLOUGH"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.51188,
-    "lon": -0.59151
+    "lon": -0.59151,
+    "child_stations": []
   },
   {
     "name": "Southall Rail Station",
-    "stationId": "910GSTHALL",
-    "naptanIds": [
-      "910GSTHALL"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.505957,
-    "lon": -0.37861
+    "lon": -0.37861,
+    "child_stations": []
   },
   {
-    "name": "Stratford Station",
-    "stationId": "HUBSRA",
-    "naptanIds": [
-      "9100STFD4",
-      "9100STFD5",
-      "910GSTFD",
-      "9400ZZDLSTD1",
-      "9400ZZDLSTD3",
-      "9400ZZDLSTD4",
-      "9400ZZLUSTD1",
-      "9400ZZLUSTD2",
-      "9400ZZLUSTD3",
-      "940GZZDLSTD",
-      "940GZZLUSTD",
-      "HUBSRA"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "dlr",
-      "tube"
-    ],
-    "lines": [
-      "Jubilee",
-      "DLR",
-      "D8",
-      "Greater Anglia",
-      "Mildmay",
-      "Elizabeth line",
-      "c2c",
-      "Central"
-    ],
-    "lat": 51.542847,
-    "lon": -0.003297
+    "name": "Stratford Underground Station",
+    "lat": 51.541806,
+    "lon": -0.003458,
+    "child_stations": [
+      "Stratford (London) Rail Station",
+      "Stratford DLR Station"
+    ]
   },
   {
     "name": "Taplow Rail Station",
-    "stationId": "910GTAPLOW",
-    "naptanIds": [
-      "910GTAPLOW"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.523562,
-    "lon": -0.68137
+    "lon": -0.68137,
+    "child_stations": []
   },
   {
-    "name": "Tottenham Court Road Station",
-    "stationId": "HUBTCR",
-    "naptanIds": [
-      "9100TOTCTRD0",
-      "9100TOTCTRD1",
-      "910GTOTCTRD",
-      "9400ZZLUTCR1",
-      "9400ZZLUTCR2",
-      "9400ZZLUTCR3",
-      "9400ZZLUTCR4",
-      "940GZZLUTCR",
-      "HUBTCR"
-    ],
-    "modes": [
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Central"
-    ],
-    "lat": 51.515974,
-    "lon": -0.130241
+    "name": "Tottenham Court Road Underground Station",
+    "lat": 51.516426,
+    "lon": -0.13041,
+    "child_stations": [
+      "Tottenham Court Road"
+    ]
   },
   {
     "name": "Twyford Rail Station",
-    "stationId": "910GTWYFORD",
-    "naptanIds": [
-      "910GTWYFORD"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.475534,
-    "lon": -0.863293
+    "lon": -0.863293,
+    "child_stations": []
   },
   {
     "name": "West Drayton Rail Station",
-    "stationId": "910GWDRYTON",
-    "naptanIds": [
-      "910GWDRYTON"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.510055,
-    "lon": -0.472234
+    "lon": -0.472234,
+    "child_stations": []
   },
   {
     "name": "West Ealing Rail Station",
-    "stationId": "910GWEALING",
-    "naptanIds": [
-      "910GWEALING"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "Great Western Railway"
-    ],
     "lat": 51.513506,
-    "lon": -0.320133
+    "lon": -0.320133,
+    "child_stations": []
   },
   {
-    "name": "Whitechapel Station",
-    "stationId": "HUBZWL",
-    "naptanIds": [
-      "9100WCHAPEL1",
-      "9100WCHAPEL2",
-      "9100WCHAPXR0",
-      "9100WCHAPXR1",
-      "910GWCHAPEL",
-      "910GWCHAPXR",
-      "9400ZZLUWPL1",
-      "9400ZZLUWPL2",
-      "940GZZLUWPL",
-      "HUBZWL"
-    ],
-    "modes": [
-      "overground",
-      "elizabeth-line",
-      "tube"
-    ],
-    "lines": [
-      "Elizabeth line",
-      "District",
-      "Windrush",
-      "Hammersmith & City"
-    ],
-    "lat": 51.519469,
-    "lon": -0.059757
+    "name": "Whitechapel Underground Station",
+    "lat": 51.519518,
+    "lon": -0.059971,
+    "child_stations": [
+      "Whitechapel",
+      "Whitechapel Rail Station"
+    ]
   },
   {
     "name": "Woolwich",
-    "stationId": "910GWOLWXR",
-    "naptanIds": [
-      "910GWOLWXR"
-    ],
-    "modes": [
-      "elizabeth-line"
-    ],
-    "lines": [
-      "Elizabeth line"
-    ],
     "lat": 51.49119,
-    "lon": 0.07072
+    "lon": 0.07072,
+    "child_stations": []
   }
 ]

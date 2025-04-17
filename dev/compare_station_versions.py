@@ -1,13 +1,18 @@
 import json
+import os
 from collections import defaultdict
 
-def load_stations(filename):
-    """Load stations from a JSON file and return as a dict keyed by name"""
-    with open(filename, 'r') as f:
-        stations = json.load(f)
-    return {s['name']: s for s in stations}
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def compare_stations(old_file, new_file):
+def load_stations(filename):
+    """Load stations from a JSON file"""
+    filepath = os.path.join(PROJECT_ROOT, filename)
+    with open(filepath, 'r') as f:
+        stations = json.load(f)
+    return stations
+
+def compare_stations(old_file, new_file, mode=None):
     """
     Compare two station files and report differences.
     Returns a tuple of (match_count, only_in_old, only_in_new, location_mismatches)
@@ -41,8 +46,7 @@ def compare_stations(old_file, new_file):
     return len(common_names), only_in_old, only_in_new, location_mismatches
 
 def main():
-    """Compare old and new station files"""
-    # Files to compare
+    """Compare different versions of station files"""
     comparisons = [
         ('slim_stations/unique_stations.json', 'raw_stations/unique_stations2.json', 'consolidated'),
         ('slim_stations/unique_stations_tube.json', 'raw_stations/unique_stations2_tube.json', 'tube'),
@@ -54,7 +58,7 @@ def main():
     for old_file, new_file, mode in comparisons:
         print(f"\nComparing {mode} stations...")
         try:
-            matches, only_old, only_new, loc_mismatches = compare_stations(old_file, new_file)
+            matches, only_old, only_new, loc_mismatches = compare_stations(old_file, new_file, mode)
             
             print(f"Results for {mode} stations:")
             print(f"- Matching stations: {matches}")

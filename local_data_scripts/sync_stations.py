@@ -6,11 +6,17 @@ from fuzzywuzzy import fuzz  # We'll use this for comparing station names
 import sys
 import shutil
 
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 class StationSync:
     def __init__(self):
         self.api_key = os.getenv('TFL_API_KEY')  # Get API key from environment variable
         self.base_url = "https://api.tfl.gov.uk"
-        self.stations_file = 'slim_stations/unique_stations.json'  # Use slim version
+        # Update paths to be relative to project root
+        self.stations_file = os.path.join(PROJECT_ROOT, 'slim_stations', 'unique_stations.json')
+        self.backup_dir = os.path.join(PROJECT_ROOT, 'station_backups')
+        self.last_sync_file = os.path.join(PROJECT_ROOT, 'last_sync.txt')
         self.threshold_percentage = 0.9  # Allow 10% variation in station count
         self.lines = {
             'tube': ['bakerloo', 'central', 'circle', 'district', 'hammersmith-city', 
@@ -43,7 +49,7 @@ class StationSync:
             ' ell '  # Added space after to avoid matching words like 'well'
         ]
         # Create backups directory if it doesn't exist
-        os.makedirs('station_backups', exist_ok=True)
+        os.makedirs(self.backup_dir, exist_ok=True)
         
     def normalize_station_name(self, name):
         """Normalize station name by removing common suffixes and standardizing format"""
@@ -154,7 +160,10 @@ class StationSync:
     def backup_stations(self):
         """Create a backup of the current stations file"""
         try:
-            backup_name = f'station_backups/unique_stations_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
+            backup_name = os.path.join(
+                self.backup_dir,
+                f'unique_stations_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
+            )
             shutil.copy2(self.stations_file, backup_name)
             print(f"\nCreated backup: {backup_name}")
             return backup_name
@@ -174,9 +183,9 @@ class StationSync:
 
     def get_latest_backup(self):
         """Find the most recent backup file"""
-        backups = [f for f in os.listdir('station_backups') if f.startswith('unique_stations_backup_')]
+        backups = [f for f in os.listdir(self.backup_dir) if f.startswith('unique_stations_backup_')]
         if backups:
-            return os.path.join('station_backups', max(backups))  # Most recent backup by filename
+            return os.path.join(self.backup_dir, max(backups))  # Most recent backup by filename
         return None
 
     def find_matching_station(self, station_name, stations_list):
@@ -307,7 +316,7 @@ class StationSync:
             print("\nNo changes needed. Local stations are up to date.")
             
         # Save sync timestamp
-        with open('last_sync.txt', 'w') as f:
+        with open(self.last_sync_file, 'w') as f:
             f.write(datetime.now().isoformat())
             
         return changes_found
@@ -399,7 +408,7 @@ class StationSync:
     def get_last_sync_time(self):
         """Get the timestamp of the last successful sync"""
         try:
-            with open('last_sync.txt', 'r') as f:
+            with open(self.last_sync_file, 'r') as f:
                 return datetime.fromisoformat(f.read().strip())
         except FileNotFoundError:
             return None

@@ -12,6 +12,9 @@ load_dotenv()
 # Using a set for O(1) lookup time when checking if a mode is valid
 VALID_MODES = {'tube', 'overground', 'dlr', 'elizabeth-line'}
 
+# Get the project root directory
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def get_station_identifier(station):
     """
     Get the best identifier for a station using a priority system:
@@ -288,24 +291,34 @@ def inspect_station_data():
         # Save mode-specific files and print summaries
         print("\nSaving mode-specific station files:")
         mode_file_mapping = {
-            'tube': 'unique_stations_tube1.json',
-            'dlr': 'unique_stations_dlr1.json',
-            'overground': 'unique_stations_overground1.json',
-            'elizabeth-line': 'unique_stations_elizabeth1.json'
+            'tube': 'unique_stations_tube.json',
+            'dlr': 'unique_stations_dlr.json',
+            'overground': 'unique_stations_overground.json',
+            'elizabeth-line': 'unique_stations_elizabeth.json'
         }
         
         for mode, filename in mode_file_mapping.items():
             stations = sorted(stations_by_mode[mode], key=lambda x: x['name'])
             print(f"- {mode}: {len(stations)} stations saved to {filename}")
-            with open(filename, 'w') as f:
-                json.dump(stations, f, indent=2)
+            save_stations(stations, filename)
 
         # Also save the complete unique stations file as before
         print("\nSaving complete unique stations list to 'unique_stations.json'")
-        with open('unique_stations.json', 'w') as f:
-            json.dump(list(stations_by_mode.values()), f, indent=2)
+        save_stations_by_mode(stations_by_mode)
             
         print("\nAll files saved successfully!")
+
+def save_stations(stations, filename):
+    """Save stations to a JSON file"""
+    filepath = os.path.join(PROJECT_ROOT, filename)
+    with open(filepath, 'w') as f:
+        json.dump(stations, f, indent=2)
+
+def save_stations_by_mode(stations_by_mode):
+    """Save stations grouped by mode"""
+    filepath = os.path.join(PROJECT_ROOT, 'raw_stations', 'unique_stations.json')
+    with open(filepath, 'w') as f:
+        json.dump(list(stations_by_mode.values()), f, indent=2)
 
 if __name__ == "__main__":
     inspect_station_data() 

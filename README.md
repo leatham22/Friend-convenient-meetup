@@ -109,6 +109,103 @@ project/
 - Elizabeth Line station data needs verification
 - Some station name variations need standardization
 
+## Development History
+
+### Initial Development Journey
+1. **First Approach: Direct API Usage**
+   - Created `test_api.py` to test initial API integration
+   - Used StopPoint API endpoint for all operations:
+     - First call: Validate input station names
+     - Second call: Get stations within radius of group center
+   - Performance Issues:
+     - 1700+ stations returned for central London
+     - 5+ minutes to process just 15/1700 stations
+     - Journey time calculations too slow for practical use
+
+2. **Data Investigation**
+   - Created `inspect_api_data.py` to analyze API response structure
+   - Generated `api_response.json` for detailed data inspection
+   - Discovered duplicate entries issue:
+     - Multiple entries for entrances, platforms, facilities
+     - Found station identification patterns:
+       - HubNaptanCode for main stations
+       - NaptanID patterns (910G/940G for parents, 9100/9400 for children)
+   - Reduced stations from 1700+ to ~466 unique locations
+   - Created `compare_stations.py` to validate data accuracy
+
+3. **Local Data Storage Evolution**
+   - Realized journey time API only needed lat/long
+   - Created local station database to avoid repeated API calls
+   - Created `consolidated_stations.py` for initial data structure
+   - Implemented station validation using local data
+   - Added fuzzy matching for station names
+
+4. **API Endpoint Optimization**
+   - Discovered more efficient Line endpoint
+   - Created `create_station_mapping.py` for initial mapping attempt
+   - Benefits over StopPoint endpoint:
+     - Fewer duplicates
+     - More reliable data
+     - Better structured responses
+   - Solved overground stations issue:
+     - Updated to new line naming convention (Windrush, etc.)
+     - Individual calls for each line
+
+5. **Data Structure Refinement**
+   - Created `collect_initial_stations.py` using Line endpoint
+   - Created `compare_station_versions.py` to validate new structure
+   - Created `slim_stations.py` for optimized data storage
+   - Created `sync_stations.py` for automated updates
+   - Created `analyze_location_diffs.py` to investigate coordinate differences
+   - Implemented:
+     - Unified station format
+     - Parent-child station relationship
+     - Smart deduplication while preserving all station names
+     - Location differences investigation (platform vs entrance coordinates)
+
+### API Optimization Journey
+1. **Initial Implementation** (see `dev/` folder)
+   - Originally made multiple API calls:
+     - Two calls to StopPoints endpoint (validation + radius search)
+     - Additional calls for journey times
+   - Created local data structure to reduce API calls
+   - Used `compare_stations.py` to validate data accuracy
+
+2. **Current Optimized Implementation**
+   - Single Line endpoint call for all station data
+   - Local data storage with efficient sync system
+   - Reduced API calls from 3+ to 1 per session
+   - Smart station matching using fuzzy logic
+   - Optimized data structure for quick lookups
+
+### Data Structure Evolution
+1. **Original Structure**
+   - Separate files for each transport mode
+   - Multiple API calls for validation
+   - Basic station matching
+
+2. **Current Structure**
+   - Unified station data with mode information
+   - Smart deduplication using HubNaptanCode
+   - Efficient sync process with fuzzy matching
+   - Backup system for data safety
+
+### Performance Improvements
+1. **API Usage**
+   - Reduced from 3+ API calls to 1
+   - Implemented local data storage
+   - Smart sync system for updates
+
+2. **Data Processing**
+   - Improved station matching algorithm
+   - Optimized data structure for quick lookups
+   - Added fuzzy matching for better accuracy
+
+3. **Code Organization**
+   - Separated active and historical code
+   - Improved script organization
+   - Better error handling and validation
+
 ## Usage
 
 1. **Find Meeting Points**
@@ -133,4 +230,4 @@ project/
 
 ## License
 
-[Your chosen license] 
+[Your chosen license]
