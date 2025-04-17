@@ -9,24 +9,41 @@ This project solves the common problem of finding a convenient place to meet in 
 2. Calculating journey times between all possible stations
 3. Finding optimal meeting points that minimize total travel time for everyone
 
-The project includes sophisticated station data management to ensure accurate station matching and journey time calculations.
+## Project Status
 
-## Key Features
+### Current Features
+- ✅ Station data management system
+  - Reliable data collection from TfL API
+  - Proper handling of multi-entrance stations
+  - Regular sync with TfL data
+- ⏳ Meeting point optimization (in progress)
+  - Journey time calculations
+  - Total travel time minimization
+  - Walking time consideration
 
-1. **Station Data Management**
-   - Automatic station data synchronization with TfL API
-   - Proper handling of multi-entrance stations
-   - Support for all London rail modes (Tube, DLR, Overground, Elizabeth Line)
+### Next Steps
+- [ ] Implement journey time calculations
+- [ ] Add meeting point optimization algorithm
+- [ ] Create user interface for input/output
+- [ ] Add support for additional transport modes
 
-2. **Data Organization**
-   - Raw station data with full TfL API information
-   - Slim station data for efficient processing
-   - Child station tracking for better station matching
+## Technical Details
 
-3. **API Integration**
-   - Reliable Line-based station fetching
-   - Automatic retries with exponential backoff
-   - Proper error handling
+### Station Data Management
+1. **Data Collection** (`scripts/collect_initial_stations.py`)
+   - Uses TfL Line endpoint for reliability
+   - Groups stations by HubNaptanCode/location
+   - Handles multi-entrance stations
+
+2. **Data Storage**
+   - Raw data in `raw_stations/` (full TfL data)
+   - Slim data in `slim_stations/` (optimized for processing)
+   - Automatic backups in `station_backups/`
+
+3. **Data Sync** (`scripts/sync_stations.py`)
+   - Regular updates from TfL API
+   - Smart station matching
+   - Change verification system
 
 ## Directory Structure
 
@@ -63,11 +80,34 @@ project/
 3. **Initial Setup**
    ```bash
    # Collect station data
-   python3 collect_initial_stations.py
+   python3 scripts/collect_initial_stations.py
    
    # Create slim versions
-   python3 slim_stations.py
+   python3 scripts/slim_stations.py
    ```
+
+## Development Progress
+
+### Latest Updates
+1. **Station Data Management**
+   - Switched to Line endpoint for better reliability
+   - Improved station grouping using HubNaptanCode
+   - Added child station tracking for better matching
+
+2. **Code Organization**
+   - Separated raw and processed data
+   - Improved script organization
+   - Added data validation tools
+
+3. **Documentation**
+   - Added detailed code comments
+   - Improved README documentation
+   - Added progress tracking
+
+### Known Issues
+- Some station location discrepancies (mostly minor)
+- Elizabeth Line station data needs verification
+- Some station name variations need standardization
 
 ## Usage
 
@@ -81,37 +121,8 @@ project/
 
 2. **Update Station Data**
    ```bash
-   python3 sync_stations.py
+   python3 scripts/sync_stations.py
    ```
-
-## Technical Details
-
-### Station Data Structure
-1. **Raw Data**
-   - Full station information from TfL
-   - Includes modes, lines, etc.
-   - Used for debugging and future features
-
-2. **Slim Data**
-   - Only essential fields:
-     - name
-     - lat/lon (for journey times)
-     - child_stations (for matching)
-
-### Station Matching
-1. **Primary Method**: HubNaptanCode
-   - Groups related stations (e.g., different entrances)
-   - Most reliable for multi-mode stations
-
-2. **Fallback Method**: Location
-   - Groups stations by coordinates
-   - ~11m accuracy (4 decimal places)
-
-### API Endpoints
-- Primary: `/Line/{line}/StopPoints`
-  - More reliable than StopPoint endpoint
-  - Better data organization
-  - Automatic retries on failure
 
 ## Contributing
 
