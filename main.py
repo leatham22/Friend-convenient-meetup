@@ -2,47 +2,246 @@ import requests
 import argparse
 import os
 import sys
-import math # Added for distance calculation
+import math
+import json
+from difflib import get_close_matches
+from fuzzywuzzy import fuzz
 
 # --- Configuration ---
-# Base URL for the TfL API
+# Base URL for the TfL API (only for journey planning)
 TFL_API_BASE_URL = "https://api.tfl.gov.uk/Journey/JourneyResults/"
 
-# Base URL for StopPoint service
-TFL_STOPPOINT_BASE_URL = "https://api.tfl.gov.uk/StopPoint/Mode/tube,overground,dlr,elizabeth-line"
+# --- Path to Local Station Data ---
+STATION_DATA_PATH = "slim_stations/unique_stations.json"
 
 # --- Helper Functions ---
+
+def load_station_data():
+    """
+    Loads station data from the local JSON file.
+    
+    Returns:
+        list: A list of station dictionaries with name, coordinates, and child stations.
+        None: If loading fails.
+    """
+    try:
+        with open(STATION_DATA_PATH, 'r') as file:
+            stations = json.load(file)
+            print(f"Loaded {len(stations)} stations from local database.")
+            return stations
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading station data: {e}", file=sys.stderr)
+        return None
+
+def create_station_lookup(stations):
+    """
+    Creates a lookup dictionary for faster station searches.
+    
+    Args:
+        stations (list): List of station dictionaries.
+        
+    Returns:
+        dict: Dictionary mapping lowercase station names to station data.
+    """
+    # Main lookup dictionary (lowercase name -> station data)
+    lookup = {}
+    
+    # Process all stations including child stations
+    for station in stations:
+        # Add main station
+        lookup[station['name'].lower()] = station
+        
+        # Add child stations that refer to their parent
+        for child_name in station.get('child_stations', []):
+            lookup[child_name.lower()] = station
+    
+    print(f"Created lookup dictionary with {len(lookup)} station names (including aliases).")
+    return lookup
+
+def find_closest_station_match(station_name, station_lookup):
+    """
+    Finds the closest matching station using exact matching first, then normalized names, and finally fuzzy matching.
+    Presents user with options when multiple close matches are found.
+    
+    Args:
+        station_name (str): The user-provided station name.
+        station_lookup (dict): The station lookup dictionary.
+        
+    Returns:
+        dict: The station data if found, None otherwise.
+    """
+    # First try direct lookup (case-insensitive)
+    normalized_input = station_name.lower().strip()
+    
+    # Try exact match first
+    for station_key, station_data in station_lookup.items():
+        if station_key.lower() == normalized_input:
+            return station_data
+            
+        # Also check child stations for exact matches
+        for child in station_data.get('child_stations', []):
+            if child.lower() == normalized_input:
+                return station_data
+    
+    # If no exact match, normalize the input name using same logic as sync_stations.py
+    def normalize_name(name):
+        """Helper function to normalize station names"""
+        if not name:
+            return ""
+            
+        name = name.lower().strip()
+        
+        # Handle common abbreviations before other normalizations
+        common_abbrevs = {
+            'st ': 'street ',
+            'st.': 'street',
+            'rd ': 'road ',
+            'rd.': 'road',
+            'ave ': 'avenue ',
+            'ave.': 'avenue',
+            'ln ': 'lane ',
+            'ln.': 'lane',
+            'pk ': 'park ',
+            'pk.': 'park',
+            'gdns ': 'gardens ',
+            'gdns.': 'gardens',
+            'xing ': 'crossing ',
+            'xing.': 'crossing',
+            'stn ': 'station ',
+            'stn.': 'station'
+        }
+        
+        # Add a space at the end to help match abbreviations at the end of the name
+        name = name + ' '
+        for abbrev, full in common_abbrevs.items():
+            name = name.replace(abbrev, full)
+        name = name.strip()  # Remove the extra space we added
+        
+        # First standardize special characters
+        name = name.replace(" & ", " and ")
+        name = name.replace("&", "and")
+        name = name.replace("-", " ")
+        name = name.replace("'", "")
+        name = name.replace('"', '')
+        name = name.replace("(", " ")
+        name = name.replace(")", " ")
+        
+        # Clean spaces
+        name = ' '.join(name.split())
+        
+        # Remove common prefixes
+        prefixes = ['london ']
+        for prefix in prefixes:
+            if name.startswith(prefix):
+                name = name[len(prefix):]
+                
+        # Remove common suffixes
+        suffixes = [
+            ' underground station',
+            ' overground station',
+            ' dlr station',
+            ' rail station',
+            ' station',
+            ' underground',
+            ' overground',
+            ' dlr'
+        ]
+        for suffix in suffixes:
+            if name.endswith(suffix):
+                name = name[:-len(suffix)]
+                
+        # Remove common patterns
+        patterns = [
+            ' (h&c line)',
+            ' (central)',
+            ' (dist&picc line)',
+            ' (for excel)',
+            ' (london)',
+            ' ell '
+        ]
+        for pattern in patterns:
+            name = name.replace(pattern, "")
+            
+        return ' '.join(name.split())
+    
+    normalized_input = normalize_name(normalized_input)
+    
+    # Try matching against normalized names
+    matches = []
+    seen_names = set()  # Track unique station names we've already added
+    
+    for station_key, station_data in station_lookup.items():
+        # Check main station name
+        station_normalized = normalize_name(station_key)
+        ratio = fuzz.ratio(normalized_input, station_normalized)
+        
+        # Only add if we haven't seen this exact name before
+        if ratio > 75 and station_data['name'] not in seen_names:  # Collect all matches above threshold
+            matches.append((station_data, ratio, station_data['name']))
+            seen_names.add(station_data['name'])
+            
+            # If this station has child stations that are different types (e.g., DLR vs Underground),
+            # add them as separate options
+            for child in station_data.get('child_stations', []):
+                child_normalized = normalize_name(child)
+                child_ratio = fuzz.ratio(normalized_input, child_normalized)
+                
+                # Only add child if it's a good match and we haven't seen this name
+                if child_ratio > 75 and child not in seen_names:
+                    # For child stations, we still return the parent data but show the child name
+                    matches.append((station_data, child_ratio, child))
+                    seen_names.add(child)
+    
+    if not matches:
+        # Single consolidated error message
+        print(f"\n Error: Station '{station_name}' not found in the list of Tube/Overground/DLR/Rail stations.")
+        print(" Please check the spelling and ensure it's a relevant station.")
+        print(" Tip: You can use common abbreviations like 'st' for 'street', 'rd' for 'road', etc.")
+        return None
+        
+    # Sort matches by ratio in descending order
+    matches.sort(key=lambda x: x[1], reverse=True)
+    
+    # If we have a perfect match, use it
+    if matches[0][1] == 100:
+        print(f"Exact match found: '{matches[0][2]}'")
+        return matches[0][0]
+        
+    # If we have multiple matches, show top 5 options
+    print(f"\nMultiple matches found for '{station_name}'. Please select the correct station:")
+    for i, (station, ratio, matched_name) in enumerate(matches[:5], 1):
+        print(f"{i}. {matched_name} (similarity: {ratio}%)")
+    
+    while True:
+        try:
+            choice = input("\nEnter the number of your station (or 0 to try a different name): ")
+            if choice == '0':
+                return None
+            choice_idx = int(choice) - 1
+            if 0 <= choice_idx < len(matches[:5]):
+                return matches[choice_idx][0]
+            print("Invalid selection. Please enter a number between 0 and", min(5, len(matches)))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 def calculate_centroid(locations):
     """
     Calculates the geographic centroid (average lat/lon) of a list of locations.
 
     Args:
-        locations (list): A list of location strings in "latitude,longitude" format.
+        locations (list): A list of [lat, lon] coordinates.
 
     Returns:
         tuple: A tuple containing (average_latitude, average_longitude),
                or (None, None) if the input is empty or invalid.
     """
-    total_lat = 0
-    total_lon = 0
-    count = 0
     if not locations:
         return None, None
-
-    for loc_str in locations:
-        try:
-            lat, lon = map(float, loc_str.split(','))
-            total_lat += lat
-            total_lon += lon
-            count += 1
-        except (ValueError, AttributeError):
-            print(f"  Warning: Skipping invalid location '{loc_str}' for centroid calculation.")
-            continue # Skip invalid entries
-
-    if count == 0:
-        return None, None
-
+    
+    total_lat = sum(loc[0] for loc in locations)
+    total_lon = sum(loc[1] for loc in locations)
+    count = len(locations)
+    
     return total_lat / count, total_lon / count
 
 def haversine_distance(lat1, lon1, lat2, lon2):
@@ -111,24 +310,98 @@ def get_api_key():
     # Argparse will handle the case where it's not provided via command line
     return None
 
-def validate_location_format(location):
+def filter_stations_by_radius(stations, centroid_lat, centroid_lon, radius_km):
     """
-    Basic validation for latitude,longitude format.
+    Filters stations that are within the specified radius from the centroid.
+    
+    Args:
+        stations (list): List of station dictionaries.
+        centroid_lat (float): Latitude of the center point.
+        centroid_lon (float): Longitude of the center point.
+        radius_km (float): Radius in kilometers.
+        
+    Returns:
+        list: Filtered list of stations within the radius.
     """
+    filtered_stations = []
+    
+    for station in stations:
+        if is_within_radius(centroid_lat, centroid_lon, radius_km, 
+                           station['lat'], station['lon']):
+            filtered_stations.append(station)
+    
+    print(f"Filtered {len(filtered_stations)} stations within {radius_km:.2f} km radius.")
+    return filtered_stations
+
+def get_travel_time(start_coords, end_coords, api_key):
+    """
+    Calls the TfL Journey Planner API to get the travel time between two locations.
+
+    Args:
+        start_coords (tuple): Starting location (latitude, longitude).
+        end_coords (tuple): Ending location (latitude, longitude).
+        api_key (str): The TfL API key.
+
+    Returns:
+        int: Travel time in minutes, or None if the journey cannot be found or an error occurs.
+    """
+    # Check if start and end coordinates are the same
+    if start_coords == end_coords:
+        print(f"  Start and end stations are the same - no journey needed")
+        return 0  # Return 0 minutes for travel time
+        
+    # Format coordinates for API request
+    start_loc = f"{start_coords[0]},{start_coords[1]}"
+    end_loc = f"{end_coords[0]},{end_coords[1]}"
+    
+    # Construct the API request URL
+    url = f"{TFL_API_BASE_URL}{start_loc}/to/{end_loc}"
+
+    # Parameters for the API request, including the API key
+    params = {
+        'app_key': api_key,
+        'timeIs': 'Departing', # Assume departure time is 'now'
+    }
+
     try:
-        lat, lon = map(float, location.split(','))
-        # Basic range check (adjust ranges if needed for specific use cases)
-        if not (-90 <= lat <= 90 and -180 <= lon <= 180):
-            raise ValueError("Latitude or longitude out of range.")
-        return True
-    except ValueError:
-        return False
+        print(f"  Querying TfL API for journey: {start_loc} -> {end_loc}...")
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+
+        # Parse the JSON response
+        journey_data = response.json()
+
+        # Check if journeys were found
+        if not journey_data.get('journeys'):
+            print(f"  Warning: No direct journey found between {start_loc} and {end_loc}.")
+            return None
+
+        # Extract the duration of the first recommended journey
+        first_journey = journey_data['journeys'][0]
+        duration = first_journey.get('duration')
+
+        if duration is not None:
+            print(f"  Found journey duration: {duration} minutes.")
+            return duration
+        else:
+            print(f"  Warning: Could not extract duration for journey {start_loc} -> {end_loc}.")
+            return None
+
+    except requests.exceptions.RequestException as e:
+        print(f"  Error calling TfL API for {start_loc} -> {end_loc}: {e}", file=sys.stderr)
+        return None
+    except KeyError as e:
+        print(f"  Error parsing TfL API response for {start_loc} -> {end_loc}: Missing key {e}", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  An unexpected error occurred for {start_loc} -> {end_loc}: {e}", file=sys.stderr)
+        return None
 
 # --- Argument Parsing ---
 
 def parse_arguments():
     """
-    Parses command-line arguments for API key, start locations, and meeting locations.
+    Parses command-line arguments for API key.
     """
     parser = argparse.ArgumentParser(
         description="Find the most convenient meeting location in London based on TfL travel times."
@@ -140,20 +413,7 @@ def parse_arguments():
         help="Your TfL API key. Alternatively, set the TFL_API_KEY environment variable."
     )
 
-    # Argument for starting locations (at least one required) - REMOVED
-    # parser.add_argument(
-    #     "-s", "--start",
-    #     required=True,
-    #     nargs='+',  # Allows one or more starting locations
-    #     help="One or more starting locations (latitude,longitude format). Example: 51.5074,-0.1278"
-    # )
-
     args = parser.parse_args()
-
-    # Validate location formats for start locations only - REMOVED VALIDATION HERE
-    # for loc in args.start:
-    #     if not validate_location_format(loc):
-    #         parser.error(f"Invalid location format: '{loc}'. Use latitude,longitude (e.g., 51.5074,-0.1278).")
 
     # Get API key, prioritizing environment variable
     final_api_key = get_api_key()
@@ -169,149 +429,6 @@ def parse_arguments():
 
     return args
 
-# --- TfL API Interaction ---
-
-def get_london_stations(api_key, centroid_lat=None, centroid_lon=None, radius_km=None):
-    """
-    Fetches London Tube and Overground/Rail stations, optionally filtering by radius.
-
-    Args:
-        api_key (str): The TfL API key.
-        centroid_lat (float, optional): Latitude of the center for filtering.
-        centroid_lon (float, optional): Longitude of the center for filtering.
-        radius_km (float, optional): Radius in km for filtering.
-
-    Returns:
-        list: A list of dictionaries (name, coords) for stations,
-              filtered if center and radius are provided.
-    """
-    params = {
-        'app_key': api_key
-    }
-    stations = []
-    filtered_stations = [] # New list for filtered results
-
-    try:
-        print(f"Fetching London stations... This might take a moment.")
-        response = requests.get(TFL_STOPPOINT_BASE_URL, params=params, timeout=60) # Increased timeout for potentially larger response
-        response.raise_for_status()
-        stop_point_data = response.json()
-
-        # Check common response structures
-        if 'stopPoints' in stop_point_data:
-            potential_stations = stop_point_data['stopPoints']
-        elif isinstance(stop_point_data, list): # Sometimes it returns a list directly
-            potential_stations = stop_point_data
-        else:
-             print(" Unexpected API response structure when fetching stations.", file=sys.stderr)
-             return []
-
-        print(f"Processing {len(potential_stations)} fetched stop points...")
-
-        filtering_active = centroid_lat is not None and centroid_lon is not None and radius_km is not None
-        if filtering_active:
-            print(f"Filtering stations within {radius_km:.2f} km of ({centroid_lat:.4f}, {centroid_lon:.4f}).")
-
-        # Iterate through the fetched stop points
-        for station in potential_stations:
-            if 'commonName' in station and 'lat' in station and 'lon' in station:
-                name = station['commonName']
-                lat = station['lat']
-                lon = station['lon']
-
-                # Basic name filter (heuristic)
-                if ' Underground Station' in name or ' DLR Station' in name or ' Rail Station' in name or ' Station' in name:
-                    # Now apply geographic filter if active
-                    if filtering_active:
-                        if is_within_radius(centroid_lat, centroid_lon, radius_km, lat, lon):
-                            coords = f"{lat},{lon}"
-                            filtered_stations.append({'name': name, 'coords': coords})
-                        # else: station is outside the radius, skip it
-                    else:
-                        # Filtering is not active, add all matching stations
-                        coords = f"{lat},{lon}"
-                        filtered_stations.append({'name': name, 'coords': coords})
-            # else: station missing essential data, skip it
-
-        result_list = filtered_stations # Return the filtered list
-        if filtering_active:
-            print(f"Filtered down to {len(result_list)} stations within the radius.")
-        else:
-             print(f"Fetched {len(result_list)} potential stations (no geographic filter applied).")
-        return result_list
-
-    except requests.exceptions.RequestException as e:
-        print(f" Error calling TfL API for stations: {e}", file=sys.stderr)
-        return []
-    except KeyError as e:
-        print(f" Error parsing TfL API station response: Missing key {e}", file=sys.stderr)
-        return []
-    except Exception as e:
-        print(f" An unexpected error occurred fetching stations: {e}", file=sys.stderr)
-        return []
-
-def get_travel_time(start_loc, end_loc, api_key):
-    """
-    Calls the TfL Journey Planner API to get the travel time between two locations.
-
-    Args:
-        start_loc (str): Starting location in "latitude,longitude" format.
-        end_loc (str): Ending location in "latitude,longitude" format.
-        api_key (str): The TfL API key.
-
-    Returns:
-        int: Travel time in minutes, or None if the journey cannot be found or an error occurs.
-    """
-    # Construct the API request URL
-    # Note: TfL API uses {from}/to/{to} structure with coordinates directly
-    url = f"{TFL_API_BASE_URL}{start_loc}/to/{end_loc}"
-
-    # Parameters for the API request, including the API key
-    params = {
-        'app_key': api_key,
-        'timeIs': 'Departing', # Assume departure time is 'now'
-        # Add other parameters as needed, e.g., mode preferences
-        # 'mode': 'tube,dlr,overground' # Example: limit modes
-    }
-
-    try:
-        print(f"  Querying TfL API: {start_loc} -> {end_loc}...")
-        response = requests.get(url, params=params, timeout=30) # Add a timeout
-        response.raise_for_status() # Raise an exception for bad status codes (4xx or 5xx)
-
-        # Parse the JSON response
-        journey_data = response.json()
-
-        # Check if journeys were found
-        if not journey_data.get('journeys'):
-            print(f"  Warning: No direct journey found between {start_loc} and {end_loc}.")
-            return None
-
-        # Extract the duration of the first recommended journey
-        # TfL API provides duration in minutes
-        first_journey = journey_data['journeys'][0]
-        duration = first_journey.get('duration')
-
-        if duration is not None:
-            print(f"  Found journey duration: {duration} minutes.")
-            return duration
-        else:
-            print(f"  Warning: Could not extract duration for journey {start_loc} -> {end_loc}.")
-            return None
-
-    except requests.exceptions.RequestException as e:
-        # Handle network errors, timeout errors, bad status codes, etc.
-        print(f"  Error calling TfL API for {start_loc} -> {end_loc}: {e}", file=sys.stderr)
-        return None
-    except KeyError as e:
-        # Handle unexpected structure in the JSON response
-        print(f"  Error parsing TfL API response for {start_loc} -> {end_loc}: Missing key {e}", file=sys.stderr)
-        return None
-    except Exception as e:
-        # Catch any other unexpected errors during the process
-        print(f"  An unexpected error occurred for {start_loc} -> {end_loc}: {e}", file=sys.stderr)
-        return None
-
 # --- Main Logic ---
 
 def main():
@@ -322,16 +439,14 @@ def main():
 
     print(f"\nUsing API Key: {'*' * (len(args.api_key) - 4) + args.api_key[-4:]}") # Mask key for printing
 
-    # --- Fetch All Stations Once for Lookup ---
-    print("\nFetching all stations for lookup...")
-    all_stations_list = get_london_stations(args.api_key)
-    if not all_stations_list:
-        print("Could not fetch the station list. Exiting.", file=sys.stderr)
+    # --- Load local station data ---
+    all_stations = load_station_data()
+    if not all_stations:
+        print("Could not load the station data. Exiting.", file=sys.stderr)
         sys.exit(1)
-
-    # Create a dictionary for faster lookup: lowercase name -> {name, coords}
-    stations_lookup = {s['name'].lower(): s for s in all_stations_list}
-    print(f"Found {len(stations_lookup)} unique station names for lookup.")
+        
+    # Create station lookup dictionary for quick access and name matching
+    station_lookup = create_station_lookup(all_stations)
 
     # --- Interactive Input for People's Start Stations and Walk Times ---
     people_data = []
@@ -351,13 +466,12 @@ def main():
                 print("Please enter details for at least two people.")
                 continue
 
-        # Find the station in our lookup (case-insensitive)
-        found_station = stations_lookup.get(station_name_input.lower())
+        # Find the station using our local data (with fuzzy matching if needed)
+        found_station = find_closest_station_match(station_name_input, station_lookup)
 
         if not found_station:
             print(f" Error: Station '{station_name_input}' not found in the list of Tube/Overground/DLR/Rail stations.")
             print(" Please check the spelling and ensure it's a relevant station.")
-            # Optional: Suggest similar names if possible (more complex)
             continue # Ask for input for the same person again
 
         # Get walk time
@@ -376,7 +490,8 @@ def main():
         person_info = {
             'id': person_count,
             'start_station_name': found_station['name'],
-            'start_station_coords': found_station['coords'],
+            'start_station_lat': found_station['lat'],
+            'start_station_lon': found_station['lon'],
             'time_to_station': walk_time_minutes
         }
         people_data.append(person_info)
@@ -385,59 +500,64 @@ def main():
 
     # --- Calculate Centroid and Radius based on *inputted stations* ---
     print("\nCalculating geographic center and radius from starting stations...")
-    start_station_coords_list = [p['start_station_coords'] for p in people_data]
-    centroid_lat, centroid_lon = calculate_centroid(start_station_coords_list)
+    start_station_coords = [(p['start_station_lat'], p['start_station_lon']) for p in people_data]
+    centroid_lat, centroid_lon = calculate_centroid(start_station_coords)
 
     if centroid_lat is None:
         print("Could not calculate centroid from the provided stations. Exiting.", file=sys.stderr)
         sys.exit(1)
 
+    # Calculate maximum distance from centroid to define our search radius
     max_distance = 0
-    for station_coords in start_station_coords_list:
-        try:
-            lat, lon = map(float, station_coords.split(','))
-            distance = haversine_distance(centroid_lat, centroid_lon, lat, lon)
-            if distance > max_distance:
-                max_distance = distance
-        except (ValueError, AttributeError):
-            continue # Should not happen if lookup worked, but good practice
+    for lat, lon in start_station_coords:
+        distance = haversine_distance(centroid_lat, centroid_lon, lat, lon)
+        if distance > max_distance:
+            max_distance = distance
 
-    # Add a buffer to the radius just in case the optimal meeting point is slightly outside
-    # the circle encompassing the start stations. Adjust buffer as needed.
+    # Add a buffer to the radius to ensure we find the optimal meeting point
     SEARCH_RADIUS_BUFFER_KM = 1.0
     search_radius_km = max_distance + SEARCH_RADIUS_BUFFER_KM
     print(f"  Centroid of start stations: ({centroid_lat:.4f}, {centroid_lon:.4f})")
     print(f"  Max distance from centroid: {max_distance:.2f} km")
     print(f"  Search Radius (with buffer): {search_radius_km:.2f} km")
 
-    # --- Get Potential Meeting Stations (Filtered based on start station centroid/radius) ---
-    potential_meeting_stations = get_london_stations(args.api_key, centroid_lat, centroid_lon, search_radius_km)
+    # --- Get Potential Meeting Stations (Filtered based on centroid/radius) ---
+    # Filter stations locally using the radius
+    potential_meeting_stations = filter_stations_by_radius(all_stations, centroid_lat, centroid_lon, search_radius_km)
+    
     if not potential_meeting_stations:
-        print("Could not fetch or filter potential meeting stations within the calculated area. Exiting.", file=sys.stderr)
+        print("Could not find potential meeting stations within the calculated area. Exiting.", file=sys.stderr)
         sys.exit(1)
 
     print(f"\nCalculating travel times to the {len(potential_meeting_stations)} filtered potential meeting stations...")
 
-    # --- Calculate Total Travel Times (Adapting the calculation) ---
+    # --- Calculate Total Travel Times ---
     results = []
     min_total_time = float('inf')
-    best_meeting_station_info = None # Store the whole station dict
+    best_meeting_station = None
 
     for i, meeting_station in enumerate(potential_meeting_stations):
         meeting_station_name = meeting_station['name']
-        meeting_station_coords = meeting_station['coords']
-        print(f"\nProcessing potential meeting station {i+1}/{len(potential_meeting_stations)}: {meeting_station_name} ({meeting_station_coords})")
+        meeting_station_lat = meeting_station['lat']
+        meeting_station_lon = meeting_station['lon']
+        
+        print(f"\nProcessing potential meeting station {i+1}/{len(potential_meeting_stations)}: {meeting_station_name}")
 
         current_meeting_total_time = 0
         possible_meeting = True
 
-        # Loop through each *person* entered by the user
+        # Loop through each person
         for person in people_data:
-            start_station_coords = person['start_station_coords']
+            start_station_lat = person['start_station_lat']
+            start_station_lon = person['start_station_lon']
             time_to_station = person['time_to_station']
 
             # Get travel time from the person's start station to the potential meeting station
-            tfl_travel_time = get_travel_time(start_station_coords, meeting_station_coords, args.api_key)
+            tfl_travel_time = get_travel_time(
+                (start_station_lat, start_station_lon), 
+                (meeting_station_lat, meeting_station_lon), 
+                args.api_key
+            )
 
             if tfl_travel_time is None:
                 print(f"  Cannot calculate TfL journey from {person['start_station_name']} to {meeting_station_name}. Skipping this meeting station.")
@@ -451,19 +571,19 @@ def main():
 
         if possible_meeting:
             print(f"-> Total combined travel time to {meeting_station_name}: {current_meeting_total_time} minutes")
-            results.append((current_meeting_total_time, meeting_station_name, meeting_station_coords))
+            results.append((current_meeting_total_time, meeting_station_name, (meeting_station_lat, meeting_station_lon)))
 
             if current_meeting_total_time < min_total_time:
                 min_total_time = current_meeting_total_time
-                best_meeting_station_info = meeting_station # Store the station info
+                best_meeting_station = meeting_station
 
     # --- Report Results ---
-    if best_meeting_station_info:
+    if best_meeting_station:
         print("\n" + "="*40)
         print("              RESULT")
         print("="*40)
-        print(f"The most convenient station found is: {best_meeting_station_info['name']}")
-        print(f"Coordinates: {best_meeting_station_info['coords']}")
+        print(f"The most convenient station found is: {best_meeting_station['name']}")
+        print(f"Coordinates: {best_meeting_station['lat']}, {best_meeting_station['lon']}")
         print(f"Minimum total combined travel time: {min_total_time} minutes")
         print(" (Includes walk time to start station + TfL journey time for each person)")
         print("="*40)
@@ -473,11 +593,12 @@ def main():
         print("Please check the starting stations entered or try again later.")
         print("="*40)
 
-    # Optional: Print all calculated results
-    # print("\nFull Results (Total Time, Station Name, Coords):")
-    # results.sort() # Sort by total time
-    # for time, name, coords in results:
-    #     print(f"- {time} mins: {name} ({coords})")
+    # Optional: Print top 5 results sorted by total time
+    results.sort() # Sort by total time
+    if len(results) > 0:
+        print("\nTop 5 Meeting Locations:")
+        for i, (time, name, coords) in enumerate(results[:5]):
+            print(f"{i+1}. {name} - {time} mins total travel time - Coords: {coords[0]:.4f}, {coords[1]:.4f}")
 
 
 if __name__ == "__main__":
