@@ -1,2 +1,6 @@
-requests
-python-dotenv 
+requests>=2.31.0
+python-dotenv>=1.0.0
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.23.0  # For better performance with fuzzywuzzy
+numpy>=1.24.0  # For convex hull calculations
+scipy>=1.11.0  # For convex hull calculations 

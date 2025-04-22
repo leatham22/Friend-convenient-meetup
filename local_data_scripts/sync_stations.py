@@ -91,6 +91,27 @@ class StationSync:
         # Final cleanup
         return ' '.join(name.split())
 
+    def process_station_name(self, name):
+        """
+        Process a station name to return both display name and normalized name
+        
+        Args:
+            name (str): The original station name
+            
+        Returns:
+            tuple: (display_name, normalized_name)
+        """
+        if not name:
+            return "", ""
+            
+        # Keep original name for display
+        display_name = name.strip()
+        
+        # Get normalized version for matching
+        normalized = self.normalize_station_name(name)
+        
+        return display_name, normalized
+
     def get_tfl_stations(self, local_station_count):
         """Fetch stations from TfL API using Line endpoint"""
         all_stations = {}  # Dictionary to prevent duplicates
@@ -112,13 +133,17 @@ class StationSync:
                     for station in stations:
                         station_name = station.get('commonName', '')
                         if station_name and 'lat' in station and 'lon' in station:
-                            # Store essential data
+                            # Get both display and normalized names
+                            display_name, normalized_name = self.process_station_name(station_name)
+                            
+                            # Store essential data with both names
                             station_data = {
-                                'name': station.get('commonName'),
+                                'name': display_name,
+                                'normalized_name': normalized_name,
                                 'lat': station.get('lat'),
-                                'lon': station.get('lon')
+                                'lon': station.get('lon'),
+                                'child_stations': []
                             }
-                            normalized_name = self.normalize_station_name(station_name)
                             all_stations[normalized_name] = station_data
                             
                             # Also store alternate names if they exist
@@ -126,8 +151,12 @@ class StationSync:
                                 if other_name.get('key') == 'AlternateName':
                                     alt_name = other_name.get('value', '')
                                     if alt_name:
-                                        normalized_alt_name = self.normalize_station_name(alt_name)
-                                        all_stations[normalized_alt_name] = station_data
+                                        _, alt_normalized = self.process_station_name(alt_name)
+                                        # Add as child station
+                                        station_data['child_stations'].append({
+                                            'name': alt_name.strip(),
+                                            'normalized_name': alt_normalized
+                                        })
                     api_success = True
                             
                 except Exception as e:
