@@ -231,3 +231,46 @@ project/
 ## License
 
 [Your chosen license]
+
+# London Station Meeting Point Finder
+
+This program helps find the optimal meeting point in London using public transport stations (Underground, Overground, DLR, and Rail).
+
+## Algorithm Overview
+
+The program uses a two-stage filtering process to efficiently find suitable meeting stations:
+
+### Stage 1: Initial Filtering
+
+For 2 people:
+- Uses an elliptical boundary with the two starting stations as foci
+- Major axis = 1.2 * direct distance between stations
+- Important geometric note: If we had used major axis = direct distance, the ellipse would collapse to a line because:
+  - In an ellipse, when major axis (2a) equals the distance between foci (2c)
+  - Then semi-major axis (a) equals focal distance (c)
+  - Using the ellipse formula b² = a² - c², we get b = 0
+  - This would reject any station not exactly on the line between start points
+- Using 1.2 * distance creates a reasonable search area that works well with stage 2
+
+For 3+ people:
+- Uses a convex hull containing all starting points
+- Adds a small buffer (0.5%) to account for stations just outside the hull
+
+### Stage 2: Centroid Filtering
+
+- Calculates the centroid of all starting points
+- Creates a circle that covers 70% of the starting points
+- Only keeps stations from stage 1 that fall within this circle
+- This helps eliminate outlier stations while maintaining a good selection of central meeting points
+
+## Implementation Details
+
+- Uses Haversine formula for accurate distance calculations on Earth's surface
+- Includes 0.5% tolerance for geographic calculations to account for:
+  - Earth's curvature effects
+  - Numerical precision in floating-point calculations
+  - Small deviations in station coordinate data
+
+## Usage
+
+[Add usage instructions here]
