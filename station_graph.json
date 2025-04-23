@@ -1,0 +1,1186 @@
+{
+  "harrow and wealdstone": {
+    "kenton": 2.23
+  },
+  "kenton": {
+    "south kenton": 1.88,
+    "harrow and wealdstone": 2.38
+  },
+  "south kenton": {
+    "north wembley": 1.5,
+    "kenton": 2.0
+  },
+  "north wembley": {
+    "wembley central": 1.92,
+    "south kenton": 1.58
+  },
+  "wembley central": {
+    "stonebridge park": 2.23,
+    "north wembley": 1.95
+  },
+  "stonebridge park": {
+    "harlesden": 2.13,
+    "wembley central": 2.42
+  },
+  "harlesden": {
+    "willesden junction": 1.65,
+    "stonebridge park": 2.02
+  },
+  "willesden junction": {
+    "kensal green": 2.47,
+    "harlesden": 1.63
+  },
+  "kensal green": {
+    "queens park": 2.65,
+    "willesden junction": 2.53
+  },
+  "queens park": {
+    "kilburn park": 1.42,
+    "kensal green": 2.83
+  },
+  "kilburn park": {
+    "maida vale": 1.48,
+    "queens park": 2.1
+  },
+  "maida vale": {
+    "warwick avenue": 1.5,
+    "kilburn park": 1.48
+  },
+  "warwick avenue": {
+    "paddington": 1.58,
+    "maida vale": 1.5
+  },
+  "paddington": {
+    "edgware road": 1.57,
+    "warwick avenue": 1.63,
+    "royal oak": 1.33,
+    "bayswater": 1.65
+  },
+  "edgware road": {
+    "marylebone": 1.12,
+    "paddington": 1.62,
+    "baker street": 1.47
+  },
+  "marylebone": {
+    "baker street": 1.17,
+    "edgware road": 1.08
+  },
+  "baker street": {
+    "regents park": 1.68,
+    "marylebone": 1.08,
+    "bond street": 2.1,
+    "st johns wood": 2.85,
+    "finchley road": 5.55,
+    "great portland street": 1.9,
+    "edgware road": 1.88
+  },
+  "regents park": {
+    "oxford circus": 1.85,
+    "baker street": 1.65
+  },
+  "oxford circus": {
+    "piccadilly circus": 1.95,
+    "regents park": 1.72,
+    "tottenham court road": 0.98,
+    "bond street": 1.03,
+    "green park": 1.78,
+    "warren street": 1.53
+  },
+  "piccadilly circus": {
+    "charing cross": 1.35,
+    "oxford circus": 2.02,
+    "leicester square": 1.17,
+    "green park": 1.18
+  },
+  "charing cross": {
+    "embankment": 0.8,
+    "piccadilly circus": 1.6,
+    "leicester square": 1.17
+  },
+  "embankment": {
+    "waterloo": 1.37,
+    "charing cross": 0.87,
+    "temple": 1.37,
+    "westminster": 1.4
+  },
+  "waterloo": {
+    "lambeth north": 1.45,
+    "embankment": 1.22,
+    "bank": 4.87,
+    "southwark": 1.02,
+    "westminster": 1.43,
+    "kennington": 2.97
+  },
+  "lambeth north": {
+    "elephant and castle": 2.57,
+    "waterloo": 1.45
+  },
+  "elephant and castle": {
+    "lambeth north": 2.13,
+    "kennington": 2.03,
+    "borough": 1.75
+  },
+  "west ruislip": {
+    "ruislip gardens": 2.28
+  },
+  "ruislip gardens": {
+    "south ruislip": 1.3,
+    "west ruislip": 2.68
+  },
+  "south ruislip": {
+    "northolt": 2.23,
+    "ruislip gardens": 1.37
+  },
+  "northolt": {
+    "greenford": 1.93,
+    "south ruislip": 2.25
+  },
+  "greenford": {
+    "perivale": 1.85,
+    "northolt": 2.15
+  },
+  "perivale": {
+    "hanger lane": 2.1,
+    "greenford": 2.0
+  },
+  "hanger lane": {
+    "north acton": 2.85,
+    "perivale": 2.07
+  },
+  "ealing broadway": {
+    "west acton": 2.28,
+    "ealing common": 2.67
+  },
+  "west acton": {
+    "north acton": 2.3,
+    "ealing broadway": 3.07
+  },
+  "north acton": {
+    "east acton": 1.5,
+    "west acton": 2.52,
+    "hanger lane": 2.87
+  },
+  "east acton": {
+    "white city": 2.57,
+    "north acton": 1.57
+  },
+  "white city": {
+    "shepherds bush": 2.68,
+    "east acton": 2.67
+  },
+  "shepherds bush": {
+    "holland park": 1.37,
+    "white city": 2.77,
+    "wood lane": 1.5,
+    "goldhawk road": 1.15
+  },
+  "holland park": {
+    "notting hill gate": 1.08,
+    "shepherds bush": 1.52
+  },
+  "notting hill gate": {
+    "queensway": 1.17,
+    "holland park": 1.18,
+    "high street kensington": 1.58,
+    "bayswater": 1.77
+  },
+  "queensway": {
+    "lancaster gate": 1.35,
+    "notting hill gate": 1.18
+  },
+  "lancaster gate": {
+    "marble arch": 1.92,
+    "queensway": 1.65
+  },
+  "marble arch": {
+    "bond street": 1.0,
+    "lancaster gate": 1.62
+  },
+  "bond street": {
+    "oxford circus": 1.1,
+    "marble arch": 1.02,
+    "green park": 1.78,
+    "baker street": 2.28
+  },
+  "tottenham court road": {
+    "holborn": 1.63,
+    "oxford circus": 1.02,
+    "leicester square": 0.98,
+    "goodge street": 1.28
+  },
+  "holborn": {
+    "chancery lane": 0.87,
+    "tottenham court road": 1.38,
+    "russell square": 1.55,
+    "covent garden": 1.53
+  },
+  "chancery lane": {
+    "st pauls": 1.52,
+    "holborn": 0.85
+  },
+  "st pauls": {
+    "bank": 1.62,
+    "chancery lane": 1.52
+  },
+  "bank": {
+    "liverpool street": 1.62,
+    "st pauls": 1.63,
+    "waterloo": 4.2,
+    "london bridge": 1.55,
+    "moorgate": 1.77
+  },
+  "liverpool street": {
+    "bethnal green": 2.6,
+    "bank": 1.65,
+    "moorgate": 1.32,
+    "aldgate": 2.18,
+    "aldgate east": 1.93
+  },
+  "bethnal green": {
+    "mile end": 1.98,
+    "liverpool street": 2.77
+  },
+  "mile end": {
+    "stratford": 3.18,
+    "bethnal green": 1.97,
+    "bow road": 1.27,
+    "stepney green": 1.72
+  },
+  "stratford": {
+    "leyton": 2.4,
+    "mile end": 3.03,
+    "west ham": 2.42
+  },
+  "leyton": {
+    "leytonstone": 2.02,
+    "stratford": 2.43
+  },
+  "leytonstone": {
+    "wanstead": 2.15,
+    "snaresbrook": 1.8,
+    "leyton": 2.02
+  },
+  "wanstead": {
+    "redbridge": 1.62,
+    "leytonstone": 2.17
+  },
+  "redbridge": {
+    "gants hill": 1.65,
+    "wanstead": 1.58
+  },
+  "gants hill": {
+    "newbury park": 2.68,
+    "redbridge": 1.7
+  },
+  "newbury park": {
+    "barkingside": 1.55,
+    "gants hill": 2.73
+  },
+  "barkingside": {
+    "fairlop": 1.57,
+    "newbury park": 1.58
+  },
+  "fairlop": {
+    "hainault": 2.93,
+    "barkingside": 1.57
+  },
+  "snaresbrook": {
+    "south woodford": 1.62,
+    "leytonstone": 2.05
+  },
+  "south woodford": {
+    "woodford": 1.9,
+    "snaresbrook": 1.6
+  },
+  "roding valley": {
+    "woodford": 2.03,
+    "chigwell": 2.13
+  },
+  "chigwell": {
+    "roding valley": 2.45,
+    "grange hill": 1.73
+  },
+  "grange hill": {
+    "chigwell": 1.63,
+    "hainault": 1.7
+  },
+  "hainault": {
+    "grange hill": 1.73,
+    "fairlop": 1.82
+  },
+  "woodford": {
+    "buckhurst hill": 2.28,
+    "roding valley": 2.18,
+    "south woodford": 1.95
+  },
+  "buckhurst hill": {
+    "loughton": 2.35,
+    "woodford": 2.32
+  },
+  "loughton": {
+    "debden": 2.13,
+    "buckhurst hill": 2.07
+  },
+  "debden": {
+    "theydon bois": 3.0,
+    "loughton": 2.67
+  },
+  "theydon bois": {
+    "epping": 2.6,
+    "debden": 2.88
+  },
+  "epping": {
+    "theydon bois": 2.37
+  },
+  "walthamstow": {
+    "blackhorse road": 2.12
+  },
+  "blackhorse road": {
+    "tottenham hale": 1.9,
+    "walthamstow": 2.12
+  },
+  "tottenham hale": {
+    "seven sisters": 2.0,
+    "blackhorse road": 1.97
+  },
+  "seven sisters": {
+    "finsbury park": 3.77,
+    "tottenham hale": 1.6
+  },
+  "kings cross": {
+    "euston": 1.32,
+    "angel": 2.18,
+    "caledonian road": 2.88,
+    "russell square": 1.67,
+    "farringdon": 2.98,
+    "highbury and islington": 2.87,
+    "euston square": 1.65
+  },
+  "euston": {
+    "warren street": 1.18,
+    "kings cross": 1.35,
+    "camden town": 3.88,
+    "mornington crescent": 1.53,
+    "great portland street": 1.3
+  },
+  "warren street": {
+    "oxford circus": 1.72,
+    "euston": 1.18,
+    "goodge street": 1.07
+  },
+  "green park": {
+    "victoria": 1.88,
+    "oxford circus": 1.97,
+    "westminster": 1.87,
+    "bond street": 1.82,
+    "piccadilly circus": 1.1,
+    "hyde park corner": 1.73
+  },
+  "victoria": {
+    "pimlico": 1.83,
+    "green park": 1.95,
+    "st jamess park": 1.42,
+    "sloane square": 1.75,
+    "st james park": 1.42
+  },
+  "pimlico": {
+    "vauxhall": 1.4,
+    "victoria": 2.18
+  },
+  "vauxhall": {
+    "stockwell": 2.3,
+    "pimlico": 1.37
+  },
+  "stockwell": {
+    "brixton": 2.03,
+    "vauxhall": 2.23,
+    "clapham north": 1.55,
+    "oval": 2.03
+  },
+  "brixton": {
+    "stockwell": 2.18
+  },
+  "finsbury park": {
+    "seven sisters": 4.25,
+    "manor house": 1.55,
+    "arsenal": 1.35,
+    "highbury and islington": 2.9
+  },
+  "stanmore": {
+    "canons park": 1.95
+  },
+  "canons park": {
+    "queensbury": 1.93,
+    "stanmore": 2.87
+  },
+  "queensbury": {
+    "kingsbury": 1.72,
+    "canons park": 2.23
+  },
+  "kingsbury": {
+    "wembley park": 3.47,
+    "queensbury": 1.85
+  },
+  "wembley park": {
+    "neasden": 2.6,
+    "kingsbury": 3.47,
+    "preston road": 2.12,
+    "finchley road": 7.0
+  },
+  "neasden": {
+    "dollis hill": 1.43,
+    "wembley park": 2.65
+  },
+  "dollis hill": {
+    "willesden green": 1.8,
+    "neasden": 1.38
+  },
+  "willesden green": {
+    "kilburn": 1.68,
+    "dollis hill": 1.67
+  },
+  "kilburn": {
+    "west hampstead": 1.63,
+    "willesden green": 2.07
+  },
+  "west hampstead": {
+    "finchley road": 1.25,
+    "kilburn": 1.55
+  },
+  "finchley road": {
+    "swiss cottage": 1.18,
+    "west hampstead": 1.2,
+    "wembley park": 7.05,
+    "harrow on the hill": 11.02,
+    "baker street": 6.13
+  },
+  "swiss cottage": {
+    "st johns wood": 1.52,
+    "finchley road": 1.18
+  },
+  "st johns wood": {
+    "baker street": 2.77,
+    "swiss cottage": 1.52
+  },
+  "westminster": {
+    "waterloo": 1.38,
+    "green park": 1.82,
+    "embankment": 1.37,
+    "st jamess park": 1.52,
+    "st james park": 1.52
+  },
+  "southwark": {
+    "london bridge": 1.65,
+    "waterloo": 0.97
+  },
+  "london bridge": {
+    "bermondsey": 2.25,
+    "southwark": 1.77,
+    "borough": 1.45,
+    "bank": 1.53
+  },
+  "bermondsey": {
+    "canada water": 1.48,
+    "london bridge": 2.17
+  },
+  "canada water": {
+    "canary wharf": 2.5,
+    "bermondsey": 1.52,
+    "rotherhithe": 0.85,
+    "surrey quays": 1.7
+  },
+  "canary wharf": {
+    "north greenwich": 2.23,
+    "canada water": 2.63
+  },
+  "north greenwich": {
+    "canning town": 2.15,
+    "canary wharf": 1.98
+  },
+  "canning town": {
+    "west ham": 2.15,
+    "north greenwich": 2.17
+  },
+  "west ham": {
+    "stratford": 3.15,
+    "canning town": 2.13,
+    "plaistow": 1.43,
+    "bromley by bow": 2.12
+  },
+  "edgware": {
+    "burnt oak": 2.43
+  },
+  "burnt oak": {
+    "colindale": 1.98,
+    "edgware": 3.37
+  },
+  "colindale": {
+    "hendon central": 2.83,
+    "burnt oak": 2.07
+  },
+  "hendon central": {
+    "brent cross": 1.73,
+    "colindale": 2.67
+  },
+  "brent cross": {
+    "golders green": 2.57,
+    "hendon central": 1.83
+  },
+  "golders green": {
+    "hampstead": 3.42,
+    "brent cross": 2.22
+  },
+  "hampstead": {
+    "belsize park": 1.82,
+    "golders green": 3.95
+  },
+  "belsize park": {
+    "chalk farm": 1.77,
+    "hampstead": 2.02
+  },
+  "chalk farm": {
+    "camden town": 1.53,
+    "belsize park": 1.9
+  },
+  "high barnet": {
+    "totteridge and whetstone": 3.67
+  },
+  "totteridge and whetstone": {
+    "woodside park": 2.23,
+    "high barnet": 4.62
+  },
+  "woodside park": {
+    "west finchley": 1.7,
+    "totteridge and whetstone": 2.23
+  },
+  "west finchley": {
+    "finchley central": 2.08,
+    "woodside park": 1.55
+  },
+  "mill hill east": {
+    "finchley central": 2.75
+  },
+  "finchley central": {
+    "east finchley": 3.37,
+    "mill hill east": 2.98,
+    "west finchley": 2.1
+  },
+  "east finchley": {
+    "highgate": 3.0,
+    "finchley central": 3.1
+  },
+  "highgate": {
+    "archway": 2.8,
+    "east finchley": 2.62
+  },
+  "archway": {
+    "tufnell park": 1.6,
+    "highgate": 2.75
+  },
+  "tufnell park": {
+    "kentish town": 1.42,
+    "archway": 1.68
+  },
+  "kentish town": {
+    "camden town": 1.93,
+    "tufnell park": 1.58
+  },
+  "camden town": {
+    "mornington crescent": 1.63,
+    "euston": 2.95,
+    "kentish town": 1.95,
+    "chalk farm": 1.55
+  },
+  "mornington crescent": {
+    "euston": 1.52,
+    "camden town": 1.8
+  },
+  "goodge street": {
+    "tottenham court road": 1.32,
+    "warren street": 1.07
+  },
+  "leicester square": {
+    "charing cross": 1.2,
+    "tottenham court road": 1.03,
+    "covent garden": 0.77,
+    "piccadilly circus": 1.07
+  },
+  "angel": {
+    "old street": 2.87,
+    "kings cross": 2.15
+  },
+  "old street": {
+    "moorgate": 1.37,
+    "angel": 2.43
+  },
+  "moorgate": {
+    "bank": 1.9,
+    "old street": 1.45,
+    "barbican": 1.38,
+    "liverpool street": 1.18
+  },
+  "borough": {
+    "elephant and castle": 1.72,
+    "london bridge": 1.4
+  },
+  "kennington": {
+    "oval": 1.58,
+    "elephant and castle": 1.8,
+    "waterloo": 2.77
+  },
+  "oval": {
+    "stockwell": 2.2,
+    "kennington": 1.7
+  },
+  "clapham north": {
+    "clapham common": 1.4,
+    "stockwell": 1.72
+  },
+  "clapham common": {
+    "clapham south": 2.0,
+    "clapham north": 1.32
+  },
+  "clapham south": {
+    "balham": 1.88,
+    "clapham common": 2.2
+  },
+  "balham": {
+    "tooting bec": 1.67,
+    "clapham south": 1.8
+  },
+  "tooting bec": {
+    "tooting broadway": 1.77,
+    "balham": 1.65
+  },
+  "tooting broadway": {
+    "colliers wood": 1.98,
+    "tooting bec": 1.88
+  },
+  "colliers wood": {
+    "south wimbledon": 1.88,
+    "tooting broadway": 1.97
+  },
+  "south wimbledon": {
+    "morden": 2.95,
+    "colliers wood": 1.85
+  },
+  "morden": {
+    "south wimbledon": 2.35
+  },
+  "uxbridge": {
+    "hillingdon": 3.0
+  },
+  "hillingdon": {
+    "ickenham": 1.6,
+    "uxbridge": 3.7
+  },
+  "ickenham": {
+    "ruislip": 2.3,
+    "hillingdon": 1.58
+  },
+  "ruislip": {
+    "ruislip manor": 1.3,
+    "ickenham": 2.23
+  },
+  "ruislip manor": {
+    "eastcote": 1.67,
+    "ruislip": 1.27
+  },
+  "eastcote": {
+    "rayners lane": 2.23,
+    "ruislip manor": 1.73
+  },
+  "rayners lane": {
+    "south harrow": 2.58,
+    "eastcote": 2.2,
+    "west harrow": 2.08
+  },
+  "south harrow": {
+    "sudbury hill": 1.85,
+    "rayners lane": 2.4
+  },
+  "sudbury hill": {
+    "sudbury town": 2.03,
+    "south harrow": 2.05
+  },
+  "sudbury town": {
+    "alperton": 1.95,
+    "sudbury hill": 2.25
+  },
+  "alperton": {
+    "park royal": 2.2,
+    "sudbury town": 2.03
+  },
+  "park royal": {
+    "north ealing": 1.52,
+    "alperton": 2.37
+  },
+  "north ealing": {
+    "ealing common": 1.65,
+    "park royal": 1.67
+  },
+  "ealing common": {
+    "acton town": 1.83,
+    "north ealing": 1.88,
+    "ealing broadway": 3.5
+  },
+  "heathrow": {
+    "hatton cross": 3.0
+  },
+  "hatton cross": {
+    "hounslow west": 3.25,
+    "heathrow": 2.1
+  },
+  "hounslow west": {
+    "hounslow central": 1.98,
+    "hatton cross": 3.3
+  },
+  "hounslow central": {
+    "hounslow east": 1.3,
+    "hounslow west": 1.85
+  },
+  "hounslow east": {
+    "osterley": 1.53,
+    "hounslow central": 1.27
+  },
+  "osterley": {
+    "boston manor": 2.85,
+    "hounslow east": 1.52
+  },
+  "boston manor": {
+    "northfields": 1.98,
+    "osterley": 2.85
+  },
+  "northfields": {
+    "south ealing": 0.98,
+    "boston manor": 1.55
+  },
+  "south ealing": {
+    "acton town": 2.93,
+    "northfields": 0.95
+  },
+  "acton town": {
+    "hammersmith": 5.65,
+    "south ealing": 2.8,
+    "ealing common": 1.5,
+    "chiswick park": 1.8
+  },
+  "hammersmith": {
+    "barons court": 1.38,
+    "acton town": 4.7,
+    "goldhawk road": 2.05,
+    "ravenscourt park": 1.63
+  },
+  "barons court": {
+    "earls court": 2.55,
+    "hammersmith": 1.32,
+    "west kensington": 1.28
+  },
+  "earls court": {
+    "gloucester road": 1.37,
+    "barons court": 2.68,
+    "kensington": 3.08,
+    "west brompton": 1.42,
+    "west kensington": 1.62,
+    "high street kensington": 3.05
+  },
+  "gloucester road": {
+    "south kensington": 1.28,
+    "earls court": 1.37,
+    "high street kensington": 2.23
+  },
+  "south kensington": {
+    "knightsbridge": 2.48,
+    "gloucester road": 1.37,
+    "sloane square": 1.98
+  },
+  "knightsbridge": {
+    "hyde park corner": 1.1,
+    "south kensington": 2.23
+  },
+  "hyde park corner": {
+    "green park": 1.73,
+    "knightsbridge": 1.12
+  },
+  "covent garden": {
+    "holborn": 1.4,
+    "leicester square": 0.77
+  },
+  "russell square": {
+    "kings cross": 1.9,
+    "holborn": 1.37
+  },
+  "caledonian road": {
+    "holloway road": 1.18,
+    "kings cross": 2.78
+  },
+  "holloway road": {
+    "arsenal": 1.28,
+    "caledonian road": 1.2
+  },
+  "arsenal": {
+    "finsbury park": 1.38,
+    "holloway road": 1.3
+  },
+  "manor house": {
+    "turnpike lane": 2.88,
+    "finsbury park": 1.67
+  },
+  "turnpike lane": {
+    "wood green": 1.57,
+    "manor house": 2.87
+  },
+  "wood green": {
+    "bounds green": 2.23,
+    "turnpike lane": 1.52
+  },
+  "bounds green": {
+    "arnos grove": 2.58,
+    "wood green": 2.2
+  },
+  "arnos grove": {
+    "southgate": 2.8,
+    "bounds green": 2.25
+  },
+  "southgate": {
+    "oakwood": 2.48,
+    "arnos grove": 3.28
+  },
+  "oakwood": {
+    "cockfosters": 2.83,
+    "southgate": 2.37
+  },
+  "cockfosters": {
+    "oakwood": 2.27
+  },
+  "aldgate": {
+    "liverpool street": 1.75,
+    "tower hill": 1.37
+  },
+  "barbican": {
+    "farringdon": 1.2,
+    "moorgate": 1.32
+  },
+  "farringdon": {
+    "kings cross": 3.12,
+    "barbican": 1.22
+  },
+  "great portland street": {
+    "baker street": 1.57,
+    "euston": 1.25,
+    "euston square": 1.25
+  },
+  "preston road": {
+    "northwick park": 2.3,
+    "wembley park": 1.98
+  },
+  "northwick park": {
+    "harrow on the hill": 2.32,
+    "preston road": 2.05
+  },
+  "harrow on the hill": {
+    "west harrow": 2.32,
+    "north harrow": 3.18,
+    "moor park": 9.03,
+    "finchley road": 10.15,
+    "northwick park": 1.9
+  },
+  "west harrow": {
+    "rayners lane": 2.05,
+    "harrow on the hill": 2.15
+  },
+  "north harrow": {
+    "pinner": 2.0,
+    "harrow on the hill": 3.08
+  },
+  "pinner": {
+    "northwood hills": 2.6,
+    "north harrow": 2.08
+  },
+  "northwood hills": {
+    "northwood": 2.23,
+    "pinner": 2.48
+  },
+  "northwood": {
+    "moor park": 2.55,
+    "northwood hills": 2.2
+  },
+  "moor park": {
+    "croxley": 4.33,
+    "rickmansworth": 4.13,
+    "northwood": 2.87,
+    "harrow on the hill": 9.62
+  },
+  "croxley": {
+    "watford": 3.6,
+    "moor park": 4.42
+  },
+  "rickmansworth": {
+    "chorleywood": 4.03,
+    "moor park": 3.78
+  },
+  "chorleywood": {
+    "chalfont and latimer": 3.95,
+    "rickmansworth": 4.07
+  },
+  "chalfont and latimer": {
+    "chesham": 9.48,
+    "amersham": 4.07,
+    "chorleywood": 3.68
+  },
+  "amersham": {
+    "chalfont and latimer": 3.65
+  },
+  "chesham": {
+    "chalfont and latimer": 9.63
+  },
+  "watford": {
+    "croxley": 3.22
+  },
+  "goldhawk road": {
+    "shepherds bush": 1.15,
+    "hammersmith": 2.43,
+    "shepherds bush market": 1.15
+  },
+  "wood lane": {
+    "latimer road": 1.5,
+    "shepherds bush": 1.5,
+    "shepherds bush market": 1.5
+  },
+  "latimer road": {
+    "ladbroke grove": 1.37,
+    "wood lane": 1.5
+  },
+  "ladbroke grove": {
+    "westbourne park": 1.48,
+    "latimer road": 1.28
+  },
+  "westbourne park": {
+    "royal oak": 1.78,
+    "ladbroke grove": 1.48
+  },
+  "royal oak": {
+    "paddington": 1.52,
+    "westbourne park": 1.72
+  },
+  "aldgate east": {
+    "whitechapel": 2.17,
+    "liverpool street": 2.12,
+    "tower hill": 1.87
+  },
+  "whitechapel": {
+    "stepney green": 2.05,
+    "aldgate east": 2.18,
+    "shadwell": 1.82,
+    "shoreditch": 1.85
+  },
+  "stepney green": {
+    "mile end": 1.73,
+    "whitechapel": 2.63
+  },
+  "bow road": {
+    "bromley by bow": 2.12,
+    "mile end": 1.27
+  },
+  "bromley by bow": {
+    "west ham": 2.0,
+    "bow road": 2.23
+  },
+  "plaistow": {
+    "upton park": 1.97,
+    "west ham": 1.5
+  },
+  "upton park": {
+    "east ham": 2.02,
+    "plaistow": 1.93
+  },
+  "east ham": {
+    "barking": 3.78,
+    "upton park": 2.0
+  },
+  "barking": {
+    "east ham": 2.87,
+    "upney": 1.97
+  },
+  "bayswater": {
+    "notting hill gate": 1.47,
+    "paddington": 1.63
+  },
+  "high street kensington": {
+    "gloucester road": 1.8,
+    "notting hill gate": 1.68,
+    "earls court": 2.72
+  },
+  "sloane square": {
+    "victoria": 1.8,
+    "south kensington": 2.0
+  },
+  "st jamess park": {
+    "westminster": 1.5,
+    "victoria": 1.33
+  },
+  "temple": {
+    "blackfriars": 1.4,
+    "embankment": 1.43
+  },
+  "blackfriars": {
+    "mansion house": 1.52,
+    "temple": 1.37
+  },
+  "mansion house": {
+    "cannon street": 0.98,
+    "blackfriars": 1.22
+  },
+  "cannon street": {
+    "monument": 0.97,
+    "mansion house": 0.93
+  },
+  "monument": {
+    "tower hill": 1.8,
+    "cannon street": 0.88
+  },
+  "tower hill": {
+    "aldgate": 1.3,
+    "monument": 1.48,
+    "aldgate east": 1.88
+  },
+  "upminster": {
+    "upminster bridge": 2.08
+  },
+  "upminster bridge": {
+    "hornchurch": 1.78,
+    "upminster": 2.32
+  },
+  "hornchurch": {
+    "elm park": 1.98,
+    "upminster bridge": 1.77
+  },
+  "elm park": {
+    "dagenham east": 2.77,
+    "hornchurch": 2.05
+  },
+  "dagenham east": {
+    "dagenham heathway": 1.83,
+    "elm park": 2.85
+  },
+  "dagenham heathway": {
+    "becontree": 1.88,
+    "dagenham east": 1.85
+  },
+  "becontree": {
+    "upney": 2.33,
+    "dagenham heathway": 1.88
+  },
+  "upney": {
+    "barking": 1.92,
+    "becontree": 2.33
+  },
+  "west brompton": {
+    "fulham broadway": 1.55,
+    "earls court": 1.42
+  },
+  "fulham broadway": {
+    "parsons green": 1.5,
+    "west brompton": 1.57
+  },
+  "parsons green": {
+    "putney bridge": 2.32,
+    "fulham broadway": 1.48
+  },
+  "putney bridge": {
+    "east putney": 2.18,
+    "parsons green": 1.92
+  },
+  "east putney": {
+    "southfields": 2.35,
+    "putney bridge": 1.85
+  },
+  "southfields": {
+    "wimbledon park": 2.05,
+    "east putney": 2.37
+  },
+  "wimbledon park": {
+    "wimbledon": 3.5,
+    "southfields": 2.18
+  },
+  "west kensington": {
+    "barons court": 1.32,
+    "earls court": 2.17
+  },
+  "ravenscourt park": {
+    "stamford brook": 1.37,
+    "hammersmith": 1.85
+  },
+  "stamford brook": {
+    "turnham green": 1.17,
+    "ravenscourt park": 1.4
+  },
+  "turnham green": {
+    "chiswick park": 1.58,
+    "gunnersbury": 2.28,
+    "stamford brook": 1.15
+  },
+  "chiswick park": {
+    "acton town": 1.83,
+    "turnham green": 1.48
+  },
+  "gunnersbury": {
+    "kew gardens": 2.43,
+    "turnham green": 2.6
+  },
+  "kew gardens": {
+    "richmond": 4.1,
+    "gunnersbury": 2.42
+  },
+  "richmond": {
+    "kew gardens": 3.1
+  },
+  "wimbledon": {
+    "wimbledon park": 2.82
+  },
+  "kensington": {
+    "earls court": 2.73
+  },
+  "new cross gate": {
+    "surrey quays": 2.8
+  },
+  "surrey quays": {
+    "canada water": 1.47,
+    "new cross gate": 3.88,
+    "new cross": 4.27
+  },
+  "rotherhithe": {
+    "wapping": 1.17,
+    "canada water": 0.93
+  },
+  "wapping": {
+    "shadwell": 1.43,
+    "rotherhithe": 1.17
+  },
+  "shadwell": {
+    "whitechapel": 1.98,
+    "wapping": 1.3
+  },
+  "highbury and islington": {
+    "kings cross": 2.77,
+    "finsbury park": 2.4
+  },
+  "euston square": {
+    "great portland street": 1.3,
+    "kings cross": 1.75
+  },
+  "shoreditch": {
+    "whitechapel": 1.6
+  },
+  "new cross": {
+    "surrey quays": 3.62
+  },
+  "shepherds bush market": {
+    "wood lane": 1.5,
+    "goldhawk road": 1.15
+  },
+  "st james park": {
+    "westminster": 1.5,
+    "victoria": 1.33
+  }
+}

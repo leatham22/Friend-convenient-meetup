@@ -45,6 +45,30 @@ This project solves the common problem of finding a convenient place to meet in 
    - Smart station matching
    - Change verification system
 
+### Station Graph System (`Station_graph/`)
+1. **Graph Generation**
+   - Creates a directed graph of London transport stations
+   - Calculates travel times between connected stations
+   - Handles station name normalization and special cases
+   - Automatically maps child platforms to parent stations
+
+2. **Data Sources**
+   - Uses `raw_stations/unique_stations2.json` for station information
+   - Uses `Inter_station_times.csv` for travel times
+   - Outputs `station_graph.json` with the complete graph
+
+3. **Key Features**
+   - Directional travel times between stations
+   - Automatic free transfers at the same station
+   - Handles special station cases (e.g., Heathrow terminals)
+   - Includes verification and validation tools
+
+4. **Utilities**
+   - Station verification scripts
+   - Missing station detection
+   - Graph validation tools
+   - Station name search functionality
+
 ## Directory Structure
 
 ```
@@ -55,6 +79,11 @@ project/
 ├── slim_stations/             # Minimal station data for processing
 │   ├── unique_stations.json   # All stations
 │   └── unique_stations_*.json # Mode-specific stations
+├── Station_graph/             # Station graph generation system
+│   ├── create_station_graph.py  # Main graph generation script
+│   ├── verify_graph.py         # Graph verification tools
+│   ├── add_missing_stations.py # Station completion tool
+│   └── README.md              # Component documentation
 ├── scripts/
 │   ├── collect_initial_stations.py  # Fetch raw station data
 │   ├── slim_stations.py            # Create minimal station data
