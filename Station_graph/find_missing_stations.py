@@ -77,7 +77,7 @@ def analyze_missing_stations():
     
     # Load the generated graph
     try:
-        with open('station_graph.json', 'r') as f:
+        with open('station_graph.normalized.json', 'r') as f:
             graph = json.load(f)
     except FileNotFoundError:
         print("Error: Could not find station_graph.json. Please run create_station_graph.py first.")

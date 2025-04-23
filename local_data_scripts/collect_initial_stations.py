@@ -86,6 +86,51 @@ def get_station_key(station):
     
     return (None, None)
 
+def handle_special_station_cases(stations):
+    """
+    Handle special cases for stations that need custom processing.
+    
+    Currently handles:
+    1. Edgware Road stations - combines the two separate stations (Circle Line and Bakerloo)
+       into a single parent station with child relationship
+    
+    Args:
+        stations (list): List of station dictionaries
+        
+    Returns:
+        list: Updated list of stations with special cases handled
+    """
+    # Find special case stations that need to be combined
+    edgware_circle = None
+    edgware_bakerloo = None
+    
+    for station in stations:
+        if station['name'] == 'Edgware Road (Circle Line) Underground Station':
+            edgware_circle = station
+        elif station['name'] == 'Edgware Road (Bakerloo) Underground Station':
+            edgware_bakerloo = station
+    
+    # Handle Edgware Road special case if both stations are found
+    if edgware_circle and edgware_bakerloo:
+        print("Handling special case: Combining Edgware Road stations")
+        
+        # Add Bakerloo line to the Circle station's lines
+        for line in edgware_bakerloo['lines']:
+            if line not in edgware_circle['lines']:
+                edgware_circle['lines'].append(line)
+        
+        # Add Bakerloo station name to child_stations if not already there
+        if edgware_bakerloo['name'] not in edgware_circle['child_stations']:
+            edgware_circle['child_stations'].append(edgware_bakerloo['name'])
+        
+        # Remove the Bakerloo station from the list
+        stations = [s for s in stations if s['name'] != 'Edgware Road (Bakerloo) Underground Station']
+        
+        print(f"  Edgware Road (Circle Line) now has {len(edgware_circle['child_stations'])} child station(s)")
+        print(f"  Edgware Road (Circle Line) now has lines: {edgware_circle['lines']}")
+    
+    return stations
+
 def collect_stations():
     """
     Collect station data using the Line endpoint method.
@@ -166,6 +211,9 @@ def collect_stations():
                 }
                 mode_stations.append(station_data)
         
+        # Handle special station cases for mode-specific stations
+        mode_stations = handle_special_station_cases(mode_stations)
+        
         # Save mode-specific file
         save_mode_stations(mode_stations, mode)
     
@@ -183,6 +231,9 @@ def collect_stations():
             'child_stations': list(name for name in data['names'] if name != main_entry['name'])
         }
         consolidated_stations.append(station_data)
+    
+    # Handle special station cases for consolidated stations
+    consolidated_stations = handle_special_station_cases(consolidated_stations)
     
     # Save consolidated file
     save_all_stations(consolidated_stations)

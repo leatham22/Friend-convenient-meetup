@@ -413,7 +413,7 @@ def create_station_graph(stations_json_path: str, travel_times_csv_path: str, ou
 
 if __name__ == "__main__":
     # Define the paths to input and output files
-    stations_json_path = "raw_stations/unique_stations2.json"  # Path to station data
+    stations_json_path = "slim_stations/unique_stations.json"  # Path to station data
     travel_times_csv_path = "Inter_station_times.csv"         # Path to travel times data
     output_path = "station_graph.json"                        # Where to save the resulting graph
     

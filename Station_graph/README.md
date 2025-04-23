@@ -6,32 +6,107 @@ This component of the London Transport Meeting Point Finder generates and analyz
 
 The project uses two primary data sources:
 
-1. `raw_stations/unique_stations2.json`: Contains information about parent stations and their child platforms
+1. `slim_stations/unique_stations.json`: Contains information about parent stations and their child platforms
 2. `Inter_station_times.csv`: Contains travel times between stations on different lines
+
+## Purpose of Station Name Standardization
+
+A critical aspect of this system is ensuring that station names are **exactly identical** between:
+1. The metadata files (`slim_stations/unique_stations.json`) 
+2. The graph files (`station_graph.json`)
+
+The standardization process ensures that:
+1. The station graph uses the same exact station names as found in the metadata file
+2. No runtime normalization is needed when looking up stations
+3. This eliminates discrepancies between names in different data sources
+4. Improves performance by avoiding normalization at runtime
+
+The workflow is:
+- User inputs a station name
+- Name is matched to the exact station name in `slim_stations/unique_stations.json` (using fuzzy matching or other techniques)
+- The exact same station name is then used to look up in `station_graph.json`
+- No intermediate normalization is required
+
+### Handled Special Cases
+
+The station name standardization handles the following special cases:
+- Stations with line indicators (e.g., "Baker Street (Metropolitan)" → "Baker Street Underground Station")
+- Stations with multiple entrances (mapped to their parent station)
+- Abbreviated station names (e.g., "Baker St" → "Baker Street Underground Station")
+- Stations with special characters (e.g., "King's Cross" → "Kings Cross Underground Station")
+- Child stations mapping to parent stations
+- Distinct but similarly named stations (e.g., "Euston Underground Station" and "Euston Square Underground Station" are kept separate)
+
+### Recent Improvements
+
+#### Euston/Euston Square Fix
+A significant improvement was made to the station name normalization to properly handle stations with similar names. Previously, "Euston Square Underground Station" was incorrectly being grouped with "Euston Underground Station". This has been fixed by:
+
+1. Modifying the normalization logic to check for "euston square" before "euston"
+2. Ensuring both stations maintain their distinct identities in the graph
+3. Updating both `create_station_graph.py` and `add_missing_stations.py` to handle this case consistently
+
+This fix serves as a template for handling other similarly named stations that should remain distinct.
+
+### Implementation
+
+This approach is implemented in the `normalize_stations.py` script, which:
+1. Loads station names from both the metadata and graph files
+2. Creates mappings between normalized and original station names (for matching purposes only)
+3. Updates the graph to use the exact station names from the metadata
+4. Handles special cases with manual mappings
+5. Outputs an updated graph using the exact station names
+
+This ensures that the graph and metadata use identical station names, eliminating the need for runtime normalization.
 
 ## Generated Output
 
-The script produces `station_graph.json`, a directed graph with the following structure:
+The script produces one main output file:
 
+1. `station_graph.json`: The graph with exact station names matching the metadata
+
+The file follows this structure:
 ```json
 {
-  "station1": {
-    "station2": 2.5,  // Travel time in minutes
-    "station3": 1.5
+  "Baker Street Underground Station": {
+    "Marylebone Underground Station": 1.17,
+    "Regent's Park Underground Station": 1.68
   },
-  "station2": {
-    "station1": 2.0,
-    "station4": 1.0
+  "Marylebone Underground Station": {
+    "Baker Street Underground Station": 1.08,
+    "Edgware Road (Bakerloo) Underground Station": 1.12
   },
   ...
 }
 ```
 
 Key features of the generated graph:
-- Station names are normalized (lowercase, without suffixes like "station", etc.)
+- Station names match exactly with the metadata, including full suffixes
 - Travel times are in minutes
 - Line transfers at the same station are automatically free (zero cost)
-- When multiple lines connect the same two stations, the minimum travel time is used
+- When multiple lines connect the same stations, the minimum travel time is used
+
+## Using the Station Graph
+
+The main application can now use the exact station names across all data files:
+1. `slim_stations/unique_stations.json`: For station metadata (coordinates)
+2. `station_graph.json`: For travel times between stations
+
+Since the station names are identical, no normalization is needed:
+```python
+# Load station data
+metadata = load_station_metadata("slim_stations/unique_stations.json")
+graph = load_station_graph("station_graph.json")
+
+# When a user selects a station (e.g., from a dropdown or with fuzzy matching)
+selected_station = "Baker Street Underground Station"
+
+# Access metadata and graph directly with the same name
+station_coordinates = metadata[selected_station]
+connections = graph[selected_station]
+```
+
+This provides better performance and eliminates potential errors from inconsistent normalization.
 
 ## How It Works
 
@@ -112,7 +187,6 @@ The project includes these verification scripts:
    ```
    python3 find_missing_csv_entries.py
    ```
-
 4. **check_csv_stations.py**: Analyzes which stations in the CSV file don't have matches in the graph
    ```
    python3 check_csv_stations.py

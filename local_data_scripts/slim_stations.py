@@ -1,3 +1,11 @@
+"""
+This script creates a slim version of the stations file with only essential data.
+It removes child_stations and other unnecessary data to reduce file size.
+
+The slim version is useful for testing and development purposes,
+as it allows for faster loading and processing of station data.
+
+"""
 import json
 import os
 

@@ -16,12 +16,34 @@ This project solves the common problem of finding a convenient place to meet in 
   - Reliable data collection from TfL API
   - Proper handling of multi-entrance stations
   - Regular sync with TfL data
+- ✅ Station name normalization system
+  - Direct normalization of station names between metadata and graph
+  - Mapping between station_graph.json and slim_stations/unique_stations.json
+  - Enhanced comparison and validation tools
+  - Added disconnected stations detection for graph validation
 - ⏳ Meeting point optimization (in progress)
   - Journey time calculations
   - Total travel time minimization
   - Walking time consideration
 
+### Latest Updates
+1. **Station Name Normalization Improvement**
+   - Updated `normalize_stations.py` to ensure exact name matching between graph and metadata
+   - Created `compare_station_names.py` for direct validation of station name alignment
+   - Now using normalized names across all components for consistent station lookup
+   - The graph now contains the exact same station names as the metadata file
+   - Fixed handling of similarly named stations (e.g., "Euston" and "Euston Square" are now properly distinct)
+   - Improved station name normalization logic to prevent incorrect grouping of distinct stations
+   - Consolidated Edgware Road stations: The two Edgware Road stations (Circle Line and Bakerloo) are now represented as a single parent station with the Bakerloo station as a child station for more accurate journey planning
+   - Added `check_disconnected_stations.py` to identify isolated stations or disconnected components in the graph
+
+2. **Code Organization**
+   - Separated raw and processed data
+   - Improved script organization
+   - Added data validation tools
+
 ### Next Steps
+- [ ] Complete validation for DLR and Overground stations in the graph
 - [ ] Implement journey time calculations
 - [ ] Add meeting point optimization algorithm
 - [ ] Create user interface for input/output
@@ -44,6 +66,30 @@ This project solves the common problem of finding a convenient place to meet in 
    - Regular updates from TfL API
    - Smart station matching
    - Change verification system
+
+4. **Station Name Normalization** (`normalize_stations.py`)
+   - Standardizes station names across all data sources
+   - Ensures station names in `station_graph.json` exactly match those in `slim_stations/unique_stations.json`
+   - Main purpose: Allow looking up stations directly by name without requiring runtime normalization
+   - Both files now use the exact same station names (not normalized):
+     - Parent stations in `slim_stations/unique_stations.json` match parent stations in `station_graph.json`
+     - Child stations in both files also match exactly
+   - Integration with main program:
+     ```python
+     # No normalization needed - the exact same station names are used in both files
+     
+     # When looking up a station, use the same name in both files
+     metadata = load_station_metadata()
+     graph = load_station_graph()
+     
+     # Station names are exactly the same in both files
+     # This is more efficient than normalizing at runtime
+     ```
+   - Handles special cases:
+     - Stations with line indicators (e.g., "Baker Street (Metropolitan)" → "Baker Street Underground Station")
+     - Stations with multiple entrances (mapped to their parent station)
+     - Child stations mapping to parent stations
+     - Abbreviations mapped to their full station names
 
 ### Station Graph System (`Station_graph/`)
 1. **Graph Generation**
@@ -134,6 +180,8 @@ project/
    - Switched to Line endpoint for better reliability
    - Improved station grouping using HubNaptanCode
    - Added child station tracking for better matching
+   - Updated metadata to include one entry for Bakersreet
+   - Moved outdated validation scripts (compare_station_names.py, find_missing_csv_entries.py, check_csv_stations.py, find_missing_stations.py, debug_csv.py) to dev/outdated_scripts/
 
 2. **Code Organization**
    - Separated raw and processed data

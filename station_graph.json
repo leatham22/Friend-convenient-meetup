@@ -170,9 +170,7 @@
   },
   "shepherds bush": {
     "holland park": 1.37,
-    "white city": 2.77,
-    "wood lane": 1.5,
-    "goldhawk road": 1.15
+    "white city": 2.77
   },
   "holland park": {
     "notting hill gate": 1.08,
@@ -347,21 +345,30 @@
     "finsbury park": 3.77,
     "tottenham hale": 1.6
   },
+  "finsbury park": {
+    "highbury and islington": 2.9,
+    "seven sisters": 4.25,
+    "manor house": 1.55,
+    "arsenal": 1.35
+  },
+  "highbury and islington": {
+    "kings cross": 2.77,
+    "finsbury park": 2.4
+  },
   "kings cross": {
     "euston": 1.32,
+    "highbury and islington": 2.87,
     "angel": 2.18,
     "caledonian road": 2.88,
     "russell square": 1.67,
-    "farringdon": 2.98,
-    "highbury and islington": 2.87,
-    "euston square": 1.65
+    "euston square": 1.65,
+    "farringdon": 2.98
   },
   "euston": {
     "warren street": 1.18,
     "kings cross": 1.35,
     "camden town": 3.88,
-    "mornington crescent": 1.53,
-    "great portland street": 1.3
+    "mornington crescent": 1.53
   },
   "warren street": {
     "oxford circus": 1.72,
@@ -380,8 +387,7 @@
     "pimlico": 1.83,
     "green park": 1.95,
     "st jamess park": 1.42,
-    "sloane square": 1.75,
-    "st james park": 1.42
+    "sloane square": 1.75
   },
   "pimlico": {
     "vauxhall": 1.4,
@@ -399,12 +405,6 @@
   },
   "brixton": {
     "stockwell": 2.18
-  },
-  "finsbury park": {
-    "seven sisters": 4.25,
-    "manor house": 1.55,
-    "arsenal": 1.35,
-    "highbury and islington": 2.9
   },
   "stanmore": {
     "canons park": 1.95
@@ -466,8 +466,7 @@
     "waterloo": 1.38,
     "green park": 1.82,
     "embankment": 1.37,
-    "st jamess park": 1.52,
-    "st james park": 1.52
+    "st jamess park": 1.52
   },
   "southwark": {
     "london bridge": 1.65,
@@ -865,9 +864,12 @@
     "kings cross": 3.12,
     "barbican": 1.22
   },
+  "euston square": {
+    "great portland street": 1.3,
+    "kings cross": 1.75
+  },
   "great portland street": {
     "baker street": 1.57,
-    "euston": 1.25,
     "euston square": 1.25
   },
   "preston road": {
@@ -938,13 +940,15 @@
     "croxley": 3.22
   },
   "goldhawk road": {
-    "shepherds bush": 1.15,
-    "hammersmith": 2.43,
-    "shepherds bush market": 1.15
+    "shepherds bush market": 1.15,
+    "hammersmith": 2.43
+  },
+  "shepherds bush market": {
+    "wood lane": 1.5,
+    "goldhawk road": 1.15
   },
   "wood lane": {
     "latimer road": 1.5,
-    "shepherds bush": 1.5,
     "shepherds bush market": 1.5
   },
   "latimer road": {
@@ -971,8 +975,7 @@
   "whitechapel": {
     "stepney green": 2.05,
     "aldgate east": 2.18,
-    "shadwell": 1.82,
-    "shoreditch": 1.85
+    "shadwell": 1.82
   },
   "stepney green": {
     "mile end": 1.73,
@@ -1146,8 +1149,7 @@
   },
   "surrey quays": {
     "canada water": 1.47,
-    "new cross gate": 3.88,
-    "new cross": 4.27
+    "new cross gate": 3.88
   },
   "rotherhithe": {
     "wapping": 1.17,
@@ -1160,27 +1162,5 @@
   "shadwell": {
     "whitechapel": 1.98,
     "wapping": 1.3
-  },
-  "highbury and islington": {
-    "kings cross": 2.77,
-    "finsbury park": 2.4
-  },
-  "euston square": {
-    "great portland street": 1.3,
-    "kings cross": 1.75
-  },
-  "shoreditch": {
-    "whitechapel": 1.6
-  },
-  "new cross": {
-    "surrey quays": 3.62
-  },
-  "shepherds bush market": {
-    "wood lane": 1.5,
-    "goldhawk road": 1.15
-  },
-  "st james park": {
-    "westminster": 1.5,
-    "victoria": 1.33
   }
 }

@@ -414,16 +414,12 @@
     "child_stations": []
   },
   {
-    "name": "Edgware Road (Bakerloo) Underground Station",
-    "lat": 51.520299,
-    "lon": -0.17015,
-    "child_stations": []
-  },
-  {
     "name": "Edgware Road (Circle Line) Underground Station",
     "lat": 51.519858,
     "lon": -0.167832,
-    "child_stations": []
+    "child_stations": [
+      "Edgware Road (Bakerloo) Underground Station"
+    ]
   },
   {
     "name": "Edgware Underground Station",

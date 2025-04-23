@@ -74,11 +74,11 @@ def normalize_station_name(name: str) -> str:
     if "baker street" in name:
         name = "baker street"  # Normalize Baker Street variants
         
-    if "euston" in name or "euston square" in name:
-        if "square" in name:
-            name = "euston square"
-        else:
-            name = "euston"  # Normalize Euston variants
+    # Handle Euston and Euston Square as separate stations 
+    if "euston square" in name:
+        name = "euston square"  # Keep Euston Square distinct
+    elif "euston" in name:
+        name = "euston"  # Normalize other Euston variants
     
     # Additional special cases for missing stations
     if "highbury" in name or "highbury and islington" in name:
