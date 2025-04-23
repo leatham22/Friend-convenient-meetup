@@ -1,3 +1,8 @@
+"""
+This script tests the station filtering functions.
+It checks the distance calculation, point in ellipse, and circle filtering.
+"""
+
 import unittest
 import math
 import json

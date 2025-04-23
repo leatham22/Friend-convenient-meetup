@@ -51,11 +51,13 @@ This project solves the common problem of finding a convenient place to meet in 
    - Calculates travel times between connected stations
    - Handles station name normalization and special cases
    - Automatically maps child platforms to parent stations
+   - Currently focused on Underground stations; DLR and Overground stations being added
 
 2. **Data Sources**
    - Uses `raw_stations/unique_stations2.json` for station information
    - Uses `Inter_station_times.csv` for travel times
    - Outputs `station_graph.json` with the complete graph
+   - Note: Travel time data for DLR and Overground stations is being added to complete the network
 
 3. **Key Features**
    - Directional travel times between stations
@@ -63,7 +65,17 @@ This project solves the common problem of finding a convenient place to meet in 
    - Handles special station cases (e.g., Heathrow terminals)
    - Includes verification and validation tools
 
-4. **Utilities**
+4. **Journey Time Optimization**
+   - Graph-based pathfinding using Dijkstra/A* algorithm (in progress)
+   - Will identify top 10 fastest journey options for meeting points
+   - Results feed into TfL API for real-time journey planning
+   - Takes into account:
+     - Direct travel times between stations
+     - Transfer times at interchange stations
+     - Walking times from starting locations
+     - Live service disruptions (via TfL API)
+
+5. **Utilities**
    - Station verification scripts
    - Missing station detection
    - Graph validation tools
@@ -137,6 +149,7 @@ project/
 - Some station location discrepancies (mostly minor)
 - Elizabeth Line station data needs verification
 - Some station name variations need standardization
+- DLR and Overground stations are currently missing from the graph structure (in progress)
 
 ## Development History
 
