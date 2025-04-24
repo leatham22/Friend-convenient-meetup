@@ -1,0 +1,201 @@
+# Original Station Graph System (Deprecated)
+
+This directory contains the original station graph building system that has been **replaced** by the new approach using TFL's `stopPointSequences` data. The scripts in this directory are kept for historical and reference purposes only.
+
+> **⚠️ IMPORTANT**: This system has been deprecated in favor of the new implementation in `network_data/build_networkx_graph_new.py` which produces more accurate results.
+
+## Why This System Was Replaced
+
+The approach in this directory had several significant limitations:
+1. Used `lineStrings` data which only contained geographical coordinates without station identifiers
+2. Required complex coordinate-to-station matching logic
+3. Generated inconsistent connections requiring a graph_fixer script
+4. Didn't use the more accurate station sequence data provided directly by the API
+5. Left 83 stations disconnected from the network
+6. Created connections between stations that aren't actually connected
+7. Missing major stations like "Farringdon" and "Canary Wharf"
+
+For details on the improved approach, see the main project README.
+
+## Scripts in This Directory
+
+### Graph Building Scripts
+**`build_networkx_graph.py`**
+- **Original Purpose**: Built a NetworkX graph of the London transport network based on line coordinates
+- **Key Issue**: Used complex coordinate-matching which led to incorrect connections
+- **Replaced By**: `network_data/build_networkx_graph_new.py` using `stopPointSequences` data
+
+**`graph_fixer.py`**
+- **Original Purpose**: Fixed connectivity issues in the graph built by the old approach
+- **Key Issue**: Needed to artificially create connections that should have been detected automatically
+- **No Longer Needed**: The new approach creates properly connected graphs without requiring fixes
+
+**`create_station_graph.py`**
+- **Original Purpose**: Created the station graph from station data and CSV travel times
+- **Key Issue**: Relied on external CSV data rather than authoritative TFL API data
+- **Replaced By**: Direct API-based connection building
+
+### Station Validation Scripts
+**`find_missing_stations.py`**
+- **Original Purpose**: Identified which stations from unique_stations.json were missing from the graph
+- **Issue**: Had to detect missing stations because of incomplete graph creation
+
+**`verify_graph.py`**
+- **Original Purpose**: Tested the graph by finding shortest paths between station pairs
+- **Issue**: Often found broken paths due to incomplete connectivity
+
+**`check_disconnected_stations.py`**
+- **Original Purpose**: Found stations that were disconnected from the main network
+- **Issue**: 83 stations were disconnected from the network in the original approach
+
+**`test_normalization.py`**
+- **Original Purpose**: Tested the station name normalization system
+- **Issue**: Complex normalization was needed to handle inconsistent naming
+
+**`compare_station_names.py`**
+- **Original Purpose**: Compared station names between data sources
+- **Issue**: Names often didn't match between sources, requiring complex reconciliation
+
+**`add_missing_stations.py`**
+- **Original Purpose**: Added missing stations to the graph after initial creation
+- **Issue**: The initial graph creation process missed many stations
+
+### CSV-Related Scripts
+**`find_missing_csv_entries.py`**
+- **Original Purpose**: Identified which stations from the CSV were missing from the graph
+- **Issue**: Relied on external CSV data instead of API data
+
+**`check_csv_stations.py`**
+- **Original Purpose**: Analyzed which stations in the CSV file didn't have matches in the graph
+- **Issue**: Required complex matching due to different naming systems
+
+**`debug_csv.py`**
+- **Original Purpose**: Troubleshooting tool for CSV data issues
+- **Issue**: CSV integration often broke due to format mismatches
+
+**`check_stations.py`**
+- **Original Purpose**: Simple validation of station data structure
+- **Issue**: Only detected basic data format issues
+
+### Data Files
+**`station_graph.json`** and **`station_graph.normalized.json`**
+- **Original Purpose**: Stored the graph data with standardized station names
+- **Issue**: Missing many stations and connections
+- **Replaced By**: More comprehensive `networkx_graph_new.json` file
+
+**`LEARNING_NOTES.md`**
+- Contains notes and lessons learned while developing the original approach
+
+## Original Documentation Below
+
+> Note: The following documentation is kept for historical purposes and describes how the original system worked.
+
+---
+
+# Station Graph Component (Original System)
+
+This component of the London Transport Meeting Point Finder generates and analyzes a directed graph of London Underground/TfL stations and the travel times between them. The graph represents parent stations as nodes, with edges representing direct one-way travel times between stations. This is a crucial component for calculating optimal meeting points in the main application.
+
+## Data Sources
+
+The project uses two primary data sources:
+
+1. `slim_stations/unique_stations.json`: Contains information about parent stations and their child platforms
+2. `Inter_station_times.csv`: Contains travel times between stations on different lines
+
+## Purpose of Station Name Standardization
+
+A critical aspect of this system is ensuring that station names are **exactly identical** between:
+1. The metadata files (`slim_stations/unique_stations.json`) 
+2. The graph files (`station_graph.json`)
+
+The standardization process ensures that:
+1. The station graph uses the same exact station names as found in the metadata file
+2. No runtime normalization is needed when looking up stations
+3. This eliminates discrepancies between names in different data sources
+4. Improves performance by avoiding normalization at runtime
+
+The workflow is:
+- User inputs a station name
+- Name is matched to the exact station name in `slim_stations/unique_stations.json` (using fuzzy matching or other techniques)
+- The exact same station name is then used to look up in `station_graph.json`
+- No intermediate normalization is required
+
+### Handled Special Cases
+
+The station name standardization handles the following special cases:
+- Stations with line indicators (e.g., "Baker Street (Metropolitan)" → "Baker Street Underground Station")
+- Stations with multiple entrances (mapped to their parent station)
+- Abbreviated station names (e.g., "Baker St" → "Baker Street Underground Station")
+- Stations with special characters (e.g., "King's Cross" → "Kings Cross Underground Station")
+- Child stations mapping to parent stations
+- Distinct but similarly named stations (e.g., "Euston Underground Station" and "Euston Square Underground Station" are kept separate)
+
+### Recent Improvements
+
+#### Euston/Euston Square Fix
+A significant improvement was made to the station name normalization to properly handle stations with similar names. Previously, "Euston Square Underground Station" was incorrectly being grouped with "Euston Underground Station". This has been fixed by:
+
+1. Modifying the normalization logic to check for "euston square" before "euston"
+2. Ensuring both stations maintain their distinct identities in the graph
+3. Updating both `create_station_graph.py` and `add_missing_stations.py` to handle this case consistently
+
+This fix serves as a template for handling other similarly named stations that should remain distinct.
+
+### Implementation
+
+This approach is implemented in the `normalize_stations.py` script, which:
+1. Loads station names from both the metadata and graph files
+2. Creates mappings between normalized and original station names (for matching purposes only)
+3. Updates the graph to use the exact station names from the metadata
+4. Handles special cases with manual mappings
+5. Outputs an updated graph using the exact station names
+
+This ensures that the graph and metadata use identical station names, eliminating the need for runtime normalization.
+
+## Generated Output
+
+The script produces one main output file:
+
+1. `station_graph.json`: The graph with exact station names matching the metadata
+
+The file follows this structure:
+```json
+{
+  "Baker Street Underground Station": {
+    "Marylebone Underground Station": 1.17,
+    "Regent's Park Underground Station": 1.68
+  },
+  "Marylebone Underground Station": {
+    "Baker Street Underground Station": 1.08,
+    "Edgware Road (Bakerloo) Underground Station": 1.12
+  },
+  ...
+}
+```
+
+Key features of the generated graph:
+- Station names match exactly with the metadata, including full suffixes
+- Travel times are in minutes
+- Line transfers at the same station are automatically free (zero cost)
+- When multiple lines connect the same stations, the minimum travel time is used
+
+## Using the Station Graph
+
+The main application can now use the exact station names across all data files:
+1. `slim_stations/unique_stations.json`: For station metadata (coordinates)
+2. `station_graph.json`: For travel times between stations
+
+Since the station names are identical, no normalization is needed:
+```python
+# Load station data
+metadata = load_station_metadata("slim_stations/unique_stations.json")
+graph = load_station_graph("station_graph.json")
+
+# When a user selects a station (e.g., from a dropdown or with fuzzy matching)
+selected_station = "Baker Street Underground Station"
+
+# Access metadata and graph directly with the same name
+station_coordinates = metadata[selected_station]
+connections = graph[selected_station]
+```
