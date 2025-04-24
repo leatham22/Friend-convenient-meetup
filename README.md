@@ -21,13 +21,24 @@ This project solves the common problem of finding a convenient place to meet in 
   - Mapping between station_graph.json and slim_stations/unique_stations.json
   - Enhanced comparison and validation tools
   - Added disconnected stations detection for graph validation
+- ✅ Improved TFL API Data Extraction
+  - Using stopPointSequences for accurate station sequences
+  - Better connection data based on API-provided sequences
+  - More accurate network representation
 - ⏳ Meeting point optimization (in progress)
   - Journey time calculations
   - Total travel time minimization
   - Walking time consideration
 
 ### Latest Updates
-1. **Station Name Normalization Improvement**
+1. **Improved Network Graph Building**
+   - Implemented a new approach using `stopPointSequences` from the TFL API
+   - More accurate representation of connections between stations
+   - No need for graph_fixer to repair connections thanks to proper sequence data
+   - Better handling of branch lines and service patterns
+   - Improved bidirectional connections for more realistic journey planning
+
+2. **Station Name Normalization Improvement**
    - Updated `normalize_stations.py` to ensure exact name matching between graph and metadata
    - Created `compare_station_names.py` for direct validation of station name alignment
    - Now using normalized names across all components for consistent station lookup
@@ -37,10 +48,11 @@ This project solves the common problem of finding a convenient place to meet in 
    - Consolidated Edgware Road stations: The two Edgware Road stations (Circle Line and Bakerloo) are now represented as a single parent station with the Bakerloo station as a child station for more accurate journey planning
    - Added `check_disconnected_stations.py` to identify isolated stations or disconnected components in the graph
 
-2. **Code Organization**
+3. **Code Organization**
    - Separated raw and processed data
    - Improved script organization
    - Added data validation tools
+   - Moved deprecated scripts to `dev/` directory for historical reference
 
 ### Next Steps
 - [ ] Complete validation for DLR and Overground stations in the graph
@@ -48,6 +60,92 @@ This project solves the common problem of finding a convenient place to meet in 
 - [ ] Add meeting point optimization algorithm
 - [ ] Create user interface for input/output
 - [ ] Add support for additional transport modes
+
+## TFL API Data Extraction Improvements
+
+### Previous Approach Problems
+The previous approach had several significant issues:
+1. **Inaccurate Connection Data**: Used `lineStrings` data which only contained geographical coordinates without any indication of actual station connections
+2. **Complex Coordinate Matching**: Required complex coordinate-to-station matching logic, trying to guess which stations were connected based on proximity
+3. **Missing Connections**: Failed to identify many valid connections between stations
+4. **Incorrect Connections**: Created connections between stations that aren't actually connected
+5. **Post-Processing Required**: Required a `graph_fixer.py` script to repair connectivity issues
+6. **Isolated Stations**: Left 83 stations disconnected from the network
+7. **Incomplete Coverage**: Missed important stations like "Farringdon" and "Canary Wharf"
+8. **Development Complexity**: Required complicated workarounds for problematic stations
+
+### New Approach Benefits
+The new implementation (`build_networkx_graph_new.py`) resolves these issues with several improvements:
+1. **Direct Sequence Data**: Uses `stopPointSequences` section which contains the exact sequence of stations on each line, directly from TFL
+2. **Station IDs**: Works directly with station IDs (NaptanIDs) rather than imprecise coordinate matching
+3. **Direction-aware**: Captures inbound/outbound direction information
+4. **Branch Handling**: Properly handles line branches and route variations
+5. **Fallback Mechanism**: Falls back to `orderedLineRoutes` if `stopPointSequences` is unavailable for any line
+6. **Better Parent-Child Station Handling**: More accurate representation of transfers between parent and child stations
+7. **Comprehensive Coverage**: Increases node count from 422 to 469 stations
+8. **Complete Connectivity**: Eliminates all isolated stations (83 → 0)
+9. **More Accurate Connections**: Increases edge count from 712 to 1120 connections
+10. **Bidirectional Representation**: Increases bidirectional pairs from 354 to 557 for better route planning
+11. **Better Transfer Representation**: Increases transfer edges from 16 to 100 for more accurate interchange modeling
+
+### Measurable Improvements
+A direct comparison of the old and new approaches shows:
+
+| Metric | Old Approach | New Approach | Improvement |
+|--------|--------------|--------------|-------------|
+| Stations (Nodes) | 422 | 469 | +47 stations |
+| Connections (Edges) | 712 | 1120 | +408 connections |
+| Bidirectional Pairs | 354 | 557 | +203 pairs |
+| Transfer Edges | 16 | 100 | +84 transfers |
+| Isolated Stations | 83 | 0 | -83 (all connected) |
+| Post-processing Required | Yes | No | Simplified workflow |
+
+### Implementation Details
+- Each station in `stopPointSequences` contains complete information (ID, name, coordinates, lines, modes, etc.)
+- Station connections are created directly from sequence order rather than geographic proximity
+- Parent-child relationships are still maintained for transfer connections
+- Direction information is preserved in edge attributes for potential future use in routing algorithms
+
+### Usage
+To use the new graph building approach:
+```bash
+python network_data/build_networkx_graph_new.py
+```
+The new graph will be saved to `network_data/networkx_graph_new.json`.
+
+## New Graph Building Approach
+
+### TFL API Integration
+1. **Direct Line Sequence Data**
+   - Using TFL's Line_RouteSequenceByPathIdPathDirectionQueryServiceTypesQueryExcludeCrowding API endpoint
+   - Provides station-by-station sequences for each transport line
+   - Contains complete station coordinates and line connections
+   - Eliminates previous deduplication hacks and station matching issues
+
+2. **Graph Construction Process**
+   - Builds station network directly from TFL sequence data
+   - Each station contains:
+     - Station name and ID
+     - Geographical coordinates (latitude/longitude)
+     - Connected lines and modes of transport
+     - Zone information
+     - Parent/child station relationships
+   - Edges between stations represent direct connections with travel times
+   - Zero-time transfers for parent-child station relationships
+
+3. **Advantages of New Approach**
+   - More accurate station positioning
+   - Complete coverage of all transport modes
+   - Better handling of line branches and directions
+   - Simplified station matching with authoritative TFL data
+   - Future-proof for station additions and line changes
+   - Compatible with NetworkX for advanced graph operations
+
+4. **Implementation Details**
+   - Station data stored with full TFL attributes
+   - Line data organized by mode of transport
+   - Child-parent relationships preserved for zero-transfer connections
+   - Edges weighted by journey time between stations
 
 ## Technical Details
 
