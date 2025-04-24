@@ -25,20 +25,40 @@ This project solves the common problem of finding a convenient place to meet in 
   - Using stopPointSequences for accurate station sequences
   - Better connection data based on API-provided sequences
   - More accurate network representation
+- ✅ Enhanced graph structure with MultiDiGraph
+  - Support for multiple train lines connecting the same stations
+  - Preservation of line-specific connection data
+  - More accurate representation of the London transport network
 - ⏳ Meeting point optimization (in progress)
   - Journey time calculations
   - Total travel time minimization
   - Walking time consideration
 
 ### Latest Updates
-1. **Improved Network Graph Building**
+1. **Improved Line Continuity Checking**
+   - Completely redesigned branch detection algorithm using network topology analysis
+   - Automatically identifies branch points (stations with more than 2 connections)
+   - Creates proper sequence tracing for each branch
+   - Eliminated false positives for missing connections at branch points
+   - Removed reliance on hard-coded branch definitions
+   - More accurate representation of the actual London transport network with proper branches
+
+2. **Improved Network Graph Structure**
+   - Migrated from NetworkX's DiGraph to MultiDiGraph to properly represent multiple train lines connecting the same stations
+   - Fixed issue where only one connection was preserved when multiple lines connect the same stations (like Circle and District lines sharing stations)
+   - Each edge now preserves its specific line information without overwriting other connections
+   - More accurate representation of the transport network with proper line-specific connections
+   - Better support for line continuity validation and journey planning
+   - Added key attribute to edge data to uniquely identify edges in the MultiDiGraph structure
+
+3. **Improved Network Graph Building**
    - Implemented a new approach using `stopPointSequences` from the TFL API
    - More accurate representation of connections between stations
    - No need for graph_fixer to repair connections thanks to proper sequence data
    - Better handling of branch lines and service patterns
    - Improved bidirectional connections for more realistic journey planning
 
-2. **Station Name Normalization Improvement**
+4. **Station Name Normalization Improvement**
    - Updated `normalize_stations.py` to ensure exact name matching between graph and metadata
    - Created `compare_station_names.py` for direct validation of station name alignment
    - Now using normalized names across all components for consistent station lookup
@@ -48,7 +68,7 @@ This project solves the common problem of finding a convenient place to meet in 
    - Consolidated Edgware Road stations: The two Edgware Road stations (Circle Line and Bakerloo) are now represented as a single parent station with the Bakerloo station as a child station for more accurate journey planning
    - Added `check_disconnected_stations.py` to identify isolated stations or disconnected components in the graph
 
-3. **Code Organization**
+5. **Code Organization**
    - Separated raw and processed data
    - Improved script organization
    - Added data validation tools
@@ -229,25 +249,31 @@ The new graph will be saved to `network_data/networkx_graph_new.json`.
 
 ```
 project/
-├── raw_stations/              # Raw station data from TfL API
-│   ├── unique_stations.json   # All stations
-│   └── unique_stations_*.json # Mode-specific stations
-├── slim_stations/             # Minimal station data for processing
-│   ├── unique_stations.json   # All stations
-│   └── unique_stations_*.json # Mode-specific stations
-├── Station_graph/             # Station graph generation system
-│   ├── create_station_graph.py  # Main graph generation script
-│   ├── verify_graph.py         # Graph verification tools
-│   ├── add_missing_stations.py # Station completion tool
-│   └── README.md              # Component documentation
+├── network_data/                     # Network graph generation and analysis scripts
+│   ├── build_networkx_graph_new.py   # Main graph building script using TfL API sequences
+│   ├── check_line_continuity.py      # Script to check for missing connections between stations
+│   ├── networkx_graph_new.json       # The generated transport network graph
+│   ├── tfl_line_data.json            # Raw data from TfL API used to build the graph
+│   └── ... other network analysis scripts
+├── raw_stations/                     # Raw station data from TfL API
+│   ├── unique_stations.json          # All stations
+│   └── unique_stations_*.json        # Mode-specific stations
+├── slim_stations/                    # Minimal station data for processing
+│   ├── unique_stations.json          # All stations
+│   └── unique_stations_*.json        # Mode-specific stations
+├── Station_graph/                    # Station graph generation system
+│   ├── create_station_graph.py       # Main graph generation script
+│   ├── verify_graph.py               # Graph verification tools
+│   ├── add_missing_stations.py       # Station completion tool
+│   └── README.md                     # Component documentation
 ├── scripts/
-│   ├── collect_initial_stations.py  # Fetch raw station data
-│   ├── slim_stations.py            # Create minimal station data
-│   ├── sync_stations.py            # Keep data in sync with TfL
-│   └── compare_station_versions.py # Compare data versions
-├── requirements.txt           # Python dependencies
-├── .env                      # API key (not in repo)
-└── .gitignore               # Git ignore rules
+│   ├── collect_initial_stations.py   # Fetch raw station data
+│   ├── slim_stations.py              # Create minimal station data
+│   ├── sync_stations.py              # Keep data in sync with TfL
+│   └── compare_station_versions.py   # Compare data versions
+├── requirements.txt                  # Python dependencies
+├── .env                              # API key (not in repo)
+└── .gitignore                        # Git ignore rules
 ```
 
 ## Setup
@@ -393,6 +419,59 @@ project/
    - Separated active and historical code
    - Improved script organization
    - Better error handling and validation
+
+## Edge Weight Calculation System
+
+To ensure accurate journey time calculations, the project implements a sophisticated edge weight calculation system that uses the TfL Journey API to get real-world travel times between adjacent stations.
+
+### Approach Overview
+
+The system follows a multi-step process to obtain and store accurate travel times:
+
+1. **Extract Per-Line Edge List**
+   - Parses the network graph to identify all adjacent station pairs on each line
+   - Groups edges by transport line (tube, DLR, overground, etc.)
+   - Stores the station ID codes required for TfL API calls
+   - Preserves station names for later reference
+
+2. **API Data Collection**
+   - Makes calls to the TfL Journey API for each adjacent station pair
+   - Uses the format: `https://api.tfl.gov.uk/Journey/JourneyResults/{from-ID}/to/{to-ID}?mode={LineName}&date=2025-04-24&time=12:00&timeIs=Departing&journeyPreference=LeastTime`
+   - Sets mode parameter to match the transport line (e.g., tube, dlr) to prevent shortcuts
+   - Uses consistent date/time parameters for all queries to ensure comparable results
+   - Processes only one line at a time to avoid overwhelming the API
+
+3. **Data Storage**
+   - Saves retrieved journey times to `weighted_edges.json`
+   - Stores origin station, destination station, transport mode, line, and duration
+   - Format is compatible with the existing graph structure
+
+4. **Graph Integration**
+   - Updates the edge weights in `networkx_graph_working.json` with the accurate journey times
+   - Replaces default weights (1) with actual travel times in minutes
+
+### Benefits
+
+This approach offers several advantages:
+
+- **Real-World Accuracy**: Uses actual TfL journey times instead of estimates
+- **Mode-Specific Travel Times**: Ensures calculations are based on the correct transport mode
+- **Consistent Measurement**: All times measured under the same conditions
+- **API Efficiency**: Minimizes API calls by only querying adjacent stations
+- **Maintainability**: Separates data collection from graph integration
+
+### Usage
+
+```bash
+# Step 1: Extract per-line edge list
+python network_data/extract_line_edges.py
+
+# Step 2-3: Call API and save journey times (for testing with Waterloo-City line)
+python network_data/get_journey_times.py --line waterloo-city
+
+# Step 4: Merge journey times with graph
+python network_data/update_edge_weights.py
+```
 
 ## Usage
 

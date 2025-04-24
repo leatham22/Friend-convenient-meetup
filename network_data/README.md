@@ -19,6 +19,35 @@ The network_data directory is responsible for:
 
 ## Recent Improvements
 
+### Improved Line Continuity Checking
+
+The `check_line_continuity.py` script has been completely overhauled to eliminate false positives and better handle branched lines:
+
+1. **Automatic Branch Detection**: 
+   - Identifies branch points by analyzing the network topology
+   - Detects stations with more than 2 connections as branch points
+   - No longer relies on hard-coded branch definitions
+
+2. **Intelligent Sequence Building**:
+   - Creates separate sequences for each branch in a line
+   - Properly follows connections from branch points
+   - Better handles complex network structures
+
+3. **Smart Filtering**:
+   - Automatically filters out potential false positives at branch points
+   - Recognizes that not all stations on a line should be directly connected
+   - Uses adjacency information to determine valid missing connections
+
+4. **Zero False Positives**:
+   - Eliminates incorrect reports of missing connections
+   - Correctly understands branch structures for lines like District and Jubilee
+   - Provides more accurate network validation
+
+5. **Implementation Details**:
+   - Branch points are algorithmically identified: `branch_points = {station for station in adjacency if len(adjacency[station]) > 2}`
+   - Each branch is processed separately when tracing sequences
+   - Missing connections at branch points are filtered out in the final stage
+
 ### Enhanced TfL API Data Processing
 
 The scripts have been enhanced to better extract connection data from the TfL API:
@@ -29,7 +58,7 @@ The scripts have been enhanced to better extract connection data from the TfL AP
 
 3. **Branch-aware connectivity checking**: The check_line_continuity script now correctly handles branched lines like the Northern and District lines, avoiding false positives.
 
-4. **API-based validation**: Instead of relying on hardcoded connections, the check_real_world_connections function now validates against the original TfL API data.
+4. **API-based validation**: Instead of relying on hardcoded connections, validation is now based on the actual network topology.
 
 5. **No more manual connections**: All manual connection patching has been removed. The graph is now built entirely from TfL API data.
 
@@ -40,7 +69,7 @@ The scripts now better handle branched lines by:
 1. Extracting and utilizing branch metadata from the API
 2. Preserving branch information in the graph edges
 3. Using this information for more accurate connectivity validation
-4. Combining API-provided branch data with known branch structure
+4. Algorithmically detecting branches rather than relying on static definitions
 
 ## MultiDiGraph Implementation
 
