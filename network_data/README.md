@@ -1,90 +1,155 @@
-# Network Data System
+# Network Data
 
-This directory contains the core data files for the London transport network graph used in the Meeting Point Finder. The graph is built directly from TFL's API data, providing accurate station relationships and connections.
+This directory contains scripts and data for building and analyzing the London transport network graph.
 
-## Files Overview
+## Overview
 
-- **networkx_graph.json**: The main graph file containing all stations (nodes) and connections (edges) in the London transport network. This includes tube, DLR, overground, and Elizabeth line services.
-- **stations_slim_format.json**: A simplified version of station data compatible with the slim_stations format used in other parts of the application.
-- **tfl_line_data.json**: Raw line sequence data from the TFL API used to build the graph.
+The network_data directory is responsible for:
+1. Fetching line and route sequence data from the TfL API
+2. Building a comprehensive graph of the London transport network
+3. Validating and analyzing the network structure
+4. Storing the network graph in a usable format for journey planning
 
-## Graph Structure
+## Key Files
 
-The `networkx_graph.json` file contains a directed graph with:
+- **build_networkx_graph_new.py**: Main script that builds the transport network graph
+- **check_line_continuity.py**: Validates the graph by checking for missing connections between stations
+- **networkx_graph_new.json**: The generated graph data (nodes and edges)
+- **tfl_line_data.json**: Raw data from the TfL API used to build the graph
 
-1. **Nodes**: Stations in the network with attributes:
-   - `id`: Station ID from TFL
-   - `name`: Human-readable station name
-   - `lat` & `lon`: Geographic coordinates
-   - `zone`: London transport zone
-   - `modes`: Transport modes serving this station (tube, dlr, etc.)
-   - `lines`: Lines connecting to this station
-   - `child_stations`: Child stations connected with zero-weight edges
+## Recent Improvements
 
-2. **Edges**: Connections between stations with attributes:
-   - `source` & `target`: Names of connected stations
-   - `line`: Line ID connecting the stations (e.g., "bakerloo")
-   - `line_name`: Human-readable line name
-   - `mode`: Transport mode (tube, dlr, overground, etc.)
-   - `weight`: Travel time weight (1 for normal connections, 0 for transfers)
-   - `transfer`: Boolean indicating if this is a transfer edge
+### Enhanced TfL API Data Processing
 
-## Implementation Logic
+The scripts have been enhanced to better extract connection data from the TfL API:
 
-### Data Collection
+1. **Improved stopPointSequences processing**: The build script now more thoroughly processes the stopPointSequences data, capturing more detailed branch information.
 
-The graph is built using the TFL Line RouteSequence API, which provides:
-- Complete station sequences for each line
-- Accurate station coordinates and attributes
-- Parent-child station relationships
+2. **Multiple data source fallbacks**: If stopPointSequences aren't available, the script now tries orderedLineRoutes and servicePatterns as fallbacks.
 
-### Parent-Child Station Relationships
+3. **Branch-aware connectivity checking**: The check_line_continuity script now correctly handles branched lines like the Northern and District lines, avoiding false positives.
 
-The graph handles complex station relationships like "Bank Underground Station" and "Bank DLR Station" by:
-1. Creating separate nodes for each station/entrance
-2. Adding zero-weight bidirectional edges between parent and child stations
-3. This ensures transfers between these stations take no time in journey calculations
+4. **API-based validation**: Instead of relying on hardcoded connections, the check_real_world_connections function now validates against the original TfL API data.
 
-For example, "Canary Wharf Underground Station" is connected to both "Canary Wharf DLR Station" and "Canary Wharf" (Elizabeth Line) with zero-weight edges, making them effectively the same location for travel planning.
+5. **No more manual connections**: All manual connection patching has been removed. The graph is now built entirely from TfL API data.
 
-### Edge Weights
+### Branch Information Support
 
-Edge weights represent travel time between stations:
-- Regular edges: Weight of 1 (default, can be updated with actual journey times)
-- Transfer edges: Weight of 0 (free transfers between connected stations)
+The scripts now better handle branched lines by:
 
-### Station Coverage
+1. Extracting and utilizing branch metadata from the API
+2. Preserving branch information in the graph edges
+3. Using this information for more accurate connectivity validation
+4. Combining API-provided branch data with known branch structure
 
-The graph includes all stations from the TFL API across supported modes:
-- London Underground (tube)
-- Docklands Light Railway (dlr)
-- London Overground (overground)
-- Elizabeth Line
+## MultiDiGraph Implementation
 
-## Usage in the Application
+The latest version of the graph uses NetworkX's MultiDiGraph structure rather than a standard DiGraph. This change provides several important benefits:
 
-This graph is used to:
-1. Find routes between stations
-2. Calculate journey times
-3. Identify optimal meeting points by minimizing total travel time
+### Why MultiDiGraph?
 
-## Generation Process
+1. **Multiple edges between the same nodes**: Many stations in London are connected by multiple train lines (e.g., Circle and District lines share many stations). A standard DiGraph can only represent one edge between any two nodes, which means it can only represent one train line connecting any pair of stations.
 
-The graph is generated by `build_networkx_graph.py` in the root directory:
-1. Fetches line sequence data from TFL API
-2. Extracts station data and connections
-3. Builds a NetworkX DiGraph
-4. Adds zero-weight edges for transfers
-5. Exports to JSON format
+2. **Line-specific attributes**: Each connection between stations has line-specific information (line name, mode, direction) that needs to be preserved.
 
-## Validation
+3. **Accurate network representation**: The real transport network has multiple ways to travel between the same stations, and MultiDiGraph allows us to model this accurately.
 
-The graph is validated using `test_station_coverage.py` to ensure:
-1. All stations from slim_stations/unique_stations.json are included
-2. All parent-child station relationships have proper transfer edges
-3. No stations are disconnected from the main network
+### Implementation Details
 
-## References
+- Each node represents a station with attributes like name, coordinates, and connected lines
+- Each edge represents a connection between stations with attributes:
+  - `line`: The TfL line ID (e.g., "district", "circle")
+  - `line_name`: The official line name (e.g., "District Line", "Circle Line")
+  - `mode`: Transport mode (e.g., "tube", "dlr")
+  - `direction`: Travel direction ("inbound", "outbound")
+  - `branch`: Branch information to handle complex line structures
+  - `weight`: Travel time between stations
+  - `transfer`: Boolean flag for zero-time transfers between parent/child stations
+  - `key`: A unique identifier for the edge in the MultiDiGraph
 
-- [TFL API Documentation](https://api-portal.tfl.gov.uk/)
-- [NetworkX Documentation](https://networkx.org/documentation/stable/) 
+### File Structure
+
+The graph is saved as a JSON file with the following structure:
+
+```json
+{
+  "nodes": {
+    "Station Name 1": {
+      "id": "station_id_1",
+      "name": "Station Name 1",
+      "lat": 51.123,
+      "lon": -0.123,
+      "zone": "1",
+      "modes": ["tube"],
+      "lines": ["district", "circle"],
+      "child_stations": []
+    },
+    ...
+  },
+  "edges": [
+    {
+      "source": "Station Name 1",
+      "target": "Station Name 2",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube",
+      "weight": 1,
+      "transfer": false,
+      "direction": "inbound",
+      "branch": "route-1",
+      "key": 0
+    },
+    ...
+  ]
+}
+```
+
+## How to Use
+
+### Building the Network Graph
+
+```bash
+# Run from the root directory
+python network_data/build_networkx_graph_new.py
+```
+
+This script:
+1. Fetches line data from the TfL API (if not already cached)
+2. Builds a MultiDiGraph structure
+3. Adds station nodes and connection edges with branch information
+4. Adds parent-child relationships for station transfers
+5. Saves the graph to networkx_graph_new.json
+
+### Validating the Network Graph
+
+```bash
+# Run from the root directory
+python network_data/check_line_continuity.py
+
+# Check a specific line
+python network_data/check_line_continuity.py --line district
+```
+
+This script:
+1. Loads the network graph
+2. Analyzes station connections for each line
+3. Identifies missing connections, accounting for branched lines
+4. Reports issues with line continuity
+
+## Notes on Parent-Child Station Relationships
+
+The scripts now use absolute paths to locate `slim_stations/unique_stations.json` from the project root, ensuring it works correctly regardless of which directory the script is run from. This file contains important parent-child relationships between stations that share the same physical location but serve different transport modes (e.g., Underground and Overground stations).
+
+These relationships are crucial for:
+1. Creating zero-weight transfer edges between related stations
+2. Ensuring the network is a single connected component
+3. Enabling proper journey planning across different transport modes
+
+If the file cannot be found, the script will still build the graph but with reduced connectivity between different transport modes.
+
+## Future Improvements
+
+1. Add edge weights based on actual journey times between stations
+2. Improve handling of interchange/transfer stations
+3. Add support for more detailed routing information
+4. Include service disruption handling 

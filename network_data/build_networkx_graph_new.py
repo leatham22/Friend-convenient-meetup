@@ -207,8 +207,8 @@ def build_graph_from_stop_point_sequences(line_data):
     Returns:
         NetworkX graph object with stations as nodes and connections as edges
     """
-    # Create a new directed graph
-    G = nx.DiGraph()
+    # Create a new multi-directed graph to support multiple edges between the same nodes
+    G = nx.MultiDiGraph()
     
     # Dictionary to track all stations by their ID
     all_stations = {}
@@ -232,7 +232,8 @@ def build_graph_from_stop_point_sequences(line_data):
             # Process each stop point sequence (each represents a branch/direction)
             for i, sequence in enumerate(stop_point_sequences):
                 direction = sequence.get("direction", "unknown")
-                print(f"  Processing sequence {i+1}: {direction}")
+                branch_name = sequence.get("name", "unknown")
+                print(f"  Processing sequence {i+1}: {direction} - {branch_name}")
                 
                 # Get the stop points (stations) in this sequence
                 stop_points = sequence.get("stopPoint", [])
@@ -270,6 +271,13 @@ def build_graph_from_stop_point_sequences(line_data):
                     # Add the station to the graph
                     if not G.has_node(station_id):
                         G.add_node(station_id, **station_data)
+                    else:
+                        # Update node data to ensure all line information is captured
+                        lines = G.nodes[station_id].get('lines', [])
+                        for line in station_data.get('lines', []):
+                            if line not in lines:
+                                lines.append(line)
+                        G.nodes[station_id]['lines'] = lines
                 
                 # Second pass: create connections between consecutive stations
                 for j in range(len(stop_points) - 1):
@@ -283,38 +291,15 @@ def build_graph_from_stop_point_sequences(line_data):
                             "line_name": line_name,
                             "mode": mode,
                             "direction": direction,
+                            "branch": branch_name,
                             "weight": 1  # Default weight - can be updated with actual times
                         })
                         
                         # Add to connections dictionary
                         connections[line_id].append(connection)
         else:
-            # If no stopPointSequences, fall back to the old method
-            print(f"  Warning: No stopPointSequences found for {line_id}, falling back to stations data")
-            
-            # Process all stations on this line
-            for station in sequence_data.get("stations", []):
-                # Get clean station data
-                station_data = get_station_data(station)
-                station_id = station_data["station_id"]
-                
-                # Skip stations with no ID
-                if not station_id:
-                    print(f"  Warning: Station {station_data['name']} has no ID, skipping")
-                    continue
-                    
-                # Add to all_stations dictionary
-                if station_id not in all_stations:
-                    all_stations[station_id] = station_data
-                else:
-                    # Update lines list if station already exists
-                    all_stations[station_id]["lines"] = list(set(
-                        all_stations[station_id]["lines"] + station_data["lines"]
-                    ))
-                
-                # Add the station to the graph
-                if not G.has_node(station_id):
-                    G.add_node(station_id, **station_data)
+            # If no stopPointSequences, fall back to the orderedLineRoutes
+            print(f"  Warning: No stopPointSequences found for {line_id}, trying orderedLineRoutes")
             
             # Process the ordered line routes if available
             ordered_routes = sequence_data.get("orderedLineRoutes", [])
@@ -324,8 +309,51 @@ def build_graph_from_stop_point_sequences(line_data):
                 for i, route in enumerate(ordered_routes):
                     # Get the naptan IDs (station IDs) in this route
                     naptan_ids = route.get("naptanIds", [])
+                    branch_name = route.get("name", f"route-{i+1}")
+                    direction = route.get("direction", "unknown")
                     
+                    if not naptan_ids:
+                        print(f"  Warning: No stations in route {i+1} for {line_id}")
+                        continue
+                        
                     print(f"  Route {i+1} has {len(naptan_ids)} stations")
+                    
+                    # First, add all stations in this route to the graph
+                    for station_id in naptan_ids:
+                        # Try to find the station in the stations list for this line
+                        station_data = None
+                        for station in sequence_data.get("stations", []):
+                            if station.get("stationId") == station_id:
+                                station_data = get_station_data(station)
+                                break
+                        
+                        # If not found, create minimal data
+                        if not station_data:
+                            station_data = {
+                                "station_id": station_id,
+                                "name": station_id,  # Use ID as name if no better info
+                                "lines": [line_id]
+                            }
+                        
+                        # Add to all_stations dictionary
+                        if station_id not in all_stations:
+                            all_stations[station_id] = station_data
+                        else:
+                            # Update lines list if station already exists
+                            all_stations[station_id]["lines"] = list(set(
+                                all_stations[station_id]["lines"] + station_data["lines"]
+                            ))
+                        
+                        # Add the station to the graph
+                        if not G.has_node(station_id):
+                            G.add_node(station_id, **station_data)
+                        else:
+                            # Update node data to ensure all line information is captured
+                            lines = G.nodes[station_id].get('lines', [])
+                            for line in station_data.get('lines', []):
+                                if line not in lines:
+                                    lines.append(line)
+                            G.nodes[station_id]['lines'] = lines
                     
                     # Create connections between consecutive stations
                     for j in range(len(naptan_ids) - 1):
@@ -337,22 +365,109 @@ def build_graph_from_stop_point_sequences(line_data):
                             "line": line_id,
                             "line_name": line_name,
                             "mode": mode,
+                            "direction": direction,
+                            "branch": branch_name,
                             "weight": 1
                         })
                         
                         # Add to connections dictionary
                         connections[line_id].append(connection)
             else:
-                print(f"  Warning: No ordered routes found for {line_id}")
+                # If neither stopPointSequences nor orderedLineRoutes, try stations and service patterns
+                print(f"  Warning: No ordered routes found for {line_id}, trying service patterns")
+                
+                # Process all stations on this line
+                all_line_stations = []
+                for station in sequence_data.get("stations", []):
+                    station_data = get_station_data(station)
+                    station_id = station_data["station_id"]
+                    
+                    # Skip stations with no ID
+                    if not station_id:
+                        continue
+                    
+                    all_line_stations.append(station_id)
+                    
+                    # Add to all_stations dictionary
+                    if station_id not in all_stations:
+                        all_stations[station_id] = station_data
+                    else:
+                        # Update lines list if station already exists
+                        all_stations[station_id]["lines"] = list(set(
+                            all_stations[station_id]["lines"] + station_data["lines"]
+                        ))
+                    
+                    # Add the station to the graph
+                    if not G.has_node(station_id):
+                        G.add_node(station_id, **station_data)
+                    else:
+                        # Update node data to ensure all line information is captured
+                        lines = G.nodes[station_id].get('lines', [])
+                        for line in station_data.get('lines', []):
+                            if line not in lines:
+                                lines.append(line)
+                        G.nodes[station_id]['lines'] = lines
+                
+                # Check service patterns if available
+                service_patterns = sequence_data.get("servicePatterns", [])
+                if service_patterns:
+                    print(f"  Found {len(service_patterns)} service patterns")
+                    
+                    for i, pattern in enumerate(service_patterns):
+                        stops = pattern.get("stopPoint", [])
+                        if not stops:
+                            continue
+                        
+                        print(f"  Pattern {i+1} has {len(stops)} stops")
+                        
+                        # Create connections between consecutive stations
+                        for j in range(len(stops) - 1):
+                            from_id = stops[j].get("stationId")
+                            to_id = stops[j + 1].get("stationId")
+                            
+                            if from_id and to_id:
+                                # Create a connection tuple (from, to, attributes)
+                                connection = (from_id, to_id, {
+                                    "line": line_id,
+                                    "line_name": line_name,
+                                    "mode": mode,
+                                    "direction": f"pattern-{i+1}",
+                                    "branch": f"service-pattern-{i+1}",
+                                    "weight": 1
+                                })
+                                
+                                # Add to connections dictionary
+                                connections[line_id].append(connection)
     
     # Add all connections to the graph
     edge_count = 0
+    
+    # With MultiDiGraph, we can add multiple edges between the same nodes with different attributes
     for line_id, line_connections in connections.items():
         for from_station, to_station, attrs in line_connections:
             # Add edge if both stations exist in graph
             if G.has_node(from_station) and G.has_node(to_station):
+                # Also add the line to both stations' lines attributes if not already there
+                for station_id in [from_station, to_station]:
+                    lines = G.nodes[station_id].get('lines', [])
+                    if line_id not in lines:
+                        lines.append(line_id)
+                        G.nodes[station_id]['lines'] = lines
+                
+                # Add bidirectional edges for each connection
+                # Forward direction
                 G.add_edge(from_station, to_station, **attrs)
-                edge_count += 1
+                
+                # Reverse direction (for bidirectional travel)
+                reverse_attrs = attrs.copy()
+                if reverse_attrs.get('direction') == 'inbound':
+                    reverse_attrs['direction'] = 'outbound'
+                elif reverse_attrs.get('direction') == 'outbound':
+                    reverse_attrs['direction'] = 'inbound'
+                
+                G.add_edge(to_station, from_station, **reverse_attrs)
+                
+                edge_count += 2  # Count both directions
     
     print(f"Added {edge_count} edges between stations")
     
@@ -381,10 +496,14 @@ def add_parent_child_edges(G, all_stations):
             parent_to_children[parent_id].append(station_id)
     
     # Load existing parent-child relationships if available
+    # Get the absolute path to the project root (parent of network_data)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    slim_stations_file = os.path.join(project_root, "slim_stations/unique_stations.json")
+    
     try:
-        with open("slim_stations/unique_stations.json", 'r') as f:
+        with open(slim_stations_file, 'r') as f:
             existing_data = json.load(f)
-            print(f"Loaded existing station data for parent-child relationships")
+            print(f"Loaded existing station data for parent-child relationships from {slim_stations_file}")
             
             # Create a mapping from station name to ID
             name_to_id = {}
@@ -414,13 +533,13 @@ def add_parent_child_edges(G, all_stations):
                         if child_id not in parent_to_children[parent_id]:
                             parent_to_children[parent_id].append(child_id)
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Warning: Could not load existing station data: {e}")
+        print(f"Warning: Could not load existing station data from {slim_stations_file}: {e}")
     
     # Add zero-weight edges between parent and children (both directions)
     added_edges = 0
     for parent_id, children in parent_to_children.items():
         for child_id in children:
-            # Add bidirectional edges
+            # Add bidirectional edges with transfer=True attribute
             G.add_edge(parent_id, child_id, weight=0, transfer=True)
             G.add_edge(child_id, parent_id, weight=0, transfer=True)
             added_edges += 2
@@ -462,10 +581,14 @@ def save_graph_to_json(G):
         }
     
     # Try to load existing child station data
+    # Get the absolute path to the project root (parent of network_data)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    slim_stations_file = os.path.join(project_root, "slim_stations/unique_stations.json")
+    
     try:
-        with open("slim_stations/unique_stations.json", 'r') as f:
+        with open(slim_stations_file, 'r') as f:
             existing_data = json.load(f)
-            print(f"Loaded existing station data for child stations")
+            print(f"Loaded existing station data for child stations from {slim_stations_file}")
             
             # Create a mapping from original name to standardized name
             name_to_standardized = {}
@@ -482,10 +605,13 @@ def save_graph_to_json(G):
                 if parent_name in graph_data["nodes"] and child_stations:
                     graph_data["nodes"][parent_name]["child_stations"] = child_stations
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Warning: Could not load existing station data for child stations: {e}")
+        print(f"Warning: Could not load existing station data for child stations from {slim_stations_file}: {e}")
     
-    # Add edges to the list
-    for u, v, data in G.edges(data=True):
+    # Now we can add all edges from the MultiDiGraph, preserving multiple edges between the same stations
+    edge_count = 0
+    
+    # Add edges to the list, with each edge having its unique attributes
+    for u, v, key, data in G.edges(data=True, keys=True):
         # Get the station names for source and target
         u_data = G.nodes[u]
         v_data = G.nodes[v]
@@ -497,17 +623,25 @@ def save_graph_to_json(G):
             # Skip edges with missing station names
             continue
             
+        # Create the edge with all attributes
         edge = {
-            "source": source_name,  # Source station name
-            "target": target_name,  # Target station name
+            "source": source_name,      # Source station name
+            "target": target_name,      # Target station name
             "line": data.get("line", ""),
             "line_name": data.get("line_name", ""),
             "mode": data.get("mode", ""),
             "weight": data.get("weight", 1),
-            "transfer": data.get("transfer", False),
-            "direction": data.get("direction", "")  # Include direction info
+            "transfer": data.get("transfer", False),  # Transfer flag
+            "direction": data.get("direction", ""),   # Direction info
+            "branch": data.get("branch", ""),         # Branch info
+            "key": key                               # Include the MultiDiGraph edge key
         }
+        
+        # Add edge to the edges list
         graph_data["edges"].append(edge)
+        edge_count += 1
+    
+    print(f"Added {edge_count} edges to graph data")
     
     # Save to file
     with open(GRAPH_FILE, 'w') as f:
