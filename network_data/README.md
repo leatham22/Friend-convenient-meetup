@@ -2,6 +2,19 @@
 
 This directory contains scripts and data for building and analyzing the London transport network graph.
 
+## Final Graph Population
+
+The primary output of this directory is the finalized, weighted network graph:
+
+- **`networkx_graph_new.json`**: This file contains the complete network structure (nodes and edges) with calculated travel times (weights). It is generated through the following steps:
+    1. **Base Graph Creation**: The initial structure (nodes and edges with null weights) is built by `build_networkx_graph_new.py` using TfL API sequence data.
+    2. **Transfer Weight Update**: Transfer edges (identified by `"transfer": true`) are updated using `update_transfers_in_graph.py`. This script sets their `"weight"` to `5` (representing a 5-minute transfer penalty) and standardizes their `"key"` to `"transfer"`.
+    3. **Journey Time Update**: Weights and durations for all *non-transfer* edges are populated using `update_edge_weights.py`. This script reads pre-calculated journey times from:
+        - `Edge_weights_tube_dlr.json` (for Tube/DLR lines, derived from timetable data and API calls)
+        - `Edge_weights_overground_elizabeth.json` (for Overground/Elizabeth lines, derived from API calls)
+
+This file (`networkx_graph_new.json`) is now ready for use in pathfinding algorithms.
+
 ## Overview
 
 The network_data directory is responsible for:

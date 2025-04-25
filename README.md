@@ -41,9 +41,9 @@ A significant part of the project involves calculating realistic travel times (e
 1.  **Tube/DLR Lines:** Primarily uses processed TfL Timetable API data (`network_data/process_timetable_data.py`), supplemented by direct TfL Journey API calls for specific missing edges (`network_data/get_missing_journey_times.py`). Results are stored in `network_data/Edge_weights_tube_dlr.json`.
 2.  **Overground/Elizabeth Line:** Uses the TfL Journey API exclusively due to timetable data limitations (`network_data/get_journey_times.py`). Results are stored in `network_data/Edge_weights_overground_elizabeth.json`.
 
-Robust validation scripts (`network_data/check_missing_edges.py`, `network_data/analyze_edge_weights.py`) have been developed and run to ensure these calculated weights are consistent with the base network graph structure (`network_data/networkx_graph_new.json`) and to check for data quality issues like schema adherence, duration outliers, and journey time symmetry.
+Robust validation scripts (`network_data/check_missing_edges.py`, `network_data/analyze_edge_weights.py`) were developed and run to ensure these calculated weights were consistent with the base network graph structure (`network_data/networkx_graph_new.json`) and to check for data quality issues like schema adherence, duration outliers, and journey time symmetry.
 
-**Next Step:** The calculated weights from both files will be merged into the main network graph file (`network_data/networkx_graph_new.json`) to create the final, weighted MultiDiGraph needed for pathfinding.
+**Graph Finalization:** The calculated weights from `Edge_weights_tube_dlr.json` and `Edge_weights_overground_elizabeth.json`, along with standardized transfer weights, have now been integrated into the main network graph file (`network_data/networkx_graph_new.json`). This file represents the final, weighted MultiDiGraph needed for pathfinding. See `network_data/README.md` for details on the update scripts used.
 
 ### Latest Updates
 1. **Improved Line Continuity Checking**
