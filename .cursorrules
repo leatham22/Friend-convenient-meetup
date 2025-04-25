@@ -4,3 +4,6 @@ Rules:
     - dont look in "dev" folder when analysing files unless specifically requested to
     - When a new chat is Started, please read the ReadMe to get a picture of the project before first response
     - When making significant change, automatically update the ReadMe with changes 
+    - When you want to write a "fixing" script, dont. Fix the original script that created the data, saving the updated data into a new data file instead. 
+    - Never implement manual implementation unless I ask.
+    - when running commands in terminal, use "python3" NOT "python"

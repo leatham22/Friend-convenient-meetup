@@ -8,8 +8,8 @@ import os
 from collections import defaultdict, Counter
 
 # File paths
-OLD_GRAPH_FILE = os.path.join("network_data", "networkx_graph.json")
-NEW_GRAPH_FILE = os.path.join("network_data", "networkx_graph_new.json")
+OLD_GRAPH_FILE = os.path.join("network_data", "old(wrong)_networkx_graph.json")
+NEW_GRAPH_FILE = os.path.join("network_data", "networkx_graph_working.json")
 
 def load_graph(file_path):
     """Load graph data from a JSON file."""

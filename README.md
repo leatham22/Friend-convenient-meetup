@@ -254,6 +254,12 @@ project/
 │   ├── check_line_continuity.py      # Script to check for missing connections between stations
 │   ├── networkx_graph_new.json       # The generated transport network graph
 │   ├── tfl_line_data.json            # Raw data from TfL API used to build the graph
+│   ├── find_terminal_stations.py      # Identifies terminal stations for Tube/DLR lines based on graph connectivity
+│   ├── get_timetable_data.py          # Fetches raw timetable data from TfL API using terminal stations and caches it per line
+│   ├── line_edges.json               # Extracted adjacent station pairs, grouped by line
+│   ├── terminal_stations.json         # Output of find_terminal_stations.py, mapping line IDs to their terminal station Naptan IDs
+│   ├── weighted_edges.json            # (Partially deprecated) Stores journey times between stations (previously from get_journey_times.py). Will be updated later with timetable data
+│   ├── timetable_cache/              # Directory containing cached raw timetable API responses, one JSON file per line (e.g., district.json)
 │   └── ... other network analysis scripts
 ├── raw_stations/                     # Raw station data from TfL API
 │   ├── unique_stations.json          # All stations
@@ -286,7 +292,11 @@ project/
 
 2. **API Key**
    - Get a free API key from [TfL API Portal](https://api-portal.tfl.gov.uk/)
-   - Create `.env` file: `TFL_API_KEY=your_key_here`
+   - Create `.env` file:
+     ```
+     TFL_API_KEY=YOUR_ACTUAL_API_KEY_HERE
+     ```
+   *(Note: A TFL App ID is no longer required)*
 
 3. **Initial Setup**
    ```bash
@@ -422,56 +432,80 @@ project/
 
 ## Edge Weight Calculation System
 
-To ensure accurate journey time calculations, the project implements a sophisticated edge weight calculation system that uses the TfL Journey API to get real-world travel times between adjacent stations.
+To ensure accurate journey time calculations, the project implements different methods depending on the transport mode.
 
-### Approach Overview
+**Tube & DLR Lines (Timetable Method - Primary)**
 
-The system follows a multi-step process to obtain and store accurate travel times:
+This is the **primary and preferred** method for most Tube and DLR lines as it uses official timetable data for potentially greater accuracy and consistency.
 
-1. **Extract Per-Line Edge List**
-   - Parses the network graph to identify all adjacent station pairs on each line
-   - Groups edges by transport line (tube, DLR, overground, etc.)
-   - Stores the station ID codes required for TfL API calls
-   - Preserves station names for later reference
+1. **Identify Terminal Stations**: The `network_data/find_terminal_stations.py` script analyzes the generated graph (`networkx_graph_new.json`) to find the endpoints (stations with only one connection on a specific line) for each Tube and DLR line. Results are saved to `network_data/terminal_stations.json`.
 
-2. **API Data Collection**
-   - Makes calls to the TfL Journey API for each adjacent station pair
-   - Uses the format: `https://api.tfl.gov.uk/Journey/JourneyResults/{from-ID}/to/{to-ID}?mode={LineName}&date=2025-04-24&time=12:00&timeIs=Departing&journeyPreference=LeastTime`
-   - Sets mode parameter to match the transport line (e.g., tube, dlr) to prevent shortcuts
-   - Uses consistent date/time parameters for all queries to ensure comparable results
-   - Processes only one line at a time to avoid overwhelming the API
+2. **Fetch Timetable Data**: `network_data/get_timetable_data.py` uses the identified terminals. For each line, it queries the TfL `/Line/{lineId}/Timetable/{fromStationId}` API endpoint, starting from each terminal. The raw JSON responses are cached in the `network_data/timetable_cache/` directory (e.g., `district.json`).
 
-3. **Data Storage**
-   - Saves retrieved journey times to `weighted_edges.json`
-   - Stores origin station, destination station, transport mode, line, and duration
-   - Format is compatible with the existing graph structure
+3. **Process Timetable Data**: `network_data/process_timetable_data.py` reads the cached data.
+   - It calculates the time difference between consecutive stops in the timetable sequences to determine **directional** journey times (A -> B might differ from B -> A).
+   - It only calculates durations for station pairs that exist as edges for that line in the base graph (`networkx_graph_new.json`), preventing the creation of edges for non-existent express segments.
+   - If multiple durations are found for the same directional pair (e.g., from different branches or terminals), it averages these durations (rounded to 1 decimal, min 0.1).
+   - It compares the calculated edges against the original Tube/DLR edges in the base graph and reports any discrepancies (edges existing in one but not the other).
+   - The final, valid, directional edges with averaged durations are saved to `network_data/calculated_timetable_edges.json`.
 
-4. **Graph Integration**
-   - Updates the edge weights in `networkx_graph_working.json` with the accurate journey times
-   - Replaces default weights (1) with actual travel times in minutes
+**Overground, Elizabeth Line & Specific Tube/DLR Edge Cases (JourneyResults API Method - Fallback)**
 
-### Benefits
+For Overground and Elizabeth Line services, and for specific Tube/DLR segments where the Timetable API method is insufficient (e.g., known problematic branches like the DLR Stratford branch, complex loops like Heathrow T4, the Circle Line due to its looped nature and potential API data gaps, the Central Line Hainault loop, or specific operational segments like the DLR skipping West India Quay southbound), the TfL JourneyResults API is used as a fallback.
 
-This approach offers several advantages:
+1.  **Extract Relevant Edges**: `network_data/extract_line_edges.py` needs modification to filter the graph and extract adjacent station pairs for Overground, Elizabeth Line, and the identified Tube/DLR edge cases (Circle, Heathrow T4 loop, Hainault loop, DLR Stratford branch, DLR WIQ southbound skip).
 
-- **Real-World Accuracy**: Uses actual TfL journey times instead of estimates
-- **Mode-Specific Travel Times**: Ensures calculations are based on the correct transport mode
-- **Consistent Measurement**: All times measured under the same conditions
-- **API Efficiency**: Minimizes API calls by only querying adjacent stations
-- **Maintainability**: Separates data collection from graph integration
+2.  **Query Journey Planner**: `network_data/get_journey_times.py` (originally designed for this) needs modification to:
+    *   Use the filtered edge list.
+    *   Query the TfL `/Journey/JourneyResults/{from_id}/to/{to_id}` endpoint for each pair.
+    *   Crucially, set the `mode` parameter in the API call to match the specific line (e.g., `overground`, `elizabeth-line`, `dlr`, `tube`) to ensure the API calculates the time using that mode and doesn't find a faster route via a different mode.
+    *   Handle potential errors or missing journeys gracefully.
 
-### Usage
+3.  **Store Results**: Journey times are saved to `network_data/weighted_edges.json` (or separate file).
 
-```bash
-# Step 1: Extract per-line edge list
-python network_data/extract_line_edges.py
+**Graph Integration**
 
-# Step 2-3: Call API and save journey times (for testing with Waterloo-City line)
-python network_data/get_journey_times.py --line waterloo-city
+A final script will be created to:
+- Read the base graph (`networkx_graph_new.json`).
+- Read the calculated durations from `calculated_timetable_edges.json` (Tube/DLR) and the JourneyResults output (Overground/Elizabeth).
+- Update the `weight` attribute of the corresponding **directional** edges in the graph.
+- Update the `weight` attribute of parent/child transfer edges (`transfer=True`) to a standard penalty (e.g., 5 minutes).
+- Save the final, weighted graph.
 
-# Step 4: Merge journey times with graph
-python network_data/update_edge_weights.py
-```
+**Pathfinding Considerations (MultiDiGraph)**
+
+- The final graph is a **MultiDiGraph** where multiple edges (representing different lines) can exist between two stations.
+- Pathfinding algorithms (Dijkstra/A*) should operate on this MultiDiGraph.
+- **Transfer Penalty:** When traversing the graph, if the algorithm moves from an edge belonging to `line_A` to an edge belonging to `line_B` (where A is not B, and neither edge is a `transfer=True` edge), a time penalty (e.g., 2 minutes) should be added to the cumulative journey time to account for the line change.
+
+## Workflow
+
+1.  **Data Extraction & Graph Creation:**
+    *   `network_data/tfl_line_data.json` is fetched/updated (if necessary) containing raw line/route data.
+    *   `network_data/build_networkx_graph_new.py` uses this data and station metadata (`slim_stations/unique_stations.json`) to create `network_data/networkx_graph_new.json` with default edge weights of 1 for line segments and 0 for transfers. The graph is a **MultiDiGraph**.
+
+2.  **Edge Weight Calculation (Tube/DLR - Timetable Method):**
+    *   `network_data/find_terminal_stations.py` identifies line endpoints from the graph, saving to `network_data/terminal_stations.json`.
+    *   `network_data/get_timetable_data.py` uses the terminals to fetch raw TfL Timetable API data for each line, caching responses in `network_data/timetable_cache/`.
+    *   `network_data/process_timetable_data.py` processes the cached timetables:
+        *   Calculates **directional** travel times between adjacent stations, **only for edges present in the base graph**.
+        *   Averages durations for the same directional pair if multiple values exist.
+        *   Reports discrepancies between calculated edges and the original Tube/DLR graph edges.
+        *   Saves the processed directional edges with averaged durations to `network_data/calculated_timetable_edges.json`.
+
+3.  **Edge Weight Calculation (Overground/Elizabeth Line & Tube/DLR Fallbacks - JourneyResults Method):**
+    *   Filter graph edges for Overground/Elizabeth Line and specific Tube/DLR exceptions (Circle, Heathrow T4, Hainault, DLR Stratford, DLR WIQ skip) using `network_data/extract_line_edges.py`.
+    *   Query TfL JourneyResults API for these pairs using `network_data/get_journey_times.py` (ensuring correct `mode` parameter).
+    *   Results are saved to `network_data/weighted_edges.json` (or separate file).
+
+4.  **Graph Update:**
+    *   A script merges durations from `calculated_timetable_edges.json` and the JourneyResults output.
+    *   This script updates the `weight` attribute for corresponding directional edges in `network_data/networkx_graph_new.json`. Transfer edge weights are updated to a standard penalty (e.g., 5 mins).
+
+5.  **Analysis & Pathfinding:**
+    *   Use the final, weighted MultiDiGraph (`network_data/networkx_graph_new.json`).
+    *   Pathfinding algorithms (Dijkstra/A*) use edge `weight`.
+    *   **Crucially, implement a check during pathfinding: if moving between edges `e1` and `e2` where `e1.line != e2.line` (and neither is a transfer edge), add a line change penalty (e.g., 2 mins) to the path cost.**
 
 ## Usage
 
@@ -541,3 +575,174 @@ For 3+ people:
 ## Usage
 
 [Add usage instructions here]
+
+## Workflow
+
+1.  **Data Extraction & Graph Creation:**
+    *   `network_data/tfl_line_data.json` is fetched/updated (if necessary) containing raw line/route data.
+    *   `network_data/build_networkx_graph_new.py` uses this data and station metadata (`slim_stations/unique_stations.json`) to create `network_data/networkx_graph_new.json` with default edge weights of 1 for line segments and 0 for transfers. The graph is a **MultiDiGraph**.
+
+2.  **Edge Weight Calculation (Tube/DLR - Timetable Method):**
+    *   `network_data/find_terminal_stations.py` identifies line endpoints from the graph, saving to `network_data/terminal_stations.json`.
+    *   `network_data/get_timetable_data.py` uses the terminals to fetch raw TfL Timetable API data for each line, caching responses in `network_data/timetable_cache/`.
+    *   `network_data/process_timetable_data.py` processes the cached timetables:
+        *   Calculates **directional** travel times between adjacent stations, **only for edges present in the base graph**.
+        *   Averages durations for the same directional pair if multiple values exist.
+        *   Reports discrepancies between calculated edges and the original Tube/DLR graph edges.
+        *   Saves the processed directional edges with averaged durations to `network_data/calculated_timetable_edges.json`.
+
+3.  **Edge Weight Calculation (Overground/Elizabeth Line - JourneyResults Method):**
+    *   Filter graph edges for Overground/Elizabeth Line using `network_data/extract_line_edges.py`.
+    *   Query TfL JourneyResults API for these pairs using `network_data/get_journey_times.py`.
+    *   Results are saved to `network_data/weighted_edges.json` (or separate file).
+
+4.  **Graph Update:**
+    *   A script merges durations from `calculated_timetable_edges.json` and the JourneyResults output.
+    *   This script updates the `weight` attribute for corresponding directional edges in `network_data/networkx_graph_new.json`. Transfer edge weights are updated to a standard penalty (e.g., 5 mins).
+
+5.  **Analysis & Pathfinding:**
+    *   Use the final, weighted MultiDiGraph (`network_data/networkx_graph_new.json`).
+    *   Pathfinding algorithms (Dijkstra/A*) use edge `weight`.
+    *   **Crucially, implement a check during pathfinding: if moving between edges `e1` and `e2` where `e1.line != e2.line` (and neither is a transfer edge), add a line change penalty (e.g., 2 mins) to the path cost.**
+
+## Usage
+
+1. **Find Meeting Points**
+   ```bash
+   python3 main.py
+   ```
+   - Enter each person's nearest station
+   - Enter walking time to that station
+   - Type 'done' when finished
+
+2. **Update Station Data**
+   ```bash
+   python3 scripts/sync_stations.py
+   ```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+[Your chosen license]
+
+# London Station Meeting Point Finder
+
+This program helps find the optimal meeting point in London using public transport stations (Underground, Overground, DLR, and Rail).
+
+## Algorithm Overview
+
+The program uses a two-stage filtering process to efficiently find suitable meeting stations:
+
+### Stage 1: Initial Filtering
+
+For 2 people:
+- Uses an elliptical boundary with the two starting stations as foci
+- Major axis = 1.2 * direct distance between stations
+- Important geometric note: If we had used major axis = direct distance, the ellipse would collapse to a line because:
+  - In an ellipse, when major axis (2a) equals the distance between foci (2c)
+  - Then semi-major axis (a) equals focal distance (c)
+  - Using the ellipse formula b² = a² - c², we get b = 0
+  - This would reject any station not exactly on the line between start points
+- Using 1.2 * distance creates a reasonable search area that works well with stage 2
+
+For 3+ people:
+- Uses a convex hull containing all starting points
+- Adds a small buffer (0.5%) to account for stations just outside the hull
+
+### Stage 2: Centroid Filtering
+
+- Calculates the centroid of all starting points
+- Creates a circle that covers 70% of the starting points
+- Only keeps stations from stage 1 that fall within this circle
+- This helps eliminate outlier stations while maintaining a good selection of central meeting points
+
+## Implementation Details
+
+- Uses Haversine formula for accurate distance calculations on Earth's surface
+- Includes 0.5% tolerance for geographic calculations to account for:
+  - Earth's curvature effects
+  - Numerical precision in floating-point calculations
+  - Small deviations in station coordinate data
+
+## Usage
+
+[Add usage instructions here]
+
+## Workflow
+
+1.  **Data Extraction & Graph Creation:**
+    *   `network_data/tfl_line_data.json` is fetched/updated (if necessary) containing raw line/route data.
+    *   `network_data/build_networkx_graph_new.py` uses this data and station metadata (`slim_stations/unique_stations.json`) to create `network_data/networkx_graph_new.json` with default edge weights of 1 for line segments and 0 for transfers. The graph is a **MultiDiGraph**.
+
+2.  **Edge Weight Calculation (Tube/DLR - Timetable Method):**
+    *   `network_data/find_terminal_stations.py` identifies line endpoints from the graph, saving to `network_data/terminal_stations.json`.
+    *   `network_data/get_timetable_data.py` uses the terminals to fetch raw TfL Timetable API data for each line, caching responses in `network_data/timetable_cache/`.
+    *   `network_data/process_timetable_data.py` processes the cached timetables:
+        *   Calculates **directional** travel times between adjacent stations, **only for edges present in the base graph**.
+        *   Averages durations for the same directional pair if multiple values exist.
+        *   Reports discrepancies between calculated edges and the original Tube/DLR graph edges.
+        *   Saves the processed directional edges with averaged durations to `network_data/calculated_timetable_edges.json`.
+
+3.  **Edge Weight Calculation (Overground/Elizabeth Line - JourneyResults Method):**
+    *   Filter graph edges for Overground/Elizabeth Line using `network_data/extract_line_edges.py`.
+    *   Query TfL JourneyResults API for these pairs using `network_data/get_journey_times.py`.
+    *   Results are saved to `network_data/weighted_edges.json` (or separate file).
+
+4.  **Graph Update:**
+    *   A script merges durations from `calculated_timetable_edges.json` and the JourneyResults output.
+    *   This script updates the `weight` attribute for corresponding directional edges in `network_data/networkx_graph_new.json`. Transfer edge weights are updated to a standard penalty (e.g., 5 mins).
+
+5.  **Analysis & Pathfinding:**
+    *   Use the final, weighted MultiDiGraph (`network_data/networkx_graph_new.json`).
+    *   Pathfinding algorithms (Dijkstra/A*) use edge `weight`.
+    *   **Crucially, implement a check during pathfinding: if moving between edges `e1` and `e2` where `e1.line != e2.line` (and neither is a transfer edge), add a line change penalty (e.g., 2 mins) to the path cost.**
+
+## Usage
+
+1. **Find Meeting Points**
+   ```bash
+   python3 main.py
+   ```
+   - Enter each person's nearest station
+   - Enter walking time to that station
+   - Type 'done' when finished
+
+2. **Update Station Data**
+   ```bash
+   python3 scripts/sync_stations.py
+   ```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+[Your chosen license]
+
+### Running the Scripts
+
+Execute the scripts in the `network_data` directory, generally in the order described in the Data Flow section:
+
+```bash
+cd network_data
+python3 build_networkx_graph_new.py    # Builds the base graph & initializes weights to null
+# python3 ../dev/original_Station_graph/update_edge_weights.py # (One-time script, moved to dev/)
+python3 find_terminal_stations.py  # Finds terminals needed for timetable fetching
+python3 get_timetable_data.py      # Fetches timetable data (uses cached terminals)
+python3 process_timetable_data.py  # Calculates durations from timetables
+python3 merge_travel_times.py      # Merges calculated times into the graph
+# (Result in networkx_graph_final.json)
+```
+
+*You can often skip `build_networkx_graph_new.py` and `find_terminal_stations.py` if the underlying network structure hasn't changed significantly and `networkx_graph_new.json` / `terminal_stations.json` already exist.*
+*Use `get_timetable_data.py --line <line_id>` to refresh data for specific lines.*
