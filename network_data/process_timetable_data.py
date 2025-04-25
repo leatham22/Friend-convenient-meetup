@@ -30,6 +30,7 @@ import argparse
 from collections import defaultdict
 import math # Import math for isnan check
 import statistics # For calculating average
+from datetime import datetime # Import datetime
 
 CACHE_DIR = "timetable_cache"
 OUTPUT_FILE = "Edge_weights_tube_dlr.json"
@@ -340,6 +341,7 @@ def create_output_edges(all_durations, graph_data):
                  "transfer": False,
                  "direction": original_edge.get('direction', ''),
                  "branch": original_edge.get('branch', ''),
+                 "calculated_timestamp": datetime.now().isoformat() # Add timestamp here
              }
              output_edges.append(output_edge)
              processed_directional_pairs.add((from_id, to_id, line_id))

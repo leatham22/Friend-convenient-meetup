@@ -34,6 +34,17 @@ This project solves the common problem of finding a convenient place to meet in 
   - Total travel time minimization
   - Walking time consideration
 
+### Edge Weight Calculation and Validation (New)
+
+A significant part of the project involves calculating realistic travel times (edge weights) between adjacent stations. This has been achieved through two main methods:
+
+1.  **Tube/DLR Lines:** Primarily uses processed TfL Timetable API data (`network_data/process_timetable_data.py`), supplemented by direct TfL Journey API calls for specific missing edges (`network_data/get_missing_journey_times.py`). Results are stored in `network_data/Edge_weights_tube_dlr.json`.
+2.  **Overground/Elizabeth Line:** Uses the TfL Journey API exclusively due to timetable data limitations (`network_data/get_journey_times.py`). Results are stored in `network_data/Edge_weights_overground_elizabeth.json`.
+
+Robust validation scripts (`network_data/check_missing_edges.py`, `network_data/analyze_edge_weights.py`) have been developed and run to ensure these calculated weights are consistent with the base network graph structure (`network_data/networkx_graph_new.json`) and to check for data quality issues like schema adherence, duration outliers, and journey time symmetry.
+
+**Next Step:** The calculated weights from both files will be merged into the main network graph file (`network_data/networkx_graph_new.json`) to create the final, weighted MultiDiGraph needed for pathfinding.
+
 ### Latest Updates
 1. **Improved Line Continuity Checking**
    - Completely redesigned branch detection algorithm using network topology analysis
@@ -540,7 +551,7 @@ This directory is central to the project, containing the scripts and data files 
 1.  **Base Graph Creation**:
     *   `build_networkx_graph_new.py` constructs the fundamental graph structure (`networkx_graph_new.json`) using TfL API data. This initial graph includes nodes (stations) and edges (connections) but edges initially have their `weight` set to `null`.
 
-2.  **Tube/DLR Edge Weight Calculation**:
+2. **Tube/DLR Edge Weight Calculation**:
     *   A two-step process generates `Edge_weights_tube_dlr.json`:
         *   **Timetable Processing**: `find_terminal_stations.py` -> `get_timetable_data.py` (caches data) -> `process_timetable_data.py` calculates most Tube/DLR weights based on TfL timetables, handling discrepancies by averaging.
         *   **Missing Edge Handling**: `get_missing_journey_times.py` specifically targets a small set of Tube/DLR edges not covered by the timetable method. It calls the TfL Journey API (adapting parameters for DLR) to get their durations and appends them to the file created by the previous step.

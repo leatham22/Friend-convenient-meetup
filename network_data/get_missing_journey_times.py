@@ -258,16 +258,16 @@ def get_and_average_journey_time(from_id, to_id, mode, line):
                             leg_duration = transit_leg.get("duration")
                             if leg_duration is not None:
                                 print(f"    Found valid leg: Line={leg_line}, Duration={leg_duration} mins")
-                                # Ensure duration is at least a small positive value
-                                valid_durations.append(max(0.1, float(leg_duration)))
+                                # Ensure duration is at least 1.0 minute (changed from 0.1)
+                                valid_durations.append(max(1.0, float(leg_duration)))
                                 continue # Move to the next journey
 
                             # If leg duration is missing, fall back to the total journey duration
                             journey_duration = journey.get("duration")
                             if journey_duration is not None:
                                 print(f"    Found valid journey (using journey duration): Line={leg_line}, Duration={journey_duration} mins")
-                                # Ensure duration is at least a small positive value
-                                valid_durations.append(max(0.1, float(journey_duration)))
+                                # Ensure duration is at least 1.0 minute (changed from 0.1)
+                                valid_durations.append(max(1.0, float(journey_duration)))
                                 continue # Move to the next journey
 
             # --- Averaging Logic ---
@@ -278,7 +278,8 @@ def get_and_average_journey_time(from_id, to_id, mode, line):
 
             if len(valid_durations) == 1:
                 # Only one valid duration found, return it directly
-                final_duration = valid_durations[0]
+                # Round to 1 decimal place and ensure minimum 1.0 (changed from 0.1)
+                final_duration = max(1.0, round(valid_durations[0], 1))
                 print(f"  Single valid duration found: {final_duration:.1f} mins")
                 return final_duration
             else:
@@ -286,7 +287,7 @@ def get_and_average_journey_time(from_id, to_id, mode, line):
                 min_d = min(valid_durations)
                 max_d = max(valid_durations)
                 diff_abs = max_d - min_d
-                # Avoid division by zero if max_d is 0 (unlikely with min 0.1)
+                # Avoid division by zero if max_d is 0 (unlikely with min 1.0)
                 diff_rel = (diff_abs / max_d) if max_d > 0 else 0
 
                 print(f"  Multiple valid durations found: {sorted(valid_durations)}")
@@ -296,14 +297,15 @@ def get_and_average_journey_time(from_id, to_id, mode, line):
                 if diff_abs <= MAX_DURATION_DIFFERENCE_MINS and diff_rel <= MAX_DURATION_DIFFERENCE_PERCENT:
                     # Differences are acceptable, calculate the average
                     avg_duration = statistics.mean(valid_durations)
-                    # Ensure the average is at least the minimum duration (0.1)
-                    final_duration = max(0.1, round(avg_duration, 1)) # Round to 1 decimal place
+                    # Ensure the average is at least the minimum duration (1.0) and round (changed from 0.1)
+                    final_duration = max(1.0, round(avg_duration, 1))
                     print(f"    Difference within threshold. Averaging to: {final_duration:.1f} mins")
                     return final_duration
                 else:
                     # Differences are too large, print a warning but still average as requested
                     avg_duration = statistics.mean(valid_durations)
-                    final_duration = max(0.1, round(avg_duration, 1))
+                    # Ensure the average is at least the minimum duration (1.0) and round (changed from 0.1)
+                    final_duration = max(1.0, round(avg_duration, 1))
                     print(f"    Warning: Large difference between durations ({diff_abs:.1f}m / {diff_rel:.2%}). Using average anyway: {final_duration:.1f} mins")
                     return final_duration
 

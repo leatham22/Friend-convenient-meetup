@@ -82,6 +82,31 @@ The scripts now better handle branched lines by:
 3. Using this information for more accurate connectivity validation
 4. Algorithmically detecting branches rather than relying on static definitions
 
+## Edge Weight Calculation (Overground/Elizabeth Line)
+
+The process for obtaining edge weights for Overground and Elizabeth line services differs from the Tube/DLR method due to limitations in the TfL Timetable API for these modes.
+
+-   **`get_journey_times.py`**: This script now specifically targets Overground and Elizabeth line station pairs defined in `line_edges.json`.
+    -   It calls the TfL Journey Results API for each adjacent station pair (in both directions).
+    -   It implements logic to average multiple valid journey times returned by the API, applying thresholds similar to `get_missing_journey_times.py`.
+    -   It ensures a minimum journey time (e.g., 1.0 minute) and handles potential API errors.
+    -   It saves the calculated edges directly to `Edge_weights_overground_elizabeth.json`.
+-   **`Edge_weights_overground_elizabeth.json`**: Contains the calculated edge weights (durations) specifically for Overground and Elizabeth line services.
+
+## Data Validation and Analysis
+
+Several scripts are available to validate and analyze the generated graph and weight data:
+
+-   **`check_line_continuity.py`**: Validates the graph structure by checking for expected connections between adjacent stations on each line, accounting for branches.
+-   **`check_missing_edges.py`**: Compares the edges defined in the base graph (`networkx_graph_new.json`) against the calculated weight files (`Edge_weights_tube_dlr.json` and `Edge_weights_overground_elizabeth.json`). It checks for discrepancies in both directions:
+    -   Edges in the graph but missing weights.
+    -   Edges with weights but not present in the graph for the corresponding mode.
+-   **`analyze_edge_weights.py`**: Performs deeper analysis on the weight files:
+    -   **Duration Sanity Check**: Flags edges with unusually high or low journey times.
+    -   **Symmetry Analysis**: Compares forward (A->B) and reverse (B->A) journey times for the same pair, highlighting significant differences.
+    -   **Schema Verification**: Checks if all records contain the expected fields and data types.
+-   **`apply_arbitrary_timestamp.py`**: A utility script to add/overwrite the `calculated_timestamp` field in weight files, used primarily to ensure schema consistency for records generated before timestamping was implemented.
+
 ## MultiDiGraph Implementation
 
 The latest version of the graph uses NetworkX's MultiDiGraph structure rather than a standard DiGraph. This change provides several important benefits:
@@ -213,18 +238,18 @@ If the file cannot be found, the script will still build the graph but with redu
         iii. It averages durations if multiple valid ones are returned and appends these newly weighted edges back to `Edge_weights_tube_dlr.json`.
 
 3.  **Edge Weight Calculation (Overground/Elizabeth Line - JourneyResults Method):**
-    a.  *(TODO)* `network_data/extract_line_edges.py`: Needs modification to filter for Overground/Elizabeth Line modes from the base graph.
-    b.  *(TODO)* `network_data/get_journey_times.py` (or a new script): Needs modification to use the filtered list and query the TfL JourneyResults API.
-    c.  *(TODO)* Results need to be stored (e.g., a separate `Edge_weights_other.json` or appended to the main weight file).
+    a.  `get_journey_times.py` uses the Journey API based on adjacent pairs identified in `line_edges.json` (which itself can be derived from the base graph if needed) -> `Edge_weights_overground_elizabeth.json`.
 
-4.  **Graph Update:**
-    a.  *(Next Step)* A script will be created to merge the durations from `Edge_weights_tube_dlr.json` (and eventually Overground/Elizabeth Line results) into the base graph.
-    b.  *(Next Step)* This script will update the `weight` attribute (currently `null`) for the corresponding directional edges in `network_data/networkx_graph_new.json`. Parent/child transfer edges (`transfer=True`) will also have their weights updated to a standard transfer time (e.g., 5 minutes).
+4.  **Validation:** Run `check_missing_edges.py` and `analyze_edge_weights.py` to verify consistency and data quality. Use `apply_arbitrary_timestamp.py` if needed for schema fixes.
 
-5.  **Analysis & Pathfinding:**
-    *   Use the final, weighted MultiDiGraph (`networkx_graph_new.json`) for network analysis and meeting point calculations.
+5.  **Graph Update (Future Step):**
+    a.  *(Next Step)* A script will be created to merge the durations from both `Edge_weights_tube_dlr.json` and `Edge_weights_overground_elizabeth.json` into the base graph `network_data/networkx_graph_new.json`.
+    b.  *(Next Step)* This script will update the `weight` attribute (currently `null`) for the corresponding directional edges. Parent/child transfer edges (`transfer=True`) will also have their weights updated to a standard transfer time (e.g., 5 minutes).
+
+6.  **Analysis & Pathfinding:**
+    *   Use the final, weighted MultiDiGraph (`networkx_graph_new.json` after update) for network analysis and meeting point calculations.
     *   Pathfinding algorithms (Dijkstra/A*) will use the `weight` attribute for travel time.
-    *   **During pathfinding, the algorithm needs to check the `line` attribute of consecutive edges in the path. If `edge_n.line != edge_n+1.line` (and neither is a transfer edge), a transfer penalty (e.g., 2 minutes) should be added to the total journey time.** 
+    *   **During pathfinding, the algorithm needs to check the `line` attribute of consecutive edges in the path. If `edge_n.line != edge_n+1.line` (and neither is a transfer edge), a transfer penalty (e.g., 2 minutes) should be added to the total journey time.**
 
 1.  **`build_networkx_graph_new.py`**: 
     *   **Input**: Raw line sequence data (cached `tfl_line_data.json` or fetched from API).
