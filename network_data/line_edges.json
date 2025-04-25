@@ -1,0 +1,5251 @@
+{
+  "bakerloo": [
+    {
+      "source_name": "Harrow & Wealdstone Underground Station",
+      "target_name": "Kenton Underground Station",
+      "source_id": "940GZZLUHAW",
+      "target_id": "940GZZLUKEN",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kenton Underground Station",
+      "target_name": "South Kenton Underground Station",
+      "source_id": "940GZZLUKEN",
+      "target_id": "940GZZLUSKT",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Kenton Underground Station",
+      "target_name": "North Wembley Underground Station",
+      "source_id": "940GZZLUSKT",
+      "target_id": "940GZZLUNWY",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Wembley Underground Station",
+      "target_name": "Wembley Central Underground Station",
+      "source_id": "940GZZLUNWY",
+      "target_id": "940GZZLUWYC",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wembley Central Underground Station",
+      "target_name": "Stonebridge Park Underground Station",
+      "source_id": "940GZZLUWYC",
+      "target_id": "940GZZLUSGP",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stonebridge Park Underground Station",
+      "target_name": "Harlesden Underground Station",
+      "source_id": "940GZZLUSGP",
+      "target_id": "940GZZLUHSN",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Harlesden Underground Station",
+      "target_name": "Willesden Junction Underground Station",
+      "source_id": "940GZZLUHSN",
+      "target_id": "940GZZLUWJN",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Willesden Junction Underground Station",
+      "target_name": "Kensal Green Underground Station",
+      "source_id": "940GZZLUWJN",
+      "target_id": "940GZZLUKSL",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kensal Green Underground Station",
+      "target_name": "Queen's Park Underground Station",
+      "source_id": "940GZZLUKSL",
+      "target_id": "940GZZLUQPS",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Queen's Park Underground Station",
+      "target_name": "Kilburn Park Underground Station",
+      "source_id": "940GZZLUQPS",
+      "target_id": "940GZZLUKPK",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kilburn Park Underground Station",
+      "target_name": "Maida Vale Underground Station",
+      "source_id": "940GZZLUKPK",
+      "target_id": "940GZZLUMVL",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Maida Vale Underground Station",
+      "target_name": "Warwick Avenue Underground Station",
+      "source_id": "940GZZLUMVL",
+      "target_id": "940GZZLUWKA",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Warwick Avenue Underground Station",
+      "target_name": "Paddington Underground Station",
+      "source_id": "940GZZLUWKA",
+      "target_id": "940GZZLUPAC",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Paddington Underground Station",
+      "target_name": "Edgware Road (Bakerloo) Underground Station",
+      "source_id": "940GZZLUPAC",
+      "target_id": "940GZZLUERB",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Edgware Road (Bakerloo) Underground Station",
+      "target_name": "Marylebone Underground Station",
+      "source_id": "940GZZLUERB",
+      "target_id": "940GZZLUMYB",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Marylebone Underground Station",
+      "target_name": "Baker Street Underground Station",
+      "source_id": "940GZZLUMYB",
+      "target_id": "940GZZLUBST",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Regent's Park Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLURGP",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Regent's Park Underground Station",
+      "target_name": "Oxford Circus Underground Station",
+      "source_id": "940GZZLURGP",
+      "target_id": "940GZZLUOXC",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Oxford Circus Underground Station",
+      "target_name": "Piccadilly Circus Underground Station",
+      "source_id": "940GZZLUOXC",
+      "target_id": "940GZZLUPCC",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Piccadilly Circus Underground Station",
+      "target_name": "Charing Cross Underground Station",
+      "source_id": "940GZZLUPCC",
+      "target_id": "940GZZLUCHX",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Charing Cross Underground Station",
+      "target_name": "Embankment Underground Station",
+      "source_id": "940GZZLUCHX",
+      "target_id": "940GZZLUEMB",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Waterloo Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUWLO",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Waterloo Underground Station",
+      "target_name": "Lambeth North Underground Station",
+      "source_id": "940GZZLUWLO",
+      "target_id": "940GZZLULBN",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Lambeth North Underground Station",
+      "target_name": "Elephant & Castle Underground Station",
+      "source_id": "940GZZLULBN",
+      "target_id": "940GZZLUEAC",
+      "line": "bakerloo",
+      "line_name": "Bakerloo",
+      "mode": "tube"
+    }
+  ],
+  "circle": [
+    {
+      "source_name": "Paddington Underground Station",
+      "target_name": "Edgware Road (Circle Line) Underground Station",
+      "source_id": "940GZZLUPAC",
+      "target_id": "940GZZLUERC",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Paddington Underground Station",
+      "target_name": "Bayswater Underground Station",
+      "source_id": "940GZZLUPAC",
+      "target_id": "940GZZLUBWT",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUGPS",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Edgware Road (Circle Line) Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUERC",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Westminster Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUWSM",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Temple Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUTMP",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Aldgate Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUALD",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Moorgate Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUMGT",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Notting Hill Gate Underground Station",
+      "target_name": "Bayswater Underground Station",
+      "source_id": "940GZZLUNHG",
+      "target_id": "940GZZLUBWT",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Notting Hill Gate Underground Station",
+      "target_name": "High Street Kensington Underground Station",
+      "source_id": "940GZZLUNHG",
+      "target_id": "940GZZLUHSK",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Edgware Road (Circle Line) Underground Station",
+      "target_name": "Paddington (H&C Line)-Underground",
+      "source_id": "940GZZLUERC",
+      "target_id": "940GZZLUPAH",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "High Street Kensington Underground Station",
+      "target_name": "Gloucester Road Underground Station",
+      "source_id": "940GZZLUHSK",
+      "target_id": "940GZZLUGTR",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gloucester Road Underground Station",
+      "target_name": "South Kensington Underground Station",
+      "source_id": "940GZZLUGTR",
+      "target_id": "940GZZLUSKS",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Kensington Underground Station",
+      "target_name": "Sloane Square Underground Station",
+      "source_id": "940GZZLUSKS",
+      "target_id": "940GZZLUSSQ",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Sloane Square Underground Station",
+      "target_name": "Victoria Underground Station",
+      "source_id": "940GZZLUSSQ",
+      "target_id": "940GZZLUVIC",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Victoria Underground Station",
+      "target_name": "St. James's Park Underground Station",
+      "source_id": "940GZZLUVIC",
+      "target_id": "940GZZLUSJP",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "St. James's Park Underground Station",
+      "target_name": "Westminster Underground Station",
+      "source_id": "940GZZLUSJP",
+      "target_id": "940GZZLUWSM",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Temple Underground Station",
+      "target_name": "Blackfriars Underground Station",
+      "source_id": "940GZZLUTMP",
+      "target_id": "940GZZLUBKF",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Blackfriars Underground Station",
+      "target_name": "Mansion House Underground Station",
+      "source_id": "940GZZLUBKF",
+      "target_id": "940GZZLUMSH",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mansion House Underground Station",
+      "target_name": "Cannon Street Underground Station",
+      "source_id": "940GZZLUMSH",
+      "target_id": "940GZZLUCST",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Cannon Street Underground Station",
+      "target_name": "Monument Underground Station",
+      "source_id": "940GZZLUCST",
+      "target_id": "940GZZLUMMT",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Monument Underground Station",
+      "target_name": "Tower Hill Underground Station",
+      "source_id": "940GZZLUMMT",
+      "target_id": "940GZZLUTWH",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tower Hill Underground Station",
+      "target_name": "Aldgate Underground Station",
+      "source_id": "940GZZLUTWH",
+      "target_id": "940GZZLUALD",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moorgate Underground Station",
+      "target_name": "Barbican Underground Station",
+      "source_id": "940GZZLUMGT",
+      "target_id": "940GZZLUBBN",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barbican Underground Station",
+      "target_name": "Farringdon Underground Station",
+      "source_id": "940GZZLUBBN",
+      "target_id": "940GZZLUFCN",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Farringdon Underground Station",
+      "target_name": "King's Cross St. Pancras Underground Station",
+      "source_id": "940GZZLUFCN",
+      "target_id": "940GZZLUKSX",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Euston Square Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUESQ",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Euston Square Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUESQ",
+      "target_id": "940GZZLUGPS",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Paddington (H&C Line)-Underground",
+      "target_name": "Royal Oak Underground Station",
+      "source_id": "940GZZLUPAH",
+      "target_id": "940GZZLURYO",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Royal Oak Underground Station",
+      "target_name": "Westbourne Park Underground Station",
+      "source_id": "940GZZLURYO",
+      "target_id": "940GZZLUWSP",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Westbourne Park Underground Station",
+      "target_name": "Ladbroke Grove Underground Station",
+      "source_id": "940GZZLUWSP",
+      "target_id": "940GZZLULAD",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ladbroke Grove Underground Station",
+      "target_name": "Latimer Road Underground Station",
+      "source_id": "940GZZLULAD",
+      "target_id": "940GZZLULRD",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Latimer Road Underground Station",
+      "target_name": "Wood Lane Underground Station",
+      "source_id": "940GZZLULRD",
+      "target_id": "940GZZLUWLA",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wood Lane Underground Station",
+      "target_name": "Shepherd's Bush Market Underground Station",
+      "source_id": "940GZZLUWLA",
+      "target_id": "940GZZLUSBM",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Shepherd's Bush Market Underground Station",
+      "target_name": "Goldhawk Road Underground Station",
+      "source_id": "940GZZLUSBM",
+      "target_id": "940GZZLUGHK",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Goldhawk Road Underground Station",
+      "target_name": "Hammersmith (H&C Line) Underground Station",
+      "source_id": "940GZZLUGHK",
+      "target_id": "940GZZLUHSC",
+      "line": "circle",
+      "line_name": "Circle",
+      "mode": "tube"
+    }
+  ],
+  "district": [
+    {
+      "source_name": "Paddington Underground Station",
+      "target_name": "Edgware Road (Circle Line) Underground Station",
+      "source_id": "940GZZLUPAC",
+      "target_id": "940GZZLUERC",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Paddington Underground Station",
+      "target_name": "Bayswater Underground Station",
+      "source_id": "940GZZLUPAC",
+      "target_id": "940GZZLUBWT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Westminster Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUWSM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Temple Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUTMP",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mile End Underground Station",
+      "target_name": "Bow Road Underground Station",
+      "source_id": "940GZZLUMED",
+      "target_id": "940GZZLUBWR",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mile End Underground Station",
+      "target_name": "Stepney Green Underground Station",
+      "source_id": "940GZZLUMED",
+      "target_id": "940GZZLUSGN",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Notting Hill Gate Underground Station",
+      "target_name": "Bayswater Underground Station",
+      "source_id": "940GZZLUNHG",
+      "target_id": "940GZZLUBWT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Notting Hill Gate Underground Station",
+      "target_name": "High Street Kensington Underground Station",
+      "source_id": "940GZZLUNHG",
+      "target_id": "940GZZLUHSK",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ealing Broadway Underground Station",
+      "target_name": "Ealing Common Underground Station",
+      "source_id": "940GZZLUEBY",
+      "target_id": "940GZZLUECM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "High Street Kensington Underground Station",
+      "target_name": "Earl's Court Underground Station",
+      "source_id": "940GZZLUHSK",
+      "target_id": "940GZZLUECT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gloucester Road Underground Station",
+      "target_name": "South Kensington Underground Station",
+      "source_id": "940GZZLUGTR",
+      "target_id": "940GZZLUSKS",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gloucester Road Underground Station",
+      "target_name": "Earl's Court Underground Station",
+      "source_id": "940GZZLUGTR",
+      "target_id": "940GZZLUECT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Kensington Underground Station",
+      "target_name": "Sloane Square Underground Station",
+      "source_id": "940GZZLUSKS",
+      "target_id": "940GZZLUSSQ",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Sloane Square Underground Station",
+      "target_name": "Victoria Underground Station",
+      "source_id": "940GZZLUSSQ",
+      "target_id": "940GZZLUVIC",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Victoria Underground Station",
+      "target_name": "St. James's Park Underground Station",
+      "source_id": "940GZZLUVIC",
+      "target_id": "940GZZLUSJP",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "St. James's Park Underground Station",
+      "target_name": "Westminster Underground Station",
+      "source_id": "940GZZLUSJP",
+      "target_id": "940GZZLUWSM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Temple Underground Station",
+      "target_name": "Blackfriars Underground Station",
+      "source_id": "940GZZLUTMP",
+      "target_id": "940GZZLUBKF",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Blackfriars Underground Station",
+      "target_name": "Mansion House Underground Station",
+      "source_id": "940GZZLUBKF",
+      "target_id": "940GZZLUMSH",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mansion House Underground Station",
+      "target_name": "Cannon Street Underground Station",
+      "source_id": "940GZZLUMSH",
+      "target_id": "940GZZLUCST",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Cannon Street Underground Station",
+      "target_name": "Monument Underground Station",
+      "source_id": "940GZZLUCST",
+      "target_id": "940GZZLUMMT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Monument Underground Station",
+      "target_name": "Tower Hill Underground Station",
+      "source_id": "940GZZLUMMT",
+      "target_id": "940GZZLUTWH",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tower Hill Underground Station",
+      "target_name": "Aldgate East Underground Station",
+      "source_id": "940GZZLUTWH",
+      "target_id": "940GZZLUADE",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Upminster Underground Station",
+      "target_name": "Upminster Bridge Underground Station",
+      "source_id": "940GZZLUUPM",
+      "target_id": "940GZZLUUPB",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Upminster Bridge Underground Station",
+      "target_name": "Hornchurch Underground Station",
+      "source_id": "940GZZLUUPB",
+      "target_id": "940GZZLUHCH",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hornchurch Underground Station",
+      "target_name": "Elm Park Underground Station",
+      "source_id": "940GZZLUHCH",
+      "target_id": "940GZZLUEPK",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Elm Park Underground Station",
+      "target_name": "Dagenham East Underground Station",
+      "source_id": "940GZZLUEPK",
+      "target_id": "940GZZLUDGE",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Dagenham East Underground Station",
+      "target_name": "Dagenham Heathway Underground Station",
+      "source_id": "940GZZLUDGE",
+      "target_id": "940GZZLUDGY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Dagenham Heathway Underground Station",
+      "target_name": "Becontree Underground Station",
+      "source_id": "940GZZLUDGY",
+      "target_id": "940GZZLUBEC",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Becontree Underground Station",
+      "target_name": "Upney Underground Station",
+      "source_id": "940GZZLUBEC",
+      "target_id": "940GZZLUUPY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Upney Underground Station",
+      "target_name": "Barking Underground Station",
+      "source_id": "940GZZLUUPY",
+      "target_id": "940GZZLUBKG",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barking Underground Station",
+      "target_name": "East Ham Underground Station",
+      "source_id": "940GZZLUBKG",
+      "target_id": "940GZZLUEHM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "East Ham Underground Station",
+      "target_name": "Upton Park Underground Station",
+      "source_id": "940GZZLUEHM",
+      "target_id": "940GZZLUUPK",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Upton Park Underground Station",
+      "target_name": "Plaistow Underground Station",
+      "source_id": "940GZZLUUPK",
+      "target_id": "940GZZLUPLW",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Plaistow Underground Station",
+      "target_name": "West Ham Underground Station",
+      "source_id": "940GZZLUPLW",
+      "target_id": "940GZZLUWHM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Ham Underground Station",
+      "target_name": "Bromley-by-Bow Underground Station",
+      "source_id": "940GZZLUWHM",
+      "target_id": "940GZZLUBBB",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bromley-by-Bow Underground Station",
+      "target_name": "Bow Road Underground Station",
+      "source_id": "940GZZLUBBB",
+      "target_id": "940GZZLUBWR",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stepney Green Underground Station",
+      "target_name": "Whitechapel Underground Station",
+      "source_id": "940GZZLUSGN",
+      "target_id": "940GZZLUWPL",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Whitechapel Underground Station",
+      "target_name": "Aldgate East Underground Station",
+      "source_id": "940GZZLUWPL",
+      "target_id": "940GZZLUADE",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Earl's Court Underground Station",
+      "target_name": "West Kensington Underground Station",
+      "source_id": "940GZZLUECT",
+      "target_id": "940GZZLUWKN",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Earl's Court Underground Station",
+      "target_name": "West Brompton Underground Station",
+      "source_id": "940GZZLUECT",
+      "target_id": "940GZZLUWBN",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Earl's Court Underground Station",
+      "target_name": "Kensington (Olympia) Underground Station",
+      "source_id": "940GZZLUECT",
+      "target_id": "940GZZLUKOY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Kensington Underground Station",
+      "target_name": "Barons Court Underground Station",
+      "source_id": "940GZZLUWKN",
+      "target_id": "940GZZLUBSC",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barons Court Underground Station",
+      "target_name": "Hammersmith (Dist&Picc Line) Underground Station",
+      "source_id": "940GZZLUBSC",
+      "target_id": "940GZZLUHSD",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hammersmith (Dist&Picc Line) Underground Station",
+      "target_name": "Ravenscourt Park Underground Station",
+      "source_id": "940GZZLUHSD",
+      "target_id": "940GZZLURVP",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ravenscourt Park Underground Station",
+      "target_name": "Stamford Brook Underground Station",
+      "source_id": "940GZZLURVP",
+      "target_id": "940GZZLUSFB",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stamford Brook Underground Station",
+      "target_name": "Turnham Green Underground Station",
+      "source_id": "940GZZLUSFB",
+      "target_id": "940GZZLUTNG",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Turnham Green Underground Station",
+      "target_name": "Chiswick Park Underground Station",
+      "source_id": "940GZZLUTNG",
+      "target_id": "940GZZLUCWP",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Turnham Green Underground Station",
+      "target_name": "Gunnersbury Underground Station",
+      "source_id": "940GZZLUTNG",
+      "target_id": "940GZZLUGBY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chiswick Park Underground Station",
+      "target_name": "Acton Town Underground Station",
+      "source_id": "940GZZLUCWP",
+      "target_id": "940GZZLUACT",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Acton Town Underground Station",
+      "target_name": "Ealing Common Underground Station",
+      "source_id": "940GZZLUACT",
+      "target_id": "940GZZLUECM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gunnersbury Underground Station",
+      "target_name": "Kew Gardens Underground Station",
+      "source_id": "940GZZLUGBY",
+      "target_id": "940GZZLUKWG",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kew Gardens Underground Station",
+      "target_name": "Richmond Underground Station",
+      "source_id": "940GZZLUKWG",
+      "target_id": "940GZZLURMD",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Brompton Underground Station",
+      "target_name": "Fulham Broadway Underground Station",
+      "source_id": "940GZZLUWBN",
+      "target_id": "940GZZLUFBY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Fulham Broadway Underground Station",
+      "target_name": "Parsons Green Underground Station",
+      "source_id": "940GZZLUFBY",
+      "target_id": "940GZZLUPSG",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Parsons Green Underground Station",
+      "target_name": "Putney Bridge Underground Station",
+      "source_id": "940GZZLUPSG",
+      "target_id": "940GZZLUPYB",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Putney Bridge Underground Station",
+      "target_name": "East Putney Underground Station",
+      "source_id": "940GZZLUPYB",
+      "target_id": "940GZZLUEPY",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "East Putney Underground Station",
+      "target_name": "Southfields Underground Station",
+      "source_id": "940GZZLUEPY",
+      "target_id": "940GZZLUSFS",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Southfields Underground Station",
+      "target_name": "Wimbledon Park Underground Station",
+      "source_id": "940GZZLUSFS",
+      "target_id": "940GZZLUWIP",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wimbledon Park Underground Station",
+      "target_name": "Wimbledon Underground Station",
+      "source_id": "940GZZLUWIP",
+      "target_id": "940GZZLUWIM",
+      "line": "district",
+      "line_name": "District",
+      "mode": "tube"
+    }
+  ],
+  "hammersmith-city": [
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUGPS",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Edgware Road (Circle Line) Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUERC",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mile End Underground Station",
+      "target_name": "Bow Road Underground Station",
+      "source_id": "940GZZLUMED",
+      "target_id": "940GZZLUBWR",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mile End Underground Station",
+      "target_name": "Stepney Green Underground Station",
+      "source_id": "940GZZLUMED",
+      "target_id": "940GZZLUSGN",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Moorgate Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUMGT",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Aldgate East Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUADE",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Edgware Road (Circle Line) Underground Station",
+      "target_name": "Paddington (H&C Line)-Underground",
+      "source_id": "940GZZLUERC",
+      "target_id": "940GZZLUPAH",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moorgate Underground Station",
+      "target_name": "Barbican Underground Station",
+      "source_id": "940GZZLUMGT",
+      "target_id": "940GZZLUBBN",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barbican Underground Station",
+      "target_name": "Farringdon Underground Station",
+      "source_id": "940GZZLUBBN",
+      "target_id": "940GZZLUFCN",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Farringdon Underground Station",
+      "target_name": "King's Cross St. Pancras Underground Station",
+      "source_id": "940GZZLUFCN",
+      "target_id": "940GZZLUKSX",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Euston Square Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUESQ",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Euston Square Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUESQ",
+      "target_id": "940GZZLUGPS",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Paddington (H&C Line)-Underground",
+      "target_name": "Royal Oak Underground Station",
+      "source_id": "940GZZLUPAH",
+      "target_id": "940GZZLURYO",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Royal Oak Underground Station",
+      "target_name": "Westbourne Park Underground Station",
+      "source_id": "940GZZLURYO",
+      "target_id": "940GZZLUWSP",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Westbourne Park Underground Station",
+      "target_name": "Ladbroke Grove Underground Station",
+      "source_id": "940GZZLUWSP",
+      "target_id": "940GZZLULAD",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ladbroke Grove Underground Station",
+      "target_name": "Latimer Road Underground Station",
+      "source_id": "940GZZLULAD",
+      "target_id": "940GZZLULRD",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Latimer Road Underground Station",
+      "target_name": "Wood Lane Underground Station",
+      "source_id": "940GZZLULRD",
+      "target_id": "940GZZLUWLA",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wood Lane Underground Station",
+      "target_name": "Shepherd's Bush Market Underground Station",
+      "source_id": "940GZZLUWLA",
+      "target_id": "940GZZLUSBM",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Shepherd's Bush Market Underground Station",
+      "target_name": "Goldhawk Road Underground Station",
+      "source_id": "940GZZLUSBM",
+      "target_id": "940GZZLUGHK",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Goldhawk Road Underground Station",
+      "target_name": "Hammersmith (H&C Line) Underground Station",
+      "source_id": "940GZZLUGHK",
+      "target_id": "940GZZLUHSC",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barking Underground Station",
+      "target_name": "East Ham Underground Station",
+      "source_id": "940GZZLUBKG",
+      "target_id": "940GZZLUEHM",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "East Ham Underground Station",
+      "target_name": "Upton Park Underground Station",
+      "source_id": "940GZZLUEHM",
+      "target_id": "940GZZLUUPK",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Upton Park Underground Station",
+      "target_name": "Plaistow Underground Station",
+      "source_id": "940GZZLUUPK",
+      "target_id": "940GZZLUPLW",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Plaistow Underground Station",
+      "target_name": "West Ham Underground Station",
+      "source_id": "940GZZLUPLW",
+      "target_id": "940GZZLUWHM",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Ham Underground Station",
+      "target_name": "Bromley-by-Bow Underground Station",
+      "source_id": "940GZZLUWHM",
+      "target_id": "940GZZLUBBB",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bromley-by-Bow Underground Station",
+      "target_name": "Bow Road Underground Station",
+      "source_id": "940GZZLUBBB",
+      "target_id": "940GZZLUBWR",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stepney Green Underground Station",
+      "target_name": "Whitechapel Underground Station",
+      "source_id": "940GZZLUSGN",
+      "target_id": "940GZZLUWPL",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Whitechapel Underground Station",
+      "target_name": "Aldgate East Underground Station",
+      "source_id": "940GZZLUWPL",
+      "target_id": "940GZZLUADE",
+      "line": "hammersmith-city",
+      "line_name": "Hammersmith & City",
+      "mode": "tube"
+    }
+  ],
+  "metropolitan": [
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUGPS",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Finchley Road Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUFYR",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Aldgate Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUALD",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Moorgate Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUMGT",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moorgate Underground Station",
+      "target_name": "Barbican Underground Station",
+      "source_id": "940GZZLUMGT",
+      "target_id": "940GZZLUBBN",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barbican Underground Station",
+      "target_name": "Farringdon Underground Station",
+      "source_id": "940GZZLUBBN",
+      "target_id": "940GZZLUFCN",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Farringdon Underground Station",
+      "target_name": "King's Cross St. Pancras Underground Station",
+      "source_id": "940GZZLUFCN",
+      "target_id": "940GZZLUKSX",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Euston Square Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUESQ",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Euston Square Underground Station",
+      "target_name": "Great Portland Street Underground Station",
+      "source_id": "940GZZLUESQ",
+      "target_id": "940GZZLUGPS",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finchley Road Underground Station",
+      "target_name": "Willesden Green Underground Station",
+      "source_id": "940GZZLUFYR",
+      "target_id": "940GZZLUWIG",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finchley Road Underground Station",
+      "target_name": "Wembley Park Underground Station",
+      "source_id": "940GZZLUFYR",
+      "target_id": "940GZZLUWYP",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Willesden Green Underground Station",
+      "target_name": "Wembley Park Underground Station",
+      "source_id": "940GZZLUWIG",
+      "target_id": "940GZZLUWYP",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wembley Park Underground Station",
+      "target_name": "Preston Road Underground Station",
+      "source_id": "940GZZLUWYP",
+      "target_id": "940GZZLUPRD",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Amersham Underground Station",
+      "target_name": "Chalfont & Latimer Underground Station",
+      "source_id": "940GZZLUAMS",
+      "target_id": "940GZZLUCAL",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chalfont & Latimer Underground Station",
+      "target_name": "Chorleywood Underground Station",
+      "source_id": "940GZZLUCAL",
+      "target_id": "940GZZLUCYD",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chalfont & Latimer Underground Station",
+      "target_name": "Chesham Underground Station",
+      "source_id": "940GZZLUCAL",
+      "target_id": "940GZZLUCSM",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chorleywood Underground Station",
+      "target_name": "Rickmansworth Underground Station",
+      "source_id": "940GZZLUCYD",
+      "target_id": "940GZZLURKW",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Rickmansworth Underground Station",
+      "target_name": "Moor Park Underground Station",
+      "source_id": "940GZZLURKW",
+      "target_id": "940GZZLUMPK",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moor Park Underground Station",
+      "target_name": "Northwood Underground Station",
+      "source_id": "940GZZLUMPK",
+      "target_id": "940GZZLUNOW",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moor Park Underground Station",
+      "target_name": "Croxley Underground Station",
+      "source_id": "940GZZLUMPK",
+      "target_id": "940GZZLUCXY",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Northwood Underground Station",
+      "target_name": "Northwood Hills Underground Station",
+      "source_id": "940GZZLUNOW",
+      "target_id": "940GZZLUNWH",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Northwood Hills Underground Station",
+      "target_name": "Pinner Underground Station",
+      "source_id": "940GZZLUNWH",
+      "target_id": "940GZZLUPNR",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Pinner Underground Station",
+      "target_name": "North Harrow Underground Station",
+      "source_id": "940GZZLUPNR",
+      "target_id": "940GZZLUNHA",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Harrow Underground Station",
+      "target_name": "Harrow-on-the-Hill Underground Station",
+      "source_id": "940GZZLUNHA",
+      "target_id": "940GZZLUHOH",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Harrow-on-the-Hill Underground Station",
+      "target_name": "Northwick Park Underground Station",
+      "source_id": "940GZZLUHOH",
+      "target_id": "940GZZLUNKP",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Harrow-on-the-Hill Underground Station",
+      "target_name": "West Harrow Underground Station",
+      "source_id": "940GZZLUHOH",
+      "target_id": "940GZZLUWHW",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Northwick Park Underground Station",
+      "target_name": "Preston Road Underground Station",
+      "source_id": "940GZZLUNKP",
+      "target_id": "940GZZLUPRD",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Harrow Underground Station",
+      "target_name": "Rayners Lane Underground Station",
+      "source_id": "940GZZLUWHW",
+      "target_id": "940GZZLURYL",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Rayners Lane Underground Station",
+      "target_name": "Eastcote Underground Station",
+      "source_id": "940GZZLURYL",
+      "target_id": "940GZZLUEAE",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Eastcote Underground Station",
+      "target_name": "Ruislip Manor Underground Station",
+      "source_id": "940GZZLUEAE",
+      "target_id": "940GZZLURSM",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ruislip Manor Underground Station",
+      "target_name": "Ruislip Underground Station",
+      "source_id": "940GZZLURSM",
+      "target_id": "940GZZLURSP",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ruislip Underground Station",
+      "target_name": "Ickenham Underground Station",
+      "source_id": "940GZZLURSP",
+      "target_id": "940GZZLUICK",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ickenham Underground Station",
+      "target_name": "Hillingdon Underground Station",
+      "source_id": "940GZZLUICK",
+      "target_id": "940GZZLUHGD",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hillingdon Underground Station",
+      "target_name": "Uxbridge Underground Station",
+      "source_id": "940GZZLUHGD",
+      "target_id": "940GZZLUUXB",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Croxley Underground Station",
+      "target_name": "Watford Underground Station",
+      "source_id": "940GZZLUCXY",
+      "target_id": "940GZZLUWAF",
+      "line": "metropolitan",
+      "line_name": "Metropolitan",
+      "mode": "tube"
+    }
+  ],
+  "jubilee": [
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "Bond Street Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUBND",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Baker Street Underground Station",
+      "target_name": "St. John's Wood Underground Station",
+      "source_id": "940GZZLUBST",
+      "target_id": "940GZZLUSJW",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Waterloo Underground Station",
+      "target_name": "Southwark Underground Station",
+      "source_id": "940GZZLUWLO",
+      "target_id": "940GZZLUSWK",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Waterloo Underground Station",
+      "target_name": "Westminster Underground Station",
+      "source_id": "940GZZLUWLO",
+      "target_id": "940GZZLUWSM",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stratford Underground Station",
+      "target_name": "West Ham Underground Station",
+      "source_id": "940GZZLUSTD",
+      "target_id": "940GZZLUWHM",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bond Street Underground Station",
+      "target_name": "Green Park Underground Station",
+      "source_id": "940GZZLUBND",
+      "target_id": "940GZZLUGPK",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Westminster Underground Station",
+      "target_name": "Green Park Underground Station",
+      "source_id": "940GZZLUWSM",
+      "target_id": "940GZZLUGPK",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Ham Underground Station",
+      "target_name": "Canning Town Underground Station",
+      "source_id": "940GZZLUWHM",
+      "target_id": "940GZZLUCGT",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Canning Town Underground Station",
+      "target_name": "North Greenwich Underground Station",
+      "source_id": "940GZZLUCGT",
+      "target_id": "940GZZLUNGW",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Greenwich Underground Station",
+      "target_name": "Canary Wharf Underground Station",
+      "source_id": "940GZZLUNGW",
+      "target_id": "940GZZLUCYF",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Canary Wharf Underground Station",
+      "target_name": "Canada Water Underground Station",
+      "source_id": "940GZZLUCYF",
+      "target_id": "940GZZLUCWR",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Canada Water Underground Station",
+      "target_name": "Bermondsey Underground Station",
+      "source_id": "940GZZLUCWR",
+      "target_id": "940GZZLUBMY",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bermondsey Underground Station",
+      "target_name": "London Bridge Underground Station",
+      "source_id": "940GZZLUBMY",
+      "target_id": "940GZZLULNB",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "London Bridge Underground Station",
+      "target_name": "Southwark Underground Station",
+      "source_id": "940GZZLULNB",
+      "target_id": "940GZZLUSWK",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "St. John's Wood Underground Station",
+      "target_name": "Swiss Cottage Underground Station",
+      "source_id": "940GZZLUSJW",
+      "target_id": "940GZZLUSWC",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Swiss Cottage Underground Station",
+      "target_name": "Finchley Road Underground Station",
+      "source_id": "940GZZLUSWC",
+      "target_id": "940GZZLUFYR",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finchley Road Underground Station",
+      "target_name": "West Hampstead Underground Station",
+      "source_id": "940GZZLUFYR",
+      "target_id": "940GZZLUWHP",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Hampstead Underground Station",
+      "target_name": "Kilburn Underground Station",
+      "source_id": "940GZZLUWHP",
+      "target_id": "940GZZLUKBN",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kilburn Underground Station",
+      "target_name": "Willesden Green Underground Station",
+      "source_id": "940GZZLUKBN",
+      "target_id": "940GZZLUWIG",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Willesden Green Underground Station",
+      "target_name": "Dollis Hill Underground Station",
+      "source_id": "940GZZLUWIG",
+      "target_id": "940GZZLUDOH",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Dollis Hill Underground Station",
+      "target_name": "Neasden Underground Station",
+      "source_id": "940GZZLUDOH",
+      "target_id": "940GZZLUNDN",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Neasden Underground Station",
+      "target_name": "Wembley Park Underground Station",
+      "source_id": "940GZZLUNDN",
+      "target_id": "940GZZLUWYP",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wembley Park Underground Station",
+      "target_name": "Kingsbury Underground Station",
+      "source_id": "940GZZLUWYP",
+      "target_id": "940GZZLUKBY",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kingsbury Underground Station",
+      "target_name": "Queensbury Underground Station",
+      "source_id": "940GZZLUKBY",
+      "target_id": "940GZZLUQBY",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Queensbury Underground Station",
+      "target_name": "Canons Park Underground Station",
+      "source_id": "940GZZLUQBY",
+      "target_id": "940GZZLUCPK",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Canons Park Underground Station",
+      "target_name": "Stanmore Underground Station",
+      "source_id": "940GZZLUCPK",
+      "target_id": "940GZZLUSTM",
+      "line": "jubilee",
+      "line_name": "Jubilee",
+      "mode": "tube"
+    }
+  ],
+  "central": [
+    {
+      "source_name": "Oxford Circus Underground Station",
+      "target_name": "Tottenham Court Road Underground Station",
+      "source_id": "940GZZLUOXC",
+      "target_id": "940GZZLUTCR",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Oxford Circus Underground Station",
+      "target_name": "Bond Street Underground Station",
+      "source_id": "940GZZLUOXC",
+      "target_id": "940GZZLUBND",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Epping Underground Station",
+      "target_name": "Theydon Bois Underground Station",
+      "source_id": "940GZZLUEPG",
+      "target_id": "940GZZLUTHB",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Theydon Bois Underground Station",
+      "target_name": "Debden Underground Station",
+      "source_id": "940GZZLUTHB",
+      "target_id": "940GZZLUDBN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Debden Underground Station",
+      "target_name": "Loughton Underground Station",
+      "source_id": "940GZZLUDBN",
+      "target_id": "940GZZLULGN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Loughton Underground Station",
+      "target_name": "Buckhurst Hill Underground Station",
+      "source_id": "940GZZLULGN",
+      "target_id": "940GZZLUBKH",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Buckhurst Hill Underground Station",
+      "target_name": "Woodford Underground Station",
+      "source_id": "940GZZLUBKH",
+      "target_id": "940GZZLUWOF",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Woodford Underground Station",
+      "target_name": "South Woodford Underground Station",
+      "source_id": "940GZZLUWOF",
+      "target_id": "940GZZLUSWF",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Woodford Underground Station",
+      "target_name": "Roding Valley Underground Station",
+      "source_id": "940GZZLUWOF",
+      "target_id": "940GZZLURVY",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Woodford Underground Station",
+      "target_name": "Snaresbrook Underground Station",
+      "source_id": "940GZZLUSWF",
+      "target_id": "940GZZLUSNB",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Snaresbrook Underground Station",
+      "target_name": "Leytonstone Underground Station",
+      "source_id": "940GZZLUSNB",
+      "target_id": "940GZZLULYS",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Leytonstone Underground Station",
+      "target_name": "Leyton Underground Station",
+      "source_id": "940GZZLULYS",
+      "target_id": "940GZZLULYN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Leytonstone Underground Station",
+      "target_name": "Wanstead Underground Station",
+      "source_id": "940GZZLULYS",
+      "target_id": "940GZZLUWSD",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Leyton Underground Station",
+      "target_name": "Stratford Underground Station",
+      "source_id": "940GZZLULYN",
+      "target_id": "940GZZLUSTD",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stratford Underground Station",
+      "target_name": "Mile End Underground Station",
+      "source_id": "940GZZLUSTD",
+      "target_id": "940GZZLUMED",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mile End Underground Station",
+      "target_name": "Bethnal Green Underground Station",
+      "source_id": "940GZZLUMED",
+      "target_id": "940GZZLUBLG",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bethnal Green Underground Station",
+      "target_name": "Liverpool Street Underground Station",
+      "source_id": "940GZZLUBLG",
+      "target_id": "940GZZLULVT",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Liverpool Street Underground Station",
+      "target_name": "Bank Underground Station",
+      "source_id": "940GZZLULVT",
+      "target_id": "940GZZLUBNK",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bank Underground Station",
+      "target_name": "St. Paul's Underground Station",
+      "source_id": "940GZZLUBNK",
+      "target_id": "940GZZLUSPU",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "St. Paul's Underground Station",
+      "target_name": "Chancery Lane Underground Station",
+      "source_id": "940GZZLUSPU",
+      "target_id": "940GZZLUCHL",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chancery Lane Underground Station",
+      "target_name": "Holborn Underground Station",
+      "source_id": "940GZZLUCHL",
+      "target_id": "940GZZLUHBN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Holborn Underground Station",
+      "target_name": "Tottenham Court Road Underground Station",
+      "source_id": "940GZZLUHBN",
+      "target_id": "940GZZLUTCR",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bond Street Underground Station",
+      "target_name": "Marble Arch Underground Station",
+      "source_id": "940GZZLUBND",
+      "target_id": "940GZZLUMBA",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Marble Arch Underground Station",
+      "target_name": "Lancaster Gate Underground Station",
+      "source_id": "940GZZLUMBA",
+      "target_id": "940GZZLULGT",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Lancaster Gate Underground Station",
+      "target_name": "Queensway Underground Station",
+      "source_id": "940GZZLULGT",
+      "target_id": "940GZZLUQWY",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Queensway Underground Station",
+      "target_name": "Notting Hill Gate Underground Station",
+      "source_id": "940GZZLUQWY",
+      "target_id": "940GZZLUNHG",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Notting Hill Gate Underground Station",
+      "target_name": "Holland Park Underground Station",
+      "source_id": "940GZZLUNHG",
+      "target_id": "940GZZLUHPK",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Holland Park Underground Station",
+      "target_name": "Shepherd's Bush (Central) Underground Station",
+      "source_id": "940GZZLUHPK",
+      "target_id": "940GZZLUSBC",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Shepherd's Bush (Central) Underground Station",
+      "target_name": "White City Underground Station",
+      "source_id": "940GZZLUSBC",
+      "target_id": "940GZZLUWCY",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "White City Underground Station",
+      "target_name": "East Acton Underground Station",
+      "source_id": "940GZZLUWCY",
+      "target_id": "940GZZLUEAN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "East Acton Underground Station",
+      "target_name": "North Acton Underground Station",
+      "source_id": "940GZZLUEAN",
+      "target_id": "940GZZLUNAN",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Acton Underground Station",
+      "target_name": "Hanger Lane Underground Station",
+      "source_id": "940GZZLUNAN",
+      "target_id": "940GZZLUHGR",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Acton Underground Station",
+      "target_name": "West Acton Underground Station",
+      "source_id": "940GZZLUNAN",
+      "target_id": "940GZZLUWTA",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hanger Lane Underground Station",
+      "target_name": "Perivale Underground Station",
+      "source_id": "940GZZLUHGR",
+      "target_id": "940GZZLUPVL",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Perivale Underground Station",
+      "target_name": "Greenford Underground Station",
+      "source_id": "940GZZLUPVL",
+      "target_id": "940GZZLUGFD",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Greenford Underground Station",
+      "target_name": "Northolt Underground Station",
+      "source_id": "940GZZLUGFD",
+      "target_id": "940GZZLUNHT",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Northolt Underground Station",
+      "target_name": "South Ruislip Underground Station",
+      "source_id": "940GZZLUNHT",
+      "target_id": "940GZZLUSRP",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Ruislip Underground Station",
+      "target_name": "Ruislip Gardens Underground Station",
+      "source_id": "940GZZLUSRP",
+      "target_id": "940GZZLURSG",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ruislip Gardens Underground Station",
+      "target_name": "West Ruislip Underground Station",
+      "source_id": "940GZZLURSG",
+      "target_id": "940GZZLUWRP",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hainault Underground Station",
+      "target_name": "Fairlop Underground Station",
+      "source_id": "940GZZLUHLT",
+      "target_id": "940GZZLUFLP",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hainault Underground Station",
+      "target_name": "Grange Hill Underground Station",
+      "source_id": "940GZZLUHLT",
+      "target_id": "940GZZLUGGH",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Fairlop Underground Station",
+      "target_name": "Barkingside Underground Station",
+      "source_id": "940GZZLUFLP",
+      "target_id": "940GZZLUBKE",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barkingside Underground Station",
+      "target_name": "Newbury Park Underground Station",
+      "source_id": "940GZZLUBKE",
+      "target_id": "940GZZLUNBP",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Newbury Park Underground Station",
+      "target_name": "Gants Hill Underground Station",
+      "source_id": "940GZZLUNBP",
+      "target_id": "940GZZLUGTH",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gants Hill Underground Station",
+      "target_name": "Redbridge Underground Station",
+      "source_id": "940GZZLUGTH",
+      "target_id": "940GZZLURBG",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Redbridge Underground Station",
+      "target_name": "Wanstead Underground Station",
+      "source_id": "940GZZLURBG",
+      "target_id": "940GZZLUWSD",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Grange Hill Underground Station",
+      "target_name": "Chigwell Underground Station",
+      "source_id": "940GZZLUGGH",
+      "target_id": "940GZZLUCWL",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Chigwell Underground Station",
+      "target_name": "Roding Valley Underground Station",
+      "source_id": "940GZZLUCWL",
+      "target_id": "940GZZLURVY",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Acton Underground Station",
+      "target_name": "Ealing Broadway Underground Station",
+      "source_id": "940GZZLUWTA",
+      "target_id": "940GZZLUEBY",
+      "line": "central",
+      "line_name": "Central",
+      "mode": "tube"
+    }
+  ],
+  "victoria": [
+    {
+      "source_name": "Oxford Circus Underground Station",
+      "target_name": "Warren Street Underground Station",
+      "source_id": "940GZZLUOXC",
+      "target_id": "940GZZLUWRR",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Oxford Circus Underground Station",
+      "target_name": "Green Park Underground Station",
+      "source_id": "940GZZLUOXC",
+      "target_id": "940GZZLUGPK",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Victoria Underground Station",
+      "target_name": "Green Park Underground Station",
+      "source_id": "940GZZLUVIC",
+      "target_id": "940GZZLUGPK",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Victoria Underground Station",
+      "target_name": "Pimlico Underground Station",
+      "source_id": "940GZZLUVIC",
+      "target_id": "940GZZLUPCO",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Euston Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUEUS",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Highbury & Islington Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUHAI",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Euston Underground Station",
+      "target_name": "Warren Street Underground Station",
+      "source_id": "940GZZLUEUS",
+      "target_id": "940GZZLUWRR",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stockwell Underground Station",
+      "target_name": "Vauxhall Underground Station",
+      "source_id": "940GZZLUSKW",
+      "target_id": "940GZZLUVXL",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stockwell Underground Station",
+      "target_name": "Brixton Underground Station",
+      "source_id": "940GZZLUSKW",
+      "target_id": "940GZZLUBXN",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finsbury Park Underground Station",
+      "target_name": "Seven Sisters Underground Station",
+      "source_id": "940GZZLUFPK",
+      "target_id": "940GZZLUSVS",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finsbury Park Underground Station",
+      "target_name": "Highbury & Islington Underground Station",
+      "source_id": "940GZZLUFPK",
+      "target_id": "940GZZLUHAI",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Walthamstow Central Underground Station",
+      "target_name": "Blackhorse Road Underground Station",
+      "source_id": "940GZZLUWWL",
+      "target_id": "940GZZLUBLR",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Blackhorse Road Underground Station",
+      "target_name": "Tottenham Hale Underground Station",
+      "source_id": "940GZZLUBLR",
+      "target_id": "940GZZLUTMH",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tottenham Hale Underground Station",
+      "target_name": "Seven Sisters Underground Station",
+      "source_id": "940GZZLUTMH",
+      "target_id": "940GZZLUSVS",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Pimlico Underground Station",
+      "target_name": "Vauxhall Underground Station",
+      "source_id": "940GZZLUPCO",
+      "target_id": "940GZZLUVXL",
+      "line": "victoria",
+      "line_name": "Victoria",
+      "mode": "tube"
+    }
+  ],
+  "piccadilly": [
+    {
+      "source_name": "Piccadilly Circus Underground Station",
+      "target_name": "Leicester Square Underground Station",
+      "source_id": "940GZZLUPCC",
+      "target_id": "940GZZLULSQ",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Piccadilly Circus Underground Station",
+      "target_name": "Green Park Underground Station",
+      "source_id": "940GZZLUPCC",
+      "target_id": "940GZZLUGPK",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Holborn Underground Station",
+      "target_name": "Russell Square Underground Station",
+      "source_id": "940GZZLUHBN",
+      "target_id": "940GZZLURSQ",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Holborn Underground Station",
+      "target_name": "Covent Garden Underground Station",
+      "source_id": "940GZZLUHBN",
+      "target_id": "940GZZLUCGN",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gloucester Road Underground Station",
+      "target_name": "South Kensington Underground Station",
+      "source_id": "940GZZLUGTR",
+      "target_id": "940GZZLUSKS",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Gloucester Road Underground Station",
+      "target_name": "Earl's Court Underground Station",
+      "source_id": "940GZZLUGTR",
+      "target_id": "940GZZLUECT",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Kensington Underground Station",
+      "target_name": "Knightsbridge Underground Station",
+      "source_id": "940GZZLUSKS",
+      "target_id": "940GZZLUKNB",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Caledonian Road Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUCAR",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Russell Square Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLURSQ",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Earl's Court Underground Station",
+      "target_name": "Barons Court Underground Station",
+      "source_id": "940GZZLUECT",
+      "target_id": "940GZZLUBSC",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Barons Court Underground Station",
+      "target_name": "Hammersmith (Dist&Picc Line) Underground Station",
+      "source_id": "940GZZLUBSC",
+      "target_id": "940GZZLUHSD",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hammersmith (Dist&Picc Line) Underground Station",
+      "target_name": "Turnham Green Underground Station",
+      "source_id": "940GZZLUHSD",
+      "target_id": "940GZZLUTNG",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Turnham Green Underground Station",
+      "target_name": "Acton Town Underground Station",
+      "source_id": "940GZZLUTNG",
+      "target_id": "940GZZLUACT",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Acton Town Underground Station",
+      "target_name": "Ealing Common Underground Station",
+      "source_id": "940GZZLUACT",
+      "target_id": "940GZZLUECM",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Acton Town Underground Station",
+      "target_name": "South Ealing Underground Station",
+      "source_id": "940GZZLUACT",
+      "target_id": "940GZZLUSEA",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ealing Common Underground Station",
+      "target_name": "North Ealing Underground Station",
+      "source_id": "940GZZLUECM",
+      "target_id": "940GZZLUNEN",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Green Park Underground Station",
+      "target_name": "Hyde Park Corner Underground Station",
+      "source_id": "940GZZLUGPK",
+      "target_id": "940GZZLUHPC",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Rayners Lane Underground Station",
+      "target_name": "Eastcote Underground Station",
+      "source_id": "940GZZLURYL",
+      "target_id": "940GZZLUEAE",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Rayners Lane Underground Station",
+      "target_name": "South Harrow Underground Station",
+      "source_id": "940GZZLURYL",
+      "target_id": "940GZZLUSHH",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Eastcote Underground Station",
+      "target_name": "Ruislip Manor Underground Station",
+      "source_id": "940GZZLUEAE",
+      "target_id": "940GZZLURSM",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ruislip Manor Underground Station",
+      "target_name": "Ruislip Underground Station",
+      "source_id": "940GZZLURSM",
+      "target_id": "940GZZLURSP",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ruislip Underground Station",
+      "target_name": "Ickenham Underground Station",
+      "source_id": "940GZZLURSP",
+      "target_id": "940GZZLUICK",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Ickenham Underground Station",
+      "target_name": "Hillingdon Underground Station",
+      "source_id": "940GZZLUICK",
+      "target_id": "940GZZLUHGD",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hillingdon Underground Station",
+      "target_name": "Uxbridge Underground Station",
+      "source_id": "940GZZLUHGD",
+      "target_id": "940GZZLUUXB",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Leicester Square Underground Station",
+      "target_name": "Covent Garden Underground Station",
+      "source_id": "940GZZLULSQ",
+      "target_id": "940GZZLUCGN",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Cockfosters Underground Station",
+      "target_name": "Oakwood Underground Station",
+      "source_id": "940GZZLUCKS",
+      "target_id": "940GZZLUOAK",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Oakwood Underground Station",
+      "target_name": "Southgate Underground Station",
+      "source_id": "940GZZLUOAK",
+      "target_id": "940GZZLUSGT",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Southgate Underground Station",
+      "target_name": "Arnos Grove Underground Station",
+      "source_id": "940GZZLUSGT",
+      "target_id": "940GZZLUASG",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Arnos Grove Underground Station",
+      "target_name": "Bounds Green Underground Station",
+      "source_id": "940GZZLUASG",
+      "target_id": "940GZZLUBDS",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bounds Green Underground Station",
+      "target_name": "Wood Green Underground Station",
+      "source_id": "940GZZLUBDS",
+      "target_id": "940GZZLUWOG",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Wood Green Underground Station",
+      "target_name": "Turnpike Lane Underground Station",
+      "source_id": "940GZZLUWOG",
+      "target_id": "940GZZLUTPN",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Turnpike Lane Underground Station",
+      "target_name": "Manor House Underground Station",
+      "source_id": "940GZZLUTPN",
+      "target_id": "940GZZLUMRH",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Manor House Underground Station",
+      "target_name": "Finsbury Park Underground Station",
+      "source_id": "940GZZLUMRH",
+      "target_id": "940GZZLUFPK",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finsbury Park Underground Station",
+      "target_name": "Arsenal Underground Station",
+      "source_id": "940GZZLUFPK",
+      "target_id": "940GZZLUASL",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Arsenal Underground Station",
+      "target_name": "Holloway Road Underground Station",
+      "source_id": "940GZZLUASL",
+      "target_id": "940GZZLUHWY",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Holloway Road Underground Station",
+      "target_name": "Caledonian Road Underground Station",
+      "source_id": "940GZZLUHWY",
+      "target_id": "940GZZLUCAR",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hyde Park Corner Underground Station",
+      "target_name": "Knightsbridge Underground Station",
+      "source_id": "940GZZLUHPC",
+      "target_id": "940GZZLUKNB",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "North Ealing Underground Station",
+      "target_name": "Park Royal Underground Station",
+      "source_id": "940GZZLUNEN",
+      "target_id": "940GZZLUPKR",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Park Royal Underground Station",
+      "target_name": "Alperton Underground Station",
+      "source_id": "940GZZLUPKR",
+      "target_id": "940GZZLUALP",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Alperton Underground Station",
+      "target_name": "Sudbury Town Underground Station",
+      "source_id": "940GZZLUALP",
+      "target_id": "940GZZLUSUT",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Sudbury Town Underground Station",
+      "target_name": "Sudbury Hill Underground Station",
+      "source_id": "940GZZLUSUT",
+      "target_id": "940GZZLUSUH",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Sudbury Hill Underground Station",
+      "target_name": "South Harrow Underground Station",
+      "source_id": "940GZZLUSUH",
+      "target_id": "940GZZLUSHH",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Ealing Underground Station",
+      "target_name": "Northfields Underground Station",
+      "source_id": "940GZZLUSEA",
+      "target_id": "940GZZLUNFD",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Northfields Underground Station",
+      "target_name": "Boston Manor Underground Station",
+      "source_id": "940GZZLUNFD",
+      "target_id": "940GZZLUBOS",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Boston Manor Underground Station",
+      "target_name": "Osterley Underground Station",
+      "source_id": "940GZZLUBOS",
+      "target_id": "940GZZLUOSY",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Osterley Underground Station",
+      "target_name": "Hounslow East Underground Station",
+      "source_id": "940GZZLUOSY",
+      "target_id": "940GZZLUHWE",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hounslow East Underground Station",
+      "target_name": "Hounslow Central Underground Station",
+      "source_id": "940GZZLUHWE",
+      "target_id": "940GZZLUHWC",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hounslow Central Underground Station",
+      "target_name": "Hounslow West Underground Station",
+      "source_id": "940GZZLUHWC",
+      "target_id": "940GZZLUHWT",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hounslow West Underground Station",
+      "target_name": "Hatton Cross Underground Station",
+      "source_id": "940GZZLUHWT",
+      "target_id": "940GZZLUHNX",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hatton Cross Underground Station",
+      "target_name": "Heathrow Terminals 2 & 3 Underground Station",
+      "source_id": "940GZZLUHNX",
+      "target_id": "940GZZLUHRC",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hatton Cross Underground Station",
+      "target_name": "Heathrow Terminal 4 Underground Station",
+      "source_id": "940GZZLUHNX",
+      "target_id": "940GZZLUHR4",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Heathrow Terminals 2 & 3 Underground Station",
+      "target_name": "Heathrow Terminal 5 Underground Station",
+      "source_id": "940GZZLUHRC",
+      "target_id": "940GZZLUHR5",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Heathrow Terminals 2 & 3 Underground Station",
+      "target_name": "Heathrow Terminal 4 Underground Station",
+      "source_id": "940GZZLUHRC",
+      "target_id": "940GZZLUHR4",
+      "line": "piccadilly",
+      "line_name": "Piccadilly",
+      "mode": "tube"
+    }
+  ],
+  "northern": [
+    {
+      "source_name": "Charing Cross Underground Station",
+      "target_name": "Embankment Underground Station",
+      "source_id": "940GZZLUCHX",
+      "target_id": "940GZZLUEMB",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Charing Cross Underground Station",
+      "target_name": "Leicester Square Underground Station",
+      "source_id": "940GZZLUCHX",
+      "target_id": "940GZZLULSQ",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Embankment Underground Station",
+      "target_name": "Waterloo Underground Station",
+      "source_id": "940GZZLUEMB",
+      "target_id": "940GZZLUWLO",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Waterloo Underground Station",
+      "target_name": "Kennington Underground Station",
+      "source_id": "940GZZLUWLO",
+      "target_id": "940GZZLUKNG",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Elephant & Castle Underground Station",
+      "target_name": "Borough Underground Station",
+      "source_id": "940GZZLUEAC",
+      "target_id": "940GZZLUBOR",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Elephant & Castle Underground Station",
+      "target_name": "Kennington Underground Station",
+      "source_id": "940GZZLUEAC",
+      "target_id": "940GZZLUKNG",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bank Underground Station",
+      "target_name": "Moorgate Underground Station",
+      "source_id": "940GZZLUBNK",
+      "target_id": "940GZZLUMGT",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Bank Underground Station",
+      "target_name": "London Bridge Underground Station",
+      "source_id": "940GZZLUBNK",
+      "target_id": "940GZZLULNB",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tottenham Court Road Underground Station",
+      "target_name": "Goodge Street Underground Station",
+      "source_id": "940GZZLUTCR",
+      "target_id": "940GZZLUGDG",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tottenham Court Road Underground Station",
+      "target_name": "Leicester Square Underground Station",
+      "source_id": "940GZZLUTCR",
+      "target_id": "940GZZLULSQ",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Moorgate Underground Station",
+      "target_name": "Old Street Underground Station",
+      "source_id": "940GZZLUMGT",
+      "target_id": "940GZZLUODS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Euston Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUEUS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "King's Cross St. Pancras Underground Station",
+      "target_name": "Angel Underground Station",
+      "source_id": "940GZZLUKSX",
+      "target_id": "940GZZLUAGL",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "London Bridge Underground Station",
+      "target_name": "Borough Underground Station",
+      "source_id": "940GZZLULNB",
+      "target_id": "940GZZLUBOR",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "High Barnet Underground Station",
+      "target_name": "Totteridge & Whetstone Underground Station",
+      "source_id": "940GZZLUHBT",
+      "target_id": "940GZZLUTAW",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Totteridge & Whetstone Underground Station",
+      "target_name": "Woodside Park Underground Station",
+      "source_id": "940GZZLUTAW",
+      "target_id": "940GZZLUWOP",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Woodside Park Underground Station",
+      "target_name": "West Finchley Underground Station",
+      "source_id": "940GZZLUWOP",
+      "target_id": "940GZZLUWFN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "West Finchley Underground Station",
+      "target_name": "Finchley Central Underground Station",
+      "source_id": "940GZZLUWFN",
+      "target_id": "940GZZLUFYC",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finchley Central Underground Station",
+      "target_name": "East Finchley Underground Station",
+      "source_id": "940GZZLUFYC",
+      "target_id": "940GZZLUEFY",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Finchley Central Underground Station",
+      "target_name": "Mill Hill East Underground Station",
+      "source_id": "940GZZLUFYC",
+      "target_id": "940GZZLUMHL",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "East Finchley Underground Station",
+      "target_name": "Highgate Underground Station",
+      "source_id": "940GZZLUEFY",
+      "target_id": "940GZZLUHGT",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Highgate Underground Station",
+      "target_name": "Archway Underground Station",
+      "source_id": "940GZZLUHGT",
+      "target_id": "940GZZLUACY",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Archway Underground Station",
+      "target_name": "Tufnell Park Underground Station",
+      "source_id": "940GZZLUACY",
+      "target_id": "940GZZLUTFP",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tufnell Park Underground Station",
+      "target_name": "Kentish Town Underground Station",
+      "source_id": "940GZZLUTFP",
+      "target_id": "940GZZLUKSH",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kentish Town Underground Station",
+      "target_name": "Camden Town Underground Station",
+      "source_id": "940GZZLUKSH",
+      "target_id": "940GZZLUCTN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Camden Town Underground Station",
+      "target_name": "Mornington Crescent Underground Station",
+      "source_id": "940GZZLUCTN",
+      "target_id": "940GZZLUMTC",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Camden Town Underground Station",
+      "target_name": "Euston Underground Station",
+      "source_id": "940GZZLUCTN",
+      "target_id": "940GZZLUEUS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Camden Town Underground Station",
+      "target_name": "Chalk Farm Underground Station",
+      "source_id": "940GZZLUCTN",
+      "target_id": "940GZZLUCFM",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Mornington Crescent Underground Station",
+      "target_name": "Euston Underground Station",
+      "source_id": "940GZZLUMTC",
+      "target_id": "940GZZLUEUS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Euston Underground Station",
+      "target_name": "Warren Street Underground Station",
+      "source_id": "940GZZLUEUS",
+      "target_id": "940GZZLUWRR",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Warren Street Underground Station",
+      "target_name": "Goodge Street Underground Station",
+      "source_id": "940GZZLUWRR",
+      "target_id": "940GZZLUGDG",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kennington Underground Station",
+      "target_name": "Oval Underground Station",
+      "source_id": "940GZZLUKNG",
+      "target_id": "940GZZLUOVL",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Kennington Underground Station",
+      "target_name": "Nine Elms Underground Station",
+      "source_id": "940GZZLUKNG",
+      "target_id": "940GZZNEUGST",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Oval Underground Station",
+      "target_name": "Stockwell Underground Station",
+      "source_id": "940GZZLUOVL",
+      "target_id": "940GZZLUSKW",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Stockwell Underground Station",
+      "target_name": "Clapham North Underground Station",
+      "source_id": "940GZZLUSKW",
+      "target_id": "940GZZLUCPN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Clapham North Underground Station",
+      "target_name": "Clapham Common Underground Station",
+      "source_id": "940GZZLUCPN",
+      "target_id": "940GZZLUCPC",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Clapham Common Underground Station",
+      "target_name": "Clapham South Underground Station",
+      "source_id": "940GZZLUCPC",
+      "target_id": "940GZZLUCPS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Clapham South Underground Station",
+      "target_name": "Balham Underground Station",
+      "source_id": "940GZZLUCPS",
+      "target_id": "940GZZLUBLM",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Balham Underground Station",
+      "target_name": "Tooting Bec Underground Station",
+      "source_id": "940GZZLUBLM",
+      "target_id": "940GZZLUTBC",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tooting Bec Underground Station",
+      "target_name": "Tooting Broadway Underground Station",
+      "source_id": "940GZZLUTBC",
+      "target_id": "940GZZLUTBY",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Tooting Broadway Underground Station",
+      "target_name": "Colliers Wood Underground Station",
+      "source_id": "940GZZLUTBY",
+      "target_id": "940GZZLUCSD",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Colliers Wood Underground Station",
+      "target_name": "South Wimbledon Underground Station",
+      "source_id": "940GZZLUCSD",
+      "target_id": "940GZZLUSWN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "South Wimbledon Underground Station",
+      "target_name": "Morden Underground Station",
+      "source_id": "940GZZLUSWN",
+      "target_id": "940GZZLUMDN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Angel Underground Station",
+      "target_name": "Old Street Underground Station",
+      "source_id": "940GZZLUAGL",
+      "target_id": "940GZZLUODS",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Edgware Underground Station",
+      "target_name": "Burnt Oak Underground Station",
+      "source_id": "940GZZLUEGW",
+      "target_id": "940GZZLUBTK",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Burnt Oak Underground Station",
+      "target_name": "Colindale Underground Station",
+      "source_id": "940GZZLUBTK",
+      "target_id": "940GZZLUCND",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Colindale Underground Station",
+      "target_name": "Hendon Central Underground Station",
+      "source_id": "940GZZLUCND",
+      "target_id": "940GZZLUHCL",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hendon Central Underground Station",
+      "target_name": "Brent Cross Underground Station",
+      "source_id": "940GZZLUHCL",
+      "target_id": "940GZZLUBTX",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Brent Cross Underground Station",
+      "target_name": "Golders Green Underground Station",
+      "source_id": "940GZZLUBTX",
+      "target_id": "940GZZLUGGN",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Golders Green Underground Station",
+      "target_name": "Hampstead Underground Station",
+      "source_id": "940GZZLUGGN",
+      "target_id": "940GZZLUHTD",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Hampstead Underground Station",
+      "target_name": "Belsize Park Underground Station",
+      "source_id": "940GZZLUHTD",
+      "target_id": "940GZZLUBZP",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Belsize Park Underground Station",
+      "target_name": "Chalk Farm Underground Station",
+      "source_id": "940GZZLUBZP",
+      "target_id": "940GZZLUCFM",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    },
+    {
+      "source_name": "Nine Elms Underground Station",
+      "target_name": "Battersea Power Station Underground Station",
+      "source_id": "940GZZNEUGST",
+      "target_id": "940GZZBPSUST",
+      "line": "northern",
+      "line_name": "Northern",
+      "mode": "tube"
+    }
+  ],
+  "waterloo-city": [
+    {
+      "source_name": "Waterloo Underground Station",
+      "target_name": "Bank Underground Station",
+      "source_id": "940GZZLUWLO",
+      "target_id": "940GZZLUBNK",
+      "line": "waterloo-city",
+      "line_name": "Waterloo & City",
+      "mode": "tube"
+    }
+  ],
+  "dlr": [
+    {
+      "source_name": "Lewisham DLR Station",
+      "target_name": "Elverson Road DLR Station",
+      "source_id": "940GZZDLLEW",
+      "target_id": "940GZZDLELV",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Elverson Road DLR Station",
+      "target_name": "Deptford Bridge DLR Station",
+      "source_id": "940GZZDLELV",
+      "target_id": "940GZZDLDEP",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Deptford Bridge DLR Station",
+      "target_name": "Greenwich DLR Station",
+      "source_id": "940GZZDLDEP",
+      "target_id": "940GZZDLGRE",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Greenwich DLR Station",
+      "target_name": "Cutty Sark (for Maritime Greenwich) DLR Station",
+      "source_id": "940GZZDLGRE",
+      "target_id": "940GZZDLCUT",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Cutty Sark (for Maritime Greenwich) DLR Station",
+      "target_name": "Island Gardens DLR Station",
+      "source_id": "940GZZDLCUT",
+      "target_id": "940GZZDLISL",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Island Gardens DLR Station",
+      "target_name": "Mudchute DLR Station",
+      "source_id": "940GZZDLISL",
+      "target_id": "940GZZDLMUD",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Mudchute DLR Station",
+      "target_name": "Crossharbour DLR Station",
+      "source_id": "940GZZDLMUD",
+      "target_id": "940GZZDLCLA",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Crossharbour DLR Station",
+      "target_name": "South Quay DLR Station",
+      "source_id": "940GZZDLCLA",
+      "target_id": "940GZZDLSOQ",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "South Quay DLR Station",
+      "target_name": "Heron Quays DLR Station",
+      "source_id": "940GZZDLSOQ",
+      "target_id": "940GZZDLHEQ",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Heron Quays DLR Station",
+      "target_name": "Canary Wharf DLR Station",
+      "source_id": "940GZZDLHEQ",
+      "target_id": "940GZZDLCAN",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Canary Wharf DLR Station",
+      "target_name": "West India Quay DLR Station",
+      "source_id": "940GZZDLCAN",
+      "target_id": "940GZZDLWIQ",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Canary Wharf DLR Station",
+      "target_name": "Westferry DLR Station",
+      "source_id": "940GZZDLCAN",
+      "target_id": "940GZZDLWFE",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "West India Quay DLR Station",
+      "target_name": "Poplar DLR Station",
+      "source_id": "940GZZDLWIQ",
+      "target_id": "940GZZDLPOP",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "West India Quay DLR Station",
+      "target_name": "Westferry DLR Station",
+      "source_id": "940GZZDLWIQ",
+      "target_id": "940GZZDLWFE",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Poplar DLR Station",
+      "target_name": "All Saints DLR Station",
+      "source_id": "940GZZDLPOP",
+      "target_id": "940GZZDLALL",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Poplar DLR Station",
+      "target_name": "Blackwall DLR Station",
+      "source_id": "940GZZDLPOP",
+      "target_id": "940GZZDLBLA",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Poplar DLR Station",
+      "target_name": "Westferry DLR Station",
+      "source_id": "940GZZDLPOP",
+      "target_id": "940GZZDLWFE",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "All Saints DLR Station",
+      "target_name": "Langdon Park DLR Station",
+      "source_id": "940GZZDLALL",
+      "target_id": "940GZZDLLDP",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Langdon Park DLR Station",
+      "target_name": "Devons Road DLR Station",
+      "source_id": "940GZZDLLDP",
+      "target_id": "940GZZDLDEV",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Devons Road DLR Station",
+      "target_name": "Bow Church DLR Station",
+      "source_id": "940GZZDLDEV",
+      "target_id": "940GZZDLBOW",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Bow Church DLR Station",
+      "target_name": "Pudding Mill Lane DLR Station",
+      "source_id": "940GZZDLBOW",
+      "target_id": "940GZZDLPUD",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Pudding Mill Lane DLR Station",
+      "target_name": "Stratford DLR Station",
+      "source_id": "940GZZDLPUD",
+      "target_id": "940GZZDLSTD",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Stratford DLR Station",
+      "target_name": "Stratford High Street DLR Station",
+      "source_id": "940GZZDLSTD",
+      "target_id": "940GZZDLSHS",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Stratford DLR Station",
+      "target_name": "Stratford International DLR Station",
+      "source_id": "940GZZDLSTD",
+      "target_id": "940GZZDLSIT",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Westferry DLR Station",
+      "target_name": "Limehouse DLR Station",
+      "source_id": "940GZZDLWFE",
+      "target_id": "940GZZDLLIM",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Limehouse DLR Station",
+      "target_name": "Shadwell DLR Station",
+      "source_id": "940GZZDLLIM",
+      "target_id": "940GZZDLSHA",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Shadwell DLR Station",
+      "target_name": "Bank DLR Station",
+      "source_id": "940GZZDLSHA",
+      "target_id": "940GZZDLBNK",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Shadwell DLR Station",
+      "target_name": "Tower Gateway DLR Station",
+      "source_id": "940GZZDLSHA",
+      "target_id": "940GZZDLTWG",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Beckton DLR Station",
+      "target_name": "Gallions Reach DLR Station",
+      "source_id": "940GZZDLBEC",
+      "target_id": "940GZZDLGAL",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Gallions Reach DLR Station",
+      "target_name": "Cyprus DLR Station",
+      "source_id": "940GZZDLGAL",
+      "target_id": "940GZZDLCYP",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Cyprus DLR Station",
+      "target_name": "Beckton Park DLR Station",
+      "source_id": "940GZZDLCYP",
+      "target_id": "940GZZDLBPK",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Beckton Park DLR Station",
+      "target_name": "Royal Albert DLR Station",
+      "source_id": "940GZZDLBPK",
+      "target_id": "940GZZDLRAL",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Royal Albert DLR Station",
+      "target_name": "Prince Regent DLR Station",
+      "source_id": "940GZZDLRAL",
+      "target_id": "940GZZDLPRE",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Prince Regent DLR Station",
+      "target_name": "Custom House (for ExCel) DLR Station",
+      "source_id": "940GZZDLPRE",
+      "target_id": "940GZZDLCUS",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Custom House (for ExCel) DLR Station",
+      "target_name": "Royal Victoria DLR Station",
+      "source_id": "940GZZDLCUS",
+      "target_id": "940GZZDLRVC",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Royal Victoria DLR Station",
+      "target_name": "Canning Town DLR Station",
+      "source_id": "940GZZDLRVC",
+      "target_id": "940GZZDLCGT",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Canning Town DLR Station",
+      "target_name": "East India DLR Station",
+      "source_id": "940GZZDLCGT",
+      "target_id": "940GZZDLEIN",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Canning Town DLR Station",
+      "target_name": "Star Lane DLR Station",
+      "source_id": "940GZZDLCGT",
+      "target_id": "940GZZDLSTL",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Canning Town DLR Station",
+      "target_name": "West Silvertown DLR Station",
+      "source_id": "940GZZDLCGT",
+      "target_id": "940GZZDLWSV",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "East India DLR Station",
+      "target_name": "Blackwall DLR Station",
+      "source_id": "940GZZDLEIN",
+      "target_id": "940GZZDLBLA",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Star Lane DLR Station",
+      "target_name": "West Ham DLR Station",
+      "source_id": "940GZZDLSTL",
+      "target_id": "940GZZDLWHM",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "West Ham DLR Station",
+      "target_name": "Abbey Road DLR Station",
+      "source_id": "940GZZDLWHM",
+      "target_id": "940GZZDLABR",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Abbey Road DLR Station",
+      "target_name": "Stratford High Street DLR Station",
+      "source_id": "940GZZDLABR",
+      "target_id": "940GZZDLSHS",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Woolwich Arsenal DLR Station",
+      "target_name": "King George V DLR Station",
+      "source_id": "940GZZDLWLA",
+      "target_id": "940GZZDLKGV",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "King George V DLR Station",
+      "target_name": "London City Airport DLR Station",
+      "source_id": "940GZZDLKGV",
+      "target_id": "940GZZDLLCA",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "London City Airport DLR Station",
+      "target_name": "Pontoon Dock DLR Station",
+      "source_id": "940GZZDLLCA",
+      "target_id": "940GZZDLPDK",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    },
+    {
+      "source_name": "Pontoon Dock DLR Station",
+      "target_name": "West Silvertown DLR Station",
+      "source_id": "940GZZDLPDK",
+      "target_id": "940GZZDLWSV",
+      "line": "dlr",
+      "line_name": "DLR",
+      "mode": "dlr"
+    }
+  ],
+  "liberty": [
+    {
+      "source_name": "Upminster Rail Station",
+      "target_name": "Emerson Park Rail Station",
+      "source_id": "910GUPMNSTR",
+      "target_id": "910GEMRSPKH",
+      "line": "liberty",
+      "line_name": "Liberty",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Emerson Park Rail Station",
+      "target_name": "Romford Rail Station",
+      "source_id": "910GEMRSPKH",
+      "target_id": "910GROMFORD",
+      "line": "liberty",
+      "line_name": "Liberty",
+      "mode": "overground"
+    }
+  ],
+  "elizabeth": [
+    {
+      "source_name": "Romford Rail Station",
+      "target_name": "Chadwell Heath Rail Station",
+      "source_id": "910GROMFORD",
+      "target_id": "910GCHDWLHT",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Romford Rail Station",
+      "target_name": "Gidea Park Rail Station",
+      "source_id": "910GROMFORD",
+      "target_id": "910GGIDEAPK",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Stratford (London) Rail Station",
+      "target_name": "Whitechapel",
+      "source_id": "910GSTFD",
+      "target_id": "910GWCHAPXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Stratford (London) Rail Station",
+      "target_name": "Maryland Rail Station",
+      "source_id": "910GSTFD",
+      "target_id": "910GMRYLAND",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Stratford (London) Rail Station",
+      "target_name": "London Liverpool Street Rail Station",
+      "source_id": "910GSTFD",
+      "target_id": "910GLIVST",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Heathrow Terminal 4 Rail Station",
+      "target_name": "Heathrow Terminals 2 & 3 Rail Station",
+      "source_id": "910GHTRWTM4",
+      "target_id": "910GHTRWAPT",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Heathrow Terminals 2 & 3 Rail Station",
+      "target_name": "Hayes & Harlington Rail Station",
+      "source_id": "910GHTRWAPT",
+      "target_id": "910GHAYESAH",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Heathrow Terminals 2 & 3 Rail Station",
+      "target_name": "Heathrow Terminal 5 Rail Station",
+      "source_id": "910GHTRWAPT",
+      "target_id": "910GHTRWTM5",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Hayes & Harlington Rail Station",
+      "target_name": "Southall Rail Station",
+      "source_id": "910GHAYESAH",
+      "target_id": "910GSTHALL",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Hayes & Harlington Rail Station",
+      "target_name": "West Drayton Rail Station",
+      "source_id": "910GHAYESAH",
+      "target_id": "910GWDRYTON",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Southall Rail Station",
+      "target_name": "Hanwell Rail Station",
+      "source_id": "910GSTHALL",
+      "target_id": "910GHANWELL",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Hanwell Rail Station",
+      "target_name": "West Ealing Rail Station",
+      "source_id": "910GHANWELL",
+      "target_id": "910GWEALING",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "West Ealing Rail Station",
+      "target_name": "Ealing Broadway Rail Station",
+      "source_id": "910GWEALING",
+      "target_id": "910GEALINGB",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Ealing Broadway Rail Station",
+      "target_name": "Acton Main Line Rail Station",
+      "source_id": "910GEALINGB",
+      "target_id": "910GACTONML",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Acton Main Line Rail Station",
+      "target_name": "Paddington",
+      "source_id": "910GACTONML",
+      "target_id": "910GPADTLL",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Acton Main Line Rail Station",
+      "target_name": "London Paddington Rail Station",
+      "source_id": "910GACTONML",
+      "target_id": "910GPADTON",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Paddington",
+      "target_name": "Bond Street",
+      "source_id": "910GPADTLL",
+      "target_id": "910GBONDST",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Bond Street",
+      "target_name": "Tottenham Court Road",
+      "source_id": "910GBONDST",
+      "target_id": "910GTOTCTRD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Tottenham Court Road",
+      "target_name": "Farringdon",
+      "source_id": "910GTOTCTRD",
+      "target_id": "910GFRNDXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Farringdon",
+      "target_name": "Liverpool Street",
+      "source_id": "910GFRNDXR",
+      "target_id": "910GLIVSTLL",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Liverpool Street",
+      "target_name": "Whitechapel",
+      "source_id": "910GLIVSTLL",
+      "target_id": "910GWCHAPXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Whitechapel",
+      "target_name": "Canary Wharf",
+      "source_id": "910GWCHAPXR",
+      "target_id": "910GCANWHRF",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Maryland Rail Station",
+      "target_name": "Forest Gate Rail Station",
+      "source_id": "910GMRYLAND",
+      "target_id": "910GFRSTGT",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Forest Gate Rail Station",
+      "target_name": "Manor Park Rail Station",
+      "source_id": "910GFRSTGT",
+      "target_id": "910GMANRPK",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Manor Park Rail Station",
+      "target_name": "Ilford Rail Station",
+      "source_id": "910GMANRPK",
+      "target_id": "910GILFORD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Ilford Rail Station",
+      "target_name": "Seven Kings Rail Station",
+      "source_id": "910GILFORD",
+      "target_id": "910GSVNKNGS",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Seven Kings Rail Station",
+      "target_name": "Goodmayes Rail Station",
+      "source_id": "910GSVNKNGS",
+      "target_id": "910GGODMAYS",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Goodmayes Rail Station",
+      "target_name": "Chadwell Heath Rail Station",
+      "source_id": "910GGODMAYS",
+      "target_id": "910GCHDWLHT",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Gidea Park Rail Station",
+      "target_name": "Harold Wood Rail Station",
+      "source_id": "910GGIDEAPK",
+      "target_id": "910GHRLDWOD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Harold Wood Rail Station",
+      "target_name": "Brentwood Rail Station",
+      "source_id": "910GHRLDWOD",
+      "target_id": "910GBRTWOOD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Brentwood Rail Station",
+      "target_name": "Shenfield Rail Station",
+      "source_id": "910GBRTWOOD",
+      "target_id": "910GSHENFLD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Canary Wharf",
+      "target_name": "Custom House",
+      "source_id": "910GCANWHRF",
+      "target_id": "910GCSTMHSXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Custom House",
+      "target_name": "Woolwich",
+      "source_id": "910GCSTMHSXR",
+      "target_id": "910GWOLWXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Woolwich",
+      "target_name": "Abbey Wood",
+      "source_id": "910GWOLWXR",
+      "target_id": "910GABWDXR",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Reading Rail Station",
+      "target_name": "Twyford Rail Station",
+      "source_id": "910GRDNGSTN",
+      "target_id": "910GTWYFORD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Twyford Rail Station",
+      "target_name": "Maidenhead Rail Station",
+      "source_id": "910GTWYFORD",
+      "target_id": "910GMDNHEAD",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Maidenhead Rail Station",
+      "target_name": "Taplow Rail Station",
+      "source_id": "910GMDNHEAD",
+      "target_id": "910GTAPLOW",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Taplow Rail Station",
+      "target_name": "Burnham (Berks) Rail Station",
+      "source_id": "910GTAPLOW",
+      "target_id": "910GBNHAM",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Burnham (Berks) Rail Station",
+      "target_name": "Slough Rail Station",
+      "source_id": "910GBNHAM",
+      "target_id": "910GSLOUGH",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Slough Rail Station",
+      "target_name": "Langley (Berks) Rail Station",
+      "source_id": "910GSLOUGH",
+      "target_id": "910GLANGLEY",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Langley (Berks) Rail Station",
+      "target_name": "Iver Rail Station",
+      "source_id": "910GLANGLEY",
+      "target_id": "910GIVER",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    },
+    {
+      "source_name": "Iver Rail Station",
+      "target_name": "West Drayton Rail Station",
+      "source_id": "910GIVER",
+      "target_id": "910GWDRYTON",
+      "line": "elizabeth",
+      "line_name": "Elizabeth line",
+      "mode": "elizabeth-line"
+    }
+  ],
+  "lioness": [
+    {
+      "source_name": "Watford Junction Rail Station",
+      "target_name": "Watford High Street Rail Station",
+      "source_id": "910GWATFJDC",
+      "target_id": "910GWATFDHS",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Watford High Street Rail Station",
+      "target_name": "Bushey Rail Station",
+      "source_id": "910GWATFDHS",
+      "target_id": "910GBUSHYDC",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Bushey Rail Station",
+      "target_name": "Carpenders Park Rail Station",
+      "source_id": "910GBUSHYDC",
+      "target_id": "910GCRPNDPK",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Carpenders Park Rail Station",
+      "target_name": "Hatch End Rail Station",
+      "source_id": "910GCRPNDPK",
+      "target_id": "910GHTCHEND",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hatch End Rail Station",
+      "target_name": "Headstone Lane Rail Station",
+      "source_id": "910GHTCHEND",
+      "target_id": "910GHEDSTNL",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Headstone Lane Rail Station",
+      "target_name": "Harrow & Wealdstone Rail Station",
+      "source_id": "910GHEDSTNL",
+      "target_id": "910GHROW",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Harrow & Wealdstone Rail Station",
+      "target_name": "Kenton Rail Station",
+      "source_id": "910GHROW",
+      "target_id": "910GKTON",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kenton Rail Station",
+      "target_name": "South Kenton Rail Station",
+      "source_id": "910GKTON",
+      "target_id": "910GSKENTON",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "South Kenton Rail Station",
+      "target_name": "North Wembley Rail Station",
+      "source_id": "910GSKENTON",
+      "target_id": "910GNWEMBLY",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "North Wembley Rail Station",
+      "target_name": "Wembley Central Rail Station",
+      "source_id": "910GNWEMBLY",
+      "target_id": "910GWMBY",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Wembley Central Rail Station",
+      "target_name": "Stonebridge Park Rail Station",
+      "source_id": "910GWMBY",
+      "target_id": "910GSTNBGPK",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Stonebridge Park Rail Station",
+      "target_name": "Harlesden Rail Station",
+      "source_id": "910GSTNBGPK",
+      "target_id": "910GHARLSDN",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Harlesden Rail Station",
+      "target_name": "Willesden Junction Rail Station",
+      "source_id": "910GHARLSDN",
+      "target_id": "910GWLSDJHL",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Willesden Junction Rail Station",
+      "target_name": "Kensal Green Rail Station",
+      "source_id": "910GWLSDJHL",
+      "target_id": "910GKENSLG",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kensal Green Rail Station",
+      "target_name": "Queens Park (London) Rail Station",
+      "source_id": "910GKENSLG",
+      "target_id": "910GQPRK",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Queens Park (London) Rail Station",
+      "target_name": "Kilburn High Road Rail Station",
+      "source_id": "910GQPRK",
+      "target_id": "910GKLBRNHR",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kilburn High Road Rail Station",
+      "target_name": "South Hampstead Rail Station",
+      "source_id": "910GKLBRNHR",
+      "target_id": "910GSHMPSTD",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    },
+    {
+      "source_name": "South Hampstead Rail Station",
+      "target_name": "London Euston Rail Station",
+      "source_id": "910GSHMPSTD",
+      "target_id": "910GEUSTON",
+      "line": "lioness",
+      "line_name": "Lioness",
+      "mode": "overground"
+    }
+  ],
+  "mildmay": [
+    {
+      "source_name": "Willesden Junction Rail Station",
+      "target_name": "Acton Central Rail Station",
+      "source_id": "910GWLSDJHL",
+      "target_id": "910GACTNCTL",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Willesden Junction Rail Station",
+      "target_name": "Kensal Rise Rail Station",
+      "source_id": "910GWLSDJHL",
+      "target_id": "910GKENR",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Willesden Junction Rail Station",
+      "target_name": "Shepherds Bush Rail Station",
+      "source_id": "910GWLSDJHL",
+      "target_id": "910GSHPDSB",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Richmond (London) Rail Station",
+      "target_name": "Kew Gardens Rail Station",
+      "source_id": "910GRICHMND",
+      "target_id": "910GKEWGRDN",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kew Gardens Rail Station",
+      "target_name": "Gunnersbury Rail Station",
+      "source_id": "910GKEWGRDN",
+      "target_id": "910GGNRSBRY",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Gunnersbury Rail Station",
+      "target_name": "South Acton Rail Station",
+      "source_id": "910GGNRSBRY",
+      "target_id": "910GSACTON",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "South Acton Rail Station",
+      "target_name": "Acton Central Rail Station",
+      "source_id": "910GSACTON",
+      "target_id": "910GACTNCTL",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kensal Rise Rail Station",
+      "target_name": "Brondesbury Park Rail Station",
+      "source_id": "910GKENR",
+      "target_id": "910GBRBYPK",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Brondesbury Park Rail Station",
+      "target_name": "Brondesbury Rail Station",
+      "source_id": "910GBRBYPK",
+      "target_id": "910GBRBY",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Brondesbury Rail Station",
+      "target_name": "West Hampstead Rail Station",
+      "source_id": "910GBRBY",
+      "target_id": "910GWHMDSTD",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "West Hampstead Rail Station",
+      "target_name": "Finchley Road & Frognal Rail Station",
+      "source_id": "910GWHMDSTD",
+      "target_id": "910GFNCHLYR",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Finchley Road & Frognal Rail Station",
+      "target_name": "Hampstead Heath Rail Station",
+      "source_id": "910GFNCHLYR",
+      "target_id": "910GHMPSTDH",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hampstead Heath Rail Station",
+      "target_name": "Gospel Oak Rail Station",
+      "source_id": "910GHMPSTDH",
+      "target_id": "910GGOSPLOK",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Gospel Oak Rail Station",
+      "target_name": "Kentish Town West Rail Station",
+      "source_id": "910GGOSPLOK",
+      "target_id": "910GKNTSHTW",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kentish Town West Rail Station",
+      "target_name": "Camden Road Rail Station",
+      "source_id": "910GKNTSHTW",
+      "target_id": "910GCMDNRD",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Camden Road Rail Station",
+      "target_name": "Caledonian Road & Barnsbury Rail Station",
+      "source_id": "910GCMDNRD",
+      "target_id": "910GCLDNNRB",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Caledonian Road & Barnsbury Rail Station",
+      "target_name": "Highbury & Islington Rail Station",
+      "source_id": "910GCLDNNRB",
+      "target_id": "910GHGHI",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Highbury & Islington Rail Station",
+      "target_name": "Canonbury Rail Station",
+      "source_id": "910GHGHI",
+      "target_id": "910GCNNB",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Canonbury Rail Station",
+      "target_name": "Dalston Kingsland Rail Station",
+      "source_id": "910GCNNB",
+      "target_id": "910GDALSKLD",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Dalston Kingsland Rail Station",
+      "target_name": "Hackney Central Rail Station",
+      "source_id": "910GDALSKLD",
+      "target_id": "910GHACKNYC",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hackney Central Rail Station",
+      "target_name": "Homerton Rail Station",
+      "source_id": "910GHACKNYC",
+      "target_id": "910GHOMRTON",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Homerton Rail Station",
+      "target_name": "Hackney Wick Rail Station",
+      "source_id": "910GHOMRTON",
+      "target_id": "910GHACKNYW",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hackney Wick Rail Station",
+      "target_name": "Stratford (London) Rail Station",
+      "source_id": "910GHACKNYW",
+      "target_id": "910GSTFD",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Clapham Junction Rail Station",
+      "target_name": "Imperial Wharf Rail Station",
+      "source_id": "910GCLPHMJC",
+      "target_id": "910GCSEAH",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Imperial Wharf Rail Station",
+      "target_name": "West Brompton Rail Station",
+      "source_id": "910GCSEAH",
+      "target_id": "910GWBRMPTN",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "West Brompton Rail Station",
+      "target_name": "Kensington (Olympia) Rail Station",
+      "source_id": "910GWBRMPTN",
+      "target_id": "910GKENOLYM",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Kensington (Olympia) Rail Station",
+      "target_name": "Shepherds Bush Rail Station",
+      "source_id": "910GKENOLYM",
+      "target_id": "910GSHPDSB",
+      "line": "mildmay",
+      "line_name": "Mildmay",
+      "mode": "overground"
+    }
+  ],
+  "suffragette": [
+    {
+      "source_name": "Gospel Oak Rail Station",
+      "target_name": "Upper Holloway Rail Station",
+      "source_id": "910GGOSPLOK",
+      "target_id": "910GUPRHLWY",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Barking Riverside",
+      "target_name": "Barking Rail Station",
+      "source_id": "910GBKRVS",
+      "target_id": "910GBARKING",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Barking Rail Station",
+      "target_name": "Woodgrange Park Rail Station",
+      "source_id": "910GBARKING",
+      "target_id": "910GWDGRNPK",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Woodgrange Park Rail Station",
+      "target_name": "Wanstead Park Rail Station",
+      "source_id": "910GWDGRNPK",
+      "target_id": "910GWNSTDPK",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Wanstead Park Rail Station",
+      "target_name": "Leytonstone High Road Rail Station",
+      "source_id": "910GWNSTDPK",
+      "target_id": "910GLYTNSHR",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Leytonstone High Road Rail Station",
+      "target_name": "Leyton Midland Road Rail Station",
+      "source_id": "910GLYTNSHR",
+      "target_id": "910GLEYTNMR",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Leyton Midland Road Rail Station",
+      "target_name": "Walthamstow Queens Road Rail Station",
+      "source_id": "910GLEYTNMR",
+      "target_id": "910GWLTHQRD",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Walthamstow Queens Road Rail Station",
+      "target_name": "Blackhorse Road Rail Station",
+      "source_id": "910GWLTHQRD",
+      "target_id": "910GBLCHSRD",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Blackhorse Road Rail Station",
+      "target_name": "South Tottenham Rail Station",
+      "source_id": "910GBLCHSRD",
+      "target_id": "910GSTOTNHM",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "South Tottenham Rail Station",
+      "target_name": "Harringay Green Lanes Rail Station",
+      "source_id": "910GSTOTNHM",
+      "target_id": "910GHRGYGL",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Harringay Green Lanes Rail Station",
+      "target_name": "Crouch Hill Rail Station",
+      "source_id": "910GHRGYGL",
+      "target_id": "910GCROUCHH",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Crouch Hill Rail Station",
+      "target_name": "Upper Holloway Rail Station",
+      "source_id": "910GCROUCHH",
+      "target_id": "910GUPRHLWY",
+      "line": "suffragette",
+      "line_name": "Suffragette",
+      "mode": "overground"
+    }
+  ],
+  "windrush": [
+    {
+      "source_name": "Highbury & Islington Rail Station",
+      "target_name": "Canonbury Rail Station",
+      "source_id": "910GHGHI",
+      "target_id": "910GCNNB",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Canonbury Rail Station",
+      "target_name": "Dalston Junction Rail Station",
+      "source_id": "910GCNNB",
+      "target_id": "910GDALS",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Clapham Junction Rail Station",
+      "target_name": "Wandsworth Road Rail Station",
+      "source_id": "910GCLPHMJC",
+      "target_id": "910GWNDSWRD",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "West Croydon Rail Station",
+      "target_name": "Norwood Junction Rail Station",
+      "source_id": "910GWCROYDN",
+      "target_id": "910GNORWDJ",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Norwood Junction Rail Station",
+      "target_name": "Anerley Rail Station",
+      "source_id": "910GNORWDJ",
+      "target_id": "910GANERLEY",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Anerley Rail Station",
+      "target_name": "Penge West Rail Station",
+      "source_id": "910GANERLEY",
+      "target_id": "910GPENEW",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Penge West Rail Station",
+      "target_name": "Sydenham Rail Station",
+      "source_id": "910GPENEW",
+      "target_id": "910GSYDENHM",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Sydenham Rail Station",
+      "target_name": "Forest Hill Rail Station",
+      "source_id": "910GSYDENHM",
+      "target_id": "910GFORESTH",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Sydenham Rail Station",
+      "target_name": "Crystal Palace Rail Station",
+      "source_id": "910GSYDENHM",
+      "target_id": "910GCRYSTLP",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Forest Hill Rail Station",
+      "target_name": "Honor Oak Park Rail Station",
+      "source_id": "910GFORESTH",
+      "target_id": "910GHONROPK",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Honor Oak Park Rail Station",
+      "target_name": "Brockley Rail Station",
+      "source_id": "910GHONROPK",
+      "target_id": "910GBROCKLY",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Brockley Rail Station",
+      "target_name": "New Cross Gate Rail Station",
+      "source_id": "910GBROCKLY",
+      "target_id": "910GNEWXGTE",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "New Cross Gate Rail Station",
+      "target_name": "Surrey Quays Rail Station",
+      "source_id": "910GNEWXGTE",
+      "target_id": "910GSURREYQ",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Surrey Quays Rail Station",
+      "target_name": "Canada Water Rail Station",
+      "source_id": "910GSURREYQ",
+      "target_id": "910GCNDAW",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Surrey Quays Rail Station",
+      "target_name": "Queens Road Peckham Rail Station",
+      "source_id": "910GSURREYQ",
+      "target_id": "910GPCKHMQD",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Surrey Quays Rail Station",
+      "target_name": "New Cross ELL Rail Station",
+      "source_id": "910GSURREYQ",
+      "target_id": "910GNWCRELL",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Canada Water Rail Station",
+      "target_name": "Rotherhithe Rail Station",
+      "source_id": "910GCNDAW",
+      "target_id": "910GRTHERHI",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Rotherhithe Rail Station",
+      "target_name": "Wapping Rail Station",
+      "source_id": "910GRTHERHI",
+      "target_id": "910GWAPPING",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Wapping Rail Station",
+      "target_name": "Shadwell Rail Station",
+      "source_id": "910GWAPPING",
+      "target_id": "910GSHADWEL",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Shadwell Rail Station",
+      "target_name": "Whitechapel Rail Station",
+      "source_id": "910GSHADWEL",
+      "target_id": "910GWCHAPEL",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Whitechapel Rail Station",
+      "target_name": "Shoreditch High Street Rail Station",
+      "source_id": "910GWCHAPEL",
+      "target_id": "910GSHRDHST",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Shoreditch High Street Rail Station",
+      "target_name": "Hoxton Rail Station",
+      "source_id": "910GSHRDHST",
+      "target_id": "910GHOXTON",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hoxton Rail Station",
+      "target_name": "Haggerston Rail Station",
+      "source_id": "910GHOXTON",
+      "target_id": "910GHAGGERS",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Haggerston Rail Station",
+      "target_name": "Dalston Junction Rail Station",
+      "source_id": "910GHAGGERS",
+      "target_id": "910GDALS",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Wandsworth Road Rail Station",
+      "target_name": "Clapham High Street Rail Station",
+      "source_id": "910GWNDSWRD",
+      "target_id": "910GCLPHHS",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Clapham High Street Rail Station",
+      "target_name": "Denmark Hill Rail Station",
+      "source_id": "910GCLPHHS",
+      "target_id": "910GDENMRKH",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Denmark Hill Rail Station",
+      "target_name": "Peckham Rye Rail Station",
+      "source_id": "910GDENMRKH",
+      "target_id": "910GPCKHMRY",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Peckham Rye Rail Station",
+      "target_name": "Queens Road Peckham Rail Station",
+      "source_id": "910GPCKHMRY",
+      "target_id": "910GPCKHMQD",
+      "line": "windrush",
+      "line_name": "Windrush",
+      "mode": "overground"
+    }
+  ],
+  "weaver": [
+    {
+      "source_name": "Cheshunt Rail Station",
+      "target_name": "Theobalds Grove Rail Station",
+      "source_id": "910GCHESHNT",
+      "target_id": "910GTHBLDSG",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Theobalds Grove Rail Station",
+      "target_name": "Turkey Street Rail Station",
+      "source_id": "910GTHBLDSG",
+      "target_id": "910GTURKYST",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Turkey Street Rail Station",
+      "target_name": "Southbury Rail Station",
+      "source_id": "910GTURKYST",
+      "target_id": "910GSBURY",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Southbury Rail Station",
+      "target_name": "Edmonton Green Rail Station",
+      "source_id": "910GSBURY",
+      "target_id": "910GEDMNGRN",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Edmonton Green Rail Station",
+      "target_name": "Silver Street Rail Station",
+      "source_id": "910GEDMNGRN",
+      "target_id": "910GSIVRST",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Edmonton Green Rail Station",
+      "target_name": "Bush Hill Park Rail Station",
+      "source_id": "910GEDMNGRN",
+      "target_id": "910GBHILLPK",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Silver Street Rail Station",
+      "target_name": "White Hart Lane Rail Station",
+      "source_id": "910GSIVRST",
+      "target_id": "910GWHHRTLA",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "White Hart Lane Rail Station",
+      "target_name": "Bruce Grove Rail Station",
+      "source_id": "910GWHHRTLA",
+      "target_id": "910GBRUCGRV",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Bruce Grove Rail Station",
+      "target_name": "Seven Sisters Rail Station",
+      "source_id": "910GBRUCGRV",
+      "target_id": "910GSEVNSIS",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Seven Sisters Rail Station",
+      "target_name": "Stamford Hill Rail Station",
+      "source_id": "910GSEVNSIS",
+      "target_id": "910GSTMFDHL",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Stamford Hill Rail Station",
+      "target_name": "Stoke Newington Rail Station",
+      "source_id": "910GSTMFDHL",
+      "target_id": "910GSTKNWNG",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Stoke Newington Rail Station",
+      "target_name": "Rectory Road Rail Station",
+      "source_id": "910GSTKNWNG",
+      "target_id": "910GRCTRYRD",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Rectory Road Rail Station",
+      "target_name": "Hackney Downs Rail Station",
+      "source_id": "910GRCTRYRD",
+      "target_id": "910GHAKNYNM",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hackney Downs Rail Station",
+      "target_name": "London Fields Rail Station",
+      "source_id": "910GHAKNYNM",
+      "target_id": "910GLONFLDS",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Hackney Downs Rail Station",
+      "target_name": "Clapton Rail Station",
+      "source_id": "910GHAKNYNM",
+      "target_id": "910GCLAPTON",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "London Fields Rail Station",
+      "target_name": "Cambridge Heath (London) Rail Station",
+      "source_id": "910GLONFLDS",
+      "target_id": "910GCAMHTH",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Cambridge Heath (London) Rail Station",
+      "target_name": "Bethnal Green Rail Station",
+      "source_id": "910GCAMHTH",
+      "target_id": "910GBTHNLGR",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Bethnal Green Rail Station",
+      "target_name": "London Liverpool Street Rail Station",
+      "source_id": "910GBTHNLGR",
+      "target_id": "910GLIVST",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Enfield Town Rail Station",
+      "target_name": "Bush Hill Park Rail Station",
+      "source_id": "910GENFLDTN",
+      "target_id": "910GBHILLPK",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Chingford Rail Station",
+      "target_name": "Highams Park Rail Station",
+      "source_id": "910GCHINGFD",
+      "target_id": "910GHGHMSPK",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Highams Park Rail Station",
+      "target_name": "Wood Street Rail Station",
+      "source_id": "910GHGHMSPK",
+      "target_id": "910GWDST",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Wood Street Rail Station",
+      "target_name": "Walthamstow Central Rail Station",
+      "source_id": "910GWDST",
+      "target_id": "910GWLTWCEN",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "Walthamstow Central Rail Station",
+      "target_name": "St James Street (London) Rail Station",
+      "source_id": "910GWLTWCEN",
+      "target_id": "910GSTJMSST",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    },
+    {
+      "source_name": "St James Street (London) Rail Station",
+      "target_name": "Clapton Rail Station",
+      "source_id": "910GSTJMSST",
+      "target_id": "910GCLAPTON",
+      "line": "weaver",
+      "line_name": "Weaver",
+      "mode": "overground"
+    }
+  ]
+}

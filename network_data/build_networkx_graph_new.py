@@ -28,7 +28,7 @@ load_dotenv()
 
 # TFL API Configuration
 TFL_API_KEY = os.getenv("TFL_API_KEY")  # Get API key from .env file
-TFL_APP_ID = os.getenv("TFL_APP_ID", "")  # Get app ID, with empty string as default if not found
+# TFL_APP_ID = os.getenv("TFL_APP_ID", "")  # Removed - App ID not needed when Key is used
 BASE_URL = "https://api.tfl.gov.uk"  # Base URL for all TFL API requests
 
 # List of transport modes we want to include in our graph
@@ -41,7 +41,7 @@ TRANSPORT_MODES = [
 
 # Output file paths
 OUTPUT_DIR = "network_data"  # Directory to store our data
-GRAPH_FILE = os.path.join(OUTPUT_DIR, "networkx_graph_new.json")  # Path for the final graph file
+GRAPH_FILE = os.path.join(OUTPUT_DIR, "networkx_graph_new.json") # Output path
 RAW_DATA_FILE = os.path.join(OUTPUT_DIR, "tfl_line_data.json")  # Path for raw API data
 
 def ensure_output_dir():
@@ -64,8 +64,8 @@ def get_lines_by_mode(mode):
     
     # Create a dictionary of parameters to send with the API request
     params = {
-        "app_key": TFL_API_KEY,  # API key for authentication
-        "app_id": TFL_APP_ID     # App ID for authentication
+        "app_key": TFL_API_KEY  # API key for authentication
+        # "app_id": TFL_APP_ID     # Removed - App ID not needed when Key is used
     }
     
     # Make a GET request to the TFL API to get all lines for the specified mode
@@ -94,7 +94,7 @@ def get_line_sequence(line_id):
     # Parameters for the API request
     params = {
         "app_key": TFL_API_KEY,
-        "app_id": TFL_APP_ID,
+        # "app_id": TFL_APP_ID, # Removed - App ID not needed when Key is used
         "excludeCrowding": "true"  # We don't need crowding data
     }
     
@@ -439,35 +439,71 @@ def build_graph_from_stop_point_sequences(line_data):
                                 # Add to connections dictionary
                                 connections[line_id].append(connection)
     
+    # --- Manual Data Correction --- 
+    # Explicitly remove 'metropolitan' from Willesden Green if it exists, 
+    # as API data sometimes incorrectly assigns it.
+    willesden_green_id = "940GZZLUWIG"
+    if G.has_node(willesden_green_id):
+        wg_lines = G.nodes[willesden_green_id].get('lines', [])
+        if 'metropolitan' in wg_lines:
+            print(f"  Correcting node data: Removing 'metropolitan' from lines list for {G.nodes[willesden_green_id].get('name')} ({willesden_green_id})")
+            wg_lines.remove('metropolitan')
+            G.nodes[willesden_green_id]['lines'] = wg_lines
+    # --- End Manual Data Correction --- 
+
     # Add all connections to the graph
     edge_count = 0
     
+    # Define stations involved in the DLR skip
+    westferry_id = "940GZZDLWFE"
+    west_india_quay_id = "940GZZDLWIQ"
+
     # With MultiDiGraph, we can add multiple edges between the same nodes with different attributes
     for line_id, line_connections in connections.items():
         for from_station, to_station, attrs in line_connections:
             # Add edge if both stations exist in graph
             if G.has_node(from_station) and G.has_node(to_station):
-                # Also add the line to both stations' lines attributes if not already there
+
+                # --- DLR West India Quay Skip Logic ---
+                # Check if this is the specific DLR edge from Westferry to West India Quay
+                # that should be skipped in the southbound (e.g., Bank->Lewisham) direction.
+                # We need to identify the correct direction/branch attribute from the API data.
+                # Assuming 'outbound' represents the Bank->Lewisham direction for this example:
+                is_dlr_southbound_skip = (
+                    line_id == "dlr" and
+                    from_station == westferry_id and
+                    to_station == west_india_quay_id and
+                    attrs.get("direction") == "outbound" # Adjust this condition based on actual API data
+                )
+                if is_dlr_southbound_skip:
+                    print(f"  Skipping DLR edge: {from_station} -> {to_station} for southbound direction.")
+                    continue # Skip adding this specific directional edge
+                # --- End DLR Skip Logic ---
+
+                # --- Verification Step ---
+                # Ensure both stations genuinely belong to this line according to their node data
+                from_lines = G.nodes[from_station].get('lines', [])
+                to_lines = G.nodes[to_station].get('lines', [])
+
+                if line_id not in from_lines or line_id not in to_lines:
+                    # If either station doesn't list this line in its own data,
+                    # it might be an error in the sequence data or station data.
+                    # We skip adding the edge for this specific line to be safe.
+                    # print(f"  Skipping edge {from_station} -> {to_station} for line {line_id} because line not listed in both station nodes.")
+                    continue
+                # --- End Verification Step ---
+
+                # Use line_id as the key to prevent duplicate edges for the same line.
+                # If the edge already exists with this key, add_edge will update its attributes.
+                G.add_edge(from_station, to_station, key=line_id, **attrs)
+                edge_count += 1
+
+                # Add the line to both stations' lines attributes (this should already be true if we pass the check above, but safe to keep)
                 for station_id in [from_station, to_station]:
                     lines = G.nodes[station_id].get('lines', [])
                     if line_id not in lines:
                         lines.append(line_id)
                         G.nodes[station_id]['lines'] = lines
-                
-                # Add bidirectional edges for each connection
-                # Forward direction
-                G.add_edge(from_station, to_station, **attrs)
-                
-                # Reverse direction (for bidirectional travel)
-                reverse_attrs = attrs.copy()
-                if reverse_attrs.get('direction') == 'inbound':
-                    reverse_attrs['direction'] = 'outbound'
-                elif reverse_attrs.get('direction') == 'outbound':
-                    reverse_attrs['direction'] = 'inbound'
-                
-                G.add_edge(to_station, from_station, **reverse_attrs)
-                
-                edge_count += 2  # Count both directions
     
     print(f"Added {edge_count} edges between stations")
     
@@ -546,12 +582,13 @@ def add_parent_child_edges(G, all_stations):
     
     print(f"Added {added_edges} zero-weight transfer edges between parent and child stations")
 
-def save_graph_to_json(G):
+def save_graph_to_json(G, output_filepath):
     """
     Save NetworkX graph as JSON.
     
     Args:
         G: NetworkX graph object
+        output_filepath: Path to save the JSON file
     """
     ensure_output_dir()
     
@@ -644,10 +681,10 @@ def save_graph_to_json(G):
     print(f"Added {edge_count} edges to graph data")
     
     # Save to file
-    with open(GRAPH_FILE, 'w') as f:
+    with open(output_filepath, 'w') as f:
         json.dump(graph_data, f, indent=2)
     
-    print(f"Graph saved to {GRAPH_FILE}")
+    print(f"Graph saved to {output_filepath}")
 
 def main():
     """Main function to build and save the network graph."""
@@ -678,7 +715,7 @@ def main():
     
     # Save graph to JSON
     print("Saving graph to JSON...")
-    save_graph_to_json(G)
+    save_graph_to_json(G, GRAPH_FILE) # Save to main file
     
     print("Done!")
 

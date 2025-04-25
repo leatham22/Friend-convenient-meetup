@@ -1,0 +1,16 @@
+{
+  "edges": [
+    {
+      "origin": "Waterloo Underground Station",
+      "destination": "Bank Underground Station",
+      "origin_id": "940GZZLUWLO",
+      "destination_id": "940GZZLUBNK",
+      "mode": "tube",
+      "line": "waterloo-city",
+      "line_name": "Waterloo & City",
+      "duration": 4,
+      "timestamp": "2025-04-25T12:37:46.657284"
+    }
+  ],
+  "last_updated": "2025-04-25T12:37:46.657433"
+}

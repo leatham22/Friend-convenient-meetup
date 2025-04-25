@@ -1,0 +1,67 @@
+{
+  "bakerloo": [
+    "940GZZLUEAC",
+    "940GZZLUHAW"
+  ],
+  "central": [
+    "940GZZLUEBY",
+    "940GZZLUEPG",
+    "940GZZLUWRP",
+    "940GZZLUHLT"
+  ],
+  "circle": [
+    "940GZZLUHSC"
+  ],
+  "district": [
+    "940GZZLUEBY",
+    "940GZZLUERC",
+    "940GZZLUKOY",
+    "940GZZLURMD",
+    "940GZZLUUPM",
+    "940GZZLUWIM"
+  ],
+  "dlr": [
+    "940GZZDLBEC",
+    "940GZZDLBNK",
+    "940GZZDLLEW",
+    "940GZZDLSIT",
+    "940GZZDLTWG",
+    "940GZZDLWLA"
+  ],
+  "hammersmith-city": [
+    "940GZZLUBKG",
+    "940GZZLUHSC"
+  ],
+  "jubilee": [
+    "940GZZLUSTD",
+    "940GZZLUSTM"
+  ],
+  "metropolitan": [
+    "940GZZLUALD",
+    "940GZZLUAMS",
+    "940GZZLUCSM",
+    "940GZZLUUXB",
+    "940GZZLUWAF"
+  ],
+  "northern": [
+    "940GZZBPSUST",
+    "940GZZLUEGW",
+    "940GZZLUHBT",
+    "940GZZLUMDN",
+    "940GZZLUMHL"
+  ],
+  "piccadilly": [
+    "940GZZLUCKS",
+    "940GZZLUHR5",
+    "940GZZLUUXB",
+    "940GZZLUHR4"
+  ],
+  "victoria": [
+    "940GZZLUBXN",
+    "940GZZLUWWL"
+  ],
+  "waterloo-city": [
+    "940GZZLUBNK",
+    "940GZZLUWLO"
+  ]
+}
