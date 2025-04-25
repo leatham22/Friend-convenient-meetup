@@ -533,216 +533,24 @@ A final script will be created to:
 
 [Your chosen license]
 
-# London Station Meeting Point Finder
+## Network Data Generation and Processing (`network_data/`)
 
-This program helps find the optimal meeting point in London using public transport stations (Underground, Overground, DLR, and Rail).
+This directory is central to the project, containing the scripts and data files necessary for creating and weighting the London transport network graph.
 
-## Algorithm Overview
+1.  **Base Graph Creation**:
+    *   `build_networkx_graph_new.py` constructs the fundamental graph structure (`networkx_graph_new.json`) using TfL API data. This initial graph includes nodes (stations) and edges (connections) but edges initially have their `weight` set to `null`.
 
-The program uses a two-stage filtering process to efficiently find suitable meeting stations:
+2.  **Tube/DLR Edge Weight Calculation**:
+    *   A two-step process generates `Edge_weights_tube_dlr.json`:
+        *   **Timetable Processing**: `find_terminal_stations.py` -> `get_timetable_data.py` (caches data) -> `process_timetable_data.py` calculates most Tube/DLR weights based on TfL timetables, handling discrepancies by averaging.
+        *   **Missing Edge Handling**: `get_missing_journey_times.py` specifically targets a small set of Tube/DLR edges not covered by the timetable method. It calls the TfL Journey API (adapting parameters for DLR) to get their durations and appends them to the file created by the previous step.
 
-### Stage 1: Initial Filtering
+3.  **Other Line Edge Weight Calculation (TODO)**:
+    *   A similar process using the TfL Journey API will be needed for Overground and Elizabeth lines.
 
-For 2 people:
-- Uses an elliptical boundary with the two starting stations as foci
-- Major axis = 1.2 * direct distance between stations
-- Important geometric note: If we had used major axis = direct distance, the ellipse would collapse to a line because:
-  - In an ellipse, when major axis (2a) equals the distance between foci (2c)
-  - Then semi-major axis (a) equals focal distance (c)
-  - Using the ellipse formula b² = a² - c², we get b = 0
-  - This would reject any station not exactly on the line between start points
-- Using 1.2 * distance creates a reasonable search area that works well with stage 2
+4.  **Final Graph Update (TODO)**:
+    *   A future script will merge the weights from `Edge_weights_tube_dlr.json` (and eventually other lines) back into `networkx_graph_new.json`, updating the `weight` attribute from `null` to the calculated duration. Transfer edge weights will also be set.
 
-For 3+ people:
-- Uses a convex hull containing all starting points
-- Adds a small buffer (0.5%) to account for stations just outside the hull
+This weighted graph is then used for finding optimal meeting points.
 
-### Stage 2: Centroid Filtering
-
-- Calculates the centroid of all starting points
-- Creates a circle that covers 70% of the starting points
-- Only keeps stations from stage 1 that fall within this circle
-- This helps eliminate outlier stations while maintaining a good selection of central meeting points
-
-## Implementation Details
-
-- Uses Haversine formula for accurate distance calculations on Earth's surface
-- Includes 0.5% tolerance for geographic calculations to account for:
-  - Earth's curvature effects
-  - Numerical precision in floating-point calculations
-  - Small deviations in station coordinate data
-
-## Usage
-
-[Add usage instructions here]
-
-## Workflow
-
-1.  **Data Extraction & Graph Creation:**
-    *   `network_data/tfl_line_data.json` is fetched/updated (if necessary) containing raw line/route data.
-    *   `network_data/build_networkx_graph_new.py` uses this data and station metadata (`slim_stations/unique_stations.json`) to create `network_data/networkx_graph_new.json` with default edge weights of 1 for line segments and 0 for transfers. The graph is a **MultiDiGraph**.
-
-2.  **Edge Weight Calculation (Tube/DLR - Timetable Method):**
-    *   `network_data/find_terminal_stations.py` identifies line endpoints from the graph, saving to `network_data/terminal_stations.json`.
-    *   `network_data/get_timetable_data.py` uses the terminals to fetch raw TfL Timetable API data for each line, caching responses in `network_data/timetable_cache/`.
-    *   `network_data/process_timetable_data.py` processes the cached timetables:
-        *   Calculates **directional** travel times between adjacent stations, **only for edges present in the base graph**.
-        *   Averages durations for the same directional pair if multiple values exist.
-        *   Reports discrepancies between calculated edges and the original Tube/DLR graph edges.
-        *   Saves the processed directional edges with averaged durations to `network_data/calculated_timetable_edges.json`.
-
-3.  **Edge Weight Calculation (Overground/Elizabeth Line - JourneyResults Method):**
-    *   Filter graph edges for Overground/Elizabeth Line using `network_data/extract_line_edges.py`.
-    *   Query TfL JourneyResults API for these pairs using `network_data/get_journey_times.py`.
-    *   Results are saved to `network_data/weighted_edges.json` (or separate file).
-
-4.  **Graph Update:**
-    *   A script merges durations from `calculated_timetable_edges.json` and the JourneyResults output.
-    *   This script updates the `weight` attribute for corresponding directional edges in `network_data/networkx_graph_new.json`. Transfer edge weights are updated to a standard penalty (e.g., 5 mins).
-
-5.  **Analysis & Pathfinding:**
-    *   Use the final, weighted MultiDiGraph (`network_data/networkx_graph_new.json`).
-    *   Pathfinding algorithms (Dijkstra/A*) use edge `weight`.
-    *   **Crucially, implement a check during pathfinding: if moving between edges `e1` and `e2` where `e1.line != e2.line` (and neither is a transfer edge), add a line change penalty (e.g., 2 mins) to the path cost.**
-
-## Usage
-
-1. **Find Meeting Points**
-   ```bash
-   python3 main.py
-   ```
-   - Enter each person's nearest station
-   - Enter walking time to that station
-   - Type 'done' when finished
-
-2. **Update Station Data**
-   ```bash
-   python3 scripts/sync_stations.py
-   ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-[Your chosen license]
-
-# London Station Meeting Point Finder
-
-This program helps find the optimal meeting point in London using public transport stations (Underground, Overground, DLR, and Rail).
-
-## Algorithm Overview
-
-The program uses a two-stage filtering process to efficiently find suitable meeting stations:
-
-### Stage 1: Initial Filtering
-
-For 2 people:
-- Uses an elliptical boundary with the two starting stations as foci
-- Major axis = 1.2 * direct distance between stations
-- Important geometric note: If we had used major axis = direct distance, the ellipse would collapse to a line because:
-  - In an ellipse, when major axis (2a) equals the distance between foci (2c)
-  - Then semi-major axis (a) equals focal distance (c)
-  - Using the ellipse formula b² = a² - c², we get b = 0
-  - This would reject any station not exactly on the line between start points
-- Using 1.2 * distance creates a reasonable search area that works well with stage 2
-
-For 3+ people:
-- Uses a convex hull containing all starting points
-- Adds a small buffer (0.5%) to account for stations just outside the hull
-
-### Stage 2: Centroid Filtering
-
-- Calculates the centroid of all starting points
-- Creates a circle that covers 70% of the starting points
-- Only keeps stations from stage 1 that fall within this circle
-- This helps eliminate outlier stations while maintaining a good selection of central meeting points
-
-## Implementation Details
-
-- Uses Haversine formula for accurate distance calculations on Earth's surface
-- Includes 0.5% tolerance for geographic calculations to account for:
-  - Earth's curvature effects
-  - Numerical precision in floating-point calculations
-  - Small deviations in station coordinate data
-
-## Usage
-
-[Add usage instructions here]
-
-## Workflow
-
-1.  **Data Extraction & Graph Creation:**
-    *   `network_data/tfl_line_data.json` is fetched/updated (if necessary) containing raw line/route data.
-    *   `network_data/build_networkx_graph_new.py` uses this data and station metadata (`slim_stations/unique_stations.json`) to create `network_data/networkx_graph_new.json` with default edge weights of 1 for line segments and 0 for transfers. The graph is a **MultiDiGraph**.
-
-2.  **Edge Weight Calculation (Tube/DLR - Timetable Method):**
-    *   `network_data/find_terminal_stations.py` identifies line endpoints from the graph, saving to `network_data/terminal_stations.json`.
-    *   `network_data/get_timetable_data.py` uses the terminals to fetch raw TfL Timetable API data for each line, caching responses in `network_data/timetable_cache/`.
-    *   `network_data/process_timetable_data.py` processes the cached timetables:
-        *   Calculates **directional** travel times between adjacent stations, **only for edges present in the base graph**.
-        *   Averages durations for the same directional pair if multiple values exist.
-        *   Reports discrepancies between calculated edges and the original Tube/DLR graph edges.
-        *   Saves the processed directional edges with averaged durations to `network_data/calculated_timetable_edges.json`.
-
-3.  **Edge Weight Calculation (Overground/Elizabeth Line - JourneyResults Method):**
-    *   Filter graph edges for Overground/Elizabeth Line using `network_data/extract_line_edges.py`.
-    *   Query TfL JourneyResults API for these pairs using `network_data/get_journey_times.py`.
-    *   Results are saved to `network_data/weighted_edges.json` (or separate file).
-
-4.  **Graph Update:**
-    *   A script merges durations from `calculated_timetable_edges.json` and the JourneyResults output.
-    *   This script updates the `weight` attribute for corresponding directional edges in `network_data/networkx_graph_new.json`. Transfer edge weights are updated to a standard penalty (e.g., 5 mins).
-
-5.  **Analysis & Pathfinding:**
-    *   Use the final, weighted MultiDiGraph (`network_data/networkx_graph_new.json`).
-    *   Pathfinding algorithms (Dijkstra/A*) use edge `weight`.
-    *   **Crucially, implement a check during pathfinding: if moving between edges `e1` and `e2` where `e1.line != e2.line` (and neither is a transfer edge), add a line change penalty (e.g., 2 mins) to the path cost.**
-
-## Usage
-
-1. **Find Meeting Points**
-   ```bash
-   python3 main.py
-   ```
-   - Enter each person's nearest station
-   - Enter walking time to that station
-   - Type 'done' when finished
-
-2. **Update Station Data**
-   ```bash
-   python3 scripts/sync_stations.py
-   ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-[Your chosen license]
-
-### Running the Scripts
-
-Execute the scripts in the `network_data` directory, generally in the order described in the Data Flow section:
-
-```bash
-cd network_data
-python3 build_networkx_graph_new.py    # Builds the base graph & initializes weights to null
-# python3 ../dev/original_Station_graph/update_edge_weights.py # (One-time script, moved to dev/)
-python3 find_terminal_stations.py  # Finds terminals needed for timetable fetching
-python3 get_timetable_data.py      # Fetches timetable data (uses cached terminals)
-python3 process_timetable_data.py  # Calculates durations from timetables
-python3 merge_travel_times.py      # Merges calculated times into the graph
-# (Result in networkx_graph_final.json)
-```
-
-*You can often skip `build_networkx_graph_new.py` and `find_terminal_stations.py` if the underlying network structure hasn't changed significantly and `networkx_graph_new.json` / `terminal_stations.json` already exist.*
-*Use `get_timetable_data.py --line <line_id>` to refresh data for specific lines.*
+## Project Setup
