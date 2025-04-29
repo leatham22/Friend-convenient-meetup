@@ -40,7 +40,7 @@ TRANSPORT_MODES = [
 ]
 
 # Output file paths
-OUTPUT_DIR = "network_data"  # Directory to store our data
+OUTPUT_DIR = "../graph_data"  # Directory to store our data
 GRAPH_FILE = os.path.join(OUTPUT_DIR, "networkx_graph_new.json") # Output path
 RAW_DATA_FILE = os.path.join(OUTPUT_DIR, "tfl_line_data.json")  # Path for raw API data
 

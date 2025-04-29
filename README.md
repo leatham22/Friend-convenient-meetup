@@ -5,7 +5,7 @@ A tool that helps groups of people find the most convenient London station to me
 ## Project Overview
 
 This project solves the common problem of finding a convenient place to meet in London when people are coming from different locations. It works by:
-1. Taking each person's nearest station and walking time
+1. Taking each person's nearest station and walking time to said station
 2. Calculating journey times between all possible stations
 3. Finding optimal meeting points that minimize total travel time for everyone
 

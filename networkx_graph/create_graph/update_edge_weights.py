@@ -22,9 +22,9 @@ import os
 
 # --- Configuration ---
 # Assumes script is in the network_data directory
-GRAPH_FILE = "networkx_graph_new.json"
-TUBE_DLR_WEIGHTS_FILE = "Edge_weights_tube_dlr.json"
-OG_EL_WEIGHTS_FILE = "Edge_weights_overground_elizabeth.json"
+GRAPH_FILE = "../graph_data/networkx_graph_new.json"
+TUBE_DLR_WEIGHTS_FILE = "../graph_data/Edge_weights_tube_dlr.json"
+OG_EL_WEIGHTS_FILE = "../graph_data/Edge_weights_overground_elizabeth.json"
 # --- End Configuration ---
 
 def load_json_data(file_path):

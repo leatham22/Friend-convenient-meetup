@@ -20,14 +20,16 @@ except ImportError:
     print("Note: matplotlib not installed. Visualization functions will be unavailable.")
 
 # File paths
-GRAPH_FILE = os.path.join("network_data", "networkx_graph_fixed.json")
+# Define the path to the graph file relative to the script's location
+# Changed from os.path.join("network_data", "networkx_graph_fixed.json")
+GRAPH_FILE = os.path.join("..", "graph_data", "networkx_graph_new.json")
 
 def load_graph_from_json(file_path=GRAPH_FILE):
     """
     Load the custom JSON format into a NetworkX graph.
     
     Args:
-        file_path: Path to the graph JSON file (default: network_data/networkx_graph_fixed.json)
+        file_path: Path to the graph JSON file (default: graph_data/networkx_graph_new.json)
         
     Returns:
         NetworkX DiGraph object representing the transport network

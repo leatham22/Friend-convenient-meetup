@@ -16,7 +16,7 @@ Usage:
 
 Output:
     Appends the calculated edges for the missing pairs to
-    Edge_weights_tube_dlr.json in the network_data directory.
+    Edge_weights_tube_dlr.json in the graph_data directory.
 """
 
 import json
@@ -29,7 +29,7 @@ import statistics # Added for averaging
 
 # --- Configuration ---
 # File to load existing edges from and append to
-OUTPUT_FILE = "Edge_weights_tube_dlr.json"
+OUTPUT_FILE = "../graph_data/Edge_weights_tube_dlr.json"
 # API configuration
 API_ENDPOINT = "https://api.tfl.gov.uk/Journey/JourneyResults"
 # Parameters for the API call - use a future date and off-peak time

@@ -20,7 +20,7 @@ Arguments:
                        If omitted, all .json files in timetable_cache/ will be processed.
 
 Output:
-    Creates Edge_weights_tube_dlr.json in the network_data directory.
+    Creates Edge_weights_tube_dlr.json in the graph_data directory.
     Prints discrepancies found in travel times to the console.
 """
 
@@ -32,9 +32,9 @@ import math # Import math for isnan check
 import statistics # For calculating average
 from datetime import datetime # Import datetime
 
-CACHE_DIR = "timetable_cache"
-OUTPUT_FILE = "Edge_weights_tube_dlr.json"
-GRAPH_FILE = "networkx_graph_new.json"
+CACHE_DIR = "../graph_data/timetable_cache"
+OUTPUT_FILE = "../graph_data/Edge_weights_tube_dlr.json"
+GRAPH_FILE = "../graph_data/networkx_graph_new.json"
 DISCREPANCY_THRESHOLD = 2 # Max difference in minutes to allow averaging
 MIN_DURATION = 0.1 # Minimum duration in minutes if calculation results in <= 0
 

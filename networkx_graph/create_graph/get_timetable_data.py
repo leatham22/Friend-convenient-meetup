@@ -14,7 +14,7 @@ Arguments:
                        If omitted, all lines in terminal_stations.json will be processed.
 
 Output:
-    Creates JSON files in network_data/timetable_cache/ containing the raw 
+    Creates JSON files in graph_data/timetable_cache/ containing the raw 
     timetable data fetched from the API for each processed line.
 """
 
@@ -27,7 +27,7 @@ from requests.exceptions import RequestException
 
 # API configuration
 API_BASE_URL = "https://api.tfl.gov.uk/Line"
-CACHE_DIR = "timetable_cache"
+CACHE_DIR = "../graph_data/timetable_cache"
 
 # Try to get TfL API key from environment variables
 TFL_API_KEY = os.environ.get("TFL_API_KEY", "")
@@ -117,7 +117,7 @@ def main():
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    terminals_file = os.path.join(script_dir, 'terminal_stations.json')
+    terminals_file = os.path.join(script_dir, '../graph_data/terminal_stations.json')
     cache_base_dir = os.path.join(script_dir, CACHE_DIR)
 
     print("Loading terminal stations...")

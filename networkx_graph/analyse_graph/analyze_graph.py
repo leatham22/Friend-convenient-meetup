@@ -102,9 +102,8 @@ def identify_missing_line_edges(graph_data, connections):
 
 def main():
     """Main function to analyze the graph"""
-    # File paths
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    graph_file = os.path.join(script_dir, 'networkx_graph_new.json')
+    # File path relative to the script's location
+    graph_file = os.path.join("..", "graph_data", "networkx_graph_new.json")
     
     print(f"Loading graph data from {graph_file}...")
     graph_data = load_graph_data(graph_file)

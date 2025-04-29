@@ -1,3 +1,9 @@
+"""
+This script was used to compare the stations in our list with the official TfL data. 
+
+It was used to create the `unique_stations.json` file, which is the master data source for all potential stations a user can start/travel to. 
+"""
+
 import requests
 import json
 from dotenv import load_dotenv

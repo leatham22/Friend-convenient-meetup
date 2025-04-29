@@ -124,9 +124,9 @@ def find_terminals(graph_data):
 def main():
     """Main function to find and save terminal stations."""
     # Determine file paths relative to the script location
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    graph_file = os.path.join(script_dir, 'networkx_graph_new.json')
-    output_file = os.path.join(script_dir, 'terminal_stations.json')
+    OUTPUT_DIR = "../graph_data" 
+    graph_file = os.path.join(OUTPUT_DIR, 'networkx_graph_new.json')
+    output_file = os.path.join(OUTPUT_DIR, 'terminal_stations.json')
     
     print(f"Loading graph data from {graph_file}...")
     graph_data = load_graph_data(graph_file)

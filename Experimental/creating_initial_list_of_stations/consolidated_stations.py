@@ -1,3 +1,9 @@
+"""
+This script was used to consolidate the stations from different modes into a single file. 
+
+It was used to create the `unique_stations.json` file, which is the master data source for all potential stations a user can start/travel to. 
+"""
+
 import json
 import os
 

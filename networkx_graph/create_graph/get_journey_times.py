@@ -25,9 +25,9 @@ import statistics # Added for averaging journey times
 
 # --- Configuration ---
 # File containing adjacent station pairs for each line
-LINE_EDGES_FILE = "line_edges.json"
+LINE_EDGES_FILE = "../graph_data/line_edges.json"
 # Output file for the calculated edge weights
-OUTPUT_FILE = "Edge_weights_overground_elizabeth.json"
+OUTPUT_FILE = "../graph_data/Edge_weights_overground_elizabeth.json"
 # Lines to process in this script
 LINES_TO_PROCESS = [
     "elizabeth",
@@ -364,9 +364,9 @@ def main():
     9. Save the complete list of edges to the output file.
     """
     # Construct the full paths to input and output files based on script location
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    line_edges_file_path = os.path.join(script_dir, LINE_EDGES_FILE)
-    output_file_path = os.path.join(script_dir, OUTPUT_FILE)
+    OUTPUT_DIR = "../graph_data" 
+    line_edges_file_path = os.path.join(OUTPUT_DIR, LINE_EDGES_FILE)
+    output_file_path = os.path.join(OUTPUT_DIR, OUTPUT_FILE)
 
     # --- Load Input Data ---
     # Load the definitions of adjacent stations for all lines

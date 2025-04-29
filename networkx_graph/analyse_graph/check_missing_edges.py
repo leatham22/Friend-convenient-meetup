@@ -172,10 +172,11 @@ def main():
     # Get the directory where the script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # Construct full paths to the data files
-    graph_file_path = os.path.join(script_dir, GRAPH_FILE)
-    tube_dlr_weights_path = os.path.join(script_dir, TUBE_DLR_WEIGHTS_FILE)
-    og_el_weights_path = os.path.join(script_dir, OG_EL_WEIGHTS_FILE)
+    # Construct full paths to the data files, pointing to the new graph_data directory
+    # Changed from os.path.join(script_dir, FILENAME) to navigate up one level first
+    graph_file_path = os.path.join(script_dir, "..", "graph_data", GRAPH_FILE)
+    tube_dlr_weights_path = os.path.join(script_dir, "..", "graph_data", TUBE_DLR_WEIGHTS_FILE)
+    og_el_weights_path = os.path.join(script_dir, "..", "graph_data", OG_EL_WEIGHTS_FILE)
 
     # --- Load Data ---
     print(f"Loading graph data from {graph_file_path}...")

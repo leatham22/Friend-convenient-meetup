@@ -1,4 +1,9 @@
-# Simple script to test TfL API connection
+"""
+This script was used to test the TfL API connection and to ensure that the API key is correct. 
+
+It was used in the process of creating the `unique_stations.json` file, which is the master data source for all potential stations a user can start/travel to. 
+"""
+
 import os
 from dotenv import load_dotenv
 import requests

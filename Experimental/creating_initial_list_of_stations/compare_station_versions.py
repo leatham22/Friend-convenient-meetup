@@ -1,3 +1,9 @@
+"""
+This script was used to compare the raw and slimmed down versions of the station files. 
+
+It was used to ensure that the slimmed down versions were correct and to identify any differences. 
+"""
+
 import json
 import os
 from collections import defaultdict

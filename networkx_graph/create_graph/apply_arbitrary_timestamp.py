@@ -19,8 +19,8 @@ from datetime import datetime
 # --- Configuration ---
 # Files to process
 FILES_TO_PROCESS = [
-    "Edge_weights_tube_dlr.json",
-    "Edge_weights_overground_elizabeth.json"
+    "../graph_data/Edge_weights_tube_dlr.json",
+    "../graph_data/Edge_weights_overground_elizabeth.json"
 ]
 
 # The arbitrary timestamp to apply (ISO format)

@@ -20,14 +20,14 @@ This file (`networkx_graph_new.json`) is now ready for use in pathfinding algori
 The network_data directory is responsible for:
 1. Fetching line and route sequence data from the TfL API
 2. Building a comprehensive graph of the London transport network
-3. Calculating journey times (weights) between stations for different lines.
-4. Validating and analyzing the network structure
+3. Validating and analyzing the network structure
+4. Calculating journey times (weights) between stations for different lines.
 5. Storing the network graph and calculated edge weights in usable formats.
 
-## Key Files
+## Key Files/directories
 
+- **networkx_graph_new.json**: This file contains all data related to our networkx graph. By running the scripts below, the file is iterated on until it becomes the complete graph data source.  
 - **build_networkx_graph_new.py**: Main script that builds the base transport network graph (nodes and edge structure) without calculated weights.
-- **networkx_graph_new.json**: The base graph data (nodes and edges with `weight=null`).
 - **process_timetable_data.py**: Processes cached TfL timetable data to calculate initial edge weights for Tube and DLR lines, saving results to `Edge_weights_tube_dlr.json`.
 - **get_missing_journey_times.py**: Fetches journey times via TfL Journey API for specific Tube/DLR edges missed by the timetable process and appends them to `Edge_weights_tube_dlr.json`.
 - **Edge_weights_tube_dlr.json**: Contains calculated edge weights (durations) for Tube and DLR lines, derived from both timetable processing and direct API calls.
@@ -179,7 +179,7 @@ The graph is saved as a JSON file with the following structure:
       "transfer": false,
       "direction": "inbound",
       "branch": "route-1",
-      "key": 0
+      "key": "district"
     },
     ...
   ]

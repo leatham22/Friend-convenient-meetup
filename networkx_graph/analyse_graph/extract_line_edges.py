@@ -10,7 +10,7 @@ Usage:
     python extract_line_edges.py
 
 Output:
-    Creates line_edges.json in the network_data directory
+    Creates line_edges.json in the graph_data directory
 """
 
 import json
@@ -127,8 +127,8 @@ def main():
     """Main function to extract and save line edges"""
     # File paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    graph_file = os.path.join(script_dir, 'networkx_graph_new.json')
-    output_file = os.path.join(script_dir, 'line_edges.json')
+    graph_file = os.path.join(script_dir, '../graph_data/networkx_graph_new.json')
+    output_file = os.path.join(script_dir, '../graph_data/line_edges.json')
     
     print(f"Loading graph data from {graph_file}...")
     graph_data = load_graph_data(graph_file)

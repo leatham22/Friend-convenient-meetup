@@ -102,10 +102,7 @@ For details on the improved approach, see the main project README.
 - **Original Purpose**: Simple validation of station data structure
 - **Issue**: Only detected basic data format issues
 
-### Data Files
-**`old(wrong)_networkx_graph.json`** and **`old_networkx_graph.json`**
-- **Original Purpose**: Intermediate or incorrect graph outputs generated during the development of the older graph-building scripts.
-- **Status**: Archived historical data.
+
 
 **`station_graph.json`** and **`station_graph.normalized.json`**
 - **Original Purpose**: Stored the graph data with standardized station names based on the CSV travel times.

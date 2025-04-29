@@ -19,7 +19,7 @@ import os
 # --- Configuration ---
 # Input and Output File (relative to the script's directory)
 # Assumes script is in network_data directory
-GRAPH_FILE = "networkx_graph_new.json" 
+GRAPH_FILE = "../graph_data/networkx_graph_new.json" 
 
 # Values to set for transfer edges
 TRANSFER_KEY_VALUE = "transfer"

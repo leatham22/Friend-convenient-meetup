@@ -1,3 +1,9 @@
+"""
+This script was used to create a mapping of stations to their child stations. 
+
+It was used to create the `unique_stations.json` file, which is the master data source for all potential stations a user can start/travel to. 
+"""
+
 import json
 import requests
 from datetime import datetime
