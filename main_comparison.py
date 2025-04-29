@@ -1,3 +1,14 @@
+"""
+This script was used to compare methods of filtering out potential meeting stations. 
+
+The old method was a simple radius-based filtering method. 
+The new method was a two-step filtering process:
+1. Filter stations within a convex hull of the start locations.
+2. Further filter based on a centroid circle covering 70% of the start locations.
+"""
+
+
+
 import requests
 import argparse
 import os

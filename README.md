@@ -85,6 +85,11 @@ Robust validation scripts (`network_data/check_missing_edges.py`, `network_data/
    - Added data validation tools
    - Moved deprecated scripts to `dev/` directory for historical reference
 
+6. **API Call Logic (TfL Journey Planner)**
+   - Updated the logic in `main.py` and `debug_compare_times.py` to use station Naptan IDs instead of latitude/longitude coordinates when calling the TfL Journey Planner API.
+   - This change improves the accuracy of journey results by directly referencing specific station infrastructure rather than potentially ambiguous geographic points.
+   - The Naptan ID for each station is sourced from the `id` field in the `slim_stations/unique_stations.json` file.
+
 ### Next Steps
 - [ ] Complete validation for DLR and Overground stations in the graph
 - [ ] Implement journey time calculations
@@ -122,14 +127,14 @@ The new implementation (`build_networkx_graph_new.py`) resolves these issues wit
 ### Measurable Improvements
 A direct comparison of the old and new approaches shows:
 
-| Metric | Old Approach | New Approach | Improvement |
-|--------|--------------|--------------|-------------|
-| Stations (Nodes) | 422 | 469 | +47 stations |
-| Connections (Edges) | 712 | 1120 | +408 connections |
-| Bidirectional Pairs | 354 | 557 | +203 pairs |
-| Transfer Edges | 16 | 100 | +84 transfers |
-| Isolated Stations | 83 | 0 | -83 (all connected) |
-| Post-processing Required | Yes | No | Simplified workflow |
+| Metric              | Old Approach | New Approach | Improvement |
+|---------------------|--------------|--------------|-------------|
+| Stations (Nodes)    | 422          | 469          | +47 stations |
+| Connections (Edges) | 712          | 1120         | +408 connections |
+| Bidirectional Pairs | 354          | 557          | +203 pairs |
+| Transfer Edges      | 16           | 100          | +84 transfers |
+| Isolated Stations   | 83           | 0            | -83 (all connected) |
+| Post-processing Required | Yes     | No           | Simplified workflow |
 
 ### Implementation Details
 - Each station in `stopPointSequences` contains complete information (ID, name, coordinates, lines, modes, etc.)
@@ -220,6 +225,16 @@ The new graph will be saved to `network_data/networkx_graph_new.json`.
      - Child stations mapping to parent stations
      - Abbreviations mapped to their full station names
 
+### Graph as Single Source of Truth (Runtime)
+
+For runtime operations like finding meeting points (`main.py`) and debugging journey times (`debug_compare_times.py`), the project now exclusively relies on the data embedded within the NetworkX graph file (`network_data/networkx_graph_new.json`).
+
+- **Data Source**: All necessary station information (including names, Naptan IDs, latitude, longitude) is extracted directly from the *node attributes* within the graph JSON.
+- **Consistency**: This ensures that the station names, IDs, and coordinates used for pathfinding (Dijkstra), filtering, and TfL API calls are inherently consistent with the graph structure itself.
+- **Simplified Dependencies**: This approach removes the runtime dependency on the separate `slim_stations/unique_stations.json` file for the core application logic, simplifying data handling.
+
+Note: The `slim_stations/unique_stations.json` file is still used during the initial *graph building* process (`network_data/build_networkx_graph_new.py`) to help establish the parent-child relationships and metadata that get embedded into the final graph file.
+
 ### Station Graph System (`Station_graph/`)
 1. **Graph Generation**
    - Creates a directed graph of London transport stations
@@ -248,13 +263,37 @@ The new graph will be saved to `network_data/networkx_graph_new.json`.
      - Direct travel times between stations
      - Transfer times at interchange stations
      - Walking times from starting locations
-     - Live service disruptions (via TfL API)
 
-5. **Utilities**
-   - Station verification scripts
-   - Missing station detection
-   - Graph validation tools
-   - Station name search functionality
+## NetworkX vs TfL API Journey Time Analysis (New)
+
+During development, a comparison was made between journey times calculated using the project's NetworkX graph and custom Dijkstra algorithm versus times retrieved from the official TfL Journey Planner API.
+
+**Key Findings:**
+
+1.  **Graph Calculation (Idealized Time):**
+    *   The NetworkX graph stores *inter-station running times* as edge weights (`duration`).
+    *   The custom Dijkstra algorithm sums these durations and adds a fixed 5-minute penalty for relevant line changes.
+    *   This calculation represents an **idealized minimum travel time**, assuming instant train availability and transfers, focusing primarily on the time spent *moving* between stations.
+
+2.  **TfL API Calculation (Scheduled Time):**
+    *   The TfL API (using `journeyPreference=leasttime`, which appears to be the default for coordinate-based queries) calculates the fastest route based on **scheduled services**.
+    *   This inherently includes significant additional time factors not present in the static graph data:
+        *   Initial wait time for the next scheduled train.
+        *   Wait times during transfers for connecting services.
+        *   Standard dwell times (stops) at intermediate stations.
+        *   Potential buffer times.
+    *   This calculation represents a more realistic **scheduled journey time**, including necessary waiting periods.
+
+3.  **Discrepancy and Ratio:**
+    *   TfL API times were consistently longer than the NetworkX graph times for the same journeys, often by a factor of ~1.7x to ~2.7x.
+    *   This difference is attributed to the API accounting for wait/dwell times, while the graph focuses on running time.
+    *   The *ratio* between the two calculations is not constant across different journeys. This means the graph's idealized time doesn't perfectly predict the *relative* scheduled time difference between potential meeting points.
+
+**Implications for the Project:**
+
+*   The NetworkX graph stage effectively identifies candidate meeting stations with low *potential* travel time (minimal running time).
+*   The subsequent TfL API calls on the top candidates provide a more conservative, schedule-based time estimate for final comparison.
+*   The two-stage approach remains valid: the graph acts as an efficient filter based on idealized speed, and the API provides a schedule-aware refinement for the most promising options. Understanding the difference between the two calculations is crucial for interpreting the final results.
 
 ## Directory Structure
 
