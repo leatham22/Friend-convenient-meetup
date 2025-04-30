@@ -623,28 +623,30 @@ def parse_arguments():
     args.api_key = final_api_key
     return args
 
-def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name, walk_time):
+def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name):
     """
     Calculates the shortest path travel time using a custom Dijkstra algorithm
     that incorporates walk time and applies a 5-minute penalty for line/mode changes
-    during the search.
+    during the search. WALK TIME IS ADDED EXTERNALLY.
 
     Args:
         graph (nx.MultiDiGraph): The loaded NetworkX graph.
         start_station_name (str): Name of the starting station.
         end_station_name (str): Name of the ending (meeting) station.
-        walk_time (int): Time in minutes to walk TO the start station.
+        # walk_time (int): REMOVED - Time to walk TO the start station is added externally.
 
     Returns:
-        float: Minimum calculated travel time in minutes, or float('inf') if no path found.
+        float: Minimum calculated travel time in minutes (excluding initial walk time),
+               or float('inf') if no path found.
     """
-    # Priority queue stores tuples: (current_total_time, current_station_name, line_key_taken_to_reach_station)
-    # line_key_taken_to_reach_station is None for the starting point (representing the walk)
-    pq = [(float(walk_time), start_station_name, None)]
+    # Priority queue stores tuples: (current_path_time, current_station_name, line_key_taken_to_reach_station)
+    # Initialize time to 0.0 as walk time is handled externally.
+    pq = [(0.0, start_station_name, None)]
 
     # Distances dictionary stores the minimum time found so far to reach a station VIA a specific line key
     # Key: (station_name, line_key), Value: time
-    distances = {(start_station_name, None): float(walk_time)}
+    # Initialize start distance to 0.0
+    distances = {(start_station_name, None): 0.0}
 
     # Keep track of the minimum time found to reach the end_station_name, regardless of the line taken
     min_time_to_destination = float('inf')
@@ -714,8 +716,8 @@ def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name, 
     if min_time_to_destination == float('inf'):
         print(f"    No path found from {start_station_name} to {end_station_name} using custom Dijkstra.")
     else:
-         print(f"    Calculated Dijkstra time: {min_time_to_destination:.2f} mins (incl. {walk_time} min walk & penalties)")
-        
+        print(f"    Calculated Dijkstra path cost: {min_time_to_destination:.2f} mins (incl. penalties)")
+
     return min_time_to_destination
 
 def main():
@@ -835,26 +837,26 @@ def main():
             start_station_name = person['start_station_name']
             time_to_station = person['time_to_station']
 
-            # Use NetworkX to calculate path cost
-            nx_travel_time = dijkstra_with_transfer_penalty(
-                G, 
-                start_station_name, 
-                meeting_station_name, 
-                time_to_station
+            # Use NetworkX to calculate path cost (Dijkstra now excludes walk time)
+            nx_path_cost = dijkstra_with_transfer_penalty(
+                G,
+                start_station_name,
+                meeting_station_name
+                # time_to_station REMOVED from args
             )
 
-            if nx_travel_time == float('inf'):
-                print(f"    Cannot estimate journey for Person {person['id']} from {start_station_name} to {meeting_station_name} using NetworkX")
+            # Check if a path was found
+            if nx_path_cost == float('inf'):
+                print(f"    Cannot estimate journey for Person {person['id']} from {start_station_name} to {meeting_station_name} using NetworkX (No path found)")
                 possible_meeting_nx = False
                 break # Stop processing this station if one person can't reach it
 
             # Total time for this person = walk time + NetworkX path cost (incl. penalties)
-            # Note: walk_time is already included in nx_travel_time by the function
-            person_total_time_nx = nx_travel_time
+            person_total_time_nx = time_to_station + nx_path_cost
+            print(f"    Person {person['id']} ({start_station_name}): Walk={time_to_station} + PathCost={nx_path_cost:.2f} -> Total={person_total_time_nx:.2f}")
+            
             person_times_nx.append(person_total_time_nx)
             current_meeting_total_time_nx += person_total_time_nx
-            
-            # No need to print breakdown here, just the result from the function
 
         if possible_meeting_nx:
             avg_time_nx = current_meeting_total_time_nx / len(people_data)

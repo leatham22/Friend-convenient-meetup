@@ -262,7 +262,9 @@ def main():
         ("Fulham Broadway Underground Station", "Notting Hill Gate Underground Station", 4),
         ("Canary Wharf Underground Station", "Gloucester Road Underground Station", 2),
         ("Earl's Court Underground Station", "Green Park Underground Station", 5), # Example different start
-        ("Bond Street Underground Station", "Waterloo Underground Station", 6)
+        ("Bond Street Underground Station", "Waterloo Underground Station", 6),
+        # Add Homerton journey for diagnostics
+        ("Homerton Rail Station", "Stratford Underground Station", 4)
     ]
 
     print("\nComparing Journeys:")
@@ -274,6 +276,57 @@ def main():
 
         # --- Graph Calculation ---
         print("Calculating Graph Time...")
+
+        # --- DIAGNOSTICS FOR HOMERTON --- 
+        if start_station == "Homerton Rail Station":
+            print("  --- Homerton Diagnostics --- ")
+            if G.has_node(start_station):
+                print(f"  Node '{start_station}' exists in graph.")
+                neighbors = list(G.neighbors(start_station))
+                print(f"  Neighbors of {start_station}: {neighbors}")
+                for neighbor in neighbors:
+                    print(f"\n    --- Checking edges from {start_station} to {neighbor} ---")
+                    edge_data = G.get_edge_data(start_station, neighbor)
+                    # print(f"    Edge data to '{neighbor}':") # Less verbose
+                    if edge_data:
+                        for key, data in edge_data.items():
+                            print(f"      Edge ({start_station} -> {neighbor}) Key ('{key}'): {data}")
+                            duration = data.get('duration')
+                            if duration is None:
+                                print("        -> Duration: MISSING or None")
+                            elif isinstance(duration, (int, float)):
+                                print(f"        -> Duration: {duration} (Valid type)")
+                            else:
+                                print(f"        -> Duration: {duration} (INVALID TYPE: {type(duration)})")
+                    else:
+                        print("     (No edge data found - unexpected)")
+
+                    # --- Check Neighbor's Outgoing Edges --- 
+                    if G.has_node(neighbor):
+                        print(f"\n    --- Checking OUTGOING edges from Neighbor: {neighbor} ---")
+                        neighbor_neighbors = list(G.neighbors(neighbor))
+                        # print(f"    Neighbors of {neighbor}: {neighbor_neighbors}") # Optional verbosity
+                        for nn in neighbor_neighbors:
+                            nn_edge_data = G.get_edge_data(neighbor, nn)
+                            if nn_edge_data:
+                                for nn_key, nn_data in nn_edge_data.items():
+                                     print(f"      Edge ({neighbor} -> {nn}) Key ('{nn_key}'): {nn_data}")
+                                     nn_duration = nn_data.get('duration')
+                                     if nn_duration is None:
+                                         print("        -> Duration: MISSING or None")
+                                     elif isinstance(nn_duration, (int, float)):
+                                         print(f"        -> Duration: {nn_duration} (Valid type)")
+                                     else:
+                                         print(f"        -> Duration: {nn_duration} (INVALID TYPE: {type(nn_duration)})")
+                            else:
+                                print(f"      (No edge data found for {neighbor} -> {nn}) - unexpected")
+                    # --- End Check Neighbor's Outgoing Edges --- 
+
+            else:
+                print(f"  Node '{start_station}' NOT FOUND in graph.")
+            print("\n  --- End Homerton Diagnostics --- ")
+        # --- END DIAGNOSTICS --- 
+
         graph_time_no_walk, path_nodes, path_keys, total_penalty = dijkstra_with_transfer_penalty_and_path(G, start_station, end_station)
         
         if graph_time_no_walk == float('inf'):

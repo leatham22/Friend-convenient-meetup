@@ -14,7 +14,55 @@ from collections import defaultdict
 # Import our graph utility functions
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from network_data.graph_utils import load_graph_from_json
+
+# Define the path to the graph file explicitly
+GRAPH_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "graph_data", "networkx_graph_new.json")
+
+def load_networkx_graph_manual(file_path=GRAPH_PATH):
+    """Loads the NetworkX graph manually from the JSON file as a MultiDiGraph."""
+    try:
+        with open(file_path, 'r') as f:
+            graph_data = json.load(f)
+
+        # IMPORTANT: Load as MultiDiGraph to handle parallel edges (multiple lines)
+        G = nx.MultiDiGraph()
+
+        # Add nodes
+        if 'nodes' in graph_data and isinstance(graph_data['nodes'], dict):
+            for node_name, attributes in graph_data['nodes'].items():
+                if isinstance(attributes, dict):
+                    G.add_node(node_name, **attributes)
+                else:
+                    G.add_node(node_name)
+                    # print(f"Warning: Node '{node_name}' has unexpected attribute format: {attributes}")
+        else:
+            print("Warning: 'nodes' key not found or not a dictionary in graph data.")
+
+        # Add edges
+        if 'edges' in graph_data and isinstance(graph_data['edges'], list):
+            for edge in graph_data['edges']:
+                if isinstance(edge, dict) and 'source' in edge and 'target' in edge:
+                    source = edge.pop('source')
+                    target = edge.pop('target')
+                    key = edge.pop('key', None)
+                    # Ensure source and target nodes exist before adding edge
+                    if G.has_node(source) and G.has_node(target):
+                        G.add_edge(source, target, key=key, **edge)
+                    else:
+                        print(f"Warning: Skipping edge due to missing node(s): {source} -> {target}")
+                else:
+                    print(f"Warning: Skipping invalid edge format: {edge}")
+        else:
+            print("Warning: 'edges' key not found or not a list in graph data.")
+
+        print(f"Loaded NetworkX graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
+        return G
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading or parsing NetworkX graph JSON from '{file_path}': {e}", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred during graph construction: {e}", file=sys.stderr)
+        return None
 
 def get_connected_components(G):
     """
@@ -148,10 +196,17 @@ def analyze_example_paths(G):
         ("King's Cross St. Pancras Underground Station", "Waterloo Underground Station"),
         ("Paddington Underground Station", "Liverpool Street Underground Station"),
         ("Euston Underground Station", "Victoria Underground Station"),
-        ("Bank Underground Station", "Oxford Circus Underground Station")
+        ("Bank Underground Station", "Oxford Circus Underground Station"),
+        # Added Inter-modal pairs
+        ("Homerton Rail Station", "Oxford Circus Underground Station"), # Overground -> Tube
+        ("Homerton Rail Station", "Stratford Underground Station"),     # Overground -> Tube (closer)
+        ("Shadwell DLR Station", "Bank Underground Station"),             # DLR -> Tube (via transfer)
+        ("Canary Wharf DLR Station", "Waterloo Underground Station"),      # DLR -> Tube
+        ("Richmond Underground Station", "Clapham Junction Rail Station"), # Tube -> Overground/Rail
+        ("Willesden Junction Underground Station", "Homerton Rail Station") # Tube/Bakerloo -> Overground
     ]
     
-    print("\nAnalyzing paths between major stations:")
+    print("\nAnalyzing paths between example stations (Tube-Tube and Inter-modal):")
     for source, target in station_pairs:
         # Clean up station names (try to find them in the graph)
         source_matches = find_stations_by_substring(G, source.split()[0])
@@ -219,8 +274,13 @@ def check_tube_line_connectivity(G, line_name):
 def main():
     """Main function to analyze graph connectivity."""
     print("Loading London transport network graph...")
-    G = load_graph_from_json()
+    # Use the manual loading function
+    G = load_networkx_graph_manual()
     
+    if G is None:
+        print("Failed to load the graph. Exiting.")
+        sys.exit(1)
+        
     # Analyze overall connectivity
     print(f"\nGraph has {G.number_of_nodes()} stations and {G.number_of_edges()} connections")
     

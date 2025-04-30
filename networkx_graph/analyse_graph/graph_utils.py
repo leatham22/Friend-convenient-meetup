@@ -57,6 +57,41 @@ def load_graph_from_json(file_path=GRAPH_FILE):
     
     return G
 
+# Add new function for loading standard node-link JSON format
+def load_node_link_graph(filepath):
+    """
+    Loads a NetworkX graph from a JSON file (node-link format).
+
+    Args:
+        filepath: Path to the graph JSON file (node-link format).
+
+    Returns:
+        NetworkX graph object (DiGraph, MultiDiGraph, etc., based on file).
+        Returns None if loading fails.
+    """
+    try:
+        with open(filepath, 'r') as f:
+            graph_data = json.load(f)
+        # Determine if it's a multigraph based on the 'multigraph' key
+        is_multigraph = graph_data.get('multigraph', False)
+        # Determine if it's directed based on the 'directed' key
+        is_directed = graph_data.get('directed', False)
+        # Load the graph using networkx.node_link_graph
+        # Specify directed and multigraph flags based on the loaded data
+        # Explicitly set edges="edges" to match how the data was saved and address FutureWarning
+        G = nx.node_link_graph(graph_data, directed=is_directed, multigraph=is_multigraph, edges="edges")
+        print(f"Successfully loaded node-link graph from {filepath}")
+        return G
+    except FileNotFoundError:
+        print(f"Error: Input graph file not found at {filepath}")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from {filepath}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred while loading the node-link graph: {e}")
+        return None
+
 def find_shortest_path(G, source, target, weight='weight'):
     """
     Find the shortest path between two stations.

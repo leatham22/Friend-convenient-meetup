@@ -2,6 +2,21 @@
 
 This directory contains scripts and data for building and analyzing the London transport network graph.
 
+**IMPORTANT GRAPH STRUCTURE CHANGE: Single Node per Hub + Multi-Step Build**
+
+The graph generation process is being refactored to address pathfinding issues caused by the previous multi-node representation of station hubs and incomplete transfer edges.
+
+The new approach involves multiple scripts:
+1.  **`create_graph/build_hub_graph.py` (NEW/REFACTORED):** Creates the base graph (`graph_data/networkx_graph_hubs_base.json`) with one node per station hub (grouped by `topMostParentId`). Nodes aggregate modes/lines/NaptanIDs. Only *line* edges (between hubs) are added (`transfer=False`, `weight=null`).
+2.  **`create_graph/add_proximity_transfers.py` (NEW):** Reads the base hub graph. Uses the TfL StopPoint proximity API to find nearby hub nodes lacking line connections. Adds bidirectional `transfer=True`, `mode='walking'`, `weight=null` edges for these pairs. Outputs the enhanced graph (`graph_data/networkx_graph_hubs_with_transfers.json`) and a list of the added transfers (`graph_data/inter_hub_transfers_to_weight.json`).
+3.  **`create_graph/calculate_transfer_weights.py` (NEW):** Reads the graph with null-weighted transfers and the list of transfers. Uses the TfL Journey API (`mode=walking`) to get durations and updates the weights for the transfer edges. Outputs the final hub graph with weighted transfers (`graph_data/networkx_graph_hubs_final.json`).
+
+*(Note: Weighting for line edges using timetable/journey data will be a subsequent step applied to this final hub graph.)*
+
+This new structure simplifies the graph, eliminates intra-hub transfer complexity, improves pathfinding robustness, and removes the build-time dependency on `../slim_stations/unique_stations.json`.
+
+---
+
 ## Final Graph Population
 
 The primary output of this directory is the finalized, weighted network graph:

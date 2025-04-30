@@ -9,6 +9,9 @@ This project solves the common problem of finding a convenient place to meet in 
 2. Calculating journey times between all possible stations
 3. Finding optimal meeting points that minimize total travel time for everyone
 
+
+LUDOS COMMENT: AT TIME OF WRITING SCRIPTS THEY WORK AS PLANNED. HOWEVER, TFL MAY RELEASE UPDATES SO CHECK WITH API FOR CHANGES.
+
 ## Project Status
 
 ### Current Features
@@ -90,7 +93,18 @@ Robust validation scripts (`network_data/check_missing_edges.py`, `network_data/
    - This change improves the accuracy of journey results by directly referencing specific station infrastructure rather than potentially ambiguous geographic points.
    - The Naptan ID for each station is sourced from the `id` field in the `slim_stations/unique_stations.json` file.
 
+7. **Planned Graph Restructure & Improved Transfers (Multi-Step)**
+   - **Problem:** Pathfinding failures identified due to incomplete/missing transfer edges between different modes within station hubs (e.g., Stratford) and between geographically close hubs (e.g., Hammersmith stations).
+   - **Solution:** Refactor the graph building into a multi-step process:
+     - **Step 1 (`build_hub_graph.py`):** Create a base graph with **one single node per station hub** (grouping by `topMostParentId`). This node aggregates modes, lines, and NaptanIDs. Add *line* edges between these hubs (`transfer=False`, `weight=null`). This eliminates intra-hub transfers and the dependency on `slim_stations/unique_stations.json`.
+     - **Step 2 (`add_proximity_transfers.py`):** Use the TfL StopPoint proximity API to find geographically close hub nodes that lack a direct line connection. Add bidirectional `transfer=True`, `mode='walking'`, `weight=null` edges for these pairs. Output the modified graph and a list of these transfers.
+     - **Step 3 (`calculate_transfer_weights.py`):** Use the TfL Journey API (`mode=walking`) to calculate durations for the proximity-based transfer edges identified in Step 2 and update their weights in the graph.
+     - **Step 4 (Future):** Calculate/update weights for the *line* edges using timetable/journey API data.
+
 ### Next Steps
+- [ ] **Implement `build_hub_graph.py` (Step 1: Single node per hub, line edges only).**
+- [ ] **Implement `add_proximity_transfers.py` (Step 2: Find/add null-weighted walking transfers).**
+- [ ] **Implement `calculate_transfer_weights.py` (Step 3: Calculate walking transfer weights).**
 - [ ] Complete validation for DLR and Overground stations in the graph
 - [ ] Implement journey time calculations
 - [ ] Add meeting point optimization algorithm
