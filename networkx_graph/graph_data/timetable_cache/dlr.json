@@ -1,6 +1,6 @@
 {
   "line_id": "dlr",
-  "fetch_timestamp": 1746107437.949614,
+  "fetch_timestamp": 1746123061.885501,
   "timetables": {
     "940GZZDLBEC": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -859,8 +859,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -2549,8 +2549,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -8162,8 +8162,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -9911,8 +9911,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -18113,8 +18113,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -19803,8 +19803,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -27019,8 +27019,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -28768,8 +28768,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -33925,8 +33925,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -35674,8 +35674,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -40254,8 +40254,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -41944,8 +41944,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -48639,8 +48639,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -50388,8 +50388,8 @@
           "status": true,
           "id": "940GZZDLSOQ",
           "name": "South Quay DLR Station",
-          "lat": 51.500053,
-          "lon": -0.016133
+          "lat": 51.50005,
+          "lon": -0.01597
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",

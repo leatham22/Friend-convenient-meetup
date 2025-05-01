@@ -1,6 +1,6 @@
 {
   "line_id": "central",
-  "fetch_timestamp": 1746107415.4530199,
+  "fetch_timestamp": 1746123020.920702,
   "timetables": {
     "940GZZLUEBY": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -3055,6 +3055,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -3484,8 +3485,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -3498,7 +3499,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -13512,8 +13512,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -13857,6 +13857,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -24601,6 +24602,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -25030,8 +25032,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -35299,7 +35301,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -35409,8 +35410,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -35754,6 +35755,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -49574,6 +49576,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -50003,8 +50006,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",

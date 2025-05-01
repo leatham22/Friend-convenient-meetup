@@ -1,6 +1,6 @@
 {
   "line_id": "waterloo-city",
-  "fetch_timestamp": 1746107475.698089,
+  "fetch_timestamp": 1746123117.3527339,
   "timetables": {
     "940GZZLUBNK": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -603,8 +603,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -3085,8 +3085,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         }
       ],
       "timetable": {

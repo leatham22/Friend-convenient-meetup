@@ -1,6 +1,6 @@
 {
   "line_id": "hammersmith-city",
-  "fetch_timestamp": 1746107445.970921,
+  "fetch_timestamp": 1746123075.2861261,
   "timetables": {
     "940GZZLUBKG": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -3359,6 +3359,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -3780,8 +3781,8 @@
           "status": true,
           "id": "940GZZLUHSC",
           "name": "Hammersmith (H&C Line) Underground Station",
-          "lat": 51.49339,
-          "lon": -0.22503
+          "lat": 51.49331,
+          "lon": -0.2243
         }
       ],
       "timetable": {
@@ -8702,8 +8703,8 @@
           "status": true,
           "id": "940GZZLUHSC",
           "name": "Hammersmith (H&C Line) Underground Station",
-          "lat": 51.49339,
-          "lon": -0.22503
+          "lat": 51.49331,
+          "lon": -0.2243
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -9052,6 +9053,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

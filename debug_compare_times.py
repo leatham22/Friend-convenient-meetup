@@ -23,23 +23,29 @@ def load_networkx_graph_and_station_data():
         G = nx.MultiDiGraph()
         station_data_lookup = {}
 
-        # Process nodes (now a list of dicts)
+        # Process nodes (list of dicts in the final graph format)
         if 'nodes' in graph_data and isinstance(graph_data['nodes'], list):
             for node_dict in graph_data['nodes']:
                 if isinstance(node_dict, dict) and 'id' in node_dict:
-                    node_id = node_dict.pop('id') # Extract the node ID ('hub_name')
-                    G.add_node(node_id, **node_dict) # Add node with remaining attributes
-                    # Store all original attributes (including the 'id' we popped) in the lookup
-                    node_dict['id'] = node_id # Add it back for the lookup
-                    station_data_lookup[node_id] = node_dict
+                    node_id = node_dict['id'] # Node ID is the hub name
+                    try:
+                        # Add node directly with its attributes from the JSON dict
+                        G.add_node(node_id, **node_dict) 
+                        # *** Crucially, populate the lookup AFTER adding to graph, using graph's data view ***
+                        station_data_lookup[node_id] = G.nodes[node_id] 
+                    except Exception as e:
+                         print(f"Error adding node or populating lookup for '{node_id}': {e}")
                 else:
                     print(f"Warning: Skipping node due to missing 'id' or unexpected format: {node_dict}")
         else:
             print("Warning: 'nodes' key not found or not a list in graph data.")
 
-        # Process edges (now a list of dicts with 'key')
-        if 'links' in graph_data and isinstance(graph_data['links'], list): # Check for 'links' key
-            for edge_dict in graph_data['links']:
+        # Process edges (list of dicts)
+        # Use 'links' key first, fallback to 'edges'
+        edge_list_key = 'links' if 'links' in graph_data else 'edges'
+        if edge_list_key in graph_data and isinstance(graph_data[edge_list_key], list):
+            for edge_dict in graph_data[edge_list_key]:
+                # Check for required keys including 'weight'
                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
                     source = edge_dict['source']
                     target = edge_dict['target']
@@ -53,26 +59,12 @@ def load_networkx_graph_and_station_data():
                     else:
                         print(f"Warning: Skipping edge due to missing node(s): {source} -> {target} (Key: {key})")
                 else:
-                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight): {edge_dict}")
-        elif 'edges' in graph_data and isinstance(graph_data['edges'], list): # Fallback check for 'edges' key
-             print("Warning: Found 'edges' key instead of 'links'. Attempting to process...")
-             for edge_dict in graph_data['edges']:
-                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
-                    source = edge_dict['source']
-                    target = edge_dict['target']
-                    key = edge_dict['key'] 
-                    weight = edge_dict['weight'] 
-                    if G.has_node(source) and G.has_node(target):
-                        G.add_edge(source, target, key=key, weight=weight)
-                    else:
-                        print(f"Warning: Skipping edge (from 'edges' list) due to missing node(s): {source} -> {target} (Key: {key})")
-                 else:
-                    print(f"Warning: Skipping invalid edge format (from 'edges' list) or missing required keys (source, target, key, weight): {edge_dict}")
+                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight) in '{edge_list_key}' list: {edge_dict}")
         else:
-            print("Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
+            print(f"Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
 
         print(f"Loaded NetworkX graph from '{GRAPH_PATH}' with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
-        print(f"Created station data lookup for {len(station_data_lookup)} stations from graph nodes.")
+        print(f"Created station lookup for {len(station_data_lookup)} stations from graph nodes.")
         return G, station_data_lookup
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading or parsing NetworkX graph JSON: {e}", file=sys.stderr)
@@ -331,13 +323,14 @@ def main():
                     if edge_data:
                         for key, data in edge_data.items():
                             print(f"      Edge ({start_station} -> {neighbor}) Key ('{key}'): {data}")
-                            duration = data.get('duration')
-                            if duration is None:
-                                print("        -> Duration: MISSING or None")
-                            elif isinstance(duration, (int, float)):
-                                print(f"        -> Duration: {duration} (Valid type)")
+                            # Use 'weight' here
+                            weight_val = data.get('weight') 
+                            if weight_val is None:
+                                print("        -> Weight: MISSING or None")
+                            elif isinstance(weight_val, (int, float)):
+                                print(f"        -> Weight: {weight_val} (Valid type)")
                             else:
-                                print(f"        -> Duration: {duration} (INVALID TYPE: {type(duration)})")
+                                print(f"        -> Weight: {weight_val} (INVALID TYPE: {type(weight_val)})")
                     else:
                         print("     (No edge data found - unexpected)")
 
@@ -351,13 +344,14 @@ def main():
                             if nn_edge_data:
                                 for nn_key, nn_data in nn_edge_data.items():
                                      print(f"      Edge ({neighbor} -> {nn}) Key ('{nn_key}'): {nn_data}")
-                                     nn_duration = nn_data.get('duration')
-                                     if nn_duration is None:
-                                         print("        -> Duration: MISSING or None")
-                                     elif isinstance(nn_duration, (int, float)):
-                                         print(f"        -> Duration: {nn_duration} (Valid type)")
+                                     # Use 'weight' here
+                                     nn_weight = nn_data.get('weight') 
+                                     if nn_weight is None:
+                                         print("        -> Weight: MISSING or None")
+                                     elif isinstance(nn_weight, (int, float)):
+                                         print(f"        -> Weight: {nn_weight} (Valid type)")
                                      else:
-                                         print(f"        -> Duration: {nn_duration} (INVALID TYPE: {type(nn_duration)})")
+                                         print(f"        -> Weight: {nn_weight} (INVALID TYPE: {type(nn_weight)})")
                             else:
                                 print(f"      (No edge data found for {neighbor} -> {nn}) - unexpected")
                     # --- End Check Neighbor's Outgoing Edges --- 
@@ -404,9 +398,11 @@ def main():
         if proceed_with_tfl:
              # Extract IDs for TfL API call based on the refined logic
              start_primary_id = start_station_data.get('primary_naptan_id')
-             start_constituents = start_station_data.get('constituent_naptan_ids', [])
+             # Use the CORRECT key 'constituent_stations'
+             start_constituents = start_station_data.get('constituent_stations', []) 
              end_primary_id = end_station_data.get('primary_naptan_id')
-             end_constituents = end_station_data.get('constituent_naptan_ids', [])
+             # Use the CORRECT key 'constituent_stations'
+             end_constituents = end_station_data.get('constituent_stations', [])   
              
              start_naptan_id = None
              end_naptan_id = None
@@ -414,14 +410,20 @@ def main():
              # Determine Start Naptan ID
              if start_primary_id and not start_primary_id.startswith("HUB"):
                  start_naptan_id = start_primary_id
-             elif start_constituents: # Check if list is not empty
-                 start_naptan_id = start_constituents[0] # Use first constituent
+             # Use the corrected key 'constituent_stations'
+             elif start_constituents and isinstance(start_constituents, list) and len(start_constituents) > 0:
+                 # Check first element is dict and has the naptan_id key
+                 if isinstance(start_constituents[0], dict) and 'naptan_id' in start_constituents[0]:
+                      start_naptan_id = start_constituents[0]['naptan_id']
              
              # Determine End Naptan ID
              if end_primary_id and not end_primary_id.startswith("HUB"):
                  end_naptan_id = end_primary_id
-             elif end_constituents: # Check if list is not empty
-                 end_naptan_id = end_constituents[0] # Use first constituent
+             # Use the corrected key 'constituent_stations'
+             elif end_constituents and isinstance(end_constituents, list) and len(end_constituents) > 0:
+                 # Check first element is dict and has the naptan_id key
+                 if isinstance(end_constituents[0], dict) and 'naptan_id' in end_constituents[0]:
+                      end_naptan_id = end_constituents[0]['naptan_id']
 
              # Validate that we successfully determined both IDs
              if not start_naptan_id:
@@ -433,41 +435,41 @@ def main():
 
         # Only call API if we have valid Naptan IDs
         if proceed_with_tfl:
-            print(f"  Using Naptan IDs: Start={start_naptan_id}, End={end_naptan_id}")
-            # Call TfL API with Naptan IDs
-            tfl_journey = get_journey_details_tfl(start_naptan_id, end_naptan_id, api_key)
-            
-            # Check tfl_journey which is now the source for duration
-            if tfl_journey is None:
-                 print("  TfL Time: Could not retrieve journey details.")
+                print(f"  Using Naptan IDs: Start={start_naptan_id}, End={end_naptan_id}")
+                # Call TfL API with Naptan IDs
+                tfl_journey = get_journey_details_tfl(start_naptan_id, end_naptan_id, api_key)
+
+        # Check tfl_journey which is now the source for duration
+        if tfl_journey is None:
+             print("  TfL Time: Could not retrieve journey details.")
                  # tfl_total_time remains None
-            else:
-                tfl_duration = tfl_journey.get('duration')
-                if tfl_duration is None:
-                     print("  TfL Time: Journey retrieved but duration missing.")
+        else:
+            tfl_duration = tfl_journey.get('duration')
+            if tfl_duration is None:
+                 print("  TfL Time: Journey retrieved but duration missing.")
                      # tfl_total_time remains None 
-                else:
-                    tfl_total_time = tfl_duration + walk_time # Calculate total time here
-                    print(f"  TfL Duration (excl. walk): {tfl_duration} mins")
-                    print(f"  TFL TOTAL TIME (incl. walk): {tfl_total_time} mins")
+            else:
+                tfl_total_time = tfl_duration + walk_time # Calculate total time here
+                print(f"  TfL Duration (excl. walk): {tfl_duration} mins")
+                print(f"  TFL TOTAL TIME (incl. walk): {tfl_total_time} mins")
                     # Print Journey Legs (only if journey details were successfully retrieved)
-                    print("  TfL Journey Breakdown:")
-                    legs = tfl_journey.get('legs', [])
-                    if not legs:
-                        print("    No legs information available.")
-                    else:
-                        for i, leg in enumerate(legs):
-                            instruction = leg.get('instruction', {}).get('summary', 'No instruction')
-                            mode = leg.get('mode', {}).get('name', 'unknown mode')
-                            duration = leg.get('duration', 0)
-                            # Add line identifier if available
-                            line_id = 'N/A' # Default
-                            if leg.get('routeOptions'):
-                                line_info = leg['routeOptions'][0].get('lineIdentifier')
-                                if line_info:
-                                    line_id = line_info.get('id', 'N/A')
+                print("  TfL Journey Breakdown:")
+                legs = tfl_journey.get('legs', [])
+                if not legs:
+                    print("    No legs information available.")
+                else:
+                    for i, leg in enumerate(legs):
+                        instruction = leg.get('instruction', {}).get('summary', 'No instruction')
+                        mode = leg.get('mode', {}).get('name', 'unknown mode')
+                        duration = leg.get('duration', 0)
+                        # Add line identifier if available
+                        line_id = 'N/A' # Default
+                        if leg.get('routeOptions'):
+                            line_info = leg['routeOptions'][0].get('lineIdentifier')
+                            if line_info:
+                                line_id = line_info.get('id', 'N/A')
                                     
-                            print(f"    {i+1}. ({mode}, line: {line_id}, {duration} min): {instruction}")
+                        print(f"    {i+1}. ({mode}, line: {line_id}, {duration} min): {instruction}")
 
         # --- Summary ---
         print("\nComparison Summary:")

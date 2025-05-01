@@ -1,6 +1,6 @@
 {
   "line_id": "northern",
-  "fetch_timestamp": 1746107459.10717,
+  "fetch_timestamp": 1746123092.473732,
   "timetables": {
     "940GZZBPSUST": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -215,8 +215,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -4180,6 +4180,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2+3",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4581,8 +4582,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -4595,7 +4596,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4725,7 +4725,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4863,8 +4862,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -10847,8 +10846,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -14152,6 +14151,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2+3",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -15054,7 +15054,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -15208,7 +15207,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -15318,8 +15316,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -15675,8 +15673,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -25891,8 +25889,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -29196,6 +29194,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2+3",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30360,8 +30359,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -30717,8 +30716,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -39622,8 +39621,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -43587,6 +43586,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2+3",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -43988,8 +43988,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -44268,8 +44268,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -56772,8 +56772,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -60077,6 +60077,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2+3",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -61241,8 +61242,8 @@
           "status": true,
           "id": "940GZZLUBNK",
           "name": "Bank Underground Station",
-          "lat": 51.513335,
-          "lon": -0.088712
+          "lat": 51.513356,
+          "lon": -0.088899
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
@@ -61598,8 +61599,8 @@
           "status": true,
           "id": "940GZZLUBZP",
           "name": "Belsize Park Underground Station",
-          "lat": 51.550311,
-          "lon": -0.164648
+          "lat": 51.550529,
+          "lon": -0.164783
         },
         {
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",

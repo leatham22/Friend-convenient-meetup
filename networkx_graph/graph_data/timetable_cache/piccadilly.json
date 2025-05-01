@@ -1,6 +1,6 @@
 {
   "line_id": "piccadilly",
-  "fetch_timestamp": 1746107467.23386,
+  "fetch_timestamp": 1746123105.401539,
   "timetables": {
     "940GZZLUCKS": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -2542,11 +2542,11 @@
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
           "icsId": "1016430",
           "modes": [
-            "elizabeth-line",
             "bus",
             "national-rail",
             "plane",
-            "tube"
+            "tube",
+            "elizabeth-line"
           ],
           "stopType": "TransportInterchange",
           "zone": "6",
@@ -3407,7 +3407,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4004,6 +4003,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -19154,11 +19154,11 @@
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
           "icsId": "1016430",
           "modes": [
-            "elizabeth-line",
             "bus",
             "national-rail",
             "plane",
-            "tube"
+            "tube",
+            "elizabeth-line"
           ],
           "stopType": "TransportInterchange",
           "zone": "6",
@@ -20330,6 +20330,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -20879,7 +20880,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -29977,11 +29977,11 @@
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
           "icsId": "1016430",
           "modes": [
-            "elizabeth-line",
             "bus",
             "national-rail",
             "plane",
-            "tube"
+            "tube",
+            "elizabeth-line"
           ],
           "stopType": "TransportInterchange",
           "zone": "6",
@@ -30468,7 +30468,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30511,7 +30510,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30554,7 +30552,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30597,7 +30594,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30640,7 +30636,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30683,7 +30678,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30726,7 +30720,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30769,7 +30762,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -31161,6 +31153,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39250,11 +39243,11 @@
           "$type": "Tfl.Api.Presentation.Entities.MatchedStop, Tfl.Api.Presentation.Entities",
           "icsId": "1016430",
           "modes": [
-            "elizabeth-line",
             "bus",
             "national-rail",
             "plane",
-            "tube"
+            "tube",
+            "elizabeth-line"
           ],
           "stopType": "TransportInterchange",
           "zone": "6",
@@ -39741,7 +39734,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39784,7 +39776,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39827,7 +39818,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39870,7 +39860,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39913,7 +39902,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39956,7 +39944,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39999,7 +39986,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40042,7 +40028,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40434,6 +40419,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1+2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40983,7 +40969,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

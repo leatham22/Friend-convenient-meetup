@@ -24,6 +24,11 @@ The primary output of the current workflow is the fully weighted graph:
 
 - **`graph_data/networkx_graph_hubs_final_weighted.json`**: The final, complete graph with weights for both line edges and transfer edges.
 
+Key Node Attributes Update:
+- Hub nodes now contain a `constituent_stations` attribute. This is a list of dictionaries, where each dictionary holds the `name` and `naptan_id` of a specific station (e.g., platform, entrance) belonging to that hub. Example: `"constituent_stations": [{"name": "Canada Water Rail Station", "naptan_id": "910GCNDAW"}, {"name": "Canada Water Underground Station", "naptan_id": "940GZZLUCWR"}]`.
+- This replaces the previous `constituent_naptan_ids` list.
+- This structure is used by `main.py` to prompt users for their specific starting point within a hub.
+
 Intermediate files generated during the process:
 - `graph_data/networkx_graph_hubs_base.json`: Base graph with hubs and unweighted line edges.
 - `graph_data/networkx_graph_hubs_with_transfers.json`: Graph with unweighted transfer edges added.

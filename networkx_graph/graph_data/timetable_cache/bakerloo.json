@@ -1,6 +1,6 @@
 {
   "line_id": "bakerloo",
-  "fetch_timestamp": 1746107413.1372259,
+  "fetch_timestamp": 1746123013.740917,
   "timetables": {
     "940GZZLUEAC": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -2406,6 +2406,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -11259,6 +11260,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

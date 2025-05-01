@@ -219,19 +219,25 @@ def calculate_transfer_weights():
             logging.warning(f"Node data not found for {h1_name} or {h2_name} despite being in primary_id mapping. Skipping pair.")
             continue
 
-        # Retrieve the list of Naptan IDs associated with each hub
-        h1_naptan_ids = h1_data.get('constituent_naptan_ids')
-        h2_naptan_ids = h2_data.get('constituent_naptan_ids')
+        # Retrieve the list of constituent station dictionaries
+        # Use the new key 'constituent_stations'
+        h1_constituents = h1_data.get('constituent_stations', []) 
+        h2_constituents = h2_data.get('constituent_stations', [])
 
-        # Check if Naptan ID lists exist and are not empty
-        if not h1_naptan_ids or not h2_naptan_ids:
-            logging.warning(f"Naptan ID list missing or empty for hub {h1_name} or {h2_name}. Skipping pair.")
+        # Check if constituent lists exist and are not empty
+        if not h1_constituents or not h2_constituents:
+            logging.warning(f"Constituent stations list missing or empty for hub {h1_name} or {h2_name}. Skipping pair.")
             continue
 
-        # Select the first Naptan ID from each list to use for the API call
-        # This assumes the first Naptan ID is a valid representative for the hub location
-        naptan_id_for_api_1 = h1_naptan_ids[0]
-        naptan_id_for_api_2 = h2_naptan_ids[0]
+        # Select the first Naptan ID from the first dictionary in each list
+        # Use the key 'naptan_id' as changed in build_hub_graph.py
+        naptan_id_for_api_1 = h1_constituents[0].get('naptan_id') 
+        naptan_id_for_api_2 = h2_constituents[0].get('naptan_id')
+        
+        # Validate that we got the Naptan IDs from the dictionaries
+        if not naptan_id_for_api_1 or not naptan_id_for_api_2:
+             logging.warning(f"Could not extract naptan_id from constituent_stations for {h1_name} or {h2_name}. Data: {h1_constituents}, {h2_constituents}. Skipping pair.")
+             continue
 
         logging.debug(f"Using Naptan IDs {naptan_id_for_api_1} (for {h1_name}) and {naptan_id_for_api_2} (for {h2_name}) for API call.")
 

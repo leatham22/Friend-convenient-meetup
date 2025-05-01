@@ -1,6 +1,6 @@
 {
   "line_id": "victoria",
-  "fetch_timestamp": 1746107473.399061,
+  "fetch_timestamp": 1746123113.4752278,
   "timetables": {
     "940GZZLUBXN": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -17124,7 +17124,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

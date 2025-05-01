@@ -1,6 +1,6 @@
 {
   "line_id": "jubilee",
-  "fetch_timestamp": 1746107448.259211,
+  "fetch_timestamp": 1746123078.9310012,
   "timetables": {
     "940GZZLUSTD": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",

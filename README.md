@@ -42,6 +42,8 @@ The project has undergone a significant refactoring towards a **hub-based graph 
 
 **Progression Update:** The main script (`main.py`) and the debug script (`debug_compare_times.py`) have now been updated to load and correctly interpret the structure of this final hub-based graph (`networkx_graph_hubs_final_weighted.json`).
 
+**UX Improvement:** Hub nodes in the graph now store a list of their constituent stations, including names and Naptan IDs (under the `constituent_stations` key). The main script (`main.py`) uses this data to prompt users to select their specific starting station when their input matches a multi-station hub, improving accuracy.
+
 **Next Steps:** Analyze the final graph using scripts in `networkx_graph/analyse_graph/`.
 
 ---

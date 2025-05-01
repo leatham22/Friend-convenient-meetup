@@ -259,30 +259,36 @@ def load_networkx_graph_and_station_data():
                station_data_lookup dictionary (name -> attributes), or (None, None) on failure.
     """
     try:
+        # Use the globally defined GRAPH_PATH
         with open(GRAPH_PATH, 'r') as f:
             graph_data = json.load(f)
 
+        # Ensure G is created as MultiDiGraph as specified in the JSON
         G = nx.MultiDiGraph()
         station_data_lookup = {}
 
-        # Process nodes (now a list of dicts)
+        # Process nodes (list of dicts in the final graph format)
         if 'nodes' in graph_data and isinstance(graph_data['nodes'], list):
             for node_dict in graph_data['nodes']:
                 if isinstance(node_dict, dict) and 'id' in node_dict:
-                    node_id = node_dict.pop('id') # Extract the node ID ('hub_name')
-                    # Add node with remaining attributes
-                    G.add_node(node_id, **node_dict)
-                    # Store all original attributes (including the 'id' we popped) in the lookup
-                    node_dict['id'] = node_id # Add it back for the lookup
-                    station_data_lookup[node_id] = node_dict
+                    node_id = node_dict['id'] # Node ID is the hub name
+                    try:
+                        # Add node directly with its attributes from the JSON dict
+                        G.add_node(node_id, **node_dict) 
+                        # *** Crucially, populate the lookup AFTER adding to graph, using graph's data view ***
+                        station_data_lookup[node_id] = G.nodes[node_id] 
+                    except Exception as e:
+                        print(f"Error adding node or populating lookup for '{node_id}': {e}")
                 else:
                     print(f"Warning: Skipping node due to missing 'id' or unexpected format: {node_dict}")
         else:
             print("Warning: 'nodes' key not found or not a list in graph data.")
 
         # Process edges (now a list of dicts with 'key')
-        if 'links' in graph_data and isinstance(graph_data['links'], list): # Standard key is 'links'
-            for edge_dict in graph_data['links']:
+        # Use 'links' key first, fallback to 'edges'
+        edge_list_key = 'links' if 'links' in graph_data else 'edges'
+        if edge_list_key in graph_data and isinstance(graph_data[edge_list_key], list):
+            for edge_dict in graph_data[edge_list_key]:
                 # Check for 'weight' instead of 'duration'
                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
                     source = edge_dict['source']
@@ -298,27 +304,10 @@ def load_networkx_graph_and_station_data():
                         print(f"Warning: Skipping edge due to missing node(s): {source} -> {target} (Key: {key})")
                 else:
                     # Update error message
-                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight): {edge_dict}")
-        elif 'edges' in graph_data and isinstance(graph_data['edges'], list): # Fallback for 'edges'
-            print("Warning: Found 'edges' key instead of 'links'. Attempting to process...")
-            for edge_dict in graph_data['edges']:
-                 # Check for 'weight' instead of 'duration'
-                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
-                    source = edge_dict['source']
-                    target = edge_dict['target']
-                    key = edge_dict['key'] 
-                    # Use 'weight' key
-                    weight = edge_dict['weight'] 
-                    if G.has_node(source) and G.has_node(target):
-                         # Use weight=weight
-                        G.add_edge(source, target, key=key, weight=weight)
-                    else:
-                        print(f"Warning: Skipping edge (from 'edges' list) due to missing node(s): {source} -> {target} (Key: {key})")
-                 else:
-                     # Update error message
-                    print(f"Warning: Skipping invalid edge format (from 'edges' list) or missing required keys (source, target, key, weight): {edge_dict}")
+                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight) in '{edge_list_key}' list: {edge_dict}")
+        # Removed the elif 'edges' fallback as it's covered by the logic above
         else:
-            print("Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
+            print(f"Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
 
         print(f"Loaded NetworkX graph from '{GRAPH_PATH}' with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
         print(f"Created station lookup for {len(station_data_lookup)} stations from graph nodes.")
@@ -398,7 +387,7 @@ def find_closest_station_match(station_name, station_data_lookup):
             else:
                 # If hub_name is missing but we matched, add the key as the name
                 node_attributes['hub_name'] = node_name 
-                return node_attributes 
+            return node_attributes
 
     # If no exact match, normalize the input name using the same logic as before
     def normalize_name(name):
@@ -807,21 +796,79 @@ def main():
             continue
 
         # Extract required info from the returned attributes
-        # Ensure the keys ('name', 'lat', 'lon', 'id') exist in the attributes
-        station_actual_name = found_station_attributes.get('hub_name', found_station_attributes.get('id'))
+        hub_name = found_station_attributes.get('hub_name', found_station_attributes.get('id'))
         station_lat = found_station_attributes.get('lat')
         station_lon = found_station_attributes.get('lon')
-        station_naptan_id = found_station_attributes.get('primary_naptan_id', found_station_attributes.get('id'))
+        primary_naptan_id = found_station_attributes.get('primary_naptan_id')
+        constituent_stations = found_station_attributes.get('constituent_stations', [])
 
-        # Validate that we got all necessary attributes
-        if not all([station_actual_name, station_lat, station_lon, station_naptan_id]):
-             print(f"Error: Missing essential attributes (name, lat, lon, or id) for matched station '{station_name}'. Attributes found: {found_station_attributes}")
+        # Validate essential attributes
+        if not all([hub_name, station_lat, station_lon]):
+             print(f"Error: Missing essential attributes (hub_name/id, lat, or lon) for matched station '{station_name}'. Attributes found: {found_station_attributes}")
              continue
 
+        # Determine the specific Naptan ID to use
+        chosen_naptan_id = None
+        chosen_station_name_for_display = hub_name # Default display name
+
+        # If it's a hub with multiple options, ask the user
+        if primary_naptan_id and primary_naptan_id.startswith("HUB") and len(constituent_stations) > 1:
+            print(f"\n'{hub_name}' is a hub. Please specify your exact starting station:")
+            for idx, constituent in enumerate(constituent_stations):
+                # Use constituent name for the choice display
+                print(f"  {idx + 1}. {constituent.get('name', 'Unknown Name')}")
+            
+            while True:
+                try:
+                    choice = input(f"Enter the number (1-{len(constituent_stations)}): ").strip()
+                    choice_idx = int(choice) - 1
+                    if 0 <= choice_idx < len(constituent_stations):
+                        # Get the chosen constituent's data
+                        chosen_constituent = constituent_stations[choice_idx]
+                        chosen_naptan_id = chosen_constituent.get('naptan_id')
+                        # Use the specific constituent name for confirmation message
+                        chosen_station_name_for_display = chosen_constituent.get('name', hub_name) 
+                        if not chosen_naptan_id:
+                             print("Error: Selected constituent station is missing Naptan ID. Please report this.")
+                             # Optionally, force re-entry or fallback
+                             chosen_naptan_id = None # Reset to trigger error below
+                        break # Exit the inner loop
+                    else:
+                        print(f"Invalid choice. Please enter a number between 1 and {len(constituent_stations)}.")
+                except ValueError:
+                    print("Invalid input. Please enter a number.")
+        
+        # If not a multi-station hub, or if user choice failed, use fallback logic
+        if not chosen_naptan_id:
+            if primary_naptan_id and not primary_naptan_id.startswith("HUB"):
+                chosen_naptan_id = primary_naptan_id
+            # Use the corrected key 'constituent_stations'
+            elif constituent_stations and isinstance(constituent_stations, list) and len(constituent_stations) > 0:
+                 # Check first element is a dict with naptan_id
+                 if isinstance(constituent_stations[0], dict) and 'naptan_id' in constituent_stations[0]:
+                      chosen_naptan_id = constituent_stations[0]['naptan_id']
+                 else:
+                     print(f"Error: Invalid structure for constituent_stations[0] for hub '{hub_name}'. Skipping.")
+                     continue # Skip this person
+            # Fallback if primary_naptan_id is missing AND constituent_stations is empty/invalid
+            # Try using the main 'id' (hub_name) which might be a naptan id in some cases
+            elif hub_name and not hub_name.startswith("HUB"):
+                 print(f"Warning: Falling back to using hub name '{hub_name}' as Naptan ID.")
+                 chosen_naptan_id = hub_name # Use hub_name itself as fallback
+            else:
+                 # This case should be rare if build_hub_graph works correctly
+                 print(f"Error: Could not determine any valid Naptan ID for '{hub_name}'. Primary: {primary_naptan_id}, Constituents: {constituent_stations}. Skipping.")
+                 continue # Skip this person
+
+        # Final validation before getting walk time
+        if not chosen_naptan_id:
+            print(f"Critical Error: Failed to assign a Naptan ID for station '{hub_name}'. Skipping this person.")
+            continue
+
+        # Get walk time (using the chosen constituent name for clarity if applicable)
         while True:
             try:
-                # Display the actual station name found in the graph
-                walk_time = int(input(f"Time (minutes) to walk TO '{station_actual_name}': ").strip())
+                walk_time = int(input(f"Time (minutes) to walk TO '{chosen_station_name_for_display}': ").strip())
                 if walk_time < 0:
                     print("Walk time cannot be negative.")
                     continue
@@ -831,14 +878,14 @@ def main():
 
         people_data.append({
             'id': person_count,
-            'start_station_name': station_actual_name, # Use name from graph node
-            'start_station_lat': station_lat,         # Use lat from graph node attributes
-            'start_station_lon': station_lon,         # Use lon from graph node attributes
-            'start_naptan_id': station_naptan_id,   # Use id from graph node attributes
+            'start_station_name': hub_name, # Store the main HUB name for graph lookups
+            'start_station_lat': station_lat,         
+            'start_station_lon': station_lon,         
+            'start_naptan_id': chosen_naptan_id,   # Store the SPECIFIC chosen/determined Naptan ID
             'time_to_station': walk_time
         })
 
-        print(f"Added: Person {person_count} starting from {station_actual_name} (ID: {station_naptan_id})")
+        print(f"Added: Person {person_count} starting from {chosen_station_name_for_display} (Hub: {hub_name}, Naptan: {chosen_naptan_id})")
         person_count += 1
 
     # Filter stations using optimized method
@@ -940,26 +987,27 @@ def main():
         # Prioritize 'hub_name' for display name.
         meeting_station_name = meeting_station_attributes.get('hub_name', meeting_station_attributes.get('id')) # Use hub_name or id
         
-        # Determine Meeting Naptan ID using the refined logic
-        meeting_primary_id = meeting_station_attributes.get('primary_naptan_id')
-        meeting_constituents = meeting_station_attributes.get('constituent_naptan_ids', [])
-        meeting_naptan_id = None # Initialize
-
-        if meeting_primary_id and not meeting_primary_id.startswith("HUB"):
-            meeting_naptan_id = meeting_primary_id
-        elif meeting_constituents:
-            meeting_naptan_id = meeting_constituents[0]
+        # Determine Target API ID using the refined logic
+        target_api_id = None
+        target_primary_id = meeting_station_attributes.get('primary_naptan_id')
+        # Use the CORRECT key 'constituent_stations'
+        target_constituents = meeting_station_attributes.get('constituent_stations', []) 
+        
+        if target_primary_id and not target_primary_id.startswith("HUB"):
+            target_api_id = target_primary_id
+        elif target_constituents:
+            target_api_id = target_constituents[0]
 
         # Validate required attributes exist for TfL call (Naptan ID)
         if not meeting_station_name:
             print(f"Warning: Skipping top station {i} due to missing name attribute ('hub_name' or 'id'). Attributes: {meeting_station_attributes}")
             continue
-        if not meeting_naptan_id:
+        if not target_api_id:
              # Update warning message to be more specific
-             print(f"Warning: Skipping top station {i} ('{meeting_station_name}') due to inability to determine valid Naptan ID (Primary: {meeting_primary_id}, Constituents: {meeting_constituents}). Attributes: {meeting_station_attributes}")
+             print(f"Warning: Skipping top station {i} ('{meeting_station_name}') due to inability to determine valid Naptan ID (Primary: {target_primary_id}, Constituents: {target_constituents}). Attributes: {meeting_station_attributes}")
              continue
 
-        print(f"\nProcessing Top station {i}/{len(top_10_stations_attributes)}: {meeting_station_name} (Using Naptan ID: {meeting_naptan_id}) (TfL API)")
+        print(f"\nProcessing Top station {i}/{len(top_10_stations_attributes)}: {meeting_station_name} (Using Naptan ID: {target_api_id}) (TfL API)")
         print("-" * 80)
 
         current_meeting_total_time = 0
@@ -976,7 +1024,7 @@ def main():
             # Get travel time from start station to meeting station using TFL API with Naptan IDs
             tfl_travel_time = get_travel_time(
                 start_naptan_id,
-                meeting_naptan_id,
+                target_api_id,
                 args.api_key
             )
 
@@ -1022,7 +1070,8 @@ def main():
         
         # Determine the best Naptan ID using the refined logic for the final calculation
         best_primary_id = best_meeting_station_attributes.get('primary_naptan_id')
-        best_constituents = best_meeting_station_attributes.get('constituent_naptan_ids', [])
+        # Use the CORRECT key 'constituent_stations'
+        best_constituents = best_meeting_station_attributes.get('constituent_stations', []) 
         best_id_for_api = None
 
         if best_primary_id and not best_primary_id.startswith("HUB"):

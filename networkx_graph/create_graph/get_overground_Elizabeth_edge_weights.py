@@ -457,49 +457,50 @@ def main():
             failed_edges.append(f"{source_name} -> {target_name} on {line} (Node data missing)")
             continue
 
-        # Determine Source API ID
+        # Determine Source API ID using the refined logic
         source_api_id = None
         source_primary_id = source_node_data.get('primary_naptan_id')
-        if source_primary_id and source_primary_id.startswith("HUB"):
-            constituent_ids = source_node_data.get('constituent_naptan_ids', [])
-            if constituent_ids:
-                source_api_id = constituent_ids[0] # Use the first constituent Naptan ID
-                print(f"  Source '{source_name}' is a HUB ({source_primary_id}). Using constituent Naptan: {source_api_id}")
-            else:
-                print(f"  Error: Source HUB '{source_name}' ({source_primary_id}) has no constituent Naptan IDs. Skipping edge.")
-                failed_edges.append(f"{source_name} -> {target_name} on {line} (Source HUB has no constituents)")
-                continue
-        else:
+        # Access the new constituent structure
+        source_constituents = source_node_data.get('constituent_stations', []) 
+
+        if source_primary_id and not source_primary_id.startswith("HUB"):
             source_api_id = source_primary_id
             print(f"  Source '{source_name}' using primary Naptan: {source_api_id}")
-
-        # Determine Target API ID
+        elif source_constituents and isinstance(source_constituents, list) and len(source_constituents) > 0 and isinstance(source_constituents[0], dict) and 'naptan_id' in source_constituents[0]:
+             # Check list is not empty and first item is dict with naptan_id
+            source_api_id = source_constituents[0]['naptan_id'] # Use the naptan_id from the first dict
+            print(f"  Source '{source_name}' is a HUB ({source_primary_id}). Using first constituent Naptan: {source_api_id}")
+        else:
+            print(f"  Error: Could not determine valid Naptan ID for source '{source_name}' (Primary: {source_primary_id}, Constituents: {source_constituents}). Skipping edge.")
+            failed_edges.append(f"{source_name} -> {target_name} on {line} (Source Naptan ID unresolved)")
+            continue
+            
+        # Determine Target API ID using the refined logic
         target_api_id = None
         target_primary_id = target_node_data.get('primary_naptan_id')
-        if target_primary_id and target_primary_id.startswith("HUB"):
-            constituent_ids = target_node_data.get('constituent_naptan_ids', [])
-            if constituent_ids:
-                target_api_id = constituent_ids[0] # Use the first constituent Naptan ID
-                print(f"  Target '{target_name}' is a HUB ({target_primary_id}). Using constituent Naptan: {target_api_id}")
-            else:
-                print(f"  Error: Target HUB '{target_name}' ({target_primary_id}) has no constituent Naptan IDs. Skipping edge.")
-                failed_edges.append(f"{source_name} -> {target_name} on {line} (Target HUB has no constituents)")
-                continue
-        else:
+        # Access the new constituent structure
+        target_constituents = target_node_data.get('constituent_stations', []) 
+        
+        if target_primary_id and not target_primary_id.startswith("HUB"):
             target_api_id = target_primary_id
             print(f"  Target '{target_name}' using primary Naptan: {target_api_id}")
-
-        # Final check for API IDs before calling API
-        if not source_api_id or not target_api_id:
-            print(f"  Error: Could not determine valid Naptan ID for API call ({source_api_id=}, {target_api_id=}). Skipping edge.")
-            failed_edges.append(f"{source_name} -> {target_name} on {line} (Could not determine Naptan ID)")
+        elif target_constituents and isinstance(target_constituents, list) and len(target_constituents) > 0 and isinstance(target_constituents[0], dict) and 'naptan_id' in target_constituents[0]:
+            # Check list is not empty and first item is dict with naptan_id
+            target_api_id = target_constituents[0]['naptan_id'] # Use the naptan_id from the first dict
+            print(f"  Target '{target_name}' is a HUB ({target_primary_id}). Using first constituent Naptan: {target_api_id}")
+        else:
+            print(f"  Error: Could not determine valid Naptan ID for target '{target_name}' (Primary: {target_primary_id}, Constituents: {target_constituents}). Skipping edge.")
+            failed_edges.append(f"{source_name} -> {target_name} on {line} (Target Naptan ID unresolved)")
             continue
 
-        # --- Call API ---
-        # Note: Mode and Line are passed directly from the edge data
-        # Translate Overground line names to 'overground' mode for API if needed?
-        # TfL API uses 'overground' and 'elizabeth-line' as modes.
-        # The mode from the edge *should* already be correct (e.g., 'overground' or 'elizabeth-line').
+        # --- Call API (Check IDs one last time) ---
+        if not source_api_id or not target_api_id:
+             # This check is slightly redundant due to the continues above, but safe.
+             print(f"  Error: Final check failed - missing Naptan ID for API call ({source_api_id=}, {target_api_id=}). Skipping edge.")
+             failed_edges.append(f"{source_name} -> {target_name} on {line} (Final Naptan ID check failed)")
+             continue
+
+        # Determine the mode to use for the API call
         api_mode = mode # Directly use the mode from the edge
         if mode == 'overground' and line != 'overground': # Check if mode is generic but line is specific OG line
              print(f"  Info: Using generic 'overground' mode for specific line '{line}' API call.")

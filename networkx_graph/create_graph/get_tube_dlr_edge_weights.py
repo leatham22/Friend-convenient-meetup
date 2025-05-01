@@ -121,16 +121,24 @@ def build_mappings(hub_graph_data):
             naptan_to_hub_name[primary_id] = hub_name
 
         # Map all constituent Naptan IDs back to the Hub Name
-        constituent_ids = node_data.get('constituent_naptan_ids', [])
-        if isinstance(constituent_ids, list):
-            for naptan_id in constituent_ids:
-                # Check if this naptan is already mapped (potentially to another hub - unlikely but possible)
-                if naptan_id in naptan_to_hub_name and naptan_to_hub_name[naptan_id] != hub_name:
-                    print(f"Warning: Naptan ID {naptan_id} is listed in multiple hubs: "
-                          f"{naptan_to_hub_name[naptan_id]} and {hub_name}. Using {hub_name}.")
-                naptan_to_hub_name[naptan_id] = hub_name
+        # Use the new key 'constituent_stations' which is a list of dicts
+        constituent_data = node_data.get('constituent_stations', []) 
+        # Check if it's a list before iterating
+        if isinstance(constituent_data, list):
+            for station_dict in constituent_data:
+                # Check if it's a dictionary and has the 'naptan_id' key
+                if isinstance(station_dict, dict) and 'naptan_id' in station_dict:
+                    naptan_id = station_dict['naptan_id']
+                    # Check if this naptan is already mapped (potentially to another hub - unlikely but possible)
+                    if naptan_id in naptan_to_hub_name and naptan_to_hub_name[naptan_id] != hub_name:
+                        print(f"Warning: Naptan ID {naptan_id} is listed in multiple hubs: "
+                              f"{naptan_to_hub_name[naptan_id]} and {hub_name}. Using {hub_name}.")
+                    naptan_to_hub_name[naptan_id] = hub_name
+                else:
+                    print(f"Warning: Invalid item found in 'constituent_stations' for hub {hub_name}: {station_dict}")
         else:
-            print(f"Warning: 'constituent_naptan_ids' for hub {hub_name} is not a list: {constituent_ids}")
+            # Update warning message to reflect the expected structure
+            print(f"Warning: 'constituent_stations' for hub {hub_name} is not a list: {constituent_data}")
 
 
     # Final check: Ensure primary Naptan IDs are mapped if they weren't in constituents
