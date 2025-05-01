@@ -1,6 +1,6 @@
 {
   "line_id": "hammersmith-city",
-  "fetch_timestamp": 1745599926.5333,
+  "fetch_timestamp": 1746107445.970921,
   "timetables": {
     "940GZZLUBKG": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",

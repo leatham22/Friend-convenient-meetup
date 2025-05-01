@@ -2,33 +2,66 @@
 
 This directory contains scripts and data for building and analyzing the London transport network graph.
 
-**IMPORTANT GRAPH STRUCTURE CHANGE: Single Node per Hub + Multi-Step Build**
+**IMPORTANT: Hub-Based Model is the Current Standard**
 
-The graph generation process is being refactored to address pathfinding issues caused by the previous multi-node representation of station hubs and incomplete transfer edges.
+The graph generation process now uses a hub-based model located in the `create_graph/` subdirectory. This improves robustness and simplifies transfer handling. Scripts and data outside this subdirectory may be part of the older, deprecated station-based model.
 
-The new approach involves multiple scripts:
-1.  **`create_graph/build_hub_graph.py` (NEW/REFACTORED):** Creates the base graph (`graph_data/networkx_graph_hubs_base.json`) with one node per station hub (grouped by `topMostParentId`). Nodes aggregate modes/lines/NaptanIDs. Only *line* edges (between hubs) are added (`transfer=False`, `weight=null`).
-2.  **`create_graph/add_proximity_transfers.py` (NEW):** Reads the base hub graph. Uses the TfL StopPoint proximity API to find nearby hub nodes lacking line connections. Adds bidirectional `transfer=True`, `mode='walking'`, `weight=null` edges for these pairs. Outputs the enhanced graph (`graph_data/networkx_graph_hubs_with_transfers.json`) and a list of the added transfers (`graph_data/inter_hub_transfers_to_weight.json`).
-3.  **`create_graph/calculate_transfer_weights.py` (NEW):** Reads the graph with null-weighted transfers and the list of transfers. Uses the TfL Journey API (`mode=walking`) to get durations and updates the weights for the transfer edges. Outputs the final hub graph with weighted transfers (`graph_data/networkx_graph_hubs_final.json`).
+**Current Status:**
+*   **Hub Graph Generation:** The process starts with `create_graph/build_hub_graph.py` generating `graph_data/networkx_graph_hubs_base.json`.
+*   **Transfer Addition:** Proximity transfers are added by `create_graph/add_proximity_transfers.py`, outputting `graph_data/networkx_graph_hubs_with_transfers.json`.
+*   **Transfer Weighting:** Walking transfer weights are calculated by `create_graph/calculate_transfer_weights.py`, outputting `graph_data/networkx_graph_hubs_with_transfer_weights.json`.
+*   **Line Edge Weight Calculation:** Tube/DLR weights are calculated using timetable data (`create_graph/get_tube_dlr_edge_weights.py`) and Overground/Elizabeth Line weights using the Journey API (`create_graph/get_overground_Elizabeth_edge_weights.py`). Both append results to the consolidated file: `graph_data/calculated_hub_edge_weights.json`.
+*   **Final Merging:** Line edge weights are merged into the graph by `create_graph/update_graph_weights.py`, producing the final weighted graph: **`graph_data/networkx_graph_hubs_final_weighted.json`**.
+*   **Validation:** The consistency between the intermediate graph and the calculated weights can be checked using `analyse_graph/validate_graph_weights.py` (ensure it points to the correct intermediate files).
 
-*(Note: Weighting for line edges using timetable/journey data will be a subsequent step applied to this final hub graph.)*
-
-This new structure simplifies the graph, eliminates intra-hub transfer complexity, improves pathfinding robustness, and removes the build-time dependency on `../slim_stations/unique_stations.json`.
+Refer to the `create_graph/README.md` for detailed steps of the current hub-based workflow.
 
 ---
 
-## Final Graph Population
+## Final Graph Population (Hub-Based)
 
-The primary output of this directory is the finalized, weighted network graph:
+The primary output of the current workflow is the fully weighted graph:
 
-- **`networkx_graph_new.json`**: This file contains the complete network structure (nodes and edges) with calculated travel times (weights). It is generated through the following steps:
-    1. **Base Graph Creation**: The initial structure (nodes and edges with null weights) is built by `build_networkx_graph_new.py` using TfL API sequence data.
-    2. **Transfer Weight Update**: Transfer edges (identified by `"transfer": true`) are updated using `update_transfers_in_graph.py`. This script sets their `"weight"` to `5` (representing a 5-minute transfer penalty) and standardizes their `"key"` to `"transfer"`.
-    3. **Journey Time Update**: Weights and durations for all *non-transfer* edges are populated using `update_edge_weights.py`. This script reads pre-calculated journey times from:
-        - `Edge_weights_tube_dlr.json` (for Tube/DLR lines, derived from timetable data and API calls)
-        - `Edge_weights_overground_elizabeth.json` (for Overground/Elizabeth lines, derived from API calls)
+- **`graph_data/networkx_graph_hubs_final_weighted.json`**: The final, complete graph with weights for both line edges and transfer edges.
 
-This file (`networkx_graph_new.json`) is now ready for use in pathfinding algorithms.
+Intermediate files generated during the process:
+- `graph_data/networkx_graph_hubs_base.json`: Base graph with hubs and unweighted line edges.
+- `graph_data/networkx_graph_hubs_with_transfers.json`: Graph with unweighted transfer edges added.
+- `graph_data/networkx_graph_hubs_with_transfer_weights.json`: Graph with weighted transfer edges, line edges still unweighted.
+- `graph_data/inter_hub_transfers_to_weight.json`: List of transfer pairs needing weighting.
+- `graph_data/calculated_hub_edge_weights.json`: Consolidated list of calculated *line* edge weights.
+
+## Key Files/directories (Current Hub-Based Workflow)
+
+- **`create_graph/`**: Directory containing scripts for the current hub-based graph generation and weighting process.
+    - `build_hub_graph.py`: Builds the base hub graph.
+    - `add_proximity_transfers.py`: Adds transfer edges between nearby hubs.
+    - `calculate_transfer_weights.py`: Calculates walking times for transfer edges.
+    - `get_timetable_data.py`: Fetches timetable data for Tube/DLR lines.
+    - `get_tube_dlr_edge_weights.py`: Calculates Tube/DLR line weights from timetable data.
+    - `get_overground_Elizabeth_edge_weights.py`: Calculates Overground/Elizabeth line weights using Journey API.
+    - `update_graph_weights.py`: Merges calculated line weights into the graph.
+    - `README.md`: Details the hub-based workflow.
+- **`analyse_graph/`**: Directory containing analysis and validation scripts.
+    - `validate_graph_weights.py`: (Needs verification) Checks consistency between intermediate graph and calculated line weights.
+    - `README.md`: Describes the analysis scripts.
+- **`graph_data/`**: Directory containing the generated graph and weight data.
+    - `networkx_graph_hubs_final_weighted.json`: The primary output - fully weighted hub graph.
+    - `networkx_graph_hubs_with_transfer_weights.json`: Intermediate graph with weighted transfers.
+    - `networkx_graph_hubs_with_transfers.json`: Intermediate graph with unweighted transfers.
+    - `networkx_graph_hubs_base.json`: Initial base graph.
+    - `calculated_hub_edge_weights.json`: Consolidated calculated line edge weights.
+    - `inter_hub_transfers_to_weight.json`: List of transfers to weight.
+    - `timetable_cache/`: Cache for raw timetable data.
+    - `tfl_all_line_sequence_data.json`: Cache for raw TfL sequence data used by `build_hub_graph.py`.
+
+## Deprecated/Legacy Files & Workflow
+
+Scripts and files outside the `create_graph/`, `analyse_graph/`, and `graph_data/` structure likely relate to the older, station-based graph model. These include files like `build_networkx_graph_new.py`, `networkx_graph_new.json`, `process_timetable_data.py`, `get_missing_journey_times.py`, `Edge_weights_tube_dlr.json`, `Edge_weights_overground_elizabeth.json`, `update_transfers_in_graph.py`, `update_edge_weights.py`, `get_journey_times.py`, `line_edges.json`, etc. While potentially useful for reference, they are not part of the current recommended workflow.
+
+---
+
+*(Previous README content below this point may refer to the deprecated workflow and should be reviewed/updated/removed as needed)*
 
 ## Overview
 
@@ -67,22 +100,22 @@ The `check_line_continuity.py` script has been completely overhauled to eliminat
    - Detects stations with more than 2 connections as branch points
    - No longer relies on hard-coded branch definitions
 
-2. **Intelligent Sequence Building**:
+2. **Intelligent Sequence Building**: 
    - Creates separate sequences for each branch in a line
    - Properly follows connections from branch points
    - Better handles complex network structures
 
-3. **Smart Filtering**:
+3. **Smart Filtering**: 
    - Automatically filters out potential false positives at branch points
    - Recognizes that not all stations on a line should be directly connected
    - Uses adjacency information to determine valid missing connections
 
-4. **Zero False Positives**:
+4. **Zero False Positives**: 
    - Eliminates incorrect reports of missing connections
    - Correctly understands branch structures for lines like District and Jubilee
    - Provides more accurate network validation
 
-5. **Implementation Details**:
+5. **Implementation Details**: 
    - Branch points are algorithmically identified: `branch_points = {station for station in adjacency if len(adjacency[station]) > 2}`
    - Each branch is processed separately when tracing sequences
    - Missing connections at branch points are filtered out in the final stage
@@ -290,7 +323,7 @@ If the file cannot be found, the script will still build the graph but with redu
         *   It also incorporates specific fixes, like removing incorrect Metropolitan line assignments at Willesden Green and skipping the southbound DLR edge from Westferry to West India Quay.
         *   The script now uses only the `TFL_API_KEY` for authentication.
 
-2.  **`update_edge_weights.py` (Located in `dev/original_Station_graph/`)**:
+2.  **`update_edge_weights.py` (Located in `dev/original_Station_graph/`)**: 
     *   **Purpose**: This was a one-time script used to initialize all edge weights in an existing `networkx_graph_new.json` to `null`. 
     *   **Status**: Archived. The weight initialization step is now integrated directly into `build_networkx_graph_new.py`.
 

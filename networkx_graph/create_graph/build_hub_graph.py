@@ -36,6 +36,38 @@ API_MAX_RETRIES = 3 # Maximum number of retries
 REQUEST_TIMEOUT = 20 # Timeout for API requests
 FETCH_DELAY = 0.3 # Small delay between API calls to avoid hitting rate limits
 
+# --- Mappings ---
+# Explicit mapping from specific line IDs to canonical TfL API modes
+# This helps where the API might not return the mode or uses a specific line ID
+LINE_ID_TO_MODE_MAP = {
+    # Tube
+    "bakerloo": "tube",
+    "central": "tube",
+    "circle": "tube",
+    "district": "tube",
+    "hammersmith-city": "tube",
+    "jubilee": "tube",
+    "metropolitan": "tube",
+    "northern": "tube",
+    "piccadilly": "tube",
+    "victoria": "tube",
+    "waterloo-city": "tube",
+    # DLR
+    "dlr": "dlr",
+    # Elizabeth Line
+    "elizabeth": "elizabeth-line", # Actual line ID is just 'elizabeth'
+    # Overground (use canonical 'overground' mode for API calls)
+    "london-overground": "overground", # Base ID
+    "weaver": "overground",
+    "suffragette": "overground",
+    "windrush": "overground",
+    "mildmay": "overground",
+    "lioness": "overground",
+    "liberty": "overground",
+    # Add other lines if necessary, e.g., trams, river-bus, cable-car
+    # "tram": "tram",
+}
+
 # --- Helper Functions ---
 
 def _make_tfl_request(url, params=None):
@@ -97,14 +129,13 @@ def get_line_sequence_data(line_id):
     if sequence_data:
         # Add the line_id to the returned data for easier processing later
         sequence_data['retrieved_line_id'] = line_id
-        # TFL API sometimes doesn't include mode in sequence, add it based on common prefixes
-        # This is heuristic, might need refinement
-        if 'modeName' not in sequence_data:
-            if line_id in ['dlr','elizabeth-line', 'london-overground']:
-                 sequence_data['modeName'] = line_id.replace('london-','')
-            elif line_id in ['bakerloo', 'central', 'circle', 'district', 'hammersmith-city', 'jubilee', 'metropolitan', 'northern', 'piccadilly', 'victoria', 'waterloo-city']:
-                 sequence_data['modeName'] = 'tube'
-            # Add heuristics for national-rail if needed based on line_id pattern
+        # Remove the unreliable heuristic for guessing 'modeName'
+        # We will determine the mode based on the line_id using LINE_ID_TO_MODE_MAP later
+        # if 'modeName' not in sequence_data:
+        #     if line_id in ['dlr','elizabeth-line', 'london-overground']:
+        #          sequence_data['modeName'] = line_id.replace('london-','')
+        #     elif line_id in ['bakerloo', 'central', 'circle', 'district', 'hammersmith-city', 'jubilee', 'metropolitan', 'northern', 'piccadilly', 'victoria', 'waterloo-city']:
+        #          sequence_data['modeName'] = 'tube'
 
         return sequence_data
     else:
@@ -207,7 +238,10 @@ def build_base_hub_graph():
     # Iterate through the sequence data for each line
     for line_sequence_data in all_line_sequences:
         line_id = line_sequence_data.get('retrieved_line_id') # Use the ID we fetched with
-        mode_name = line_sequence_data.get('modeName', 'unknown') # Get mode if available
+        # Determine the correct mode using the mapping, default to 'unknown' if not found
+        mode_name = LINE_ID_TO_MODE_MAP.get(line_id, 'unknown')
+        if mode_name == 'unknown':
+             logging.warning(f"Line ID '{line_id}' not found in LINE_ID_TO_MODE_MAP. Mode set to 'unknown'. Update map if needed.")
 
         # Process stopPointSequences (preferred data source)
         for sequence in line_sequence_data.get('stopPointSequences', []):
@@ -307,7 +341,10 @@ def build_base_hub_graph():
     # Re-iterate through the line sequence data to create edges
     for line_sequence_data in all_line_sequences:
         line_id = line_sequence_data.get('retrieved_line_id')
-        mode = line_sequence_data.get('modeName', 'unknown')
+        # Determine the correct mode using the mapping for edge attributes
+        mode = LINE_ID_TO_MODE_MAP.get(line_id, 'unknown')
+        if mode == 'unknown' and line_id: # Avoid logging if line_id itself was missing
+             logging.warning(f"Edge creation: Mode unknown for line ID '{line_id}'. Check LINE_ID_TO_MODE_MAP.")
 
         for sequence in line_sequence_data.get('stopPointSequences', []):
             branch_id = sequence.get('branchId', 0)
@@ -361,7 +398,69 @@ def build_base_hub_graph():
                          logging.error(f"Error adding edge {hub_a_name} -> {hub_b_name} (key: {line_id}): {e}")
 
     logging.info(f"Added {edge_count} inter-hub line edges.")
-    logging.info(f"Final Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+
+    # --- Post-Processing Corrections ---
+    # 1. Remove incorrect Metropolitan edges from Willesden Green
+    willesden_green_naptan = "940GZZLUWIG"
+    willesden_hub_id = station_to_hub_id.get(willesden_green_naptan)
+    willesden_hub_node_name = None
+    if willesden_hub_id:
+        willesden_hub_node_name = hub_info.get(willesden_hub_id, {}).get('hub_name')
+
+    if willesden_hub_node_name and G.has_node(willesden_hub_node_name):
+        edges_to_remove = []
+        # Check outgoing edges
+        for u, v, key, data in G.out_edges(willesden_hub_node_name, keys=True, data=True):
+            if data.get('line') == 'metropolitan':
+                edges_to_remove.append((u, v, key))
+        # Check incoming edges
+        for u, v, key, data in G.in_edges(willesden_hub_node_name, keys=True, data=True):
+            if data.get('line') == 'metropolitan':
+                edges_to_remove.append((u, v, key))
+
+        if edges_to_remove:
+            logging.info(f"Removing {len(edges_to_remove)} incorrect Metropolitan line edges connected to {willesden_hub_node_name}.")
+            for u, v, key in edges_to_remove:
+                if G.has_edge(u, v, key=key):
+                    G.remove_edge(u, v, key=key)
+                else:
+                     logging.warning(f"Attempted to remove non-existent edge during correction: {u}->{v} key:{key}")
+
+    # 2. Add missing direct Metropolitan edge between Finchley Road and Wembley Park
+    finchley_rd_naptan = "940GZZLUFYR"
+    wembley_pk_naptan = "940GZZLUWYP"
+    finchley_hub_id = station_to_hub_id.get(finchley_rd_naptan)
+    wembley_hub_id = station_to_hub_id.get(wembley_pk_naptan)
+    finchley_hub_name = hub_info.get(finchley_hub_id, {}).get('hub_name') if finchley_hub_id else None
+    wembley_hub_name = hub_info.get(wembley_hub_id, {}).get('hub_name') if wembley_hub_id else None
+
+    if finchley_hub_name and wembley_hub_name and G.has_node(finchley_hub_name) and G.has_node(wembley_hub_name):
+        logging.info(f"Adding direct Metropolitan edge between {finchley_hub_name} and {wembley_hub_name}.")
+        common_edge_attrs = {
+            'line': 'metropolitan',
+            'mode': 'tube',
+            'direction': 'bidirectional_added', # Indicate it was manually added
+            'branch': 0, # Or appropriate value
+            'transfer': False,
+            'weight': None
+        }
+        # Add edge Finchley -> Wembley
+        if not G.has_edge(finchley_hub_name, wembley_hub_name, key='metropolitan'):
+            G.add_edge(finchley_hub_name, wembley_hub_name, key='metropolitan', **common_edge_attrs)
+            edge_count += 1 # Increment edge count
+        else:
+            logging.debug(f"Edge {finchley_hub_name}->{wembley_hub_name} (metropolitan) already exists.")
+        # Add edge Wembley -> Finchley
+        if not G.has_edge(wembley_hub_name, finchley_hub_name, key='metropolitan'):
+            G.add_edge(wembley_hub_name, finchley_hub_name, key='metropolitan', **common_edge_attrs)
+            edge_count += 1 # Increment edge count
+        else:
+            logging.debug(f"Edge {wembley_hub_name}->{finchley_hub_name} (metropolitan) already exists.")
+    else:
+        logging.warning("Could not find hub nodes for Finchley Road and/or Wembley Park. Cannot add direct Metropolitan edge.")
+    # --- End Post-Processing Corrections ---
+
+    logging.info(f"Final Graph (after corrections): {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     # 5. Save the Graph
     save_graph(G, OUTPUT_GRAPH_FILE)

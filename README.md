@@ -10,6 +10,40 @@ This project solves the common problem of finding a convenient place to meet in 
 3. Finding optimal meeting points that minimize total travel time for everyone
 
 
+## Latest Implementation: Hub-Based Graph & Weight Calculation
+
+**Status: Completed & Validated**
+
+The project has undergone a significant refactoring towards a **hub-based graph model** to improve pathfinding robustness and simplify transfer handling. This involves several key steps and scripts located in `networkx_graph/create_graph/`:
+
+1.  **Base Hub Graph (`build_hub_graph.py`):**
+    *   Creates a graph (`networkx_graph/graph_data/networkx_graph_hubs_base.json`) where each node represents a single station *hub*.
+    *   Adds edges representing *line* connections between different hubs, initially with `null` weights.
+
+2.  **Proximity Transfers (`add_proximity_transfers.py`):**
+    *   Identifies geographically close hub nodes that lack direct line connections.
+    *   Adds potential walking transfer edges (`transfer=True`) between these hubs, also with initial `null` weights.
+    *   Outputs `networkx_graph/graph_data/networkx_graph_hubs_with_transfers.json`.
+
+3.  **Transfer Weight Calculation (`calculate_transfer_weights.py`):**
+    *   Uses the TfL Journey API (walking mode) to calculate durations for the proximity transfer edges.
+    *   Outputs `networkx_graph/graph_data/networkx_graph_hubs_with_transfer_weights.json` (graph with weighted transfers).
+
+4.  **Line Edge Weight Calculation:**
+    *   Tube/DLR weights calculated via timetable data (`get_tube_dlr_edge_weights.py`).
+    *   Overground/Elizabeth line weights calculated via Journey API (`get_overground_Elizabeth_edge_weights.py`).
+    *   Both append results to `networkx_graph/graph_data/calculated_hub_edge_weights.json`.
+
+5.  **Final Graph Update (`update_graph_weights.py`):**
+    *   Reads the graph with weighted transfers (`...with_transfer_weights.json`).
+    *   Reads the consolidated line edge weights (`calculated_hub_edge_weights.json`).
+    *   Updates the `weight` attribute for all line edges.
+    *   Outputs the final, fully weighted graph: **`networkx_graph/graph_data/networkx_graph_hubs_final_weighted.json`**. This file is the complete network representation ready for analysis and pathfinding.
+
+**Next Steps:** Analyze the final graph using scripts in `networkx_graph/analyse_graph/`.
+
+---
+
 LUDOS COMMENT: AT TIME OF WRITING SCRIPTS THEY WORK AS PLANNED. HOWEVER, TFL MAY RELEASE UPDATES SO CHECK WITH API FOR CHANGES.
 
 ## Project Status

@@ -24,13 +24,18 @@ import requests
 import time
 import argparse
 from requests.exceptions import RequestException
+from dotenv import load_dotenv # Import the function
+
+# --- Configuration ---
+# Load environment variables from .env file first
+load_dotenv()
 
 # API configuration
 API_BASE_URL = "https://api.tfl.gov.uk/Line"
 CACHE_DIR = "../graph_data/timetable_cache"
 
-# Try to get TfL API key from environment variables
-TFL_API_KEY = os.environ.get("TFL_API_KEY", "")
+# Try to get TfL API key from environment variables *after* loading .env
+TFL_API_KEY = os.environ.get("TFL_API_KEY")
 # TFL_APP_ID = os.environ.get("TFL_APP_ID", "") # Removed unnecessary App ID
 
 API_PARAMS = {}
@@ -38,6 +43,7 @@ if TFL_API_KEY:
     API_PARAMS["app_key"] = TFL_API_KEY
 # if TFL_APP_ID: # Removed unnecessary App ID check
 #     API_PARAMS["app_id"] = TFL_APP_ID
+# --- End Configuration ---
 
 def load_json_data(file_path, data_description):
     """
@@ -92,6 +98,37 @@ def fetch_timetable(line_id, from_stop_id):
         print(f"    An unexpected error occurred during API call: {e}")
         return None
 
+def fetch_point_to_point_timetable(line_id, from_stop_id, to_stop_id):
+    """
+    Fetches timetable data between two specific stop points on a line.
+    Uses the /Line/{id}/Timetable/{fromStopPointId}/to/{toStopPointId} endpoint.
+
+    Args:
+        line_id (str): The ID of the line.
+        from_stop_id (str): The Naptan ID of the starting station.
+        to_stop_id (str): The Naptan ID of the destination station.
+
+    Returns:
+        dict: The API response JSON data, or None if the request fails.
+    """
+    api_url = f"{API_BASE_URL}/{line_id}/Timetable/{from_stop_id}/to/{to_stop_id}"
+    print(f"  Fetching point-to-point: {line_id} from {from_stop_id} to {to_stop_id}...")
+
+    try:
+        response = requests.get(api_url, params=API_PARAMS)
+        response.raise_for_status() # Raise an exception for bad status codes
+        print(f"    Status: {response.status_code}")
+        return response.json()
+    except RequestException as e:
+        print(f"    Error fetching point-to-point timetable for {line_id} ({from_stop_id} -> {to_stop_id}): {e}")
+        # Check for 404 specifically
+        if response is not None and response.status_code == 404:
+            print(f"    Warning: No direct timetable found between {from_stop_id} and {to_stop_id} on line {line_id}.")
+        return None
+    except Exception as e:
+        print(f"    An unexpected error occurred during point-to-point API call: {e}")
+        return None
+
 def save_to_cache(data, file_path):
     """
     Saves data to a JSON file in the cache directory.
@@ -140,10 +177,12 @@ def main():
         lines_to_process = terminal_stations
         print(f"Processing all {len(lines_to_process)} lines found in {terminals_file}.")
 
-    # Check for API credentials
+    # Check for API credentials *after* attempting to load from .env
     if not API_PARAMS:
-        print("\nWarning: TfL API credentials (TFL_API_KEY) not found in environment variables.")
+        print("\nWarning: TfL API credentials (TFL_API_KEY) not found in environment variables or .env file.")
         print("API calls may be rate-limited or fail.")
+    else:
+        print("\nAPI Key found. Proceeding with authenticated calls.") # Added confirmation message
 
     # Process each line
     for line_id, terminals in lines_to_process.items():
@@ -174,7 +213,31 @@ def main():
             # Delay between API calls to respect usage limits
             time.sleep(1) 
 
-        # Save the collected data for this line to its cache file
+        # --- Add specific point-to-point fetches for known problematic segments ---            
+        point_to_point_fetches = []
+        if line_id == 'dlr':
+            point_to_point_fetches.append(('940GZZDLSTD', '940GZZDLCAN'))
+        elif line_id == 'district':
+            point_to_point_fetches.append(('940GZZLUECT', '940GZZLUKOY'))
+        elif line_id == 'central':
+            point_to_point_fetches.append(('940GZZLUGGH', '940GZZLUHLT'))
+        
+        if point_to_point_fetches:
+            print(f"\n  Performing additional point-to-point fetches for line: {line_id}")
+            for from_id, to_id in point_to_point_fetches:
+                p2p_timetable_data = fetch_point_to_point_timetable(line_id, from_id, to_id)
+                # Add the data under a specific key like 'FROM_to_TO'
+                cache_key = f"{from_id}_to_{to_id}"
+                if p2p_timetable_data:
+                    line_cache_data["timetables"][cache_key] = p2p_timetable_data
+                    print(f"    Added point-to-point data for {cache_key}")
+                else:
+                    line_cache_data["timetables"][cache_key] = None # Indicate failed fetch
+                    print(f"    No data fetched for point-to-point {cache_key}. Storing null.")
+                time.sleep(1) # Delay between API calls
+        # --- End point-to-point fetches ---    
+            
+        # Save the collected data (including terminal and point-to-point) for this line
         cache_file_path = os.path.join(cache_base_dir, f"{line_id}.json")
         save_to_cache(line_cache_data, cache_file_path)
 

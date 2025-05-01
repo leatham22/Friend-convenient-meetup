@@ -1,6 +1,6 @@
 {
   "line_id": "jubilee",
-  "fetch_timestamp": 1745606384.372972,
+  "fetch_timestamp": 1746107448.259211,
   "timetables": {
     "940GZZLUSTD": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -2629,6 +2629,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -2660,6 +2661,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -18013,6 +18015,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -18044,6 +18047,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "2",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

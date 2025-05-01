@@ -1,8 +1,7 @@
 Rules:
-    - I am learning to programe so please keep this educational / a learning experience rather than a "pure" problem solver
-    - Add extra comments when implementing code to explain what each line is doing 
+    - I am learning to programe so please make sure to explain every change made and add extra comments to each line of code implemented
     - When a new chat is Started, please read the ReadMe to get a picture of the project before first response
     - When making significant change, automatically update the progression part of ReadMe with changes 
-    - When you want to write a "fixing" script, dont. Fix the original script that created the data, saving the updated data into a new data file instead. 
-    - Never implement manual implementation unless I ask.
+    - When a script isnt getting the exact output we want, focus on fixing that script rather than creating a new one that deals with the errors. 
+    - When there is a small error in data outputted, don't fix the error manually in the script unless I have asked. Focus on optimising the original script. 
     - when running commands in terminal, use "python3" NOT "python"

@@ -3,15 +3,15 @@
 Get Overground and Elizabeth Line Journey Times
 
 This script calls the TfL Journey API to get accurate journey times between
-adjacent stations for the London Overground and Elizabeth lines. It averages
-journey times if multiple valid direct routes are returned by the API within
-defined thresholds.
+adjacent stations for the London Overground and Elizabeth lines, using the
+hub-based graph structure. It averages journey times if multiple valid direct
+routes are returned by the API within defined thresholds.
 
-The results are saved to Edge_weights_overground_elizabeth.json, matching the
-format used for Tube and DLR lines.
+The results are saved to Edge_weights_overground_elizabeth.json, updating any
+existing entries or adding new ones.
 
 Usage:
-    python3 get_journey_times.py
+    python3 get_overground_Elizabeth_edge_weights.py
 """
 
 import json
@@ -24,21 +24,29 @@ import urllib.parse
 import statistics # Added for averaging journey times
 
 # --- Configuration ---
-# File containing adjacent station pairs for each line
-LINE_EDGES_FILE = "../graph_data/line_edges.json"
-# Output file for the calculated edge weights
-OUTPUT_FILE = "../graph_data/Edge_weights_overground_elizabeth.json"
+# Determine the directory of the current script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Define the data directory relative to the script's directory
+DATA_DIR = os.path.join(SCRIPT_DIR, "../graph_data")
+
+# Define filenames (relative to DATA_DIR)
+GRAPH_DATA_FILE = "networkx_graph_hubs_with_transfer_weights.json"
+OUTPUT_FILE = "calculated_hub_edge_weights.json"
+
+# Construct full paths using the absolute DATA_DIR
+GRAPH_DATA_FULL_PATH = os.path.join(DATA_DIR, GRAPH_DATA_FILE)
+OUTPUT_FILE_FULL_PATH = os.path.join(DATA_DIR, OUTPUT_FILE)
+
 # Lines to process in this script
 LINES_TO_PROCESS = [
     "elizabeth",
-    # List all Overground lines explicitly by their key in line_edges.json
     "weaver",            # Overground line name
     "suffragette",       # Overground line name
     "windrush",          # Overground line name
     "mildmay",           # Overground line name
     "lioness",           # Overground line name
     "liberty",           # Overground line name
-] # Adjust these names based on the actual keys in line_edges.json
+] # Adjust these names based on the actual line IDs in graph data
 
 # API configuration
 API_ENDPOINT = "https://api.tfl.gov.uk/Journey/JourneyResults"
@@ -70,44 +78,43 @@ if TFL_APP_ID:
     API_PARAMS["app_id"] = TFL_APP_ID
 # --- End API Credentials ---
 
-def load_line_edges(file_path):
+def load_graph_data(file_path):
     """
-    Load the line edges data (adjacent station pairs) from a JSON file.
-    This file should contain a dictionary where keys are line IDs
-    and values are lists of station pairs for that line.
+    Load the graph data (nodes and edges) from the NetworkX JSON file.
 
     Args:
-        file_path (str): Path to the line edges JSON file.
+        file_path (str): Path to the graph JSON file.
 
     Returns:
-        dict: The loaded line edges data, or an empty dict if the file
-              is not found or is invalid.
+        tuple: A tuple containing (nodes_list, edges_list), or (None, None)
+               if the file is not found or is invalid.
     """
     # Check if the specified file exists
     if not os.path.exists(file_path):
-        print(f"Error: Line edges file {file_path} not found.")
-        return {} # Return empty dict if file doesn't exist
+        print(f"Error: Graph data file {file_path} not found.")
+        return None, None # Return None if file doesn't exist
 
     try:
         # Open the file for reading with UTF-8 encoding
         with open(file_path, 'r', encoding='utf-8') as file:
             # Load the JSON data from the file
             data = json.load(file)
-            # Check if the loaded data is a dictionary (expected format)
-            if isinstance(data, dict):
-                return data
+            # Check if the loaded data has the expected 'nodes' and 'edges' keys
+            if isinstance(data, dict) and 'nodes' in data and 'edges' in data:
+                print(f"Successfully loaded {len(data['nodes'])} nodes and {len(data['edges'])} edges.")
+                return data.get('nodes', []), data.get('edges', [])
             else:
-                # If not a dictionary, print a warning and return empty
-                print(f"Warning: Data in {file_path} is not a dictionary. Cannot process lines.")
-                return {}
+                # If keys are missing, print a warning and return None
+                print(f"Warning: Data in {file_path} is missing 'nodes' or 'edges' key. Cannot process.")
+                return None, None
     except json.JSONDecodeError as e:
         # Handle errors if the file contains invalid JSON
-        print(f"Error decoding JSON from {file_path}: {e}. Cannot process lines.")
-        return {}
+        print(f"Error decoding JSON from {file_path}: {e}. Cannot process.")
+        return None, None
     except Exception as e:
         # Handle any other unexpected errors during file loading
-        print(f"An unexpected error occurred loading {file_path}: {e}. Cannot process lines.")
-        return {}
+        print(f"An unexpected error occurred loading {file_path}: {e}. Cannot process.")
+        return None, None
 
 def load_existing_edges(file_path):
     """
@@ -348,38 +355,44 @@ def get_and_average_journey_time(from_id, to_id, mode, line):
         print(f"  An unexpected error occurred processing API response: {e}")
         return None
 
-# Removed process_line_edges function as the logic is integrated into main loop
-
 def main():
     """
     Main function to:
-    1. Load line definitions (adjacent stations).
+    1. Load graph definitions (nodes and edges).
     2. Load existing calculated edge weights (if any).
     3. Iterate through specified lines (Overground, Elizabeth).
-    4. For each line, iterate through adjacent station pairs.
-    5. Skip pairs already present in the loaded weights.
-    6. Call TfL API to get (and average) journey time for new pairs.
-    7. Construct edge dictionaries in the target format.
-    8. Append new edges to the list.
-    9. Save the complete list of edges to the output file.
+    4. Iterate through edges belonging to these lines.
+    5. Skip edges already present in the loaded weights.
+    6. Determine correct Naptan IDs (handling HUBs).
+    7. Call TfL API to get (and average) journey time for new edges.
+    8. Construct edge dictionaries in the target format.
+    9. Append new edges to the list.
+    10. Save the complete list of edges to the output file.
     """
-    # Construct the full paths to input and output files based on script location
-    OUTPUT_DIR = "../graph_data" 
-    line_edges_file_path = os.path.join(OUTPUT_DIR, LINE_EDGES_FILE)
-    output_file_path = os.path.join(OUTPUT_DIR, OUTPUT_FILE)
+    # Use the pre-calculated absolute paths
+    graph_data_file_path = GRAPH_DATA_FULL_PATH
+    output_file_path = OUTPUT_FILE_FULL_PATH
 
     # --- Load Input Data ---
-    # Load the definitions of adjacent stations for all lines
-    print(f"Loading line edges from {line_edges_file_path}...")
-    all_line_edges = load_line_edges(line_edges_file_path)
+    # Load the graph data (nodes and edges)
+    print(f"Loading graph data from {graph_data_file_path}...")
+    # Ensure the loading function is called with the correct path
+    graph_nodes, graph_edges = load_graph_data(graph_data_file_path)
 
-    # Check if line edges were loaded successfully
-    if not all_line_edges:
-        print("Failed to load line edges. Cannot proceed. Ensure line_edges.json exists and is valid.")
-        return # Exit if we don't have the input station pairs
+    # Check if graph data was loaded successfully
+    if graph_nodes is None or graph_edges is None:
+        print("Failed to load graph data. Cannot proceed.")
+        print(f"Ensure the file exists and is valid JSON: {graph_data_file_path}")
+        return # Exit if we don't have the input data
 
-    # Load the edges that have already been calculated and saved previously
+    # Build a map from node ID (hub_name) to node data for easy lookup
+    node_map = {node['id']: node for node in graph_nodes}
+    print(f"Built node map with {len(node_map)} entries.")
+
+    # Load existing edges from the output file.
+    # This helps prevent redundant API calls if the script is run multiple times.
     print(f"Loading existing calculated edges from {output_file_path}...")
+    # Ensure the loading function is called with the correct path
     all_calculated_edges = load_existing_edges(output_file_path)
     print(f"Loaded {len(all_calculated_edges)} existing calculated edges.")
 
@@ -388,129 +401,163 @@ def main():
     existing_edge_keys = set()
     for edge in all_calculated_edges:
         # Ensure the existing edge has the necessary keys to create a unique identifier
-        if all(k in edge for k in ('source', 'target', 'line')):
+        if all(k in edge for k in ('source', 'target', 'line', 'weight')):
             key = f"{edge['source']}|{edge['target']}|{edge['line']}"
             existing_edge_keys.add(key)
         else:
             # Warn if an existing edge is missing key information
-            print(f"Warning: Skipping existing edge due to missing keys: {edge.get('source','?')}|{edge.get('target','?')}|{edge.get('line','?')}")
+            print(f"Warning: Skipping existing edge due to missing keys: {edge}")
     # --- End Load Input Data ---
 
+    # --- Process Edges ---
     # Counter for newly added edges during this run
     added_count = 0
-    # Counter for total pairs processed in this run
-    processed_count = 0
+    # Counter for total pairs processed in this run that needed API calls
+    api_processed_count = 0
     # List to keep track of edges that failed API calls
     failed_edges = []
 
-    # --- Process Each Target Line ---
-    print(f"Processing lines: {', '.join(LINES_TO_PROCESS)}")
-    for line_id in LINES_TO_PROCESS:
-        # Check if the current line_id exists in the loaded line_edges data
-        if line_id not in all_line_edges:
-            print(f"Warning: Line '{line_id}' not found in {LINE_EDGES_FILE}. Skipping.")
-            continue # Move to the next line in LINES_TO_PROCESS
+    # Iterate through the edges loaded from the graph data file
+    print(f"\nProcessing edges from {GRAPH_DATA_FILE} for lines: {', '.join(LINES_TO_PROCESS)}")
+    total_edges_in_file = len(graph_edges)
+    for i, edge_info in enumerate(graph_edges):
 
-        # Get the list of adjacent station pairs (edges) for the current line
-        edges_to_process = all_line_edges[line_id]
-        print(f"Processing {len(edges_to_process)} station pairs for line: {line_id}...")
+        # Extract basic edge information
+        line = edge_info.get('line')
+        mode = edge_info.get('mode') # Use mode directly from edge data
+        source_name = edge_info.get('source') # This is the Hub Name
+        target_name = edge_info.get('target') # This is the Hub Name
 
-        # Iterate through each station pair (edge) for the current line
-        for i, edge_info in enumerate(edges_to_process):
-            processed_count += 1 # Count each pair from line_edges.json once
-            # Extract necessary information for the API call and output edge
-            # Using .get() provides default None if a key is missing, preventing KeyErrors
-            source_name = edge_info.get('source_name')
-            target_name = edge_info.get('target_name')
-            source_id = edge_info.get('source_id')   # Naptan ID
-            target_id = edge_info.get('target_id')   # Naptan ID
-            mode = edge_info.get('mode')             # e.g., 'overground', 'elizabeth-line'
-            # Use the line_id from the outer loop as the definitive line ID
-            line_name = edge_info.get('line_name')   # Full line name, e.g., "Elizabeth line"
+        # --- Filter by Line ---
+        # Skip edges not belonging to the lines we want to process
+        if line not in LINES_TO_PROCESS:
+            continue
 
-            # Validate that we have the minimum required info for this pair
-            # Need names and IDs for both ends, mode, and the line_id
-            if not all([source_name, target_name, source_id, target_id, mode, line_id]):
-                print(f"  [{i+1}/{len(edges_to_process)}] Warning: Skipping pair due to missing data: {edge_info}")
-                continue # Skip this pair if essential info is missing
+        # --- Validate Minimum Data ---
+        # Check if we have the essential info for this edge
+        if not all([source_name, target_name, line, mode]):
+            print(f"  [{i+1}/{total_edges_in_file}] Line {line}: Warning - Skipping edge due to missing data: {source_name} -> {target_name}")
+            continue
 
-            # --- Process Forward Direction: source -> target ---
-            forward_key = f"{source_name}|{target_name}|{line_id}"
-            print(f"[{i+1}/{len(edges_to_process)}] Checking Forward: {source_name} -> {target_name} on {line_id}")
+        # --- Check if Edge Already Processed ---
+        edge_key = f"{source_name}|{target_name}|{line}"
+        if edge_key in existing_edge_keys:
+            # print(f"  [{i+1}/{total_edges_in_file}] Line {line}: Edge {source_name} -> {target_name} already exists. Skipping.")
+            continue # Skip if already calculated
 
-            # Check if this forward edge has already been calculated and saved
-            if forward_key in existing_edge_keys:
-                print(f"  Forward edge already exists. Skipping API call.")
+        # --- Get Naptan IDs for API Call ---
+        print(f"\n[{i+1}/{total_edges_in_file}] Processing Edge: {source_name} -> {target_name} on {line} ({mode})")
+        api_processed_count += 1 # Increment counter for edges needing API call
+
+        source_node_data = node_map.get(source_name)
+        target_node_data = node_map.get(target_name)
+
+        if not source_node_data or not target_node_data:
+            print(f"  Error: Node data not found for {source_name} or {target_name}. Skipping edge.")
+            failed_edges.append(f"{source_name} -> {target_name} on {line} (Node data missing)")
+            continue
+
+        # Determine Source API ID
+        source_api_id = None
+        source_primary_id = source_node_data.get('primary_naptan_id')
+        if source_primary_id and source_primary_id.startswith("HUB"):
+            constituent_ids = source_node_data.get('constituent_naptan_ids', [])
+            if constituent_ids:
+                source_api_id = constituent_ids[0] # Use the first constituent Naptan ID
+                print(f"  Source '{source_name}' is a HUB ({source_primary_id}). Using constituent Naptan: {source_api_id}")
             else:
-                # --- Forward edge does not exist, proceed with API call ---
-                duration = get_and_average_journey_time(source_id, target_id, mode, line_id)
-                # Pause execution briefly to avoid overwhelming the API
-                print(f"  Waiting {API_DELAY_SECONDS} second(s)...")
-                time.sleep(API_DELAY_SECONDS)
+                print(f"  Error: Source HUB '{source_name}' ({source_primary_id}) has no constituent Naptan IDs. Skipping edge.")
+                failed_edges.append(f"{source_name} -> {target_name} on {line} (Source HUB has no constituents)")
+                continue
+        else:
+            source_api_id = source_primary_id
+            print(f"  Source '{source_name}' using primary Naptan: {source_api_id}")
 
-                if duration is not None:
-                    new_edge = {
-                        "source": source_name, "target": target_name, "line": line_id,
-                        "line_name": line_name or "", "mode": mode, "duration": duration,
-                        "weight": duration, "transfer": False,
-                        "calculated_timestamp": datetime.now().isoformat()
-                    }
-                    all_calculated_edges.append(new_edge)
-                    existing_edge_keys.add(forward_key)
-                    added_count += 1
-                    print(f"  Successfully calculated and added forward edge. Duration: {duration:.1f} mins.")
-                else:
-                    print(f"  Failed to get journey time for forward edge {source_name} -> {target_name}. Edge not added.")
-                    # Record the failure
-                    failed_edges.append(f"FORWARD: {source_name} -> {target_name} on {line_id}")
-
-            # --- Process Reverse Direction: target -> source ---
-            # Use the same mode and line_id, but swap source/target names and IDs
-            reverse_key = f"{target_name}|{source_name}|{line_id}"
-            print(f"[{i+1}/{len(edges_to_process)}] Checking Reverse: {target_name} -> {source_name} on {line_id}")
-
-            # Check if this reverse edge has already been calculated and saved
-            if reverse_key in existing_edge_keys:
-                print(f"  Reverse edge already exists. Skipping API call.")
+        # Determine Target API ID
+        target_api_id = None
+        target_primary_id = target_node_data.get('primary_naptan_id')
+        if target_primary_id and target_primary_id.startswith("HUB"):
+            constituent_ids = target_node_data.get('constituent_naptan_ids', [])
+            if constituent_ids:
+                target_api_id = constituent_ids[0] # Use the first constituent Naptan ID
+                print(f"  Target '{target_name}' is a HUB ({target_primary_id}). Using constituent Naptan: {target_api_id}")
             else:
-                 # --- Reverse edge does not exist, proceed with API call ---
-                 # Note: Swapped target_id and source_id in the function call
-                duration = get_and_average_journey_time(target_id, source_id, mode, line_id)
-                 # Pause execution briefly to avoid overwhelming the API
-                print(f"  Waiting {API_DELAY_SECONDS} second(s)...")
-                time.sleep(API_DELAY_SECONDS)
+                print(f"  Error: Target HUB '{target_name}' ({target_primary_id}) has no constituent Naptan IDs. Skipping edge.")
+                failed_edges.append(f"{source_name} -> {target_name} on {line} (Target HUB has no constituents)")
+                continue
+        else:
+            target_api_id = target_primary_id
+            print(f"  Target '{target_name}' using primary Naptan: {target_api_id}")
 
-                if duration is not None:
-                    # Construct the reverse edge dictionary (swap source/target names)
-                    new_edge = {
-                        "source": target_name, "target": source_name, "line": line_id,
-                        "line_name": line_name or "", "mode": mode, "duration": duration,
-                        "weight": duration, "transfer": False,
-                        "calculated_timestamp": datetime.now().isoformat()
-                    }
-                    all_calculated_edges.append(new_edge)
-                    existing_edge_keys.add(reverse_key)
-                    added_count += 1
-                    print(f"  Successfully calculated and added reverse edge. Duration: {duration:.1f} mins.")
-                else:
-                    print(f"  Failed to get journey time for reverse edge {target_name} -> {source_name}. Edge not added.")
-                    # Record the failure
-                    failed_edges.append(f"REVERSE: {target_name} -> {source_name} on {line_id}")
+        # Final check for API IDs before calling API
+        if not source_api_id or not target_api_id:
+            print(f"  Error: Could not determine valid Naptan ID for API call ({source_api_id=}, {target_api_id=}). Skipping edge.")
+            failed_edges.append(f"{source_name} -> {target_name} on {line} (Could not determine Naptan ID)")
+            continue
 
-        # --- End loop for station pairs in the current line ---
-    # --- End loop for lines ---
+        # --- Call API ---
+        # Note: Mode and Line are passed directly from the edge data
+        # Translate Overground line names to 'overground' mode for API if needed?
+        # TfL API uses 'overground' and 'elizabeth-line' as modes.
+        # The mode from the edge *should* already be correct (e.g., 'overground' or 'elizabeth-line').
+        api_mode = mode # Directly use the mode from the edge
+        if mode == 'overground' and line != 'overground': # Check if mode is generic but line is specific OG line
+             print(f"  Info: Using generic 'overground' mode for specific line '{line}' API call.")
+             # api_mode remains 'overground'
+        elif mode == 'elizabeth-line' and line != 'elizabeth':
+             print(f"  Info: Using 'elizabeth-line' mode for specific line '{line}' API call.")
+             # api_mode remains 'elizabeth-line'
+
+        duration = get_and_average_journey_time(source_api_id, target_api_id, api_mode, line)
+
+        # Pause execution briefly to avoid overwhelming the API
+        print(f"  Waiting {API_DELAY_SECONDS} second(s)...")
+        time.sleep(API_DELAY_SECONDS)
+
+        # --- Store Result ---
+        if duration is not None:
+            # Construct the new edge dictionary to match the desired output format
+            # Using 'weight' for consistency with graph structure, value is the duration
+            new_edge = {
+                "source": source_name,
+                "target": target_name,
+                "line": line,       # e.g., "windrush", "elizabeth"
+                "mode": mode,       # e.g., "overground", "elizabeth-line"
+                "weight": duration, # Calculated duration in minutes
+                "transfer": False,  # Assuming these are direct line edges
+                "branch": 0,        # Added: Default branch ID
+                "direction": "unknown", # Added: Placeholder direction
+                "key": line,        # Added: Use the specific line ID as the key
+                "calculated_timestamp": datetime.now().isoformat()
+            }
+            # Add the line_name if available in the node data (e.g., from source node)
+            if source_node_data.get("lines") and line in source_node_data["lines"]:
+                 # This assumes the 'lines' list in node data corresponds correctly.
+                 # A more robust way might involve mapping line IDs to full names if needed.
+                 # For now, let's keep it simple. The 'line' field already holds the ID.
+                 pass # We decided 'line' ID is sufficient for now
+
+            all_calculated_edges.append(new_edge)
+            existing_edge_keys.add(edge_key) # Mark this edge as processed
+            added_count += 1
+            print(f"  ---> Successfully calculated and added edge. Duration: {duration:.1f} mins.")
+        else:
+            print(f"  ---> Failed to get journey time for edge {source_name} -> {target_name} on {line}. Edge not added.")
+            failed_edges.append(f"{source_name} -> {target_name} on {line} (API Fail/No Valid Journey)")
+
+    # --- End loop for edges ---
 
     # --- Save Results ---
     # Check if any new edges were added during this run
     if added_count > 0:
-        print(f"Processed {processed_count} total pairs across specified lines.")
-        print(f"Added {added_count} new edges. Saving updated list to {output_file_path}...")
+        print(f"\nProcessed {api_processed_count} pairs requiring API calls across specified lines.")
+        print(f"Added {added_count} new edges. Saving updated list ({len(all_calculated_edges)} total) to {output_file_path}...")
         # Save the potentially updated list of all edges back to the file
         save_edges(all_calculated_edges, output_file_path)
     else:
-        # No new edges were added, the output file remains unchanged
-        print(f"Processed {processed_count} total pairs across specified lines.")
-        print("No new edges were added. Output file remains unchanged.")
+        # No new edges needed API calls or were successfully added
+        print(f"\nProcessed {api_processed_count} pairs requiring API calls across specified lines.")
+        print(f"No new valid edges were added. Output file ({output_file_path}) remains unchanged with {len(all_calculated_edges)} edges.")
 
     print("Script finished.")
 

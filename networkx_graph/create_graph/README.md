@@ -12,47 +12,65 @@ The primary goal is to construct a `NetworkX` MultiDiGraph where:
 
 This hub-based approach simplifies transfers within the same station complex and aims to improve pathfinding robustness.
 
-## New Hub-Based Workflow Scripts
+## Hub-Based Workflow & Status
 
-This new workflow uses three main scripts executed sequentially:
+This new workflow uses several main scripts executed sequentially:
 
-1.  **`build_hub_graph.py`**:
-    *   **Purpose**: Creates the foundational base graph with a single-node-per-hub structure.
-    *   **Input**: Fetches raw line sequence data from the TfL API (using cached `tfl_all_line_sequence_data.json` in `../graph_data/` or fetching if missing/stale).
-    *   **Process**: Identifies unique stations, groups them by `topMostParentId` into hubs, creates one node per hub aggregating station details (name, primary Naptan ID, lat/lon, modes, lines, constituent Naptan IDs, zone). Adds directed edges *only* between *different* hubs based on line sequences. Edges represent line segments (`transfer=False`) with `weight=null` initially.
-    *   **Output**: Creates `../graph_data/networkx_graph_hubs_base.json` (NetworkX node-link format).
-    *   **Requires**: `TFL_API_KEY` environment variable (optional for cached data, required for fetching).
-    *   **Extra details**: Has a couple of manual fixes due to inconsistent TFL API data, eg WIllesden Green Underground Station is quoted as being on Metrapolitan line on API data, but it hasnt run on that line since 1979. Also West India Quay being skipped in one direction. 
+1.  **`build_hub_graph.py` (Status: Implemented)**:
+    *   Creates the base graph (`../graph_data/networkx_graph_hubs_base.json`) with one node per hub and null-weighted line edges.
+    *   Includes manual corrections for TfL API data.
 
-2.  **`add_proximity_transfers.py`**:
-    *   **Purpose**: Adds potential walking transfer edges (with null weights) between geographically close but distinct hubs.
-    *   **Input**: `../graph_data/networkx_graph_hubs_base.json`.
-    *   **Process**: Loads the base graph. For each hub, queries the TfL StopPoint API to find nearby hubs within a radius. If a nearby distinct hub is found *and* no direct line edge already connects them, adds bidirectional edges with `transfer=True`, `mode='walking'`, `line='walking'`, `key='transfer'`, and `weight=null`. Records pairs of hub Naptan IDs needing weight calculation.
-    *   **Output**:
-        *   `../graph_data/networkx_graph_hubs_with_transfers.json` (Graph with null-weighted transfer edges added).
-        *   `../graph_data/inter_hub_transfers_to_weight.json` (List of [primary_naptan_id_1, primary_naptan_id_2] pairs for transfers).
-    *   **Requires**: Network connection (for TfL StopPoint API calls).
+2.  **`add_proximity_transfers.py` (Status: Implemented)**:
+    *   Reads the base graph.
+    *   Adds null-weighted walking transfer edges between nearby hubs.
+    *   Outputs `../graph_data/networkx_graph_hubs_with_transfers.json` (graph) and `../graph_data/inter_hub_transfers_to_weight.json` (list of transfers).
 
-3.  **`calculate_transfer_weights.py`**:
-    *   **Purpose**: Calculates walking durations for the proximity-based transfer edges and updates their weights.
-    *   **Input**: `../graph_data/networkx_graph_hubs_with_transfers.json`, `../graph_data/inter_hub_transfers_to_weight.json`.
-    *   **Process**: Loads the graph and the transfer list. For each pair of hub Naptan IDs, calls the TfL Journey API (`mode=walking`) to get the duration in minutes. Updates the `weight` attribute on the corresponding bidirectional transfer edges (key='transfer'). If the API call fails or returns no duration, the weight is set to `null`.
-    *   **Output**: Creates the final hub graph `../graph_data/networkx_graph_hubs_final.json` with calculated walking transfer weights.
-    *   **Requires**: `TFL_API_KEY` environment variable (mandatory for Journey API calls).
+3.  **`calculate_transfer_weights.py` (Status: Implemented)**:
+    *   Reads `networkx_graph_hubs_with_transfers.json`.
+    *   Calculates weights (walking durations) for transfer edges using the TFL Journey API.
+    *   Outputs `../graph_data/networkx_graph_hubs_with_transfer_weights.json` (contains weighted transfers, line edges still null).
+
+4.  **`get_timetable_data.py` (Status: Implemented)**:
+    *   Fetches standard timetable data using terminals and specific point-to-point data for known problematic segments.
+    *   Caches data in `../graph_data/timetable_cache/`.
+
+5.  **`get_tube_dlr_edge_weights.py` (Status: Implemented)**:
+    *   Reads `networkx_graph_hubs_with_transfer_weights.json` (to know which hub connections exist).
+    *   Processes cached timetable data (`../graph_data/timetable_cache/`).
+    *   Calculates average durations for *Tube/DLR line edges* between hubs.
+    *   Appends calculated weights to `../graph_data/calculated_hub_edge_weights.json`.
+
+6.  **`get_overground_Elizabeth_edge_weights.py` (Status: Implemented)**:
+    *   Reads `networkx_graph_hubs_with_transfer_weights.json` (to know which hub connections exist).
+    *   Uses the TFL Journey API to get journey times for *Overground/Elizabeth line edges* between hubs.
+    *   Appends calculated weights to `../graph_data/calculated_hub_edge_weights.json`.
+
+7.  **`update_graph_weights.py` (Status: Implemented)**:
+    *   Reads `networkx_graph_hubs_with_transfer_weights.json` (graph with weighted transfers).
+    *   Reads `calculated_hub_edge_weights.json` (containing all calculated line edge weights).
+    *   Updates the null weights for the line edges in the graph.
+    *   Outputs the final, fully weighted graph: `../graph_data/networkx_graph_hubs_final_weighted.json`.
+
+**Current State:**
+*   The scripts are implemented to produce a fully weighted hub-based graph.
+*   The final output is `networkx_graph_hubs_final_weighted.json`.
+
+**Next Steps:**
+*   Analyze the final graph using scripts in the `../analyse_graph/` directory.
+*   Further refinement or validation of weights as needed.
 
 ---
 
-## Legacy/Alternative Weighting Scripts (Timetable-Based)
+## Legacy/Alternative Weighting Scripts
 
-*(These scripts operate on the older, station-level graph structure or may be adapted for the hub graph line edges in the future. They are not part of the primary hub-based workflow described above for generating the initial weighted graph with walking transfers.)*
+*(These scripts may be outdated or operate on different graph structures. Refer to the Hub-Based Workflow above for the current process.)*
 
-*   **`find_terminal_stations.py`**: Identifies potential terminal stations for timetable fetching.
-*   **`get_timetable_data.py`**: Fetches TfL Timetable data using terminals.
-*   **`process_timetable_data.py`**: Calculates average journey times from timetables.
-*   **`get_missing_journey_times.py`**: Supplements timetable data with Journey API calls for specific edges.
-*   **`get_journey_times.py`**: Uses Journey API for specific modes (e.g., Overground/Elizabeth).
-*   **`update_edge_weights.py`**: Merges calculated journey times into a graph.
-*   **`apply_arbitrary_timestamp.py`**: Utility for timestamping weight files.
+*   `find_terminal_stations.py`
+*   `process_timetable_data.py`
+*   `get_missing_journey_times.py`
+*   `get_journey_times.py`
+*   `update_edge_weights.py` (Note: A new script with the same name is used in the current workflow)
+*   `apply_arbitrary_timestamp.py`
 
 ## Hub-Based Workflow Execution
 
@@ -65,10 +83,14 @@ The typical workflow to generate the complete, hub-based weighted graph is:
 2.  **Build Base Hub Graph**: Run `python3 build_hub_graph.py`.
 3.  **Add Proximity Transfers**: Run `python3 add_proximity_transfers.py`.
 4.  **Calculate Transfer Weights**: Run `python3 calculate_transfer_weights.py`.
+5.  **Fetch Timetable Data**: Run `python3 get_timetable_data.py`.
+6.  **Calculate Tube/DLR Line Weights**: Run `python3 get_tube_dlr_edge_weights.py`.
+7.  **Calculate Overground/Elizabeth Line Weights**: Run `python3 get_overground_Elizabeth_edge_weights.py`.
+8.  **Update Graph with Line Weights**: Run `python3 update_graph_weights.py`.
 
-The final graph will be in `../graph_data/networkx_graph_hubs_final.json`.
+The final graph will be in `../graph_data/networkx_graph_hubs_final_weighted.json`.
 
-*Note: Scripts should generally be run from the root directory of the project (the parent of `networkx_graph`). File paths within the scripts assume this structure.* 
+*Note: Scripts should generally be run from this `create_graph` directory, or paths adjusted accordingly if run from the project root.*
 
 ## Environment Setup
 

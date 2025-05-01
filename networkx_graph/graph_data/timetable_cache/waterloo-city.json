@@ -1,6 +1,6 @@
 {
   "line_id": "waterloo-city",
-  "fetch_timestamp": 1745599999.0726001,
+  "fetch_timestamp": 1746107475.698089,
   "timetables": {
     "940GZZLUBNK": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",

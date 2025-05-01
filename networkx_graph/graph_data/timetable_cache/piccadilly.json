@@ -1,6 +1,6 @@
 {
   "line_id": "piccadilly",
-  "fetch_timestamp": 1745599947.747815,
+  "fetch_timestamp": 1746107467.23386,
   "timetables": {
     "940GZZLUCKS": {
       "$type": "Tfl.Api.Presentation.Entities.TimetableResponse, Tfl.Api.Presentation.Entities",
@@ -3407,6 +3407,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -3769,7 +3770,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4972,6 +4972,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -20480,7 +20481,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -20879,6 +20879,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -21374,6 +21375,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30466,6 +30468,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30508,6 +30511,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30550,6 +30554,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30592,6 +30597,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30634,6 +30640,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30676,6 +30683,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30718,6 +30726,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -30760,6 +30769,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -31302,7 +31312,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -32196,6 +32205,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39731,6 +39741,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39773,6 +39784,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39815,6 +39827,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39857,6 +39870,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39899,6 +39913,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39941,6 +39956,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -39983,6 +39999,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40025,6 +40042,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "5",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40567,7 +40585,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -40966,6 +40983,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -41461,6 +41479,7 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "6",
+          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 INPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_with_transfers.json'
 INPUT_TRANSFER_LIST_FILE = 'networkx_graph/graph_data/inter_hub_transfers_to_weight.json'
 # Final output graph file
-OUTPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_final.json'
+OUTPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_with_transfer_weights.json'
 
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(OUTPUT_GRAPH_FILE), exist_ok=True)
