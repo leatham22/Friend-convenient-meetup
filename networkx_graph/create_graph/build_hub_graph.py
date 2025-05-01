@@ -1,3 +1,9 @@
+"""
+This script builds the base hub graph.
+It fetches the TFL line sequence data and processes it to identify hubs and stations.
+It then creates a NetworkX graph with single nodes per hub and inter-hub line connections.
+"""
+
 import networkx as nx
 import requests
 import json
@@ -231,7 +237,7 @@ def build_base_hub_graph():
         return None
 
     # 2. Hub Identification and Mapping Creation
-    hub_info = {} # topMostParentId -> {hub_name, lat, lon, zone, primary_naptan_id, modes, lines, constituent_naptan_ids}
+    hub_info = {} # topMostParentId -> {hub_name, lat, lon, zone, primary_naptan_id, modes, lines, constituent_stations}
     station_to_hub_id = {} # stationId (naptanId) -> topMostParentId
 
     logging.info("Processing TFL data to identify hubs and stations...")
@@ -268,7 +274,9 @@ def build_base_hub_graph():
                         'hub_name': station_name, # Use first name, try to refine below
                         'primary_naptan_id': hub_id,
                         'lat': lat, 'lon': lon, 'zone': zone,
-                        'modes': set(), 'lines': set(), 'constituent_naptan_ids': set()
+                        'modes': set(), 'lines': set(), 
+                        # Initialize the new structure for constituent stations (temp dict)
+                        'constituent_stations': {} 
                     }
                     # Attempt to find parent details for better name/coords
                     parent_info_found = False
@@ -281,7 +289,13 @@ def build_base_hub_graph():
                             break
 
                 # Add current station's details to hub
-                hub_info[hub_id]['constituent_naptan_ids'].add(station_id)
+                # Use station_id as key and station_name as value in the temp dict
+                if station_name: # Ensure station has a name
+                     hub_info[hub_id]['constituent_stations'][station_id] = station_name
+                else:
+                     logging.warning(f"Constituent station {station_id} for hub {hub_id} has no name. Skipping.")
+                    
+                # Add lines and modes
                 if line_id: hub_info[hub_id]['lines'].add(line_id)
                 if mode_name != 'unknown': hub_info[hub_id]['modes'].add(mode_name)
                 # Add modes from the stop point itself if available
@@ -291,11 +305,21 @@ def build_base_hub_graph():
     for hub_id in hub_info:
         hub_info[hub_id]['modes'] = {m for m in hub_info[hub_id]['modes'] if m} # Filter out empty strings
 
-    # Convert sets to lists for JSON serialization
+    # Convert sets to lists for JSON serialization and finalize constituent_stations
     for hub_id in hub_info:
         hub_info[hub_id]['modes'] = sorted(list(hub_info[hub_id]['modes'])) # Sort for consistency
         hub_info[hub_id]['lines'] = sorted(list(hub_info[hub_id]['lines']))
-        hub_info[hub_id]['constituent_naptan_ids'] = sorted(list(hub_info[hub_id]['constituent_naptan_ids']))
+        
+        # Convert the temporary constituent_stations dict to the final list of dicts
+        constituent_list = [
+            {'name': name, 'naptan_id': naptan_id} 
+            for naptan_id, name in hub_info[hub_id]['constituent_stations'].items()
+        ]
+        # Sort the list for consistency (e.g., by Naptan ID)
+        hub_info[hub_id]['constituent_stations'] = sorted(constituent_list, key=lambda x: x['naptan_id'])
+        
+        # Remove the old constituent_naptan_ids key if it somehow exists (it shouldn't with new init)
+        # hub_info[hub_id].pop('constituent_naptan_ids', None) 
 
     logging.info(f"Identified {len(hub_info)} unique hubs.")
 

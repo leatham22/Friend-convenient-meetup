@@ -16,8 +16,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GWCROYDN"
+            "constituent_stations": [
+                {
+                    "name": "West Croydon Rail Station",
+                    "naptan_id": "910GWCROYDN"
+                }
             ],
             "id": "West Croydon Rail Station"
         },
@@ -34,8 +37,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GNORWDJ"
+            "constituent_stations": [
+                {
+                    "name": "Norwood Junction Rail Station",
+                    "naptan_id": "910GNORWDJ"
+                }
             ],
             "id": "Norwood Junction Rail Station"
         },
@@ -52,8 +58,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GANERLEY"
+            "constituent_stations": [
+                {
+                    "name": "Anerley Rail Station",
+                    "naptan_id": "910GANERLEY"
+                }
             ],
             "id": "Anerley Rail Station"
         },
@@ -70,8 +79,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GPENEW"
+            "constituent_stations": [
+                {
+                    "name": "Penge West Rail Station",
+                    "naptan_id": "910GPENEW"
+                }
             ],
             "id": "Penge West Rail Station"
         },
@@ -88,8 +100,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GSYDENHM"
+            "constituent_stations": [
+                {
+                    "name": "Sydenham Rail Station",
+                    "naptan_id": "910GSYDENHM"
+                }
             ],
             "id": "Sydenham Rail Station"
         },
@@ -106,8 +121,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GFORESTH"
+            "constituent_stations": [
+                {
+                    "name": "Forest Hill Rail Station",
+                    "naptan_id": "910GFORESTH"
+                }
             ],
             "id": "Forest Hill Rail Station"
         },
@@ -124,8 +142,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GHONROPK"
+            "constituent_stations": [
+                {
+                    "name": "Honor Oak Park Rail Station",
+                    "naptan_id": "910GHONROPK"
+                }
             ],
             "id": "Honor Oak Park Rail Station"
         },
@@ -142,8 +163,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GBROCKLY"
+            "constituent_stations": [
+                {
+                    "name": "Brockley Rail Station",
+                    "naptan_id": "910GBROCKLY"
+                }
             ],
             "id": "Brockley Rail Station"
         },
@@ -160,8 +184,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GNEWXGTE"
+            "constituent_stations": [
+                {
+                    "name": "New Cross Gate Rail Station",
+                    "naptan_id": "910GNEWXGTE"
+                }
             ],
             "id": "New Cross Gate Rail Station"
         },
@@ -177,8 +204,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GSURREYQ"
+            "constituent_stations": [
+                {
+                    "name": "Surrey Quays Rail Station",
+                    "naptan_id": "910GSURREYQ"
+                }
             ],
             "id": "Surrey Quays Rail Station"
         },
@@ -196,9 +226,15 @@
                 "jubilee",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GCNDAW",
-                "940GZZLUCWR"
+            "constituent_stations": [
+                {
+                    "name": "Canada Water Rail Station",
+                    "naptan_id": "910GCNDAW"
+                },
+                {
+                    "name": "Canada Water Underground Station",
+                    "naptan_id": "940GZZLUCWR"
+                }
             ],
             "id": "Canada Water Rail Station"
         },
@@ -214,8 +250,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GRTHERHI"
+            "constituent_stations": [
+                {
+                    "name": "Rotherhithe Rail Station",
+                    "naptan_id": "910GRTHERHI"
+                }
             ],
             "id": "Rotherhithe Rail Station"
         },
@@ -232,8 +271,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GWAPPING"
+            "constituent_stations": [
+                {
+                    "name": "Wapping Rail Station",
+                    "naptan_id": "910GWAPPING"
+                }
             ],
             "id": "Wapping Rail Station"
         },
@@ -251,9 +293,15 @@
                 "dlr",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GSHADWEL",
-                "940GZZDLSHA"
+            "constituent_stations": [
+                {
+                    "name": "Shadwell Rail Station",
+                    "naptan_id": "910GSHADWEL"
+                },
+                {
+                    "name": "Shadwell DLR Station",
+                    "naptan_id": "940GZZDLSHA"
+                }
             ],
             "id": "Shadwell Rail Station"
         },
@@ -274,10 +322,19 @@
                 "hammersmith-city",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GWCHAPEL",
-                "910GWCHAPXR",
-                "940GZZLUWPL"
+            "constituent_stations": [
+                {
+                    "name": "Whitechapel Rail Station",
+                    "naptan_id": "910GWCHAPEL"
+                },
+                {
+                    "name": "Whitechapel",
+                    "naptan_id": "910GWCHAPXR"
+                },
+                {
+                    "name": "Whitechapel Underground Station",
+                    "naptan_id": "940GZZLUWPL"
+                }
             ],
             "id": "Whitechapel Rail Station"
         },
@@ -293,8 +350,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GSHRDHST"
+            "constituent_stations": [
+                {
+                    "name": "Shoreditch High Street Rail Station",
+                    "naptan_id": "910GSHRDHST"
+                }
             ],
             "id": "Shoreditch High Street Rail Station"
         },
@@ -310,8 +370,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GHOXTON"
+            "constituent_stations": [
+                {
+                    "name": "Hoxton Rail Station",
+                    "naptan_id": "910GHOXTON"
+                }
             ],
             "id": "Hoxton Rail Station"
         },
@@ -327,8 +390,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GHAGGERS"
+            "constituent_stations": [
+                {
+                    "name": "Haggerston Rail Station",
+                    "naptan_id": "910GHAGGERS"
+                }
             ],
             "id": "Haggerston Rail Station"
         },
@@ -345,8 +411,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GDALS"
+            "constituent_stations": [
+                {
+                    "name": "Dalston Junction Rail Station",
+                    "naptan_id": "910GDALS"
+                }
             ],
             "id": "Dalston Junction Rail Station"
         },
@@ -364,8 +433,11 @@
                 "mildmay",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GCNNB"
+            "constituent_stations": [
+                {
+                    "name": "Canonbury Rail Station",
+                    "naptan_id": "910GCNNB"
+                }
             ],
             "id": "Canonbury Rail Station"
         },
@@ -385,9 +457,15 @@
                 "victoria",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GHGHI",
-                "940GZZLUHAI"
+            "constituent_stations": [
+                {
+                    "name": "Highbury & Islington Rail Station",
+                    "naptan_id": "910GHGHI"
+                },
+                {
+                    "name": "Highbury & Islington Underground Station",
+                    "naptan_id": "940GZZLUHAI"
+                }
             ],
             "id": "Highbury & Islington Rail Station"
         },
@@ -405,9 +483,15 @@
                 "mildmay",
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GCLPHMJ1",
-                "910GCLPHMJC"
+            "constituent_stations": [
+                {
+                    "name": "Clapham Junction Rail Station",
+                    "naptan_id": "910GCLPHMJ1"
+                },
+                {
+                    "name": "Clapham Junction Rail Station",
+                    "naptan_id": "910GCLPHMJC"
+                }
             ],
             "id": "Clapham Junction Rail Station"
         },
@@ -423,8 +507,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GWNDSWRD"
+            "constituent_stations": [
+                {
+                    "name": "Wandsworth Road Rail Station",
+                    "naptan_id": "910GWNDSWRD"
+                }
             ],
             "id": "Wandsworth Road Rail Station"
         },
@@ -440,8 +527,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GCLPHHS"
+            "constituent_stations": [
+                {
+                    "name": "Clapham High Street Rail Station",
+                    "naptan_id": "910GCLPHHS"
+                }
             ],
             "id": "Clapham High Street Rail Station"
         },
@@ -458,8 +548,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GDENMRKH"
+            "constituent_stations": [
+                {
+                    "name": "Denmark Hill Rail Station",
+                    "naptan_id": "910GDENMRKH"
+                }
             ],
             "id": "Denmark Hill Rail Station"
         },
@@ -476,8 +569,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GPCKHMRY"
+            "constituent_stations": [
+                {
+                    "name": "Peckham Rye Rail Station",
+                    "naptan_id": "910GPCKHMRY"
+                }
             ],
             "id": "Peckham Rye Rail Station"
         },
@@ -494,8 +590,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GPCKHMQD"
+            "constituent_stations": [
+                {
+                    "name": "Queens Road Peckham Rail Station",
+                    "naptan_id": "910GPCKHMQD"
+                }
             ],
             "id": "Queens Road Peckham Rail Station"
         },
@@ -512,8 +611,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GCRYSTLP"
+            "constituent_stations": [
+                {
+                    "name": "Crystal Palace Rail Station",
+                    "naptan_id": "910GCRYSTLP"
+                }
             ],
             "id": "Crystal Palace Rail Station"
         },
@@ -530,8 +632,11 @@
             "lines": [
                 "windrush"
             ],
-            "constituent_naptan_ids": [
-                "910GNWCRELL"
+            "constituent_stations": [
+                {
+                    "name": "New Cross ELL Rail Station",
+                    "naptan_id": "910GNWCRELL"
+                }
             ],
             "id": "New Cross ELL Rail Station"
         },
@@ -547,8 +652,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHBT"
+            "constituent_stations": [
+                {
+                    "name": "High Barnet Underground Station",
+                    "naptan_id": "940GZZLUHBT"
+                }
             ],
             "id": "High Barnet Underground Station"
         },
@@ -564,8 +672,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTAW"
+            "constituent_stations": [
+                {
+                    "name": "Totteridge & Whetstone Underground Station",
+                    "naptan_id": "940GZZLUTAW"
+                }
             ],
             "id": "Totteridge & Whetstone Underground Station"
         },
@@ -581,8 +692,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWOP"
+            "constituent_stations": [
+                {
+                    "name": "Woodside Park Underground Station",
+                    "naptan_id": "940GZZLUWOP"
+                }
             ],
             "id": "Woodside Park Underground Station"
         },
@@ -598,8 +712,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWFN"
+            "constituent_stations": [
+                {
+                    "name": "West Finchley Underground Station",
+                    "naptan_id": "940GZZLUWFN"
+                }
             ],
             "id": "West Finchley Underground Station"
         },
@@ -615,8 +732,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUFYC"
+            "constituent_stations": [
+                {
+                    "name": "Finchley Central Underground Station",
+                    "naptan_id": "940GZZLUFYC"
+                }
             ],
             "id": "Finchley Central Underground Station"
         },
@@ -632,8 +752,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEFY"
+            "constituent_stations": [
+                {
+                    "name": "East Finchley Underground Station",
+                    "naptan_id": "940GZZLUEFY"
+                }
             ],
             "id": "East Finchley Underground Station"
         },
@@ -649,8 +772,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHGT"
+            "constituent_stations": [
+                {
+                    "name": "Highgate Underground Station",
+                    "naptan_id": "940GZZLUHGT"
+                }
             ],
             "id": "Highgate Underground Station"
         },
@@ -666,8 +792,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUACY"
+            "constituent_stations": [
+                {
+                    "name": "Archway Underground Station",
+                    "naptan_id": "940GZZLUACY"
+                }
             ],
             "id": "Archway Underground Station"
         },
@@ -683,8 +812,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTFP"
+            "constituent_stations": [
+                {
+                    "name": "Tufnell Park Underground Station",
+                    "naptan_id": "940GZZLUTFP"
+                }
             ],
             "id": "Tufnell Park Underground Station"
         },
@@ -700,8 +832,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKSH"
+            "constituent_stations": [
+                {
+                    "name": "Kentish Town Underground Station",
+                    "naptan_id": "940GZZLUKSH"
+                }
             ],
             "id": "Kentish Town Underground Station"
         },
@@ -717,8 +852,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCTN"
+            "constituent_stations": [
+                {
+                    "name": "Camden Town Underground Station",
+                    "naptan_id": "940GZZLUCTN"
+                }
             ],
             "id": "Camden Town Underground Station"
         },
@@ -734,8 +872,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMTC"
+            "constituent_stations": [
+                {
+                    "name": "Mornington Crescent Underground Station",
+                    "naptan_id": "940GZZLUMTC"
+                }
             ],
             "id": "Mornington Crescent Underground Station"
         },
@@ -755,9 +896,15 @@
                 "northern",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "910GEUSTON",
-                "940GZZLUEUS"
+            "constituent_stations": [
+                {
+                    "name": "London Euston Rail Station",
+                    "naptan_id": "910GEUSTON"
+                },
+                {
+                    "name": "Euston Underground Station",
+                    "naptan_id": "940GZZLUEUS"
+                }
             ],
             "id": "Euston Underground Station"
         },
@@ -774,8 +921,11 @@
                 "northern",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWRR"
+            "constituent_stations": [
+                {
+                    "name": "Warren Street Underground Station",
+                    "naptan_id": "940GZZLUWRR"
+                }
             ],
             "id": "Warren Street Underground Station"
         },
@@ -791,8 +941,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGDG"
+            "constituent_stations": [
+                {
+                    "name": "Goodge Street Underground Station",
+                    "naptan_id": "940GZZLUGDG"
+                }
             ],
             "id": "Goodge Street Underground Station"
         },
@@ -811,9 +964,15 @@
                 "elizabeth",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "910GTOTCTRD",
-                "940GZZLUTCR"
+            "constituent_stations": [
+                {
+                    "name": "Tottenham Court Road",
+                    "naptan_id": "910GTOTCTRD"
+                },
+                {
+                    "name": "Tottenham Court Road Underground Station",
+                    "naptan_id": "940GZZLUTCR"
+                }
             ],
             "id": "Tottenham Court Road Underground Station"
         },
@@ -830,8 +989,11 @@
                 "northern",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULSQ"
+            "constituent_stations": [
+                {
+                    "name": "Leicester Square Underground Station",
+                    "naptan_id": "940GZZLULSQ"
+                }
             ],
             "id": "Leicester Square Underground Station"
         },
@@ -848,8 +1010,11 @@
                 "bakerloo",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCHX"
+            "constituent_stations": [
+                {
+                    "name": "Charing Cross Underground Station",
+                    "naptan_id": "940GZZLUCHX"
+                }
             ],
             "id": "Charing Cross Underground Station"
         },
@@ -868,8 +1033,11 @@
                 "district",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEMB"
+            "constituent_stations": [
+                {
+                    "name": "Embankment Underground Station",
+                    "naptan_id": "940GZZLUEMB"
+                }
             ],
             "id": "Embankment Underground Station"
         },
@@ -888,8 +1056,11 @@
                 "northern",
                 "waterloo-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWLO"
+            "constituent_stations": [
+                {
+                    "name": "Waterloo Underground Station",
+                    "naptan_id": "940GZZLUWLO"
+                }
             ],
             "id": "Waterloo Underground Station"
         },
@@ -905,8 +1076,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKNG"
+            "constituent_stations": [
+                {
+                    "name": "Kennington Underground Station",
+                    "naptan_id": "940GZZLUKNG"
+                }
             ],
             "id": "Kennington Underground Station"
         },
@@ -922,8 +1096,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUOVL"
+            "constituent_stations": [
+                {
+                    "name": "Oval Underground Station",
+                    "naptan_id": "940GZZLUOVL"
+                }
             ],
             "id": "Oval Underground Station"
         },
@@ -940,8 +1117,11 @@
                 "northern",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSKW"
+            "constituent_stations": [
+                {
+                    "name": "Stockwell Underground Station",
+                    "naptan_id": "940GZZLUSKW"
+                }
             ],
             "id": "Stockwell Underground Station"
         },
@@ -957,8 +1137,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCPN"
+            "constituent_stations": [
+                {
+                    "name": "Clapham North Underground Station",
+                    "naptan_id": "940GZZLUCPN"
+                }
             ],
             "id": "Clapham North Underground Station"
         },
@@ -974,8 +1157,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCPC"
+            "constituent_stations": [
+                {
+                    "name": "Clapham Common Underground Station",
+                    "naptan_id": "940GZZLUCPC"
+                }
             ],
             "id": "Clapham Common Underground Station"
         },
@@ -991,8 +1177,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCPS"
+            "constituent_stations": [
+                {
+                    "name": "Clapham South Underground Station",
+                    "naptan_id": "940GZZLUCPS"
+                }
             ],
             "id": "Clapham South Underground Station"
         },
@@ -1008,8 +1197,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBLM"
+            "constituent_stations": [
+                {
+                    "name": "Balham Underground Station",
+                    "naptan_id": "940GZZLUBLM"
+                }
             ],
             "id": "Balham Underground Station"
         },
@@ -1025,8 +1217,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTBC"
+            "constituent_stations": [
+                {
+                    "name": "Tooting Bec Underground Station",
+                    "naptan_id": "940GZZLUTBC"
+                }
             ],
             "id": "Tooting Bec Underground Station"
         },
@@ -1042,8 +1237,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTBY"
+            "constituent_stations": [
+                {
+                    "name": "Tooting Broadway Underground Station",
+                    "naptan_id": "940GZZLUTBY"
+                }
             ],
             "id": "Tooting Broadway Underground Station"
         },
@@ -1059,8 +1257,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCSD"
+            "constituent_stations": [
+                {
+                    "name": "Colliers Wood Underground Station",
+                    "naptan_id": "940GZZLUCSD"
+                }
             ],
             "id": "Colliers Wood Underground Station"
         },
@@ -1076,8 +1277,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSWN"
+            "constituent_stations": [
+                {
+                    "name": "South Wimbledon Underground Station",
+                    "naptan_id": "940GZZLUSWN"
+                }
             ],
             "id": "South Wimbledon Underground Station"
         },
@@ -1093,8 +1297,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMDN"
+            "constituent_stations": [
+                {
+                    "name": "Morden Underground Station",
+                    "naptan_id": "940GZZLUMDN"
+                }
             ],
             "id": "Morden Underground Station"
         },
@@ -1115,8 +1322,11 @@
                 "piccadilly",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKSX"
+            "constituent_stations": [
+                {
+                    "name": "King's Cross St. Pancras Underground Station",
+                    "naptan_id": "940GZZLUKSX"
+                }
             ],
             "id": "King's Cross St. Pancras Underground Station"
         },
@@ -1132,8 +1342,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUAGL"
+            "constituent_stations": [
+                {
+                    "name": "Angel Underground Station",
+                    "naptan_id": "940GZZLUAGL"
+                }
             ],
             "id": "Angel Underground Station"
         },
@@ -1149,8 +1362,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUODS"
+            "constituent_stations": [
+                {
+                    "name": "Old Street Underground Station",
+                    "naptan_id": "940GZZLUODS"
+                }
             ],
             "id": "Old Street Underground Station"
         },
@@ -1169,8 +1385,11 @@
                 "metropolitan",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMGT"
+            "constituent_stations": [
+                {
+                    "name": "Moorgate Underground Station",
+                    "naptan_id": "940GZZLUMGT"
+                }
             ],
             "id": "Moorgate Underground Station"
         },
@@ -1190,9 +1409,15 @@
                 "northern",
                 "waterloo-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLBNK",
-                "940GZZLUBNK"
+            "constituent_stations": [
+                {
+                    "name": "Bank DLR Station",
+                    "naptan_id": "940GZZDLBNK"
+                },
+                {
+                    "name": "Bank Underground Station",
+                    "naptan_id": "940GZZLUBNK"
+                }
             ],
             "id": "Bank Underground Station"
         },
@@ -1209,8 +1434,11 @@
                 "jubilee",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULNB"
+            "constituent_stations": [
+                {
+                    "name": "London Bridge Underground Station",
+                    "naptan_id": "940GZZLULNB"
+                }
             ],
             "id": "London Bridge Underground Station"
         },
@@ -1226,8 +1454,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBOR"
+            "constituent_stations": [
+                {
+                    "name": "Borough Underground Station",
+                    "naptan_id": "940GZZLUBOR"
+                }
             ],
             "id": "Borough Underground Station"
         },
@@ -1244,8 +1475,11 @@
                 "bakerloo",
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEAC"
+            "constituent_stations": [
+                {
+                    "name": "Elephant & Castle Underground Station",
+                    "naptan_id": "940GZZLUEAC"
+                }
             ],
             "id": "Elephant & Castle Underground Station"
         },
@@ -1261,8 +1495,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEGW"
+            "constituent_stations": [
+                {
+                    "name": "Edgware Underground Station",
+                    "naptan_id": "940GZZLUEGW"
+                }
             ],
             "id": "Edgware Underground Station"
         },
@@ -1278,8 +1515,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBTK"
+            "constituent_stations": [
+                {
+                    "name": "Burnt Oak Underground Station",
+                    "naptan_id": "940GZZLUBTK"
+                }
             ],
             "id": "Burnt Oak Underground Station"
         },
@@ -1295,8 +1535,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCND"
+            "constituent_stations": [
+                {
+                    "name": "Colindale Underground Station",
+                    "naptan_id": "940GZZLUCND"
+                }
             ],
             "id": "Colindale Underground Station"
         },
@@ -1312,8 +1555,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHCL"
+            "constituent_stations": [
+                {
+                    "name": "Hendon Central Underground Station",
+                    "naptan_id": "940GZZLUHCL"
+                }
             ],
             "id": "Hendon Central Underground Station"
         },
@@ -1329,8 +1575,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBTX"
+            "constituent_stations": [
+                {
+                    "name": "Brent Cross Underground Station",
+                    "naptan_id": "940GZZLUBTX"
+                }
             ],
             "id": "Brent Cross Underground Station"
         },
@@ -1346,8 +1595,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGGN"
+            "constituent_stations": [
+                {
+                    "name": "Golders Green Underground Station",
+                    "naptan_id": "940GZZLUGGN"
+                }
             ],
             "id": "Golders Green Underground Station"
         },
@@ -1363,8 +1615,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHTD"
+            "constituent_stations": [
+                {
+                    "name": "Hampstead Underground Station",
+                    "naptan_id": "940GZZLUHTD"
+                }
             ],
             "id": "Hampstead Underground Station"
         },
@@ -1380,8 +1635,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBZP"
+            "constituent_stations": [
+                {
+                    "name": "Belsize Park Underground Station",
+                    "naptan_id": "940GZZLUBZP"
+                }
             ],
             "id": "Belsize Park Underground Station"
         },
@@ -1397,8 +1655,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCFM"
+            "constituent_stations": [
+                {
+                    "name": "Chalk Farm Underground Station",
+                    "naptan_id": "940GZZLUCFM"
+                }
             ],
             "id": "Chalk Farm Underground Station"
         },
@@ -1414,8 +1675,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMHL"
+            "constituent_stations": [
+                {
+                    "name": "Mill Hill East Underground Station",
+                    "naptan_id": "940GZZLUMHL"
+                }
             ],
             "id": "Mill Hill East Underground Station"
         },
@@ -1431,8 +1695,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZNEUGST"
+            "constituent_stations": [
+                {
+                    "name": "Nine Elms Underground Station",
+                    "naptan_id": "940GZZNEUGST"
+                }
             ],
             "id": "Nine Elms Underground Station"
         },
@@ -1448,8 +1715,11 @@
             "lines": [
                 "northern"
             ],
-            "constituent_naptan_ids": [
-                "940GZZBPSUST"
+            "constituent_stations": [
+                {
+                    "name": "Battersea Power Station Underground Station",
+                    "naptan_id": "940GZZBPSUST"
+                }
             ],
             "id": "Battersea Power Station Underground Station"
         },
@@ -1473,10 +1743,19 @@
                 "jubilee",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GSTFD",
-                "940GZZDLSTD",
-                "940GZZLUSTD"
+            "constituent_stations": [
+                {
+                    "name": "Stratford (London) Rail Station",
+                    "naptan_id": "910GSTFD"
+                },
+                {
+                    "name": "Stratford DLR Station",
+                    "naptan_id": "940GZZDLSTD"
+                },
+                {
+                    "name": "Stratford Underground Station",
+                    "naptan_id": "940GZZLUSTD"
+                }
             ],
             "id": "Stratford Underground Station"
         },
@@ -1496,9 +1775,15 @@
                 "hammersmith-city",
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLWHM",
-                "940GZZLUWHM"
+            "constituent_stations": [
+                {
+                    "name": "West Ham DLR Station",
+                    "naptan_id": "940GZZDLWHM"
+                },
+                {
+                    "name": "West Ham Underground Station",
+                    "naptan_id": "940GZZLUWHM"
+                }
             ],
             "id": "West Ham Underground Station"
         },
@@ -1516,9 +1801,15 @@
                 "dlr",
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLCGT",
-                "940GZZLUCGT"
+            "constituent_stations": [
+                {
+                    "name": "Canning Town DLR Station",
+                    "naptan_id": "940GZZDLCGT"
+                },
+                {
+                    "name": "Canning Town Underground Station",
+                    "naptan_id": "940GZZLUCGT"
+                }
             ],
             "id": "Canning Town Underground Station"
         },
@@ -1534,8 +1825,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNGW"
+            "constituent_stations": [
+                {
+                    "name": "North Greenwich Underground Station",
+                    "naptan_id": "940GZZLUNGW"
+                }
             ],
             "id": "North Greenwich Underground Station"
         },
@@ -1555,10 +1849,19 @@
                 "elizabeth",
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "910GCANWHRF",
-                "940GZZDLCAN",
-                "940GZZLUCYF"
+            "constituent_stations": [
+                {
+                    "name": "Canary Wharf",
+                    "naptan_id": "910GCANWHRF"
+                },
+                {
+                    "name": "Canary Wharf DLR Station",
+                    "naptan_id": "940GZZDLCAN"
+                },
+                {
+                    "name": "Canary Wharf Underground Station",
+                    "naptan_id": "940GZZLUCYF"
+                }
             ],
             "id": "Canary Wharf Underground Station"
         },
@@ -1574,8 +1877,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBMY"
+            "constituent_stations": [
+                {
+                    "name": "Bermondsey Underground Station",
+                    "naptan_id": "940GZZLUBMY"
+                }
             ],
             "id": "Bermondsey Underground Station"
         },
@@ -1591,8 +1897,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSWK"
+            "constituent_stations": [
+                {
+                    "name": "Southwark Underground Station",
+                    "naptan_id": "940GZZLUSWK"
+                }
             ],
             "id": "Southwark Underground Station"
         },
@@ -1610,8 +1919,11 @@
                 "district",
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWSM"
+            "constituent_stations": [
+                {
+                    "name": "Westminster Underground Station",
+                    "naptan_id": "940GZZLUWSM"
+                }
             ],
             "id": "Westminster Underground Station"
         },
@@ -1629,8 +1941,11 @@
                 "piccadilly",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGPK"
+            "constituent_stations": [
+                {
+                    "name": "Green Park Underground Station",
+                    "naptan_id": "940GZZLUGPK"
+                }
             ],
             "id": "Green Park Underground Station"
         },
@@ -1649,9 +1964,15 @@
                 "elizabeth",
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "910GBONDST",
-                "940GZZLUBND"
+            "constituent_stations": [
+                {
+                    "name": "Bond Street",
+                    "naptan_id": "910GBONDST"
+                },
+                {
+                    "name": "Bond Street Underground Station",
+                    "naptan_id": "940GZZLUBND"
+                }
             ],
             "id": "Bond Street Underground Station"
         },
@@ -1671,8 +1992,11 @@
                 "jubilee",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBST"
+            "constituent_stations": [
+                {
+                    "name": "Baker Street Underground Station",
+                    "naptan_id": "940GZZLUBST"
+                }
             ],
             "id": "Baker Street Underground Station"
         },
@@ -1688,8 +2012,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSJW"
+            "constituent_stations": [
+                {
+                    "name": "St. John's Wood Underground Station",
+                    "naptan_id": "940GZZLUSJW"
+                }
             ],
             "id": "St. John's Wood Underground Station"
         },
@@ -1705,8 +2032,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSWC"
+            "constituent_stations": [
+                {
+                    "name": "Swiss Cottage Underground Station",
+                    "naptan_id": "940GZZLUSWC"
+                }
             ],
             "id": "Swiss Cottage Underground Station"
         },
@@ -1723,8 +2053,11 @@
                 "jubilee",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUFYR"
+            "constituent_stations": [
+                {
+                    "name": "Finchley Road Underground Station",
+                    "naptan_id": "940GZZLUFYR"
+                }
             ],
             "id": "Finchley Road Underground Station"
         },
@@ -1742,9 +2075,15 @@
                 "jubilee",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GWHMDSTD",
-                "940GZZLUWHP"
+            "constituent_stations": [
+                {
+                    "name": "West Hampstead Rail Station",
+                    "naptan_id": "910GWHMDSTD"
+                },
+                {
+                    "name": "West Hampstead Underground Station",
+                    "naptan_id": "940GZZLUWHP"
+                }
             ],
             "id": "West Hampstead Underground Station"
         },
@@ -1760,8 +2099,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKBN"
+            "constituent_stations": [
+                {
+                    "name": "Kilburn Underground Station",
+                    "naptan_id": "940GZZLUKBN"
+                }
             ],
             "id": "Kilburn Underground Station"
         },
@@ -1777,8 +2119,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWIG"
+            "constituent_stations": [
+                {
+                    "name": "Willesden Green Underground Station",
+                    "naptan_id": "940GZZLUWIG"
+                }
             ],
             "id": "Willesden Green Underground Station"
         },
@@ -1794,8 +2139,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUDOH"
+            "constituent_stations": [
+                {
+                    "name": "Dollis Hill Underground Station",
+                    "naptan_id": "940GZZLUDOH"
+                }
             ],
             "id": "Dollis Hill Underground Station"
         },
@@ -1811,8 +2159,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNDN"
+            "constituent_stations": [
+                {
+                    "name": "Neasden Underground Station",
+                    "naptan_id": "940GZZLUNDN"
+                }
             ],
             "id": "Neasden Underground Station"
         },
@@ -1829,8 +2180,11 @@
                 "jubilee",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWYP"
+            "constituent_stations": [
+                {
+                    "name": "Wembley Park Underground Station",
+                    "naptan_id": "940GZZLUWYP"
+                }
             ],
             "id": "Wembley Park Underground Station"
         },
@@ -1846,8 +2200,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKBY"
+            "constituent_stations": [
+                {
+                    "name": "Kingsbury Underground Station",
+                    "naptan_id": "940GZZLUKBY"
+                }
             ],
             "id": "Kingsbury Underground Station"
         },
@@ -1863,8 +2220,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUQBY"
+            "constituent_stations": [
+                {
+                    "name": "Queensbury Underground Station",
+                    "naptan_id": "940GZZLUQBY"
+                }
             ],
             "id": "Queensbury Underground Station"
         },
@@ -1880,8 +2240,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCPK"
+            "constituent_stations": [
+                {
+                    "name": "Canons Park Underground Station",
+                    "naptan_id": "940GZZLUCPK"
+                }
             ],
             "id": "Canons Park Underground Station"
         },
@@ -1897,8 +2260,11 @@
             "lines": [
                 "jubilee"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSTM"
+            "constituent_stations": [
+                {
+                    "name": "Stanmore Underground Station",
+                    "naptan_id": "940GZZLUSTM"
+                }
             ],
             "id": "Stanmore Underground Station"
         },
@@ -1914,8 +2280,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCKS"
+            "constituent_stations": [
+                {
+                    "name": "Cockfosters Underground Station",
+                    "naptan_id": "940GZZLUCKS"
+                }
             ],
             "id": "Cockfosters Underground Station"
         },
@@ -1931,8 +2300,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUOAK"
+            "constituent_stations": [
+                {
+                    "name": "Oakwood Underground Station",
+                    "naptan_id": "940GZZLUOAK"
+                }
             ],
             "id": "Oakwood Underground Station"
         },
@@ -1948,8 +2320,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSGT"
+            "constituent_stations": [
+                {
+                    "name": "Southgate Underground Station",
+                    "naptan_id": "940GZZLUSGT"
+                }
             ],
             "id": "Southgate Underground Station"
         },
@@ -1965,8 +2340,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUASG"
+            "constituent_stations": [
+                {
+                    "name": "Arnos Grove Underground Station",
+                    "naptan_id": "940GZZLUASG"
+                }
             ],
             "id": "Arnos Grove Underground Station"
         },
@@ -1982,8 +2360,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBDS"
+            "constituent_stations": [
+                {
+                    "name": "Bounds Green Underground Station",
+                    "naptan_id": "940GZZLUBDS"
+                }
             ],
             "id": "Bounds Green Underground Station"
         },
@@ -1999,8 +2380,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWOG"
+            "constituent_stations": [
+                {
+                    "name": "Wood Green Underground Station",
+                    "naptan_id": "940GZZLUWOG"
+                }
             ],
             "id": "Wood Green Underground Station"
         },
@@ -2016,8 +2400,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTPN"
+            "constituent_stations": [
+                {
+                    "name": "Turnpike Lane Underground Station",
+                    "naptan_id": "940GZZLUTPN"
+                }
             ],
             "id": "Turnpike Lane Underground Station"
         },
@@ -2033,8 +2420,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMRH"
+            "constituent_stations": [
+                {
+                    "name": "Manor House Underground Station",
+                    "naptan_id": "940GZZLUMRH"
+                }
             ],
             "id": "Manor House Underground Station"
         },
@@ -2051,8 +2441,11 @@
                 "piccadilly",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUFPK"
+            "constituent_stations": [
+                {
+                    "name": "Finsbury Park Underground Station",
+                    "naptan_id": "940GZZLUFPK"
+                }
             ],
             "id": "Finsbury Park Underground Station"
         },
@@ -2068,8 +2461,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUASL"
+            "constituent_stations": [
+                {
+                    "name": "Arsenal Underground Station",
+                    "naptan_id": "940GZZLUASL"
+                }
             ],
             "id": "Arsenal Underground Station"
         },
@@ -2085,8 +2481,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHWY"
+            "constituent_stations": [
+                {
+                    "name": "Holloway Road Underground Station",
+                    "naptan_id": "940GZZLUHWY"
+                }
             ],
             "id": "Holloway Road Underground Station"
         },
@@ -2102,8 +2501,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCAR"
+            "constituent_stations": [
+                {
+                    "name": "Caledonian Road Underground Station",
+                    "naptan_id": "940GZZLUCAR"
+                }
             ],
             "id": "Caledonian Road Underground Station"
         },
@@ -2119,8 +2521,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURSQ"
+            "constituent_stations": [
+                {
+                    "name": "Russell Square Underground Station",
+                    "naptan_id": "940GZZLURSQ"
+                }
             ],
             "id": "Russell Square Underground Station"
         },
@@ -2137,8 +2542,11 @@
                 "central",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHBN"
+            "constituent_stations": [
+                {
+                    "name": "Holborn Underground Station",
+                    "naptan_id": "940GZZLUHBN"
+                }
             ],
             "id": "Holborn Underground Station"
         },
@@ -2154,8 +2562,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCGN"
+            "constituent_stations": [
+                {
+                    "name": "Covent Garden Underground Station",
+                    "naptan_id": "940GZZLUCGN"
+                }
             ],
             "id": "Covent Garden Underground Station"
         },
@@ -2172,8 +2583,11 @@
                 "bakerloo",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPCC"
+            "constituent_stations": [
+                {
+                    "name": "Piccadilly Circus Underground Station",
+                    "naptan_id": "940GZZLUPCC"
+                }
             ],
             "id": "Piccadilly Circus Underground Station"
         },
@@ -2189,8 +2603,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHPC"
+            "constituent_stations": [
+                {
+                    "name": "Hyde Park Corner Underground Station",
+                    "naptan_id": "940GZZLUHPC"
+                }
             ],
             "id": "Hyde Park Corner Underground Station"
         },
@@ -2207,8 +2624,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKNB"
+            "constituent_stations": [
+                {
+                    "name": "Knightsbridge Underground Station",
+                    "naptan_id": "940GZZLUKNB"
+                }
             ],
             "id": "Knightsbridge Underground Station"
         },
@@ -2226,8 +2646,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSKS"
+            "constituent_stations": [
+                {
+                    "name": "South Kensington Underground Station",
+                    "naptan_id": "940GZZLUSKS"
+                }
             ],
             "id": "South Kensington Underground Station"
         },
@@ -2245,8 +2668,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGTR"
+            "constituent_stations": [
+                {
+                    "name": "Gloucester Road Underground Station",
+                    "naptan_id": "940GZZLUGTR"
+                }
             ],
             "id": "Gloucester Road Underground Station"
         },
@@ -2263,8 +2689,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUECT"
+            "constituent_stations": [
+                {
+                    "name": "Earl's Court Underground Station",
+                    "naptan_id": "940GZZLUECT"
+                }
             ],
             "id": "Earl's Court Underground Station"
         },
@@ -2281,8 +2710,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBSC"
+            "constituent_stations": [
+                {
+                    "name": "Barons Court Underground Station",
+                    "naptan_id": "940GZZLUBSC"
+                }
             ],
             "id": "Barons Court Underground Station"
         },
@@ -2301,9 +2733,15 @@
                 "hammersmith-city",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHSC",
-                "940GZZLUHSD"
+            "constituent_stations": [
+                {
+                    "name": "Hammersmith (H&C Line) Underground Station",
+                    "naptan_id": "940GZZLUHSC"
+                },
+                {
+                    "name": "Hammersmith (Dist&Picc Line) Underground Station",
+                    "naptan_id": "940GZZLUHSD"
+                }
             ],
             "id": "Hammersmith (Dist&Picc Line) Underground Station"
         },
@@ -2320,8 +2758,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTNG"
+            "constituent_stations": [
+                {
+                    "name": "Turnham Green Underground Station",
+                    "naptan_id": "940GZZLUTNG"
+                }
             ],
             "id": "Turnham Green Underground Station"
         },
@@ -2338,8 +2779,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUACT"
+            "constituent_stations": [
+                {
+                    "name": "Acton Town Underground Station",
+                    "naptan_id": "940GZZLUACT"
+                }
             ],
             "id": "Acton Town Underground Station"
         },
@@ -2356,8 +2800,11 @@
                 "district",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUECM"
+            "constituent_stations": [
+                {
+                    "name": "Ealing Common Underground Station",
+                    "naptan_id": "940GZZLUECM"
+                }
             ],
             "id": "Ealing Common Underground Station"
         },
@@ -2373,8 +2820,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNEN"
+            "constituent_stations": [
+                {
+                    "name": "North Ealing Underground Station",
+                    "naptan_id": "940GZZLUNEN"
+                }
             ],
             "id": "North Ealing Underground Station"
         },
@@ -2390,8 +2840,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPKR"
+            "constituent_stations": [
+                {
+                    "name": "Park Royal Underground Station",
+                    "naptan_id": "940GZZLUPKR"
+                }
             ],
             "id": "Park Royal Underground Station"
         },
@@ -2407,8 +2860,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUALP"
+            "constituent_stations": [
+                {
+                    "name": "Alperton Underground Station",
+                    "naptan_id": "940GZZLUALP"
+                }
             ],
             "id": "Alperton Underground Station"
         },
@@ -2424,8 +2880,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSUT"
+            "constituent_stations": [
+                {
+                    "name": "Sudbury Town Underground Station",
+                    "naptan_id": "940GZZLUSUT"
+                }
             ],
             "id": "Sudbury Town Underground Station"
         },
@@ -2441,8 +2900,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSUH"
+            "constituent_stations": [
+                {
+                    "name": "Sudbury Hill Underground Station",
+                    "naptan_id": "940GZZLUSUH"
+                }
             ],
             "id": "Sudbury Hill Underground Station"
         },
@@ -2458,8 +2920,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSHH"
+            "constituent_stations": [
+                {
+                    "name": "South Harrow Underground Station",
+                    "naptan_id": "940GZZLUSHH"
+                }
             ],
             "id": "South Harrow Underground Station"
         },
@@ -2476,8 +2941,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURYL"
+            "constituent_stations": [
+                {
+                    "name": "Rayners Lane Underground Station",
+                    "naptan_id": "940GZZLURYL"
+                }
             ],
             "id": "Rayners Lane Underground Station"
         },
@@ -2494,8 +2962,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEAE"
+            "constituent_stations": [
+                {
+                    "name": "Eastcote Underground Station",
+                    "naptan_id": "940GZZLUEAE"
+                }
             ],
             "id": "Eastcote Underground Station"
         },
@@ -2512,8 +2983,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURSM"
+            "constituent_stations": [
+                {
+                    "name": "Ruislip Manor Underground Station",
+                    "naptan_id": "940GZZLURSM"
+                }
             ],
             "id": "Ruislip Manor Underground Station"
         },
@@ -2530,8 +3004,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURSP"
+            "constituent_stations": [
+                {
+                    "name": "Ruislip Underground Station",
+                    "naptan_id": "940GZZLURSP"
+                }
             ],
             "id": "Ruislip Underground Station"
         },
@@ -2548,8 +3025,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUICK"
+            "constituent_stations": [
+                {
+                    "name": "Ickenham Underground Station",
+                    "naptan_id": "940GZZLUICK"
+                }
             ],
             "id": "Ickenham Underground Station"
         },
@@ -2566,8 +3046,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHGD"
+            "constituent_stations": [
+                {
+                    "name": "Hillingdon Underground Station",
+                    "naptan_id": "940GZZLUHGD"
+                }
             ],
             "id": "Hillingdon Underground Station"
         },
@@ -2584,8 +3067,11 @@
                 "metropolitan",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUUXB"
+            "constituent_stations": [
+                {
+                    "name": "Uxbridge Underground Station",
+                    "naptan_id": "940GZZLUUXB"
+                }
             ],
             "id": "Uxbridge Underground Station"
         },
@@ -2601,8 +3087,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSEA"
+            "constituent_stations": [
+                {
+                    "name": "South Ealing Underground Station",
+                    "naptan_id": "940GZZLUSEA"
+                }
             ],
             "id": "South Ealing Underground Station"
         },
@@ -2618,8 +3107,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNFD"
+            "constituent_stations": [
+                {
+                    "name": "Northfields Underground Station",
+                    "naptan_id": "940GZZLUNFD"
+                }
             ],
             "id": "Northfields Underground Station"
         },
@@ -2635,8 +3127,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBOS"
+            "constituent_stations": [
+                {
+                    "name": "Boston Manor Underground Station",
+                    "naptan_id": "940GZZLUBOS"
+                }
             ],
             "id": "Boston Manor Underground Station"
         },
@@ -2652,8 +3147,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUOSY"
+            "constituent_stations": [
+                {
+                    "name": "Osterley Underground Station",
+                    "naptan_id": "940GZZLUOSY"
+                }
             ],
             "id": "Osterley Underground Station"
         },
@@ -2669,8 +3167,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHWE"
+            "constituent_stations": [
+                {
+                    "name": "Hounslow East Underground Station",
+                    "naptan_id": "940GZZLUHWE"
+                }
             ],
             "id": "Hounslow East Underground Station"
         },
@@ -2686,8 +3187,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHWC"
+            "constituent_stations": [
+                {
+                    "name": "Hounslow Central Underground Station",
+                    "naptan_id": "940GZZLUHWC"
+                }
             ],
             "id": "Hounslow Central Underground Station"
         },
@@ -2703,8 +3207,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHWT"
+            "constituent_stations": [
+                {
+                    "name": "Hounslow West Underground Station",
+                    "naptan_id": "940GZZLUHWT"
+                }
             ],
             "id": "Hounslow West Underground Station"
         },
@@ -2720,8 +3227,11 @@
             "lines": [
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHNX"
+            "constituent_stations": [
+                {
+                    "name": "Hatton Cross Underground Station",
+                    "naptan_id": "940GZZLUHNX"
+                }
             ],
             "id": "Hatton Cross Underground Station"
         },
@@ -2740,9 +3250,15 @@
                 "elizabeth",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "910GHTRWAPT",
-                "940GZZLUHRC"
+            "constituent_stations": [
+                {
+                    "name": "Heathrow Terminals 2 & 3 Rail Station",
+                    "naptan_id": "910GHTRWAPT"
+                },
+                {
+                    "name": "Heathrow Terminals 2 & 3 Underground Station",
+                    "naptan_id": "940GZZLUHRC"
+                }
             ],
             "id": "Heathrow Terminals 2 & 3 Underground Station"
         },
@@ -2761,9 +3277,15 @@
                 "elizabeth",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "910GHTRWTM5",
-                "940GZZLUHR5"
+            "constituent_stations": [
+                {
+                    "name": "Heathrow Terminal 5 Rail Station",
+                    "naptan_id": "910GHTRWTM5"
+                },
+                {
+                    "name": "Heathrow Terminal 5 Underground Station",
+                    "naptan_id": "940GZZLUHR5"
+                }
             ],
             "id": "Heathrow Terminal 5 Underground Station"
         },
@@ -2781,9 +3303,15 @@
                 "elizabeth",
                 "piccadilly"
             ],
-            "constituent_naptan_ids": [
-                "910GHTRWTM4",
-                "940GZZLUHR4"
+            "constituent_stations": [
+                {
+                    "name": "Heathrow Terminal 4 Rail Station",
+                    "naptan_id": "910GHTRWTM4"
+                },
+                {
+                    "name": "Heathrow Terminal 4 Underground Station",
+                    "naptan_id": "940GZZLUHR4"
+                }
             ],
             "id": "Heathrow Terminal 4 Underground Station"
         },
@@ -2802,9 +3330,15 @@
                 "district",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GRICHMND",
-                "940GZZLURMD"
+            "constituent_stations": [
+                {
+                    "name": "Richmond (London) Rail Station",
+                    "naptan_id": "910GRICHMND"
+                },
+                {
+                    "name": "Richmond Underground Station",
+                    "naptan_id": "940GZZLURMD"
+                }
             ],
             "id": "Richmond (London) Rail Station"
         },
@@ -2822,9 +3356,15 @@
                 "district",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GKEWGRDN",
-                "940GZZLUKWG"
+            "constituent_stations": [
+                {
+                    "name": "Kew Gardens Rail Station",
+                    "naptan_id": "910GKEWGRDN"
+                },
+                {
+                    "name": "Kew Gardens Underground Station",
+                    "naptan_id": "940GZZLUKWG"
+                }
             ],
             "id": "Kew Gardens Rail Station"
         },
@@ -2842,9 +3382,15 @@
                 "district",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GGNRSBRY",
-                "940GZZLUGBY"
+            "constituent_stations": [
+                {
+                    "name": "Gunnersbury Rail Station",
+                    "naptan_id": "910GGNRSBRY"
+                },
+                {
+                    "name": "Gunnersbury Underground Station",
+                    "naptan_id": "940GZZLUGBY"
+                }
             ],
             "id": "Gunnersbury Rail Station"
         },
@@ -2860,8 +3406,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GSACTON"
+            "constituent_stations": [
+                {
+                    "name": "South Acton Rail Station",
+                    "naptan_id": "910GSACTON"
+                }
             ],
             "id": "South Acton Rail Station"
         },
@@ -2877,8 +3426,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GACTNCTL"
+            "constituent_stations": [
+                {
+                    "name": "Acton Central Rail Station",
+                    "naptan_id": "910GACTNCTL"
+                }
             ],
             "id": "Acton Central Rail Station"
         },
@@ -2897,9 +3449,15 @@
                 "lioness",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GWLSDJHL",
-                "940GZZLUWJN"
+            "constituent_stations": [
+                {
+                    "name": "Willesden Junction Rail Station",
+                    "naptan_id": "910GWLSDJHL"
+                },
+                {
+                    "name": "Willesden Junction Underground Station",
+                    "naptan_id": "940GZZLUWJN"
+                }
             ],
             "id": "Willesden Junction Rail Station"
         },
@@ -2915,8 +3473,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GKENR"
+            "constituent_stations": [
+                {
+                    "name": "Kensal Rise Rail Station",
+                    "naptan_id": "910GKENR"
+                }
             ],
             "id": "Kensal Rise Rail Station"
         },
@@ -2932,8 +3493,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GBRBYPK"
+            "constituent_stations": [
+                {
+                    "name": "Brondesbury Park Rail Station",
+                    "naptan_id": "910GBRBYPK"
+                }
             ],
             "id": "Brondesbury Park Rail Station"
         },
@@ -2949,8 +3513,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GBRBY"
+            "constituent_stations": [
+                {
+                    "name": "Brondesbury Rail Station",
+                    "naptan_id": "910GBRBY"
+                }
             ],
             "id": "Brondesbury Rail Station"
         },
@@ -2966,8 +3533,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GFNCHLYR"
+            "constituent_stations": [
+                {
+                    "name": "Finchley Road & Frognal Rail Station",
+                    "naptan_id": "910GFNCHLYR"
+                }
             ],
             "id": "Finchley Road & Frognal Rail Station"
         },
@@ -2983,8 +3553,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GHMPSTDH"
+            "constituent_stations": [
+                {
+                    "name": "Hampstead Heath Rail Station",
+                    "naptan_id": "910GHMPSTDH"
+                }
             ],
             "id": "Hampstead Heath Rail Station"
         },
@@ -3001,8 +3574,11 @@
                 "mildmay",
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GGOSPLOK"
+            "constituent_stations": [
+                {
+                    "name": "Gospel Oak Rail Station",
+                    "naptan_id": "910GGOSPLOK"
+                }
             ],
             "id": "Gospel Oak Rail Station"
         },
@@ -3018,8 +3594,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GKNTSHTW"
+            "constituent_stations": [
+                {
+                    "name": "Kentish Town West Rail Station",
+                    "naptan_id": "910GKNTSHTW"
+                }
             ],
             "id": "Kentish Town West Rail Station"
         },
@@ -3035,8 +3614,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GCMDNRD"
+            "constituent_stations": [
+                {
+                    "name": "Camden Road Rail Station",
+                    "naptan_id": "910GCMDNRD"
+                }
             ],
             "id": "Camden Road Rail Station"
         },
@@ -3052,8 +3634,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GCLDNNRB"
+            "constituent_stations": [
+                {
+                    "name": "Caledonian Road & Barnsbury Rail Station",
+                    "naptan_id": "910GCLDNNRB"
+                }
             ],
             "id": "Caledonian Road & Barnsbury Rail Station"
         },
@@ -3069,8 +3654,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GDALSKLD"
+            "constituent_stations": [
+                {
+                    "name": "Dalston Kingsland Rail Station",
+                    "naptan_id": "910GDALSKLD"
+                }
             ],
             "id": "Dalston Kingsland Rail Station"
         },
@@ -3086,8 +3674,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GHACKNYC"
+            "constituent_stations": [
+                {
+                    "name": "Hackney Central Rail Station",
+                    "naptan_id": "910GHACKNYC"
+                }
             ],
             "id": "Hackney Central Rail Station"
         },
@@ -3103,8 +3694,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GHOMRTON"
+            "constituent_stations": [
+                {
+                    "name": "Homerton Rail Station",
+                    "naptan_id": "910GHOMRTON"
+                }
             ],
             "id": "Homerton Rail Station"
         },
@@ -3120,8 +3714,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GHACKNYW"
+            "constituent_stations": [
+                {
+                    "name": "Hackney Wick Rail Station",
+                    "naptan_id": "910GHACKNYW"
+                }
             ],
             "id": "Hackney Wick Rail Station"
         },
@@ -3137,8 +3734,11 @@
             "lines": [
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GCSEAH"
+            "constituent_stations": [
+                {
+                    "name": "Imperial Wharf Rail Station",
+                    "naptan_id": "910GCSEAH"
+                }
             ],
             "id": "Imperial Wharf Rail Station"
         },
@@ -3156,9 +3756,15 @@
                 "district",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GWBRMPTN",
-                "940GZZLUWBN"
+            "constituent_stations": [
+                {
+                    "name": "West Brompton Rail Station",
+                    "naptan_id": "910GWBRMPTN"
+                },
+                {
+                    "name": "West Brompton Underground Station",
+                    "naptan_id": "940GZZLUWBN"
+                }
             ],
             "id": "West Brompton Rail Station"
         },
@@ -3176,9 +3782,15 @@
                 "district",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GKENOLYM",
-                "940GZZLUKOY"
+            "constituent_stations": [
+                {
+                    "name": "Kensington (Olympia) Rail Station",
+                    "naptan_id": "910GKENOLYM"
+                },
+                {
+                    "name": "Kensington (Olympia) Underground Station",
+                    "naptan_id": "940GZZLUKOY"
+                }
             ],
             "id": "Kensington (Olympia) Rail Station"
         },
@@ -3196,9 +3808,15 @@
                 "central",
                 "mildmay"
             ],
-            "constituent_naptan_ids": [
-                "910GSHPDSB",
-                "940GZZLUSBC"
+            "constituent_stations": [
+                {
+                    "name": "Shepherds Bush Rail Station",
+                    "naptan_id": "910GSHPDSB"
+                },
+                {
+                    "name": "Shepherd's Bush (Central) Underground Station",
+                    "naptan_id": "940GZZLUSBC"
+                }
             ],
             "id": "Shepherds Bush Rail Station"
         },
@@ -3217,9 +3835,15 @@
                 "district",
                 "liberty"
             ],
-            "constituent_naptan_ids": [
-                "910GUPMNSTR",
-                "940GZZLUUPM"
+            "constituent_stations": [
+                {
+                    "name": "Upminster Rail Station",
+                    "naptan_id": "910GUPMNSTR"
+                },
+                {
+                    "name": "Upminster Underground Station",
+                    "naptan_id": "940GZZLUUPM"
+                }
             ],
             "id": "Upminster Underground Station"
         },
@@ -3235,8 +3859,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUUPB"
+            "constituent_stations": [
+                {
+                    "name": "Upminster Bridge Underground Station",
+                    "naptan_id": "940GZZLUUPB"
+                }
             ],
             "id": "Upminster Bridge Underground Station"
         },
@@ -3252,8 +3879,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHCH"
+            "constituent_stations": [
+                {
+                    "name": "Hornchurch Underground Station",
+                    "naptan_id": "940GZZLUHCH"
+                }
             ],
             "id": "Hornchurch Underground Station"
         },
@@ -3269,8 +3899,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEPK"
+            "constituent_stations": [
+                {
+                    "name": "Elm Park Underground Station",
+                    "naptan_id": "940GZZLUEPK"
+                }
             ],
             "id": "Elm Park Underground Station"
         },
@@ -3286,8 +3919,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUDGE"
+            "constituent_stations": [
+                {
+                    "name": "Dagenham East Underground Station",
+                    "naptan_id": "940GZZLUDGE"
+                }
             ],
             "id": "Dagenham East Underground Station"
         },
@@ -3303,8 +3939,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUDGY"
+            "constituent_stations": [
+                {
+                    "name": "Dagenham Heathway Underground Station",
+                    "naptan_id": "940GZZLUDGY"
+                }
             ],
             "id": "Dagenham Heathway Underground Station"
         },
@@ -3320,8 +3959,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBEC"
+            "constituent_stations": [
+                {
+                    "name": "Becontree Underground Station",
+                    "naptan_id": "940GZZLUBEC"
+                }
             ],
             "id": "Becontree Underground Station"
         },
@@ -3337,8 +3979,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUUPY"
+            "constituent_stations": [
+                {
+                    "name": "Upney Underground Station",
+                    "naptan_id": "940GZZLUUPY"
+                }
             ],
             "id": "Upney Underground Station"
         },
@@ -3358,9 +4003,15 @@
                 "hammersmith-city",
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GBARKING",
-                "940GZZLUBKG"
+            "constituent_stations": [
+                {
+                    "name": "Barking Rail Station",
+                    "naptan_id": "910GBARKING"
+                },
+                {
+                    "name": "Barking Underground Station",
+                    "naptan_id": "940GZZLUBKG"
+                }
             ],
             "id": "Barking Underground Station"
         },
@@ -3377,8 +4028,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEHM"
+            "constituent_stations": [
+                {
+                    "name": "East Ham Underground Station",
+                    "naptan_id": "940GZZLUEHM"
+                }
             ],
             "id": "East Ham Underground Station"
         },
@@ -3395,8 +4049,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUUPK"
+            "constituent_stations": [
+                {
+                    "name": "Upton Park Underground Station",
+                    "naptan_id": "940GZZLUUPK"
+                }
             ],
             "id": "Upton Park Underground Station"
         },
@@ -3413,8 +4070,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPLW"
+            "constituent_stations": [
+                {
+                    "name": "Plaistow Underground Station",
+                    "naptan_id": "940GZZLUPLW"
+                }
             ],
             "id": "Plaistow Underground Station"
         },
@@ -3431,8 +4091,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBBB"
+            "constituent_stations": [
+                {
+                    "name": "Bromley-by-Bow Underground Station",
+                    "naptan_id": "940GZZLUBBB"
+                }
             ],
             "id": "Bromley-by-Bow Underground Station"
         },
@@ -3449,8 +4112,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBWR"
+            "constituent_stations": [
+                {
+                    "name": "Bow Road Underground Station",
+                    "naptan_id": "940GZZLUBWR"
+                }
             ],
             "id": "Bow Road Underground Station"
         },
@@ -3468,8 +4134,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMED"
+            "constituent_stations": [
+                {
+                    "name": "Mile End Underground Station",
+                    "naptan_id": "940GZZLUMED"
+                }
             ],
             "id": "Mile End Underground Station"
         },
@@ -3486,8 +4155,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSGN"
+            "constituent_stations": [
+                {
+                    "name": "Stepney Green Underground Station",
+                    "naptan_id": "940GZZLUSGN"
+                }
             ],
             "id": "Stepney Green Underground Station"
         },
@@ -3504,8 +4176,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUADE"
+            "constituent_stations": [
+                {
+                    "name": "Aldgate East Underground Station",
+                    "naptan_id": "940GZZLUADE"
+                }
             ],
             "id": "Aldgate East Underground Station"
         },
@@ -3522,8 +4197,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTWH"
+            "constituent_stations": [
+                {
+                    "name": "Tower Hill Underground Station",
+                    "naptan_id": "940GZZLUTWH"
+                }
             ],
             "id": "Tower Hill Underground Station"
         },
@@ -3540,8 +4218,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMMT"
+            "constituent_stations": [
+                {
+                    "name": "Monument Underground Station",
+                    "naptan_id": "940GZZLUMMT"
+                }
             ],
             "id": "Monument Underground Station"
         },
@@ -3558,8 +4239,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCST"
+            "constituent_stations": [
+                {
+                    "name": "Cannon Street Underground Station",
+                    "naptan_id": "940GZZLUCST"
+                }
             ],
             "id": "Cannon Street Underground Station"
         },
@@ -3576,8 +4260,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMSH"
+            "constituent_stations": [
+                {
+                    "name": "Mansion House Underground Station",
+                    "naptan_id": "940GZZLUMSH"
+                }
             ],
             "id": "Mansion House Underground Station"
         },
@@ -3594,8 +4281,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBKF"
+            "constituent_stations": [
+                {
+                    "name": "Blackfriars Underground Station",
+                    "naptan_id": "940GZZLUBKF"
+                }
             ],
             "id": "Blackfriars Underground Station"
         },
@@ -3612,8 +4302,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTMP"
+            "constituent_stations": [
+                {
+                    "name": "Temple Underground Station",
+                    "naptan_id": "940GZZLUTMP"
+                }
             ],
             "id": "Temple Underground Station"
         },
@@ -3630,8 +4323,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSJP"
+            "constituent_stations": [
+                {
+                    "name": "St. James's Park Underground Station",
+                    "naptan_id": "940GZZLUSJP"
+                }
             ],
             "id": "St. James's Park Underground Station"
         },
@@ -3649,8 +4345,11 @@
                 "district",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUVIC"
+            "constituent_stations": [
+                {
+                    "name": "Victoria Underground Station",
+                    "naptan_id": "940GZZLUVIC"
+                }
             ],
             "id": "Victoria Underground Station"
         },
@@ -3667,8 +4366,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSSQ"
+            "constituent_stations": [
+                {
+                    "name": "Sloane Square Underground Station",
+                    "naptan_id": "940GZZLUSSQ"
+                }
             ],
             "id": "Sloane Square Underground Station"
         },
@@ -3684,8 +4386,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWKN"
+            "constituent_stations": [
+                {
+                    "name": "West Kensington Underground Station",
+                    "naptan_id": "940GZZLUWKN"
+                }
             ],
             "id": "West Kensington Underground Station"
         },
@@ -3701,8 +4406,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURVP"
+            "constituent_stations": [
+                {
+                    "name": "Ravenscourt Park Underground Station",
+                    "naptan_id": "940GZZLURVP"
+                }
             ],
             "id": "Ravenscourt Park Underground Station"
         },
@@ -3718,8 +4426,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSFB"
+            "constituent_stations": [
+                {
+                    "name": "Stamford Brook Underground Station",
+                    "naptan_id": "940GZZLUSFB"
+                }
             ],
             "id": "Stamford Brook Underground Station"
         },
@@ -3735,8 +4446,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCWP"
+            "constituent_stations": [
+                {
+                    "name": "Chiswick Park Underground Station",
+                    "naptan_id": "940GZZLUCWP"
+                }
             ],
             "id": "Chiswick Park Underground Station"
         },
@@ -3756,9 +4470,15 @@
                 "district",
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GEALINGB",
-                "940GZZLUEBY"
+            "constituent_stations": [
+                {
+                    "name": "Ealing Broadway Rail Station",
+                    "naptan_id": "910GEALINGB"
+                },
+                {
+                    "name": "Ealing Broadway Underground Station",
+                    "naptan_id": "940GZZLUEBY"
+                }
             ],
             "id": "Ealing Broadway Underground Station"
         },
@@ -3774,8 +4494,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUFBY"
+            "constituent_stations": [
+                {
+                    "name": "Fulham Broadway Underground Station",
+                    "naptan_id": "940GZZLUFBY"
+                }
             ],
             "id": "Fulham Broadway Underground Station"
         },
@@ -3791,8 +4514,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPSG"
+            "constituent_stations": [
+                {
+                    "name": "Parsons Green Underground Station",
+                    "naptan_id": "940GZZLUPSG"
+                }
             ],
             "id": "Parsons Green Underground Station"
         },
@@ -3808,8 +4534,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPYB"
+            "constituent_stations": [
+                {
+                    "name": "Putney Bridge Underground Station",
+                    "naptan_id": "940GZZLUPYB"
+                }
             ],
             "id": "Putney Bridge Underground Station"
         },
@@ -3825,8 +4554,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEPY"
+            "constituent_stations": [
+                {
+                    "name": "East Putney Underground Station",
+                    "naptan_id": "940GZZLUEPY"
+                }
             ],
             "id": "East Putney Underground Station"
         },
@@ -3842,8 +4574,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSFS"
+            "constituent_stations": [
+                {
+                    "name": "Southfields Underground Station",
+                    "naptan_id": "940GZZLUSFS"
+                }
             ],
             "id": "Southfields Underground Station"
         },
@@ -3859,8 +4594,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWIP"
+            "constituent_stations": [
+                {
+                    "name": "Wimbledon Park Underground Station",
+                    "naptan_id": "940GZZLUWIP"
+                }
             ],
             "id": "Wimbledon Park Underground Station"
         },
@@ -3876,8 +4614,11 @@
             "lines": [
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWIM"
+            "constituent_stations": [
+                {
+                    "name": "Wimbledon Underground Station",
+                    "naptan_id": "940GZZLUWIM"
+                }
             ],
             "id": "Wimbledon Underground Station"
         },
@@ -3895,8 +4636,11 @@
                 "district",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUERC"
+            "constituent_stations": [
+                {
+                    "name": "Edgware Road (Circle Line) Underground Station",
+                    "naptan_id": "940GZZLUERC"
+                }
             ],
             "id": "Edgware Road (Circle Line) Underground Station"
         },
@@ -3918,11 +4662,23 @@
                 "elizabeth",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "910GPADTLL",
-                "910GPADTON",
-                "940GZZLUPAC",
-                "940GZZLUPAH"
+            "constituent_stations": [
+                {
+                    "name": "Paddington",
+                    "naptan_id": "910GPADTLL"
+                },
+                {
+                    "name": "London Paddington Rail Station",
+                    "naptan_id": "910GPADTON"
+                },
+                {
+                    "name": "Paddington Underground Station",
+                    "naptan_id": "940GZZLUPAC"
+                },
+                {
+                    "name": "Paddington (H&C Line)-Underground",
+                    "naptan_id": "940GZZLUPAH"
+                }
             ],
             "id": "Paddington Underground Station"
         },
@@ -3939,8 +4695,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBWT"
+            "constituent_stations": [
+                {
+                    "name": "Bayswater Underground Station",
+                    "naptan_id": "940GZZLUBWT"
+                }
             ],
             "id": "Bayswater Underground Station"
         },
@@ -3958,8 +4717,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNHG"
+            "constituent_stations": [
+                {
+                    "name": "Notting Hill Gate Underground Station",
+                    "naptan_id": "940GZZLUNHG"
+                }
             ],
             "id": "Notting Hill Gate Underground Station"
         },
@@ -3976,8 +4738,11 @@
                 "circle",
                 "district"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHSK"
+            "constituent_stations": [
+                {
+                    "name": "High Street Kensington Underground Station",
+                    "naptan_id": "940GZZLUHSK"
+                }
             ],
             "id": "High Street Kensington Underground Station"
         },
@@ -3995,9 +4760,15 @@
                 "victoria",
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GWLTWCEN",
-                "940GZZLUWWL"
+            "constituent_stations": [
+                {
+                    "name": "Walthamstow Central Rail Station",
+                    "naptan_id": "910GWLTWCEN"
+                },
+                {
+                    "name": "Walthamstow Central Underground Station",
+                    "naptan_id": "940GZZLUWWL"
+                }
             ],
             "id": "Walthamstow Central Underground Station"
         },
@@ -4015,9 +4786,15 @@
                 "suffragette",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "910GBLCHSRD",
-                "940GZZLUBLR"
+            "constituent_stations": [
+                {
+                    "name": "Blackhorse Road Rail Station",
+                    "naptan_id": "910GBLCHSRD"
+                },
+                {
+                    "name": "Blackhorse Road Underground Station",
+                    "naptan_id": "940GZZLUBLR"
+                }
             ],
             "id": "Blackhorse Road Underground Station"
         },
@@ -4033,8 +4810,11 @@
             "lines": [
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTMH"
+            "constituent_stations": [
+                {
+                    "name": "Tottenham Hale Underground Station",
+                    "naptan_id": "940GZZLUTMH"
+                }
             ],
             "id": "Tottenham Hale Underground Station"
         },
@@ -4053,9 +4833,15 @@
                 "victoria",
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSEVNSIS",
-                "940GZZLUSVS"
+            "constituent_stations": [
+                {
+                    "name": "Seven Sisters Rail Station",
+                    "naptan_id": "910GSEVNSIS"
+                },
+                {
+                    "name": "Seven Sisters Underground Station",
+                    "naptan_id": "940GZZLUSVS"
+                }
             ],
             "id": "Seven Sisters Underground Station"
         },
@@ -4073,8 +4859,11 @@
                 "central",
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUOXC"
+            "constituent_stations": [
+                {
+                    "name": "Oxford Circus Underground Station",
+                    "naptan_id": "940GZZLUOXC"
+                }
             ],
             "id": "Oxford Circus Underground Station"
         },
@@ -4090,8 +4879,11 @@
             "lines": [
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPCO"
+            "constituent_stations": [
+                {
+                    "name": "Pimlico Underground Station",
+                    "naptan_id": "940GZZLUPCO"
+                }
             ],
             "id": "Pimlico Underground Station"
         },
@@ -4107,8 +4899,11 @@
             "lines": [
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUVXL"
+            "constituent_stations": [
+                {
+                    "name": "Vauxhall Underground Station",
+                    "naptan_id": "940GZZLUVXL"
+                }
             ],
             "id": "Vauxhall Underground Station"
         },
@@ -4124,8 +4919,11 @@
             "lines": [
                 "victoria"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBXN"
+            "constituent_stations": [
+                {
+                    "name": "Brixton Underground Station",
+                    "naptan_id": "940GZZLUBXN"
+                }
             ],
             "id": "Brixton Underground Station"
         },
@@ -4141,8 +4939,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUAMS"
+            "constituent_stations": [
+                {
+                    "name": "Amersham Underground Station",
+                    "naptan_id": "940GZZLUAMS"
+                }
             ],
             "id": "Amersham Underground Station"
         },
@@ -4158,8 +4959,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCAL"
+            "constituent_stations": [
+                {
+                    "name": "Chalfont & Latimer Underground Station",
+                    "naptan_id": "940GZZLUCAL"
+                }
             ],
             "id": "Chalfont & Latimer Underground Station"
         },
@@ -4175,8 +4979,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCYD"
+            "constituent_stations": [
+                {
+                    "name": "Chorleywood Underground Station",
+                    "naptan_id": "940GZZLUCYD"
+                }
             ],
             "id": "Chorleywood Underground Station"
         },
@@ -4192,8 +4999,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURKW"
+            "constituent_stations": [
+                {
+                    "name": "Rickmansworth Underground Station",
+                    "naptan_id": "940GZZLURKW"
+                }
             ],
             "id": "Rickmansworth Underground Station"
         },
@@ -4209,8 +5019,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMPK"
+            "constituent_stations": [
+                {
+                    "name": "Moor Park Underground Station",
+                    "naptan_id": "940GZZLUMPK"
+                }
             ],
             "id": "Moor Park Underground Station"
         },
@@ -4226,8 +5039,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNOW"
+            "constituent_stations": [
+                {
+                    "name": "Northwood Underground Station",
+                    "naptan_id": "940GZZLUNOW"
+                }
             ],
             "id": "Northwood Underground Station"
         },
@@ -4243,8 +5059,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNWH"
+            "constituent_stations": [
+                {
+                    "name": "Northwood Hills Underground Station",
+                    "naptan_id": "940GZZLUNWH"
+                }
             ],
             "id": "Northwood Hills Underground Station"
         },
@@ -4260,8 +5079,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPNR"
+            "constituent_stations": [
+                {
+                    "name": "Pinner Underground Station",
+                    "naptan_id": "940GZZLUPNR"
+                }
             ],
             "id": "Pinner Underground Station"
         },
@@ -4277,8 +5099,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNHA"
+            "constituent_stations": [
+                {
+                    "name": "North Harrow Underground Station",
+                    "naptan_id": "940GZZLUNHA"
+                }
             ],
             "id": "North Harrow Underground Station"
         },
@@ -4294,8 +5119,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHOH"
+            "constituent_stations": [
+                {
+                    "name": "Harrow-on-the-Hill Underground Station",
+                    "naptan_id": "940GZZLUHOH"
+                }
             ],
             "id": "Harrow-on-the-Hill Underground Station"
         },
@@ -4311,8 +5139,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNKP"
+            "constituent_stations": [
+                {
+                    "name": "Northwick Park Underground Station",
+                    "naptan_id": "940GZZLUNKP"
+                }
             ],
             "id": "Northwick Park Underground Station"
         },
@@ -4328,8 +5159,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPRD"
+            "constituent_stations": [
+                {
+                    "name": "Preston Road Underground Station",
+                    "naptan_id": "940GZZLUPRD"
+                }
             ],
             "id": "Preston Road Underground Station"
         },
@@ -4347,8 +5181,11 @@
                 "hammersmith-city",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGPS"
+            "constituent_stations": [
+                {
+                    "name": "Great Portland Street Underground Station",
+                    "naptan_id": "940GZZLUGPS"
+                }
             ],
             "id": "Great Portland Street Underground Station"
         },
@@ -4366,8 +5203,11 @@
                 "hammersmith-city",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUESQ"
+            "constituent_stations": [
+                {
+                    "name": "Euston Square Underground Station",
+                    "naptan_id": "940GZZLUESQ"
+                }
             ],
             "id": "Euston Square Underground Station"
         },
@@ -4387,9 +5227,15 @@
                 "hammersmith-city",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "910GFRNDXR",
-                "940GZZLUFCN"
+            "constituent_stations": [
+                {
+                    "name": "Farringdon",
+                    "naptan_id": "910GFRNDXR"
+                },
+                {
+                    "name": "Farringdon Underground Station",
+                    "naptan_id": "940GZZLUFCN"
+                }
             ],
             "id": "Farringdon Underground Station"
         },
@@ -4407,8 +5253,11 @@
                 "hammersmith-city",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBBN"
+            "constituent_stations": [
+                {
+                    "name": "Barbican Underground Station",
+                    "naptan_id": "940GZZLUBBN"
+                }
             ],
             "id": "Barbican Underground Station"
         },
@@ -4432,10 +5281,19 @@
                 "metropolitan",
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GLIVST",
-                "910GLIVSTLL",
-                "940GZZLULVT"
+            "constituent_stations": [
+                {
+                    "name": "London Liverpool Street Rail Station",
+                    "naptan_id": "910GLIVST"
+                },
+                {
+                    "name": "Liverpool Street",
+                    "naptan_id": "910GLIVSTLL"
+                },
+                {
+                    "name": "Liverpool Street Underground Station",
+                    "naptan_id": "940GZZLULVT"
+                }
             ],
             "id": "Liverpool Street Underground Station"
         },
@@ -4452,8 +5310,11 @@
                 "circle",
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUALD"
+            "constituent_stations": [
+                {
+                    "name": "Aldgate Underground Station",
+                    "naptan_id": "940GZZLUALD"
+                }
             ],
             "id": "Aldgate Underground Station"
         },
@@ -4469,8 +5330,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCSM"
+            "constituent_stations": [
+                {
+                    "name": "Chesham Underground Station",
+                    "naptan_id": "940GZZLUCSM"
+                }
             ],
             "id": "Chesham Underground Station"
         },
@@ -4486,8 +5350,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWHW"
+            "constituent_stations": [
+                {
+                    "name": "West Harrow Underground Station",
+                    "naptan_id": "940GZZLUWHW"
+                }
             ],
             "id": "West Harrow Underground Station"
         },
@@ -4503,8 +5370,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCXY"
+            "constituent_stations": [
+                {
+                    "name": "Croxley Underground Station",
+                    "naptan_id": "940GZZLUCXY"
+                }
             ],
             "id": "Croxley Underground Station"
         },
@@ -4520,8 +5390,11 @@
             "lines": [
                 "metropolitan"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWAF"
+            "constituent_stations": [
+                {
+                    "name": "Watford Underground Station",
+                    "naptan_id": "940GZZLUWAF"
+                }
             ],
             "id": "Watford Underground Station"
         },
@@ -4537,8 +5410,11 @@
             "lines": [
                 "liberty"
             ],
-            "constituent_naptan_ids": [
-                "910GEMRSPKH"
+            "constituent_stations": [
+                {
+                    "name": "Emerson Park Rail Station",
+                    "naptan_id": "910GEMRSPKH"
+                }
             ],
             "id": "Emerson Park Rail Station"
         },
@@ -4557,8 +5433,11 @@
                 "elizabeth",
                 "liberty"
             ],
-            "constituent_naptan_ids": [
-                "910GROMFORD"
+            "constituent_stations": [
+                {
+                    "name": "Romford Rail Station",
+                    "naptan_id": "910GROMFORD"
+                }
             ],
             "id": "Romford Rail Station"
         },
@@ -4575,8 +5454,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GCHESHNT"
+            "constituent_stations": [
+                {
+                    "name": "Cheshunt Rail Station",
+                    "naptan_id": "910GCHESHNT"
+                }
             ],
             "id": "Cheshunt Rail Station"
         },
@@ -4593,8 +5475,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GTHBLDSG"
+            "constituent_stations": [
+                {
+                    "name": "Theobalds Grove Rail Station",
+                    "naptan_id": "910GTHBLDSG"
+                }
             ],
             "id": "Theobalds Grove Rail Station"
         },
@@ -4611,8 +5496,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GTURKYST"
+            "constituent_stations": [
+                {
+                    "name": "Turkey Street Rail Station",
+                    "naptan_id": "910GTURKYST"
+                }
             ],
             "id": "Turkey Street Rail Station"
         },
@@ -4629,8 +5517,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSBURY"
+            "constituent_stations": [
+                {
+                    "name": "Southbury Rail Station",
+                    "naptan_id": "910GSBURY"
+                }
             ],
             "id": "Southbury Rail Station"
         },
@@ -4647,8 +5538,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GEDMNGRN"
+            "constituent_stations": [
+                {
+                    "name": "Edmonton Green Rail Station",
+                    "naptan_id": "910GEDMNGRN"
+                }
             ],
             "id": "Edmonton Green Rail Station"
         },
@@ -4665,8 +5559,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSIVRST"
+            "constituent_stations": [
+                {
+                    "name": "Silver Street Rail Station",
+                    "naptan_id": "910GSIVRST"
+                }
             ],
             "id": "Silver Street Rail Station"
         },
@@ -4683,8 +5580,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GWHHRTLA"
+            "constituent_stations": [
+                {
+                    "name": "White Hart Lane Rail Station",
+                    "naptan_id": "910GWHHRTLA"
+                }
             ],
             "id": "White Hart Lane Rail Station"
         },
@@ -4701,8 +5601,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GBRUCGRV"
+            "constituent_stations": [
+                {
+                    "name": "Bruce Grove Rail Station",
+                    "naptan_id": "910GBRUCGRV"
+                }
             ],
             "id": "Bruce Grove Rail Station"
         },
@@ -4719,8 +5622,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSTMFDHL"
+            "constituent_stations": [
+                {
+                    "name": "Stamford Hill Rail Station",
+                    "naptan_id": "910GSTMFDHL"
+                }
             ],
             "id": "Stamford Hill Rail Station"
         },
@@ -4737,8 +5643,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSTKNWNG"
+            "constituent_stations": [
+                {
+                    "name": "Stoke Newington Rail Station",
+                    "naptan_id": "910GSTKNWNG"
+                }
             ],
             "id": "Stoke Newington Rail Station"
         },
@@ -4755,8 +5664,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GRCTRYRD"
+            "constituent_stations": [
+                {
+                    "name": "Rectory Road Rail Station",
+                    "naptan_id": "910GRCTRYRD"
+                }
             ],
             "id": "Rectory Road Rail Station"
         },
@@ -4773,8 +5685,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GHAKNYNM"
+            "constituent_stations": [
+                {
+                    "name": "Hackney Downs Rail Station",
+                    "naptan_id": "910GHAKNYNM"
+                }
             ],
             "id": "Hackney Downs Rail Station"
         },
@@ -4791,8 +5706,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GLONFLDS"
+            "constituent_stations": [
+                {
+                    "name": "London Fields Rail Station",
+                    "naptan_id": "910GLONFLDS"
+                }
             ],
             "id": "London Fields Rail Station"
         },
@@ -4809,8 +5727,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GCAMHTH"
+            "constituent_stations": [
+                {
+                    "name": "Cambridge Heath (London) Rail Station",
+                    "naptan_id": "910GCAMHTH"
+                }
             ],
             "id": "Cambridge Heath (London) Rail Station"
         },
@@ -4827,8 +5748,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GBTHNLGR"
+            "constituent_stations": [
+                {
+                    "name": "Bethnal Green Rail Station",
+                    "naptan_id": "910GBTHNLGR"
+                }
             ],
             "id": "Bethnal Green Rail Station"
         },
@@ -4844,8 +5768,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GENFLDTN"
+            "constituent_stations": [
+                {
+                    "name": "Enfield Town Rail Station",
+                    "naptan_id": "910GENFLDTN"
+                }
             ],
             "id": "Enfield Town Rail Station"
         },
@@ -4862,8 +5789,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GBHILLPK"
+            "constituent_stations": [
+                {
+                    "name": "Bush Hill Park Rail Station",
+                    "naptan_id": "910GBHILLPK"
+                }
             ],
             "id": "Bush Hill Park Rail Station"
         },
@@ -4879,8 +5809,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GCHINGFD"
+            "constituent_stations": [
+                {
+                    "name": "Chingford Rail Station",
+                    "naptan_id": "910GCHINGFD"
+                }
             ],
             "id": "Chingford Rail Station"
         },
@@ -4896,8 +5829,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GHGHMSPK"
+            "constituent_stations": [
+                {
+                    "name": "Highams Park Rail Station",
+                    "naptan_id": "910GHGHMSPK"
+                }
             ],
             "id": "Highams Park Rail Station"
         },
@@ -4913,8 +5849,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GWDST"
+            "constituent_stations": [
+                {
+                    "name": "Wood Street Rail Station",
+                    "naptan_id": "910GWDST"
+                }
             ],
             "id": "Wood Street Rail Station"
         },
@@ -4930,8 +5869,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GSTJMSST"
+            "constituent_stations": [
+                {
+                    "name": "St James Street (London) Rail Station",
+                    "naptan_id": "910GSTJMSST"
+                }
             ],
             "id": "St James Street (London) Rail Station"
         },
@@ -4948,8 +5890,11 @@
             "lines": [
                 "weaver"
             ],
-            "constituent_naptan_ids": [
-                "910GCLAPTON"
+            "constituent_stations": [
+                {
+                    "name": "Clapton Rail Station",
+                    "naptan_id": "910GCLAPTON"
+                }
             ],
             "id": "Clapton Rail Station"
         },
@@ -4965,8 +5910,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEPG"
+            "constituent_stations": [
+                {
+                    "name": "Epping Underground Station",
+                    "naptan_id": "940GZZLUEPG"
+                }
             ],
             "id": "Epping Underground Station"
         },
@@ -4982,8 +5930,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUTHB"
+            "constituent_stations": [
+                {
+                    "name": "Theydon Bois Underground Station",
+                    "naptan_id": "940GZZLUTHB"
+                }
             ],
             "id": "Theydon Bois Underground Station"
         },
@@ -4999,8 +5950,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUDBN"
+            "constituent_stations": [
+                {
+                    "name": "Debden Underground Station",
+                    "naptan_id": "940GZZLUDBN"
+                }
             ],
             "id": "Debden Underground Station"
         },
@@ -5017,8 +5971,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULGN"
+            "constituent_stations": [
+                {
+                    "name": "Loughton Underground Station",
+                    "naptan_id": "940GZZLULGN"
+                }
             ],
             "id": "Loughton Underground Station"
         },
@@ -5035,8 +5992,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBKH"
+            "constituent_stations": [
+                {
+                    "name": "Buckhurst Hill Underground Station",
+                    "naptan_id": "940GZZLUBKH"
+                }
             ],
             "id": "Buckhurst Hill Underground Station"
         },
@@ -5052,8 +6012,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWOF"
+            "constituent_stations": [
+                {
+                    "name": "Woodford Underground Station",
+                    "naptan_id": "940GZZLUWOF"
+                }
             ],
             "id": "Woodford Underground Station"
         },
@@ -5069,8 +6032,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSWF"
+            "constituent_stations": [
+                {
+                    "name": "South Woodford Underground Station",
+                    "naptan_id": "940GZZLUSWF"
+                }
             ],
             "id": "South Woodford Underground Station"
         },
@@ -5086,8 +6052,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSNB"
+            "constituent_stations": [
+                {
+                    "name": "Snaresbrook Underground Station",
+                    "naptan_id": "940GZZLUSNB"
+                }
             ],
             "id": "Snaresbrook Underground Station"
         },
@@ -5103,8 +6072,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULYS"
+            "constituent_stations": [
+                {
+                    "name": "Leytonstone Underground Station",
+                    "naptan_id": "940GZZLULYS"
+                }
             ],
             "id": "Leytonstone Underground Station"
         },
@@ -5120,8 +6092,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULYN"
+            "constituent_stations": [
+                {
+                    "name": "Leyton Underground Station",
+                    "naptan_id": "940GZZLULYN"
+                }
             ],
             "id": "Leyton Underground Station"
         },
@@ -5137,8 +6112,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBLG"
+            "constituent_stations": [
+                {
+                    "name": "Bethnal Green Underground Station",
+                    "naptan_id": "940GZZLUBLG"
+                }
             ],
             "id": "Bethnal Green Underground Station"
         },
@@ -5154,8 +6132,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSPU"
+            "constituent_stations": [
+                {
+                    "name": "St. Paul's Underground Station",
+                    "naptan_id": "940GZZLUSPU"
+                }
             ],
             "id": "St. Paul's Underground Station"
         },
@@ -5171,8 +6152,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCHL"
+            "constituent_stations": [
+                {
+                    "name": "Chancery Lane Underground Station",
+                    "naptan_id": "940GZZLUCHL"
+                }
             ],
             "id": "Chancery Lane Underground Station"
         },
@@ -5188,8 +6172,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMBA"
+            "constituent_stations": [
+                {
+                    "name": "Marble Arch Underground Station",
+                    "naptan_id": "940GZZLUMBA"
+                }
             ],
             "id": "Marble Arch Underground Station"
         },
@@ -5205,8 +6192,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULGT"
+            "constituent_stations": [
+                {
+                    "name": "Lancaster Gate Underground Station",
+                    "naptan_id": "940GZZLULGT"
+                }
             ],
             "id": "Lancaster Gate Underground Station"
         },
@@ -5222,8 +6212,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUQWY"
+            "constituent_stations": [
+                {
+                    "name": "Queensway Underground Station",
+                    "naptan_id": "940GZZLUQWY"
+                }
             ],
             "id": "Queensway Underground Station"
         },
@@ -5240,8 +6233,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHPK"
+            "constituent_stations": [
+                {
+                    "name": "Holland Park Underground Station",
+                    "naptan_id": "940GZZLUHPK"
+                }
             ],
             "id": "Holland Park Underground Station"
         },
@@ -5257,8 +6253,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWCY"
+            "constituent_stations": [
+                {
+                    "name": "White City Underground Station",
+                    "naptan_id": "940GZZLUWCY"
+                }
             ],
             "id": "White City Underground Station"
         },
@@ -5274,8 +6273,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUEAN"
+            "constituent_stations": [
+                {
+                    "name": "East Acton Underground Station",
+                    "naptan_id": "940GZZLUEAN"
+                }
             ],
             "id": "East Acton Underground Station"
         },
@@ -5291,8 +6293,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNAN"
+            "constituent_stations": [
+                {
+                    "name": "North Acton Underground Station",
+                    "naptan_id": "940GZZLUNAN"
+                }
             ],
             "id": "North Acton Underground Station"
         },
@@ -5308,8 +6313,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHGR"
+            "constituent_stations": [
+                {
+                    "name": "Hanger Lane Underground Station",
+                    "naptan_id": "940GZZLUHGR"
+                }
             ],
             "id": "Hanger Lane Underground Station"
         },
@@ -5325,8 +6333,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUPVL"
+            "constituent_stations": [
+                {
+                    "name": "Perivale Underground Station",
+                    "naptan_id": "940GZZLUPVL"
+                }
             ],
             "id": "Perivale Underground Station"
         },
@@ -5342,8 +6353,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGFD"
+            "constituent_stations": [
+                {
+                    "name": "Greenford Underground Station",
+                    "naptan_id": "940GZZLUGFD"
+                }
             ],
             "id": "Greenford Underground Station"
         },
@@ -5359,8 +6373,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNHT"
+            "constituent_stations": [
+                {
+                    "name": "Northolt Underground Station",
+                    "naptan_id": "940GZZLUNHT"
+                }
             ],
             "id": "Northolt Underground Station"
         },
@@ -5376,8 +6393,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSRP"
+            "constituent_stations": [
+                {
+                    "name": "South Ruislip Underground Station",
+                    "naptan_id": "940GZZLUSRP"
+                }
             ],
             "id": "South Ruislip Underground Station"
         },
@@ -5393,8 +6413,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURSG"
+            "constituent_stations": [
+                {
+                    "name": "Ruislip Gardens Underground Station",
+                    "naptan_id": "940GZZLURSG"
+                }
             ],
             "id": "Ruislip Gardens Underground Station"
         },
@@ -5410,8 +6433,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWRP"
+            "constituent_stations": [
+                {
+                    "name": "West Ruislip Underground Station",
+                    "naptan_id": "940GZZLUWRP"
+                }
             ],
             "id": "West Ruislip Underground Station"
         },
@@ -5427,8 +6453,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUHLT"
+            "constituent_stations": [
+                {
+                    "name": "Hainault Underground Station",
+                    "naptan_id": "940GZZLUHLT"
+                }
             ],
             "id": "Hainault Underground Station"
         },
@@ -5444,8 +6473,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUFLP"
+            "constituent_stations": [
+                {
+                    "name": "Fairlop Underground Station",
+                    "naptan_id": "940GZZLUFLP"
+                }
             ],
             "id": "Fairlop Underground Station"
         },
@@ -5461,8 +6493,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUBKE"
+            "constituent_stations": [
+                {
+                    "name": "Barkingside Underground Station",
+                    "naptan_id": "940GZZLUBKE"
+                }
             ],
             "id": "Barkingside Underground Station"
         },
@@ -5478,8 +6513,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUNBP"
+            "constituent_stations": [
+                {
+                    "name": "Newbury Park Underground Station",
+                    "naptan_id": "940GZZLUNBP"
+                }
             ],
             "id": "Newbury Park Underground Station"
         },
@@ -5495,8 +6533,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGTH"
+            "constituent_stations": [
+                {
+                    "name": "Gants Hill Underground Station",
+                    "naptan_id": "940GZZLUGTH"
+                }
             ],
             "id": "Gants Hill Underground Station"
         },
@@ -5512,8 +6553,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURBG"
+            "constituent_stations": [
+                {
+                    "name": "Redbridge Underground Station",
+                    "naptan_id": "940GZZLURBG"
+                }
             ],
             "id": "Redbridge Underground Station"
         },
@@ -5529,8 +6573,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWSD"
+            "constituent_stations": [
+                {
+                    "name": "Wanstead Underground Station",
+                    "naptan_id": "940GZZLUWSD"
+                }
             ],
             "id": "Wanstead Underground Station"
         },
@@ -5547,8 +6594,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGGH"
+            "constituent_stations": [
+                {
+                    "name": "Grange Hill Underground Station",
+                    "naptan_id": "940GZZLUGGH"
+                }
             ],
             "id": "Grange Hill Underground Station"
         },
@@ -5565,8 +6615,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUCWL"
+            "constituent_stations": [
+                {
+                    "name": "Chigwell Underground Station",
+                    "naptan_id": "940GZZLUCWL"
+                }
             ],
             "id": "Chigwell Underground Station"
         },
@@ -5582,8 +6635,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURVY"
+            "constituent_stations": [
+                {
+                    "name": "Roding Valley Underground Station",
+                    "naptan_id": "940GZZLURVY"
+                }
             ],
             "id": "Roding Valley Underground Station"
         },
@@ -5599,8 +6655,11 @@
             "lines": [
                 "central"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWTA"
+            "constituent_stations": [
+                {
+                    "name": "West Acton Underground Station",
+                    "naptan_id": "940GZZLUWTA"
+                }
             ],
             "id": "West Acton Underground Station"
         },
@@ -5616,8 +6675,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLLEW"
+            "constituent_stations": [
+                {
+                    "name": "Lewisham DLR Station",
+                    "naptan_id": "940GZZDLLEW"
+                }
             ],
             "id": "Lewisham DLR Station"
         },
@@ -5633,8 +6695,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLELV"
+            "constituent_stations": [
+                {
+                    "name": "Elverson Road DLR Station",
+                    "naptan_id": "940GZZDLELV"
+                }
             ],
             "id": "Elverson Road DLR Station"
         },
@@ -5650,8 +6715,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLDEP"
+            "constituent_stations": [
+                {
+                    "name": "Deptford Bridge DLR Station",
+                    "naptan_id": "940GZZDLDEP"
+                }
             ],
             "id": "Deptford Bridge DLR Station"
         },
@@ -5667,8 +6735,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLGRE"
+            "constituent_stations": [
+                {
+                    "name": "Greenwich DLR Station",
+                    "naptan_id": "940GZZDLGRE"
+                }
             ],
             "id": "Greenwich DLR Station"
         },
@@ -5684,8 +6755,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLCUT"
+            "constituent_stations": [
+                {
+                    "name": "Cutty Sark (for Maritime Greenwich) DLR Station",
+                    "naptan_id": "940GZZDLCUT"
+                }
             ],
             "id": "Cutty Sark (for Maritime Greenwich) DLR Station"
         },
@@ -5701,8 +6775,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLISL"
+            "constituent_stations": [
+                {
+                    "name": "Island Gardens DLR Station",
+                    "naptan_id": "940GZZDLISL"
+                }
             ],
             "id": "Island Gardens DLR Station"
         },
@@ -5718,8 +6795,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLMUD"
+            "constituent_stations": [
+                {
+                    "name": "Mudchute DLR Station",
+                    "naptan_id": "940GZZDLMUD"
+                }
             ],
             "id": "Mudchute DLR Station"
         },
@@ -5735,8 +6815,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLCLA"
+            "constituent_stations": [
+                {
+                    "name": "Crossharbour DLR Station",
+                    "naptan_id": "940GZZDLCLA"
+                }
             ],
             "id": "Crossharbour DLR Station"
         },
@@ -5752,8 +6835,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLSOQ"
+            "constituent_stations": [
+                {
+                    "name": "South Quay DLR Station",
+                    "naptan_id": "940GZZDLSOQ"
+                }
             ],
             "id": "South Quay DLR Station"
         },
@@ -5769,8 +6855,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLHEQ"
+            "constituent_stations": [
+                {
+                    "name": "Heron Quays DLR Station",
+                    "naptan_id": "940GZZDLHEQ"
+                }
             ],
             "id": "Heron Quays DLR Station"
         },
@@ -5786,8 +6875,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLWIQ"
+            "constituent_stations": [
+                {
+                    "name": "West India Quay DLR Station",
+                    "naptan_id": "940GZZDLWIQ"
+                }
             ],
             "id": "West India Quay DLR Station"
         },
@@ -5803,8 +6895,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLPOP"
+            "constituent_stations": [
+                {
+                    "name": "Poplar DLR Station",
+                    "naptan_id": "940GZZDLPOP"
+                }
             ],
             "id": "Poplar DLR Station"
         },
@@ -5820,8 +6915,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLALL"
+            "constituent_stations": [
+                {
+                    "name": "All Saints DLR Station",
+                    "naptan_id": "940GZZDLALL"
+                }
             ],
             "id": "All Saints DLR Station"
         },
@@ -5837,8 +6935,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLLDP"
+            "constituent_stations": [
+                {
+                    "name": "Langdon Park DLR Station",
+                    "naptan_id": "940GZZDLLDP"
+                }
             ],
             "id": "Langdon Park DLR Station"
         },
@@ -5854,8 +6955,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLDEV"
+            "constituent_stations": [
+                {
+                    "name": "Devons Road DLR Station",
+                    "naptan_id": "940GZZDLDEV"
+                }
             ],
             "id": "Devons Road DLR Station"
         },
@@ -5871,8 +6975,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLBOW"
+            "constituent_stations": [
+                {
+                    "name": "Bow Church DLR Station",
+                    "naptan_id": "940GZZDLBOW"
+                }
             ],
             "id": "Bow Church DLR Station"
         },
@@ -5888,8 +6995,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLPUD"
+            "constituent_stations": [
+                {
+                    "name": "Pudding Mill Lane DLR Station",
+                    "naptan_id": "940GZZDLPUD"
+                }
             ],
             "id": "Pudding Mill Lane DLR Station"
         },
@@ -5905,8 +7015,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLWFE"
+            "constituent_stations": [
+                {
+                    "name": "Westferry DLR Station",
+                    "naptan_id": "940GZZDLWFE"
+                }
             ],
             "id": "Westferry DLR Station"
         },
@@ -5922,8 +7035,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLLIM"
+            "constituent_stations": [
+                {
+                    "name": "Limehouse DLR Station",
+                    "naptan_id": "940GZZDLLIM"
+                }
             ],
             "id": "Limehouse DLR Station"
         },
@@ -5939,8 +7055,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLTWG"
+            "constituent_stations": [
+                {
+                    "name": "Tower Gateway DLR Station",
+                    "naptan_id": "940GZZDLTWG"
+                }
             ],
             "id": "Tower Gateway DLR Station"
         },
@@ -5956,8 +7075,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLBEC"
+            "constituent_stations": [
+                {
+                    "name": "Beckton DLR Station",
+                    "naptan_id": "940GZZDLBEC"
+                }
             ],
             "id": "Beckton DLR Station"
         },
@@ -5973,8 +7095,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLGAL"
+            "constituent_stations": [
+                {
+                    "name": "Gallions Reach DLR Station",
+                    "naptan_id": "940GZZDLGAL"
+                }
             ],
             "id": "Gallions Reach DLR Station"
         },
@@ -5990,8 +7115,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLCYP"
+            "constituent_stations": [
+                {
+                    "name": "Cyprus DLR Station",
+                    "naptan_id": "940GZZDLCYP"
+                }
             ],
             "id": "Cyprus DLR Station"
         },
@@ -6007,8 +7135,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLBPK"
+            "constituent_stations": [
+                {
+                    "name": "Beckton Park DLR Station",
+                    "naptan_id": "940GZZDLBPK"
+                }
             ],
             "id": "Beckton Park DLR Station"
         },
@@ -6024,8 +7155,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLRAL"
+            "constituent_stations": [
+                {
+                    "name": "Royal Albert DLR Station",
+                    "naptan_id": "940GZZDLRAL"
+                }
             ],
             "id": "Royal Albert DLR Station"
         },
@@ -6041,8 +7175,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLPRE"
+            "constituent_stations": [
+                {
+                    "name": "Prince Regent DLR Station",
+                    "naptan_id": "940GZZDLPRE"
+                }
             ],
             "id": "Prince Regent DLR Station"
         },
@@ -6060,9 +7197,15 @@
                 "dlr",
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GCSTMHSXR",
-                "940GZZDLCUS"
+            "constituent_stations": [
+                {
+                    "name": "Custom House",
+                    "naptan_id": "910GCSTMHSXR"
+                },
+                {
+                    "name": "Custom House (for ExCel) DLR Station",
+                    "naptan_id": "940GZZDLCUS"
+                }
             ],
             "id": "Custom House (for ExCel) DLR Station"
         },
@@ -6078,8 +7221,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLRVC"
+            "constituent_stations": [
+                {
+                    "name": "Royal Victoria DLR Station",
+                    "naptan_id": "940GZZDLRVC"
+                }
             ],
             "id": "Royal Victoria DLR Station"
         },
@@ -6096,8 +7242,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLEIN"
+            "constituent_stations": [
+                {
+                    "name": "East India DLR Station",
+                    "naptan_id": "940GZZDLEIN"
+                }
             ],
             "id": "East India DLR Station"
         },
@@ -6113,8 +7262,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLBLA"
+            "constituent_stations": [
+                {
+                    "name": "Blackwall DLR Station",
+                    "naptan_id": "940GZZDLBLA"
+                }
             ],
             "id": "Blackwall DLR Station"
         },
@@ -6131,8 +7283,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLSTL"
+            "constituent_stations": [
+                {
+                    "name": "Star Lane DLR Station",
+                    "naptan_id": "940GZZDLSTL"
+                }
             ],
             "id": "Star Lane DLR Station"
         },
@@ -6148,8 +7303,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLABR"
+            "constituent_stations": [
+                {
+                    "name": "Abbey Road DLR Station",
+                    "naptan_id": "940GZZDLABR"
+                }
             ],
             "id": "Abbey Road DLR Station"
         },
@@ -6165,8 +7323,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLSHS"
+            "constituent_stations": [
+                {
+                    "name": "Stratford High Street DLR Station",
+                    "naptan_id": "940GZZDLSHS"
+                }
             ],
             "id": "Stratford High Street DLR Station"
         },
@@ -6182,8 +7343,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLSIT"
+            "constituent_stations": [
+                {
+                    "name": "Stratford International DLR Station",
+                    "naptan_id": "940GZZDLSIT"
+                }
             ],
             "id": "Stratford International DLR Station"
         },
@@ -6199,8 +7363,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLWLA"
+            "constituent_stations": [
+                {
+                    "name": "Woolwich Arsenal DLR Station",
+                    "naptan_id": "940GZZDLWLA"
+                }
             ],
             "id": "Woolwich Arsenal DLR Station"
         },
@@ -6216,8 +7383,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLKGV"
+            "constituent_stations": [
+                {
+                    "name": "King George V DLR Station",
+                    "naptan_id": "940GZZDLKGV"
+                }
             ],
             "id": "King George V DLR Station"
         },
@@ -6233,8 +7403,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLLCA"
+            "constituent_stations": [
+                {
+                    "name": "London City Airport DLR Station",
+                    "naptan_id": "940GZZDLLCA"
+                }
             ],
             "id": "London City Airport DLR Station"
         },
@@ -6251,8 +7424,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLPDK"
+            "constituent_stations": [
+                {
+                    "name": "Pontoon Dock DLR Station",
+                    "naptan_id": "940GZZDLPDK"
+                }
             ],
             "id": "Pontoon Dock DLR Station"
         },
@@ -6268,8 +7444,11 @@
             "lines": [
                 "dlr"
             ],
-            "constituent_naptan_ids": [
-                "940GZZDLWSV"
+            "constituent_stations": [
+                {
+                    "name": "West Silvertown DLR Station",
+                    "naptan_id": "940GZZDLWSV"
+                }
             ],
             "id": "West Silvertown DLR Station"
         },
@@ -6286,8 +7465,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GHAYESAH"
+            "constituent_stations": [
+                {
+                    "name": "Hayes & Harlington Rail Station",
+                    "naptan_id": "910GHAYESAH"
+                }
             ],
             "id": "Hayes & Harlington Rail Station"
         },
@@ -6304,8 +7486,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GSTHALL"
+            "constituent_stations": [
+                {
+                    "name": "Southall Rail Station",
+                    "naptan_id": "910GSTHALL"
+                }
             ],
             "id": "Southall Rail Station"
         },
@@ -6322,8 +7507,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GHANWELL"
+            "constituent_stations": [
+                {
+                    "name": "Hanwell Rail Station",
+                    "naptan_id": "910GHANWELL"
+                }
             ],
             "id": "Hanwell Rail Station"
         },
@@ -6340,8 +7528,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GWEALING"
+            "constituent_stations": [
+                {
+                    "name": "West Ealing Rail Station",
+                    "naptan_id": "910GWEALING"
+                }
             ],
             "id": "West Ealing Rail Station"
         },
@@ -6358,8 +7549,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GACTONML"
+            "constituent_stations": [
+                {
+                    "name": "Acton Main Line Rail Station",
+                    "naptan_id": "910GACTONML"
+                }
             ],
             "id": "Acton Main Line Rail Station"
         },
@@ -6375,8 +7569,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GMRYLAND"
+            "constituent_stations": [
+                {
+                    "name": "Maryland Rail Station",
+                    "naptan_id": "910GMRYLAND"
+                }
             ],
             "id": "Maryland Rail Station"
         },
@@ -6392,8 +7589,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GFRSTGT"
+            "constituent_stations": [
+                {
+                    "name": "Forest Gate Rail Station",
+                    "naptan_id": "910GFRSTGT"
+                }
             ],
             "id": "Forest Gate Rail Station"
         },
@@ -6409,8 +7609,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GMANRPK"
+            "constituent_stations": [
+                {
+                    "name": "Manor Park Rail Station",
+                    "naptan_id": "910GMANRPK"
+                }
             ],
             "id": "Manor Park Rail Station"
         },
@@ -6427,8 +7630,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GILFORD"
+            "constituent_stations": [
+                {
+                    "name": "Ilford Rail Station",
+                    "naptan_id": "910GILFORD"
+                }
             ],
             "id": "Ilford Rail Station"
         },
@@ -6445,8 +7651,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GSVNKNGS"
+            "constituent_stations": [
+                {
+                    "name": "Seven Kings Rail Station",
+                    "naptan_id": "910GSVNKNGS"
+                }
             ],
             "id": "Seven Kings Rail Station"
         },
@@ -6462,8 +7671,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GGODMAYS"
+            "constituent_stations": [
+                {
+                    "name": "Goodmayes Rail Station",
+                    "naptan_id": "910GGODMAYS"
+                }
             ],
             "id": "Goodmayes Rail Station"
         },
@@ -6479,8 +7691,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GCHDWLHT"
+            "constituent_stations": [
+                {
+                    "name": "Chadwell Heath Rail Station",
+                    "naptan_id": "910GCHDWLHT"
+                }
             ],
             "id": "Chadwell Heath Rail Station"
         },
@@ -6497,8 +7712,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GGIDEAPK"
+            "constituent_stations": [
+                {
+                    "name": "Gidea Park Rail Station",
+                    "naptan_id": "910GGIDEAPK"
+                }
             ],
             "id": "Gidea Park Rail Station"
         },
@@ -6514,8 +7732,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GHRLDWOD"
+            "constituent_stations": [
+                {
+                    "name": "Harold Wood Rail Station",
+                    "naptan_id": "910GHRLDWOD"
+                }
             ],
             "id": "Harold Wood Rail Station"
         },
@@ -6531,8 +7752,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GBRTWOOD"
+            "constituent_stations": [
+                {
+                    "name": "Brentwood Rail Station",
+                    "naptan_id": "910GBRTWOOD"
+                }
             ],
             "id": "Brentwood Rail Station"
         },
@@ -6549,8 +7773,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GSHENFLD"
+            "constituent_stations": [
+                {
+                    "name": "Shenfield Rail Station",
+                    "naptan_id": "910GSHENFLD"
+                }
             ],
             "id": "Shenfield Rail Station"
         },
@@ -6567,8 +7794,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GWOLWXR"
+            "constituent_stations": [
+                {
+                    "name": "Woolwich",
+                    "naptan_id": "910GWOLWXR"
+                }
             ],
             "id": "Woolwich"
         },
@@ -6584,8 +7814,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GABWDXR"
+            "constituent_stations": [
+                {
+                    "name": "Abbey Wood",
+                    "naptan_id": "910GABWDXR"
+                }
             ],
             "id": "Abbey Wood"
         },
@@ -6602,8 +7835,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GRDNGSTN"
+            "constituent_stations": [
+                {
+                    "name": "Reading Rail Station",
+                    "naptan_id": "910GRDNGSTN"
+                }
             ],
             "id": "Reading Rail Station"
         },
@@ -6620,8 +7856,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GTWYFORD"
+            "constituent_stations": [
+                {
+                    "name": "Twyford Rail Station",
+                    "naptan_id": "910GTWYFORD"
+                }
             ],
             "id": "Twyford Rail Station"
         },
@@ -6638,8 +7877,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GMDNHEAD"
+            "constituent_stations": [
+                {
+                    "name": "Maidenhead Rail Station",
+                    "naptan_id": "910GMDNHEAD"
+                }
             ],
             "id": "Maidenhead Rail Station"
         },
@@ -6656,8 +7898,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GTAPLOW"
+            "constituent_stations": [
+                {
+                    "name": "Taplow Rail Station",
+                    "naptan_id": "910GTAPLOW"
+                }
             ],
             "id": "Taplow Rail Station"
         },
@@ -6674,8 +7919,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GBNHAM"
+            "constituent_stations": [
+                {
+                    "name": "Burnham (Berks) Rail Station",
+                    "naptan_id": "910GBNHAM"
+                }
             ],
             "id": "Burnham (Berks) Rail Station"
         },
@@ -6692,8 +7940,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GSLOUGH"
+            "constituent_stations": [
+                {
+                    "name": "Slough Rail Station",
+                    "naptan_id": "910GSLOUGH"
+                }
             ],
             "id": "Slough Rail Station"
         },
@@ -6710,8 +7961,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GLANGLEY"
+            "constituent_stations": [
+                {
+                    "name": "Langley (Berks) Rail Station",
+                    "naptan_id": "910GLANGLEY"
+                }
             ],
             "id": "Langley (Berks) Rail Station"
         },
@@ -6728,8 +7982,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GIVER"
+            "constituent_stations": [
+                {
+                    "name": "Iver Rail Station",
+                    "naptan_id": "910GIVER"
+                }
             ],
             "id": "Iver Rail Station"
         },
@@ -6746,8 +8003,11 @@
             "lines": [
                 "elizabeth"
             ],
-            "constituent_naptan_ids": [
-                "910GWDRYTON"
+            "constituent_stations": [
+                {
+                    "name": "West Drayton Rail Station",
+                    "naptan_id": "910GWDRYTON"
+                }
             ],
             "id": "West Drayton Rail Station"
         },
@@ -6764,8 +8024,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURYO"
+            "constituent_stations": [
+                {
+                    "name": "Royal Oak Underground Station",
+                    "naptan_id": "940GZZLURYO"
+                }
             ],
             "id": "Royal Oak Underground Station"
         },
@@ -6782,8 +8045,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWSP"
+            "constituent_stations": [
+                {
+                    "name": "Westbourne Park Underground Station",
+                    "naptan_id": "940GZZLUWSP"
+                }
             ],
             "id": "Westbourne Park Underground Station"
         },
@@ -6800,8 +8066,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULAD"
+            "constituent_stations": [
+                {
+                    "name": "Ladbroke Grove Underground Station",
+                    "naptan_id": "940GZZLULAD"
+                }
             ],
             "id": "Ladbroke Grove Underground Station"
         },
@@ -6818,8 +8087,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULRD"
+            "constituent_stations": [
+                {
+                    "name": "Latimer Road Underground Station",
+                    "naptan_id": "940GZZLULRD"
+                }
             ],
             "id": "Latimer Road Underground Station"
         },
@@ -6836,8 +8108,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWLA"
+            "constituent_stations": [
+                {
+                    "name": "Wood Lane Underground Station",
+                    "naptan_id": "940GZZLUWLA"
+                }
             ],
             "id": "Wood Lane Underground Station"
         },
@@ -6854,8 +8129,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUSBM"
+            "constituent_stations": [
+                {
+                    "name": "Shepherd's Bush Market Underground Station",
+                    "naptan_id": "940GZZLUSBM"
+                }
             ],
             "id": "Shepherd's Bush Market Underground Station"
         },
@@ -6872,8 +8150,11 @@
                 "circle",
                 "hammersmith-city"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUGHK"
+            "constituent_stations": [
+                {
+                    "name": "Goldhawk Road Underground Station",
+                    "naptan_id": "940GZZLUGHK"
+                }
             ],
             "id": "Goldhawk Road Underground Station"
         },
@@ -6889,8 +8170,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GBKRVS"
+            "constituent_stations": [
+                {
+                    "name": "Barking Riverside",
+                    "naptan_id": "910GBKRVS"
+                }
             ],
             "id": "Barking Riverside"
         },
@@ -6906,8 +8190,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GWDGRNPK"
+            "constituent_stations": [
+                {
+                    "name": "Woodgrange Park Rail Station",
+                    "naptan_id": "910GWDGRNPK"
+                }
             ],
             "id": "Woodgrange Park Rail Station"
         },
@@ -6923,8 +8210,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GWNSTDPK"
+            "constituent_stations": [
+                {
+                    "name": "Wanstead Park Rail Station",
+                    "naptan_id": "910GWNSTDPK"
+                }
             ],
             "id": "Wanstead Park Rail Station"
         },
@@ -6940,8 +8230,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GLYTNSHR"
+            "constituent_stations": [
+                {
+                    "name": "Leytonstone High Road Rail Station",
+                    "naptan_id": "910GLYTNSHR"
+                }
             ],
             "id": "Leytonstone High Road Rail Station"
         },
@@ -6957,8 +8250,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GLEYTNMR"
+            "constituent_stations": [
+                {
+                    "name": "Leyton Midland Road Rail Station",
+                    "naptan_id": "910GLEYTNMR"
+                }
             ],
             "id": "Leyton Midland Road Rail Station"
         },
@@ -6974,8 +8270,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GWLTHQRD"
+            "constituent_stations": [
+                {
+                    "name": "Walthamstow Queens Road Rail Station",
+                    "naptan_id": "910GWLTHQRD"
+                }
             ],
             "id": "Walthamstow Queens Road Rail Station"
         },
@@ -6991,8 +8290,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GSTOTNHM"
+            "constituent_stations": [
+                {
+                    "name": "South Tottenham Rail Station",
+                    "naptan_id": "910GSTOTNHM"
+                }
             ],
             "id": "South Tottenham Rail Station"
         },
@@ -7008,8 +8310,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GHRGYGL"
+            "constituent_stations": [
+                {
+                    "name": "Harringay Green Lanes Rail Station",
+                    "naptan_id": "910GHRGYGL"
+                }
             ],
             "id": "Harringay Green Lanes Rail Station"
         },
@@ -7025,8 +8330,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GCROUCHH"
+            "constituent_stations": [
+                {
+                    "name": "Crouch Hill Rail Station",
+                    "naptan_id": "910GCROUCHH"
+                }
             ],
             "id": "Crouch Hill Rail Station"
         },
@@ -7042,8 +8350,11 @@
             "lines": [
                 "suffragette"
             ],
-            "constituent_naptan_ids": [
-                "910GUPRHLWY"
+            "constituent_stations": [
+                {
+                    "name": "Upper Holloway Rail Station",
+                    "naptan_id": "910GUPRHLWY"
+                }
             ],
             "id": "Upper Holloway Rail Station"
         },
@@ -7059,8 +8370,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GWATFJDC"
+            "constituent_stations": [
+                {
+                    "name": "Watford Junction Rail Station",
+                    "naptan_id": "910GWATFJDC"
+                }
             ],
             "id": "Watford Junction Rail Station"
         },
@@ -7076,8 +8390,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GWATFDHS"
+            "constituent_stations": [
+                {
+                    "name": "Watford High Street Rail Station",
+                    "naptan_id": "910GWATFDHS"
+                }
             ],
             "id": "Watford High Street Rail Station"
         },
@@ -7093,8 +8410,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GBUSHYDC"
+            "constituent_stations": [
+                {
+                    "name": "Bushey Rail Station",
+                    "naptan_id": "910GBUSHYDC"
+                }
             ],
             "id": "Bushey Rail Station"
         },
@@ -7110,8 +8430,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GCRPNDPK"
+            "constituent_stations": [
+                {
+                    "name": "Carpenders Park Rail Station",
+                    "naptan_id": "910GCRPNDPK"
+                }
             ],
             "id": "Carpenders Park Rail Station"
         },
@@ -7127,8 +8450,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GHTCHEND"
+            "constituent_stations": [
+                {
+                    "name": "Hatch End Rail Station",
+                    "naptan_id": "910GHTCHEND"
+                }
             ],
             "id": "Hatch End Rail Station"
         },
@@ -7144,8 +8470,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GHEDSTNL"
+            "constituent_stations": [
+                {
+                    "name": "Headstone Lane Rail Station",
+                    "naptan_id": "910GHEDSTNL"
+                }
             ],
             "id": "Headstone Lane Rail Station"
         },
@@ -7164,9 +8493,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GHROW",
-                "940GZZLUHAW"
+            "constituent_stations": [
+                {
+                    "name": "Harrow & Wealdstone Rail Station",
+                    "naptan_id": "910GHROW"
+                },
+                {
+                    "name": "Harrow & Wealdstone Underground Station",
+                    "naptan_id": "940GZZLUHAW"
+                }
             ],
             "id": "Harrow & Wealdstone Rail Station"
         },
@@ -7184,9 +8519,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GKTON",
-                "940GZZLUKEN"
+            "constituent_stations": [
+                {
+                    "name": "Kenton Rail Station",
+                    "naptan_id": "910GKTON"
+                },
+                {
+                    "name": "Kenton Underground Station",
+                    "naptan_id": "940GZZLUKEN"
+                }
             ],
             "id": "Kenton Rail Station"
         },
@@ -7204,9 +8545,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GSKENTON",
-                "940GZZLUSKT"
+            "constituent_stations": [
+                {
+                    "name": "South Kenton Rail Station",
+                    "naptan_id": "910GSKENTON"
+                },
+                {
+                    "name": "South Kenton Underground Station",
+                    "naptan_id": "940GZZLUSKT"
+                }
             ],
             "id": "South Kenton Rail Station"
         },
@@ -7224,9 +8571,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GNWEMBLY",
-                "940GZZLUNWY"
+            "constituent_stations": [
+                {
+                    "name": "North Wembley Rail Station",
+                    "naptan_id": "910GNWEMBLY"
+                },
+                {
+                    "name": "North Wembley Underground Station",
+                    "naptan_id": "940GZZLUNWY"
+                }
             ],
             "id": "North Wembley Rail Station"
         },
@@ -7244,9 +8597,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GWMBY",
-                "940GZZLUWYC"
+            "constituent_stations": [
+                {
+                    "name": "Wembley Central Rail Station",
+                    "naptan_id": "910GWMBY"
+                },
+                {
+                    "name": "Wembley Central Underground Station",
+                    "naptan_id": "940GZZLUWYC"
+                }
             ],
             "id": "Wembley Central Rail Station"
         },
@@ -7264,9 +8623,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GSTNBGPK",
-                "940GZZLUSGP"
+            "constituent_stations": [
+                {
+                    "name": "Stonebridge Park Rail Station",
+                    "naptan_id": "910GSTNBGPK"
+                },
+                {
+                    "name": "Stonebridge Park Underground Station",
+                    "naptan_id": "940GZZLUSGP"
+                }
             ],
             "id": "Stonebridge Park Rail Station"
         },
@@ -7284,9 +8649,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GHARLSDN",
-                "940GZZLUHSN"
+            "constituent_stations": [
+                {
+                    "name": "Harlesden Rail Station",
+                    "naptan_id": "910GHARLSDN"
+                },
+                {
+                    "name": "Harlesden Underground Station",
+                    "naptan_id": "940GZZLUHSN"
+                }
             ],
             "id": "Harlesden Rail Station"
         },
@@ -7304,9 +8675,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GKENSLG",
-                "940GZZLUKSL"
+            "constituent_stations": [
+                {
+                    "name": "Kensal Green Rail Station",
+                    "naptan_id": "910GKENSLG"
+                },
+                {
+                    "name": "Kensal Green Underground Station",
+                    "naptan_id": "940GZZLUKSL"
+                }
             ],
             "id": "Kensal Green Rail Station"
         },
@@ -7324,9 +8701,15 @@
                 "bakerloo",
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GQPRK",
-                "940GZZLUQPS"
+            "constituent_stations": [
+                {
+                    "name": "Queens Park (London) Rail Station",
+                    "naptan_id": "910GQPRK"
+                },
+                {
+                    "name": "Queen's Park Underground Station",
+                    "naptan_id": "940GZZLUQPS"
+                }
             ],
             "id": "Queens Park (London) Rail Station"
         },
@@ -7342,8 +8725,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GKLBRNHR"
+            "constituent_stations": [
+                {
+                    "name": "Kilburn High Road Rail Station",
+                    "naptan_id": "910GKLBRNHR"
+                }
             ],
             "id": "Kilburn High Road Rail Station"
         },
@@ -7359,8 +8745,11 @@
             "lines": [
                 "lioness"
             ],
-            "constituent_naptan_ids": [
-                "910GSHMPSTD"
+            "constituent_stations": [
+                {
+                    "name": "South Hampstead Rail Station",
+                    "naptan_id": "910GSHMPSTD"
+                }
             ],
             "id": "South Hampstead Rail Station"
         },
@@ -7376,8 +8765,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUKPK"
+            "constituent_stations": [
+                {
+                    "name": "Kilburn Park Underground Station",
+                    "naptan_id": "940GZZLUKPK"
+                }
             ],
             "id": "Kilburn Park Underground Station"
         },
@@ -7393,8 +8785,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMVL"
+            "constituent_stations": [
+                {
+                    "name": "Maida Vale Underground Station",
+                    "naptan_id": "940GZZLUMVL"
+                }
             ],
             "id": "Maida Vale Underground Station"
         },
@@ -7410,8 +8805,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUWKA"
+            "constituent_stations": [
+                {
+                    "name": "Warwick Avenue Underground Station",
+                    "naptan_id": "940GZZLUWKA"
+                }
             ],
             "id": "Warwick Avenue Underground Station"
         },
@@ -7427,8 +8825,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUERB"
+            "constituent_stations": [
+                {
+                    "name": "Edgware Road (Bakerloo) Underground Station",
+                    "naptan_id": "940GZZLUERB"
+                }
             ],
             "id": "Edgware Road (Bakerloo) Underground Station"
         },
@@ -7444,8 +8845,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLUMYB"
+            "constituent_stations": [
+                {
+                    "name": "Marylebone Underground Station",
+                    "naptan_id": "940GZZLUMYB"
+                }
             ],
             "id": "Marylebone Underground Station"
         },
@@ -7461,8 +8865,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLURGP"
+            "constituent_stations": [
+                {
+                    "name": "Regent's Park Underground Station",
+                    "naptan_id": "940GZZLURGP"
+                }
             ],
             "id": "Regent's Park Underground Station"
         },
@@ -7478,8 +8885,11 @@
             "lines": [
                 "bakerloo"
             ],
-            "constituent_naptan_ids": [
-                "940GZZLULBN"
+            "constituent_stations": [
+                {
+                    "name": "Lambeth North Underground Station",
+                    "naptan_id": "940GZZLULBN"
+                }
             ],
             "id": "Lambeth North Underground Station"
         }

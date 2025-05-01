@@ -8,9 +8,9 @@ import math
 from dotenv import load_dotenv
 
 # --- Configuration ---
-GRAPH_PATH = "networkx_graph/graph_data/networkx_graph_new.json"
+GRAPH_PATH = "networkx_graph/graph_data/networkx_graph_hubs_final_weighted.json"
 TFL_API_BASE_URL = "https://api.tfl.gov.uk/Journey/JourneyResults/"
-# STATION_DATA_PATH = "slim_stations/unique_stations.json" # No longer needed
+
 
 # --- Helper Functions (Adapted from main.py) ---
 
@@ -23,41 +23,56 @@ def load_networkx_graph_and_station_data():
         G = nx.MultiDiGraph()
         station_data_lookup = {}
 
-        # Add nodes and populate lookup
-        if 'nodes' in graph_data and isinstance(graph_data['nodes'], dict):
-            for node_name, attributes in graph_data['nodes'].items():
-                # Ensure attributes is a dict before adding node and data
-                if isinstance(attributes, dict):
-                    G.add_node(node_name, **attributes)
-                    # Store all attributes in the lookup, keyed by node name
-                    station_data_lookup[node_name] = attributes
+        # Process nodes (now a list of dicts)
+        if 'nodes' in graph_data and isinstance(graph_data['nodes'], list):
+            for node_dict in graph_data['nodes']:
+                if isinstance(node_dict, dict) and 'id' in node_dict:
+                    node_id = node_dict.pop('id') # Extract the node ID ('hub_name')
+                    G.add_node(node_id, **node_dict) # Add node with remaining attributes
+                    # Store all original attributes (including the 'id' we popped) in the lookup
+                    node_dict['id'] = node_id # Add it back for the lookup
+                    station_data_lookup[node_id] = node_dict
                 else:
-                    # Add node even if attributes are missing/malformed, but don't add to lookup
-                    G.add_node(node_name)
-                    print(f"Warning: Node '{node_name}' has unexpected attribute format: {attributes}")
+                    print(f"Warning: Skipping node due to missing 'id' or unexpected format: {node_dict}")
         else:
-            print("Warning: 'nodes' key not found or not a dictionary in graph data.")
+            print("Warning: 'nodes' key not found or not a list in graph data.")
 
-        # Add edges (logic remains the same)
-        if 'edges' in graph_data and isinstance(graph_data['edges'], list):
-            for edge in graph_data['edges']:
-                if isinstance(edge, dict) and 'source' in edge and 'target' in edge:
-                    source = edge.pop('source')
-                    target = edge.pop('target')
-                    key = edge.pop('key', None)
-                    # Ensure source and target nodes exist before adding edge
+        # Process edges (now a list of dicts with 'key')
+        if 'links' in graph_data and isinstance(graph_data['links'], list): # Check for 'links' key
+            for edge_dict in graph_data['links']:
+                if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
+                    source = edge_dict['source']
+                    target = edge_dict['target']
+                    key = edge_dict['key'] # This is the line/mode/transfer identifier
+                    weight = edge_dict['weight'] 
+
+                    # Ensure nodes exist before adding edge
                     if G.has_node(source) and G.has_node(target):
-                        G.add_edge(source, target, key=key, **edge)
+                         # Add edge with key and weight as an attribute
+                        G.add_edge(source, target, key=key, weight=weight)
                     else:
-                        print(f"Warning: Skipping edge due to missing node(s): {source} -> {target}")
+                        print(f"Warning: Skipping edge due to missing node(s): {source} -> {target} (Key: {key})")
                 else:
-                    print(f"Warning: Skipping invalid edge format: {edge}")
+                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight): {edge_dict}")
+        elif 'edges' in graph_data and isinstance(graph_data['edges'], list): # Fallback check for 'edges' key
+             print("Warning: Found 'edges' key instead of 'links'. Attempting to process...")
+             for edge_dict in graph_data['edges']:
+                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
+                    source = edge_dict['source']
+                    target = edge_dict['target']
+                    key = edge_dict['key'] 
+                    weight = edge_dict['weight'] 
+                    if G.has_node(source) and G.has_node(target):
+                        G.add_edge(source, target, key=key, weight=weight)
+                    else:
+                        print(f"Warning: Skipping edge (from 'edges' list) due to missing node(s): {source} -> {target} (Key: {key})")
+                 else:
+                    print(f"Warning: Skipping invalid edge format (from 'edges' list) or missing required keys (source, target, key, weight): {edge_dict}")
         else:
-            print("Warning: 'edges' key not found or not a list in graph data.")
+            print("Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
 
-        print(f"Loaded NetworkX graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
+        print(f"Loaded NetworkX graph from '{GRAPH_PATH}' with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
         print(f"Created station data lookup for {len(station_data_lookup)} stations from graph nodes.")
-        # Return both the graph and the lookup dictionary
         return G, station_data_lookup
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading or parsing NetworkX graph JSON: {e}", file=sys.stderr)
@@ -76,6 +91,12 @@ def get_api_key():
 
 def get_travel_time_tfl(start_naptan_id, end_naptan_id, api_key):
     """Calls the TfL Journey Planner API using Naptan IDs."""
+    # Check if start and end are the same Hub ID. 
+    # The API might handle this, but it saves an unnecessary call.
+    if start_naptan_id == end_naptan_id:
+        print(f"  Start and end Naptan IDs are the same ({start_naptan_id}), returning 0 minutes.")
+        return 0 # Travel time within the same hub/station is 0
+
     if not start_naptan_id or not end_naptan_id:
         print("  Error: Missing Naptan ID for TfL API call.")
         return None
@@ -115,6 +136,12 @@ def get_travel_time_tfl(start_naptan_id, end_naptan_id, api_key):
 
 def get_journey_details_tfl(start_naptan_id, end_naptan_id, api_key):
     """Calls the TfL Journey Planner API using Naptan IDs and returns the first journey object."""
+    # Check if start and end are the same Hub ID. 
+    if start_naptan_id == end_naptan_id:
+        print(f"  Start and end Naptan IDs are the same ({start_naptan_id}), returning None (no journey needed).")
+        # Return a structure indicating 0 duration but no legs? Or just None? Let's return None.
+        return None 
+
     if not start_naptan_id or not end_naptan_id:
         print("  Error: Missing Naptan ID for TfL API call.")
         return None
@@ -163,6 +190,19 @@ def dijkstra_with_transfer_penalty_and_path(graph, start_station_name, end_stati
     Returns:
         tuple: (min_time, path_nodes, path_keys, total_penalty) or (inf, [], [], 0) if no path.
     """
+    # Ensure start/end stations exist in the graph before starting
+    if start_station_name not in graph:
+        print(f"  Error: Start station '{start_station_name}' not found in the graph.")
+        return float('inf'), [], [], 0.0
+    if end_station_name not in graph:
+        print(f"  Error: End station '{end_station_name}' not found in the graph.")
+        return float('inf'), [], [], 0.0
+        
+    # If start and end are the same, return 0 time immediately
+    if start_station_name == end_station_name:
+        print(f"  Start and end stations are the same ('{start_station_name}'), path time is 0.")
+        return 0.0, [start_station_name], [], 0.0
+
     pq = [(0.0, start_station_name, None)] # (time, station, line_key_used_to_arrive)
     distances = {(start_station_name, None): 0.0} # Key: (station, line_key), Value: time
     
@@ -196,11 +236,11 @@ def dijkstra_with_transfer_penalty_and_path(graph, start_station_name, end_stati
             edge_datas = graph.get_edge_data(current_station, neighbor_station)
             if not edge_datas: continue
 
-            for edge_index, edge_data in edge_datas.items():
-                edge_duration = edge_data.get('duration', float('inf'))
-                current_edge_line_key = edge_index 
+            for edge_key, edge_data in edge_datas.items():
+                edge_travel_time = edge_data.get('weight', float('inf')) 
+                current_edge_line_key = edge_key 
 
-                if edge_duration == float('inf') or current_edge_line_key is None:
+                if edge_travel_time == float('inf') or current_edge_line_key is None:
                     continue
 
                 penalty = 0.0
@@ -210,14 +250,14 @@ def dijkstra_with_transfer_penalty_and_path(graph, start_station_name, end_stati
                     current_edge_line_key != 'transfer'):
                     penalty = 5.0 
 
-                new_time = current_time + edge_duration + penalty
+                new_time = current_time + edge_travel_time + penalty
                 neighbor_state = (neighbor_station, current_edge_line_key)
 
                 if new_time < distances.get(neighbor_state, float('inf')):
                     distances[neighbor_state] = new_time
                     heapq.heappush(pq, (new_time, neighbor_station, current_edge_line_key))
-                    # Store predecessor info for path reconstruction
-                    predecessors[neighbor_state] = (current_station, previous_line_key, edge_duration, penalty)
+                    # Store predecessor info for path reconstruction, store edge_travel_time
+                    predecessors[neighbor_state] = (current_station, previous_line_key, edge_travel_time, penalty)
 
     # Path Reconstruction
     if final_state_at_destination:
@@ -227,7 +267,7 @@ def dijkstra_with_transfer_penalty_and_path(graph, start_station_name, end_stati
         
         curr = final_state_at_destination
         while curr in predecessors:
-            prev_station, prev_line_key, edge_dur, penalty = predecessors[curr]
+            prev_station, prev_line_key, edge_travel_time, penalty = predecessors[curr]
             # Insert at the beginning to reverse the path
             path_nodes.insert(0, curr[0]) 
             path_keys.insert(0, curr[1])
@@ -336,7 +376,9 @@ def main():
             graph_total_time = graph_time_no_walk + walk_time
             print(f"  Graph Path ({len(path_nodes)} nodes): {' -> '.join(path_nodes)}")
             print(f"  Graph Keys Used: {path_keys}")
-            print(f"  Base Path Duration (sum of edge weights): {graph_time_no_walk - total_penalty:.2f} mins")
+             # Calculate base path duration by summing weights (excluding penalty)
+            base_path_duration = graph_time_no_walk - total_penalty 
+            print(f"  Base Path Duration (sum of edge weights): {base_path_duration:.2f} mins")
             print(f"  Calculated Penalty: {total_penalty:.2f} mins")
             print(f"  Graph Time (excl. walk): {graph_time_no_walk:.2f} mins")
             print(f"  GRAPH TOTAL TIME (incl. walk): {graph_total_time:.2f} mins")
@@ -347,52 +389,91 @@ def main():
         start_station_data = station_data_lookup.get(start_station)
         end_station_data = station_data_lookup.get(end_station)
 
-        if not start_station_data or not end_station_data:
-            print(f"  Error: Could not find station data in graph nodes for '{start_station}' or '{end_station}'")
-            tfl_total_time = None
-            tfl_journey = None
-        else:
-            # Extract Naptan ID from the node attributes
-            # Ensure the 'id' key exists in the attributes dictionary
-            start_naptan_id = start_station_data.get('id')
-            end_naptan_id = end_station_data.get('id')
+        # --- Add check for missing station data before proceeding ---
+        tfl_total_time = None # Initialize to None
+        tfl_journey = None    # Initialize to None
+        proceed_with_tfl = True # Flag to control API call
 
-            if not start_naptan_id or not end_naptan_id:
-                print(f"  Error: Missing Naptan ID attribute ('id') in graph node data for '{start_station}' (Data: {start_station_data}) or '{end_station}' (Data: {end_station_data})")
-                tfl_total_time = None
-                tfl_journey = None
-            else:
-                print(f"  Using Naptan IDs: Start={start_naptan_id}, End={end_naptan_id}")
-                # Call TfL API with Naptan IDs
-                tfl_journey = get_journey_details_tfl(start_naptan_id, end_naptan_id, api_key)
+        if not start_station_data:
+            print(f"  Error: Could not find station data in graph lookup for START station '{start_station}'")
+            proceed_with_tfl = False
+        if not end_station_data:
+             print(f"  Error: Could not find station data in graph lookup for END station '{end_station}'")
+             proceed_with_tfl = False
 
-        # Check tfl_journey which is now the source for duration
-        if tfl_journey is None:
-             print("  TfL Time: Could not retrieve journey details.")
-             tfl_total_time = None # Ensure total time is None if journey failed
-        else:
-            tfl_duration = tfl_journey.get('duration')
-            if tfl_duration is None:
-                 print("  TfL Time: Journey retrieved but duration missing.")
-                 tfl_total_time = None # Handle missing duration in response
+        if proceed_with_tfl:
+             # Extract IDs for TfL API call based on the refined logic
+             start_primary_id = start_station_data.get('primary_naptan_id')
+             start_constituents = start_station_data.get('constituent_naptan_ids', [])
+             end_primary_id = end_station_data.get('primary_naptan_id')
+             end_constituents = end_station_data.get('constituent_naptan_ids', [])
+             
+             start_naptan_id = None
+             end_naptan_id = None
+
+             # Determine Start Naptan ID
+             if start_primary_id and not start_primary_id.startswith("HUB"):
+                 start_naptan_id = start_primary_id
+             elif start_constituents: # Check if list is not empty
+                 start_naptan_id = start_constituents[0] # Use first constituent
+             
+             # Determine End Naptan ID
+             if end_primary_id and not end_primary_id.startswith("HUB"):
+                 end_naptan_id = end_primary_id
+             elif end_constituents: # Check if list is not empty
+                 end_naptan_id = end_constituents[0] # Use first constituent
+
+             # Validate that we successfully determined both IDs
+             if not start_naptan_id:
+                 print(f"  Error: Could not determine valid Naptan ID for START station '{start_station}' (Primary: {start_primary_id}, Constituents: {start_constituents})")
+                 proceed_with_tfl = False
+             if not end_naptan_id:
+                 print(f"  Error: Could not determine valid Naptan ID for END station '{end_station}' (Primary: {end_primary_id}, Constituents: {end_constituents})")
+                 proceed_with_tfl = False
+
+        # Only call API if we have valid Naptan IDs
+        if proceed_with_tfl:
+            print(f"  Using Naptan IDs: Start={start_naptan_id}, End={end_naptan_id}")
+            # Call TfL API with Naptan IDs
+            tfl_journey = get_journey_details_tfl(start_naptan_id, end_naptan_id, api_key)
+            
+            # Check tfl_journey which is now the source for duration
+            if tfl_journey is None:
+                 print("  TfL Time: Could not retrieve journey details.")
+                 # tfl_total_time remains None
             else:
-                tfl_total_time = tfl_duration + walk_time
-                print(f"  TfL Duration (excl. walk): {tfl_duration} mins")
-                print(f"  TFL TOTAL TIME (incl. walk): {tfl_total_time} mins")
-                # Print Journey Legs (remains the same, uses tfl_journey)
-                print("  TfL Journey Breakdown:")
-                legs = tfl_journey.get('legs', [])
-                if not legs:
-                    print("    No legs information available.")
+                tfl_duration = tfl_journey.get('duration')
+                if tfl_duration is None:
+                     print("  TfL Time: Journey retrieved but duration missing.")
+                     # tfl_total_time remains None 
                 else:
-                    for i, leg in enumerate(legs):
-                        instruction = leg.get('instruction', {}).get('summary', 'No instruction')
-                        mode = leg.get('mode', {}).get('name', 'unknown mode')
-                        duration = leg.get('duration', 0)
-                        print(f"    {i+1}. ({mode}, {duration} min): {instruction}")
+                    tfl_total_time = tfl_duration + walk_time # Calculate total time here
+                    print(f"  TfL Duration (excl. walk): {tfl_duration} mins")
+                    print(f"  TFL TOTAL TIME (incl. walk): {tfl_total_time} mins")
+                    # Print Journey Legs (only if journey details were successfully retrieved)
+                    print("  TfL Journey Breakdown:")
+                    legs = tfl_journey.get('legs', [])
+                    if not legs:
+                        print("    No legs information available.")
+                    else:
+                        for i, leg in enumerate(legs):
+                            instruction = leg.get('instruction', {}).get('summary', 'No instruction')
+                            mode = leg.get('mode', {}).get('name', 'unknown mode')
+                            duration = leg.get('duration', 0)
+                            # Add line identifier if available
+                            line_id = 'N/A' # Default
+                            if leg.get('routeOptions'):
+                                line_info = leg['routeOptions'][0].get('lineIdentifier')
+                                if line_info:
+                                    line_id = line_info.get('id', 'N/A')
+                                    
+                            print(f"    {i+1}. ({mode}, line: {line_id}, {duration} min): {instruction}")
 
         # --- Summary ---
         print("\nComparison Summary:")
+        print(f"  Graph Total: {graph_total_time:.2f} mins" if graph_total_time != float('inf') else "  Graph Total: N/A (Path not found)")
+        print(f"  TfL Total:   {tfl_total_time} mins" if tfl_total_time is not None else "  TfL Total:   N/A (API error or no journey)")
+
         # Check graph time is finite and tfl_total_time is not None before comparing
         if graph_total_time != float('inf') and tfl_total_time is not None:
             diff = tfl_total_time - graph_total_time

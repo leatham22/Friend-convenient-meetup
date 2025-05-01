@@ -40,6 +40,8 @@ The project has undergone a significant refactoring towards a **hub-based graph 
     *   Updates the `weight` attribute for all line edges.
     *   Outputs the final, fully weighted graph: **`networkx_graph/graph_data/networkx_graph_hubs_final_weighted.json`**. This file is the complete network representation ready for analysis and pathfinding.
 
+**Progression Update:** The main script (`main.py`) and the debug script (`debug_compare_times.py`) have now been updated to load and correctly interpret the structure of this final hub-based graph (`networkx_graph_hubs_final_weighted.json`).
+
 **Next Steps:** Analyze the final graph using scripts in `networkx_graph/analyse_graph/`.
 
 ---

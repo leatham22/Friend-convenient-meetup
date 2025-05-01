@@ -25,7 +25,7 @@ TFL_API_BASE_URL = "https://api.tfl.gov.uk/Journey/JourneyResults/"
 STATION_DATA_PATH = "slim_stations/unique_stations.json"
 
 # --- Path to NetworkX Graph Data ---
-GRAPH_PATH = "networkx_graph/graph_data/networkx_graph_new.json"
+GRAPH_PATH = "networkx_graph/graph_data/networkx_graph_hubs_final_weighted.json"
 
 # --- Station Filtering Functions ---
 
@@ -265,41 +265,66 @@ def load_networkx_graph_and_station_data():
         G = nx.MultiDiGraph()
         station_data_lookup = {}
 
-        # Add nodes and populate lookup
-        if 'nodes' in graph_data and isinstance(graph_data['nodes'], dict):
-            for node_name, attributes in graph_data['nodes'].items():
-                if isinstance(attributes, dict):
-                    G.add_node(node_name, **attributes)
-                    # Add station attributes (including id, lat, lon if present) to lookup
-                    station_data_lookup[node_name] = attributes 
+        # Process nodes (now a list of dicts)
+        if 'nodes' in graph_data and isinstance(graph_data['nodes'], list):
+            for node_dict in graph_data['nodes']:
+                if isinstance(node_dict, dict) and 'id' in node_dict:
+                    node_id = node_dict.pop('id') # Extract the node ID ('hub_name')
+                    # Add node with remaining attributes
+                    G.add_node(node_id, **node_dict)
+                    # Store all original attributes (including the 'id' we popped) in the lookup
+                    node_dict['id'] = node_id # Add it back for the lookup
+                    station_data_lookup[node_id] = node_dict
                 else:
-                    G.add_node(node_name) # Add node even if attributes format is unexpected
-                    print(f"Warning: Node '{node_name}' has unexpected attribute format: {attributes}")
+                    print(f"Warning: Skipping node due to missing 'id' or unexpected format: {node_dict}")
         else:
-            print("Warning: 'nodes' key not found or not a dictionary in graph data.")
+            print("Warning: 'nodes' key not found or not a list in graph data.")
 
-        # Add edges
-        if 'edges' in graph_data and isinstance(graph_data['edges'], list):
-            for edge in graph_data['edges']:
-                if isinstance(edge, dict) and 'source' in edge and 'target' in edge:
-                    source = edge.pop('source')
-                    target = edge.pop('target')
-                    key = edge.pop('key', None)
-                    # Ensure nodes exist in the graph before adding edge
+        # Process edges (now a list of dicts with 'key')
+        if 'links' in graph_data and isinstance(graph_data['links'], list): # Standard key is 'links'
+            for edge_dict in graph_data['links']:
+                # Check for 'weight' instead of 'duration'
+                if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
+                    source = edge_dict['source']
+                    target = edge_dict['target']
+                    key = edge_dict['key'] # This is the line/mode/transfer identifier
+                    # Use 'weight' key
+                    weight = edge_dict['weight'] 
+                    # Ensure nodes exist before adding edge
                     if G.has_node(source) and G.has_node(target):
-                        G.add_edge(source, target, key=key, **edge)
+                        # Add edge with key and weight as an attribute
+                        G.add_edge(source, target, key=key, weight=weight) # Use weight=weight
                     else:
-                        print(f"Warning: Skipping edge due to missing node(s): {source} -> {target}")
+                        print(f"Warning: Skipping edge due to missing node(s): {source} -> {target} (Key: {key})")
                 else:
-                    print(f"Warning: Skipping invalid edge format: {edge}")
+                    # Update error message
+                    print(f"Warning: Skipping invalid edge format or missing required keys (source, target, key, weight): {edge_dict}")
+        elif 'edges' in graph_data and isinstance(graph_data['edges'], list): # Fallback for 'edges'
+            print("Warning: Found 'edges' key instead of 'links'. Attempting to process...")
+            for edge_dict in graph_data['edges']:
+                 # Check for 'weight' instead of 'duration'
+                 if isinstance(edge_dict, dict) and all(k in edge_dict for k in ['source', 'target', 'key', 'weight']):
+                    source = edge_dict['source']
+                    target = edge_dict['target']
+                    key = edge_dict['key'] 
+                    # Use 'weight' key
+                    weight = edge_dict['weight'] 
+                    if G.has_node(source) and G.has_node(target):
+                         # Use weight=weight
+                        G.add_edge(source, target, key=key, weight=weight)
+                    else:
+                        print(f"Warning: Skipping edge (from 'edges' list) due to missing node(s): {source} -> {target} (Key: {key})")
+                 else:
+                     # Update error message
+                    print(f"Warning: Skipping invalid edge format (from 'edges' list) or missing required keys (source, target, key, weight): {edge_dict}")
         else:
-            print("Warning: 'edges' key not found or not a list in graph data.")
+            print("Warning: Neither 'links' nor 'edges' key found or not a list in graph data.")
 
-        print(f"Loaded NetworkX graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
+        print(f"Loaded NetworkX graph from '{GRAPH_PATH}' with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
         print(f"Created station lookup for {len(station_data_lookup)} stations from graph nodes.")
         return G, station_data_lookup
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading or parsing NetworkX graph JSON: {e}", file=sys.stderr)
+        print(f"Error loading or parsing NetworkX graph JSON from {GRAPH_PATH}: {e}", file=sys.stderr)
         return None, None
     except Exception as e:
         print(f"An unexpected error occurred during graph construction: {e}", file=sys.stderr)
@@ -362,15 +387,20 @@ def find_closest_station_match(station_name, station_data_lookup):
     # Normalize the user input
     normalized_input_raw = station_name.lower().strip()
 
-    # Try exact case-insensitive match first against graph node names
+    # Try exact case-insensitive match first against graph node names (keys of the lookup)
     for node_name, node_attributes in station_data_lookup.items():
         if node_name.lower() == normalized_input_raw:
             print(f"Exact match found: '{node_name}'")
             # Return the attributes dictionary for the matched node
-            return node_attributes
+            # Check if 'hub_name' is present, otherwise use the matched node_name
+            if 'hub_name' in node_attributes:
+                return node_attributes
+            else:
+                # If hub_name is missing but we matched, add the key as the name
+                node_attributes['hub_name'] = node_name 
+                return node_attributes 
 
     # If no exact match, normalize the input name using the same logic as before
-    # (Keep the normalization function as it helps match user variations)
     def normalize_name(name):
         """Helper function to normalize station names"""
         if not name:
@@ -639,6 +669,19 @@ def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name):
         float: Minimum calculated travel time in minutes (excluding initial walk time),
                or float('inf') if no path found.
     """
+    # Ensure start/end stations exist in the graph before starting
+    if start_station_name not in graph:
+        print(f"    Error: Start station '{start_station_name}' not found in the graph.")
+        return float('inf')
+    if end_station_name not in graph:
+        print(f"    Error: End station '{end_station_name}' not found in the graph.")
+        return float('inf')
+
+    # If start and end are the same, return 0 time immediately
+    if start_station_name == end_station_name:
+        print(f"    Start and end stations are the same ('{start_station_name}'), path time is 0.")
+        return 0.0
+
     # Priority queue stores tuples: (current_path_time, current_station_name, line_key_taken_to_reach_station)
     # Initialize time to 0.0 as walk time is handled externally.
     pq = [(0.0, start_station_name, None)]
@@ -683,12 +726,14 @@ def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name):
             if not edge_datas:
                 continue # Should not happen with graph.neighbors, but safeguard
 
-            for edge_index, edge_data in edge_datas.items():
-                edge_duration = edge_data.get('duration', float('inf'))
-                current_edge_line_key = edge_index # <-- Correct: The edge_index *is* the line key (e.g., 'circle')
+            for edge_key, edge_data in edge_datas.items():
+                # Use 'weight' instead of 'duration'
+                edge_travel_time = edge_data.get('weight', float('inf')) 
+                current_edge_line_key = edge_key # <-- Correct: The edge_index *is* the line key (e.g., 'circle')
 
-                if edge_duration == float('inf') or current_edge_line_key is None:
-                    continue # Skip edges without duration or a valid line key (edge_index)
+                # Check using edge_travel_time
+                if edge_travel_time == float('inf') or current_edge_line_key is None:
+                    continue # Skip edges without weight or a valid line key (edge_index)
 
                 # Calculate penalty
                 penalty = 0.0
@@ -703,8 +748,8 @@ def dijkstra_with_transfer_penalty(graph, start_station_name, end_station_name):
                     # Optional: print penalty application for debugging
                     # print(f"        +5 min penalty: Changed from '{previous_line_key}' to '{current_edge_line_key}' arriving at {neighbor_station}")
 
-                # Calculate the time to reach the neighbor via THIS specific edge
-                new_time = current_time + edge_duration + penalty
+                # Calculate the time to reach the neighbor via THIS specific edge using edge_travel_time
+                new_time = current_time + edge_travel_time + penalty 
 
                 # Relaxation step: If this path is shorter than any known path to reach
                 # the neighbor_station VIA the current_edge_line_key, update it.
@@ -763,10 +808,10 @@ def main():
 
         # Extract required info from the returned attributes
         # Ensure the keys ('name', 'lat', 'lon', 'id') exist in the attributes
-        station_actual_name = found_station_attributes.get('name') # Should match the node name
+        station_actual_name = found_station_attributes.get('hub_name', found_station_attributes.get('id'))
         station_lat = found_station_attributes.get('lat')
         station_lon = found_station_attributes.get('lon')
-        station_naptan_id = found_station_attributes.get('id')
+        station_naptan_id = found_station_attributes.get('primary_naptan_id', found_station_attributes.get('id'))
 
         # Validate that we got all necessary attributes
         if not all([station_actual_name, station_lat, station_lon, station_naptan_id]):
@@ -817,7 +862,7 @@ def main():
     # Iterate through the *attributes* of the filtered stations
     for i, meeting_station_attributes in enumerate(filtered_stations_attributes, 1):
         # Extract name and ID from attributes
-        meeting_station_name = meeting_station_attributes.get('name')
+        meeting_station_name = meeting_station_attributes.get('hub_name', meeting_station_attributes.get('id'))
         # meeting_station_id = meeting_station_attributes.get('id') # Not needed for Dijkstra
         
         # Validate name exists
@@ -891,16 +936,30 @@ def main():
 
     # Iterate through the attributes of the top 10 stations
     for i, meeting_station_attributes in enumerate(top_10_stations_attributes, 1):
-        # Extract name and Naptan ID from the attributes
-        meeting_station_name = meeting_station_attributes.get('name')
-        meeting_naptan_id = meeting_station_attributes.get('id')
+        # Extract name and Naptan ID from the attributes.
+        # Prioritize 'hub_name' for display name.
+        meeting_station_name = meeting_station_attributes.get('hub_name', meeting_station_attributes.get('id')) # Use hub_name or id
+        
+        # Determine Meeting Naptan ID using the refined logic
+        meeting_primary_id = meeting_station_attributes.get('primary_naptan_id')
+        meeting_constituents = meeting_station_attributes.get('constituent_naptan_ids', [])
+        meeting_naptan_id = None # Initialize
 
-        # Validate required attributes exist
-        if not meeting_station_name or not meeting_naptan_id:
-            print(f"Warning: Skipping top station {i} due to missing name or id attribute. Attributes: {meeting_station_attributes}")
+        if meeting_primary_id and not meeting_primary_id.startswith("HUB"):
+            meeting_naptan_id = meeting_primary_id
+        elif meeting_constituents:
+            meeting_naptan_id = meeting_constituents[0]
+
+        # Validate required attributes exist for TfL call (Naptan ID)
+        if not meeting_station_name:
+            print(f"Warning: Skipping top station {i} due to missing name attribute ('hub_name' or 'id'). Attributes: {meeting_station_attributes}")
             continue
+        if not meeting_naptan_id:
+             # Update warning message to be more specific
+             print(f"Warning: Skipping top station {i} ('{meeting_station_name}') due to inability to determine valid Naptan ID (Primary: {meeting_primary_id}, Constituents: {meeting_constituents}). Attributes: {meeting_station_attributes}")
+             continue
 
-        print(f"\nProcessing Top station {i}/{len(top_10_stations_attributes)}: {meeting_station_name} (ID: {meeting_naptan_id}) (TfL API)")
+        print(f"\nProcessing Top station {i}/{len(top_10_stations_attributes)}: {meeting_station_name} (Using Naptan ID: {meeting_naptan_id}) (TfL API)")
         print("-" * 80)
 
         current_meeting_total_time = 0
@@ -956,33 +1015,47 @@ def main():
     # --- Final Result Display ---
     # Print final results based on the TFL calculations for the top stations
     if best_meeting_station_attributes:
-        # Extract info from the best station's attributes
-        best_name = best_meeting_station_attributes.get('name', 'Unknown Station')
+        # Extract info from the best station's attributes, prioritizing new keys
+        best_name = best_meeting_station_attributes.get('hub_name', best_meeting_station_attributes.get('id', 'Unknown Station'))
         best_lat = best_meeting_station_attributes.get('lat', 'N/A')
         best_lon = best_meeting_station_attributes.get('lon', 'N/A')
-        best_id = best_meeting_station_attributes.get('id') # Needed for final TFL calls
+        
+        # Determine the best Naptan ID using the refined logic for the final calculation
+        best_primary_id = best_meeting_station_attributes.get('primary_naptan_id')
+        best_constituents = best_meeting_station_attributes.get('constituent_naptan_ids', [])
+        best_id_for_api = None
+
+        if best_primary_id and not best_primary_id.startswith("HUB"):
+            best_id_for_api = best_primary_id
+        elif best_constituents:
+            best_id_for_api = best_constituents[0]
         
         print("\n" + "="*80)
         print("                                    FINAL RESULT (based on TFL API for top NetworkX estimates)")
         print("="*80)
         print(f"The most convenient station found is: {best_name}")
         print(f"Coordinates: {best_lat}, {best_lon}")
-        print(f"Naptan ID: {best_id}")
+        # Display the Naptan ID that will be used for final API calls
+        print(f"Using Naptan ID for final checks: {best_id_for_api if best_id_for_api else 'Error: Could not determine ID'}") 
         print(f"\nTotal combined TFL travel time: {min_total_time} minutes")
         print(f"Average TFL travel time per person: {min_avg_time:.1f} minutes")
         print("\nBreakdown by person (TFL API times for best station):")
 
-        # Check if we have the best station's Naptan ID before recalculating
-        if not best_id:
-             print(" Error: Could not retrieve Naptan ID for the best station to show final breakdown.")
+        # Check if we determined a valid Naptan ID for the best station before recalculating
+        if not best_id_for_api:
+             print(" Error: Could not determine a valid Naptan ID for the best station to show final breakdown.")
         else:
             # Recalculate individual TFL times for the best station for final display
             for person in people_data:
-                start_naptan_id = person['start_naptan_id']
+                # Use the person's stored Naptan ID (already determined during input)
+                start_naptan_id = person.get('start_naptan_id') 
+                if not start_naptan_id:
+                    print(f"  Person {person['id']} from {person['start_station_name']}: Error retrieving start Naptan ID.")
+                    continue
                 # Use Naptan IDs for the final TFL call
                 tfl_time = get_travel_time(
                     start_naptan_id,
-                    best_id, # Use the best station's ID
+                    best_id_for_api, # Use the determined best station's ID for API
                     args.api_key
                 )
                 if tfl_time is not None:
@@ -1006,7 +1079,7 @@ def main():
             alternatives_shown = 0
             for total_time, avg_time, name, station_attributes in tfl_results:
                  # Compare using name attribute from the stored attributes dictionary
-                if station_attributes.get('name') != best_name and alternatives_shown < 5:
+                if station_attributes.get('hub_name') != best_name and alternatives_shown < 5:
                     print(f"{alternatives_shown + 1}. {name}")
                     print(f"   Total TFL travel time: {total_time} mins")
                     print(f"   Average per person: {avg_time:.1f} mins")
