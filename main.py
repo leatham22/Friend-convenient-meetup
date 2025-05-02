@@ -991,12 +991,14 @@ def main():
         target_api_id = None
         target_primary_id = meeting_station_attributes.get('primary_naptan_id')
         # Use the CORRECT key 'constituent_stations'
-        target_constituents = meeting_station_attributes.get('constituent_stations', []) 
-        
+        target_constituents = meeting_station_attributes.get('constituent_stations', [])
+
         if target_primary_id and not target_primary_id.startswith("HUB"):
             target_api_id = target_primary_id
-        elif target_constituents:
-            target_api_id = target_constituents[0]
+        # Check if target_constituents is not empty AND the first item is a dictionary AND it has 'naptan_id'
+        elif target_constituents and isinstance(target_constituents[0], dict) and 'naptan_id' in target_constituents[0]:
+            # Correctly extract the Naptan ID string
+            target_api_id = target_constituents[0].get('naptan_id') # Extract the ID
 
         # Validate required attributes exist for TfL call (Naptan ID)
         if not meeting_station_name:
@@ -1071,14 +1073,16 @@ def main():
         # Determine the best Naptan ID using the refined logic for the final calculation
         best_primary_id = best_meeting_station_attributes.get('primary_naptan_id')
         # Use the CORRECT key 'constituent_stations'
-        best_constituents = best_meeting_station_attributes.get('constituent_stations', []) 
+        best_constituents = best_meeting_station_attributes.get('constituent_stations', [])
         best_id_for_api = None
 
         if best_primary_id and not best_primary_id.startswith("HUB"):
             best_id_for_api = best_primary_id
-        elif best_constituents:
-            best_id_for_api = best_constituents[0]
-        
+        # Check if best_constituents is not empty AND the first item is a dictionary AND it has 'naptan_id'
+        elif best_constituents and isinstance(best_constituents[0], dict) and 'naptan_id' in best_constituents[0]:
+             # Correctly extract the Naptan ID string
+            best_id_for_api = best_constituents[0].get('naptan_id') # Extract the ID
+
         print("\n" + "="*80)
         print("                                    FINAL RESULT (based on TFL API for top NetworkX estimates)")
         print("="*80)

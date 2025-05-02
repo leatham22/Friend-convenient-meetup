@@ -225,3 +225,13 @@ selected_station = "Baker Street Underground Station"
 station_coordinates = metadata[selected_station]
 connections = graph[selected_station]
 ```
+
+# Station Graph Building and Testing
+
+This directory contains scripts and subfolders related to the iterative process of building and testing different versions of the London Underground station graph.
+
+## Contents
+
+*   `graph_v0.1/`: Scripts and data for the initial unweighted graph version.
+*   `graph_v0.2/`: Scripts focusing on adding edge weights (journey times) and testing.
+*   `graph_v0.3/`: Scripts related to testing a revised graph data structure.

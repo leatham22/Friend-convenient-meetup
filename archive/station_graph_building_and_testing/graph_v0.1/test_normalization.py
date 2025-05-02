@@ -7,7 +7,7 @@ This shows the process of:
 """
 
 import json
-from normalize_stations import normalize_name
+from archive.normalize_stations import normalize_name
 
 
 def test_normalization():
