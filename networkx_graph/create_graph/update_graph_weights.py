@@ -199,18 +199,10 @@ def update_graph_edge_weights(graph_path, weights_path, output_path):
 if __name__ == "__main__":
     # Explain: This block ensures the code inside only runs when the script is executed directly (not imported as a module).
     print("Script started.")
-    # Define relative paths from the script's location
-    # Explain: os.path.dirname(__file__) gets the directory where the script is located.
-    # Explain: os.path.abspath converts it to an absolute path.
-    # Explain: os.path.join is used to construct paths in a platform-independent way.
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Explain: Navigates up one level from script_dir to get the project's base directory (assuming script is in create_graph).
-    base_dir = os.path.dirname(script_dir)
-
-    # Explain: Defines the paths to the input graph, calculated weights, and the output file relative to the base directory.
-    graph_file = os.path.join(base_dir, 'graph_data', 'networkx_graph_hubs_with_transfer_weights.json')
-    weights_file = os.path.join(base_dir, 'graph_data', 'calculated_hub_edge_weights.json')
-    output_file = os.path.join(base_dir, 'graph_data', 'networkx_graph_hubs_final_weighted.json')
+    # Define relative paths directly from the script's location in create_graph/
+    graph_file = 'output/stage3_networkx_graph_hubs_with_transfer_weights.json'
+    weights_file = 'output/stage4_calculated_hub_edge_weights.json'
+    output_file = 'output/final_networkx_graph.json'
 
     # Explain: Calls the main function to perform the update process.
     update_graph_edge_weights(graph_file, weights_file, output_file)

@@ -20,11 +20,11 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define file paths for input data cache and output graph
-OUTPUT_DIR = 'networkx_graph/graph_data' # Use a common output dir variable
-TFL_DATA_CACHE = os.path.join(OUTPUT_DIR, 'tfl_all_line_sequence_data.json') # More descriptive cache name
-OUTPUT_GRAPH_FILE = os.path.join(OUTPUT_DIR, 'networkx_graph_hubs_base.json')
+# Paths are relative to the script's location in create_graph/
+TFL_DATA_CACHE = '../data/raw_API_data/tfl_all_line_sequence_data.json'
+OUTPUT_GRAPH_FILE = 'output/stage1_networkx_graph_hubs_base.json'
 # Ensure the output directory exists
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs('output', exist_ok=True) # Create ./output/ directory relative to the script
 
 # TFL API Configuration
 TFL_API_KEY = os.getenv("TFL_API_KEY")
@@ -156,7 +156,7 @@ def fetch_all_tfl_data(modes, cache_path):
     # Check cache first
     if os.path.exists(cache_path):
         cache_mod_time = os.path.getmtime(cache_path)
-        if (time.time() - cache_mod_time) < 7 * 24 * 60 * 60:
+        if (time.time() - cache_mod_time) < 30 * 24 * 60 * 60:
             logging.info(f"Using cached TFL line data from {cache_path}")
             with open(cache_path, 'r') as f:
                 try:
@@ -164,7 +164,7 @@ def fetch_all_tfl_data(modes, cache_path):
                 except json.JSONDecodeError:
                     logging.error(f"Error decoding cache file {cache_path}. Fetching fresh data.")
         else:
-            logging.info("Cached TFL data is older than 7 days. Fetching fresh data.")
+            logging.info("Cached TFL data is older than 30 days. Fetching fresh data.")
     else:
         logging.info("No cached TFL data found. Fetching from API.")
 

@@ -1,14 +1,16 @@
-# File: networkx_graph/analyse_graph/validate_final_graph.py
-# Description: Performs validation checks on the final NetworkX graph 
-#              (networkx_graph_hubs_final.json).
-# Checks performed:
-# 1. Basic Graph Info: Number of nodes and edges.
-# 2. Edge Type Counts: Counts edges by key ('transfer' or line name for routes).
-# 3. Transfer Edge Weights: Checks how many transfer edges have None vs. valid weights.
-# 4. Graph Connectivity: Checks if the graph is weakly connected (explained).
-# 5. Node Attribute Presence: Verifies essential attributes (excluding id, zone) exist for all nodes.
-# 6. Edge Attribute Presence: Verifies essential attributes exist for relevant edges.
-#    - Lists route edges missing the 'line' attribute.
+"""
+File: networkx_graph/analyse_graph/validate_final_graph.py
+Description: Performs validation checks on the final NetworkX graph 
+             (networkx_graph_hubs_final.json).
+Checks performed:
+1. Basic Graph Info: Number of nodes and edges.
+2. Edge Type Counts: Counts edges by key ('transfer' or line name for routes).
+3. Transfer Edge Weights: Checks how many transfer edges have None vs. valid weights.
+4. Graph Connectivity: Checks if the graph is weakly connected (explained).
+5. Node Attribute Presence: Verifies essential attributes (excluding id, zone) exist for all nodes.
+6. Edge Attribute Presence: Verifies essential attributes exist for relevant edges.
+   - Lists route edges missing the 'line' attribute.
+"""
 
 import networkx as nx
 import json
@@ -31,7 +33,7 @@ except ImportError as e:
 
 # --- Configuration ---
 # Define the path to the final graph file relative to this script's location
-FINAL_GRAPH_FILE = "../graph_data/networkx_graph_hubs_final.json"
+FINAL_GRAPH_FILE = "../create_graph/output/final_networkx_graph.json"
 
 # --- Main Validation Logic ---
 def validate_graph(graph_filepath):
@@ -69,8 +71,8 @@ def validate_graph(graph_filepath):
     transfer_edges_count_key = edge_key_counts.get('transfer', 0)
     route_edges_count_key = num_edges - transfer_edges_count_key
     
-    logging.info(f" - Edges with key='transfer': {transfer_edges_count_key}")
-    logging.info(f" - Edges with other keys (assumed routes): {route_edges_count_key}")
+    logging.info(f" - Transfer edges: {transfer_edges_count_key}")
+    logging.info(f" - Adjacent station travel edges: {route_edges_count_key}")
     logging.info(f"   - Unique route keys (lines): {len(edge_key_counts) - (1 if 'transfer' in edge_key_counts else 0)}")
     # Example route keys:
     route_keys_example = [k for k in edge_key_counts if k != 'transfer'][:5]
@@ -100,7 +102,7 @@ def validate_graph(graph_filepath):
          logging.warning(f"Mismatch: Counted {transfer_edges_count_key} edges with key='transfer' but checked {transfer_edges_checked_count} for weight.")
     
     # Report findings
-    logging.info(f" - Checked {transfer_edges_checked_count} edges with key='transfer':")
+    logging.info(f" - Checked {transfer_edges_checked_count} transfer edges:")
     if transfer_edges_checked_count > 0:
         logging.info(f"   - With a valid weight value: {transfer_edges_with_weight}")
         logging.info(f"   - With weight explicitly set to None: {transfer_edges_none_weight}")
@@ -131,7 +133,7 @@ def validate_graph(graph_filepath):
     logging.info("[Check 5: Node Attributes Presence]")
     # 'id' is the node identifier itself, not an attribute in the data dict after loading.
     # 'zone' check removed as requested.
-    essential_node_attrs = ['primary_naptan_id', 'constituent_naptan_ids', 'lat', 'lon', 'modes', 'lines', 'hub_name'] 
+    essential_node_attrs = ['primary_naptan_id', 'constituent_stations', 'lat', 'lon', 'modes', 'lines', 'hub_name']
     nodes_missing_attrs_summary = Counter()
     nodes_failing_checks = defaultdict(list) # Store nodes failing specific checks
     checked_nodes_count = 0
@@ -148,8 +150,8 @@ def validate_graph(graph_filepath):
                  missing = True
             # Add check for empty lists for attributes that should be lists
             elif isinstance(data[attr], list) and not data[attr]:
-                # Flag attributes like modes, lines, constituent_naptan_ids if they are empty lists
-                if attr in ['modes', 'lines', 'constituent_naptan_ids']:
+                # Flag attributes like modes, lines, constituent_stations if they are empty lists
+                if attr in ['modes', 'lines', 'constituent_stations']:
                     missing = True
                     attr = f"{attr}_isEmptyList" # Use a distinct key for reporting empty lists
 
@@ -201,7 +203,7 @@ def validate_graph(graph_filepath):
                  other_key_edges_checked += 1
 
         # Report findings for route edges
-        logging.info(f" - Checked {route_edges_checked} route edges (key != 'transfer'):")
+        logging.info(f" - Checked {route_edges_checked} adjacent station travel edges:")
         if route_edges_missing_line_attr == 0 and route_edges_line_is_none_or_empty == 0:
             logging.info("   - All route edges seem to have a valid 'line' attribute.")
         else:

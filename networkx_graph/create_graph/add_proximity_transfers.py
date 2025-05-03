@@ -24,13 +24,13 @@ if not TFL_API_KEY:
     logging.warning("TFL_API_KEY not found in environment variables. Proceeding without API key (may hit rate limits).")
 
 # Input graph file from the first script
-INPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_base.json'
+INPUT_GRAPH_FILE = 'output/stage1_networkx_graph_hubs_base.json'
 # Output files for the graph with transfer edges and the list of transfers to weight
-OUTPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_with_transfers.json'
-OUTPUT_TRANSFER_LIST_FILE = 'networkx_graph/graph_data/inter_hub_transfers_to_weight.json'
+OUTPUT_GRAPH_FILE = 'output/stage2_networkx_graph_hubs_with_transfers.json'
+OUTPUT_TRANSFER_LIST_FILE = 'output/inter_hub_transfers_to_weight.json'
 
-# Ensure the output directory exists
-os.makedirs(os.path.dirname(OUTPUT_GRAPH_FILE), exist_ok=True)
+# Ensure the output directory exists (handled by build_hub_graph.py)
+# os.makedirs(os.path.dirname(OUTPUT_GRAPH_FILE), exist_ok=True)
 
 # TFL API endpoint for finding nearby StopPoints
 TFL_API_NEARBY_URL = "https://api.tfl.gov.uk/StopPoint"

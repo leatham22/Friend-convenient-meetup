@@ -14,7 +14,7 @@ This directory contains the first iteration of scripts used to build and verify 
 *   `create_station_graph.py`: The primary script for generating the initial station graph.
 *   `check_stations.py`: Basic checks for known missing stations returned by `find_missing_stations.py`
 *   `add_missing_stations.py`: Script to add stations identified in `Inter_station_times.csv` that don't exist in `station_graph.json`
-
+*   `normalize_stations.py`: Script to update naming conventions in `station_graph.json` to match our original data source. Therefore no more name normalisation needed between data sets. 
 
 ### Graph tests:
 

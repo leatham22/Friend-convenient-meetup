@@ -1,7 +1,5 @@
 Rules:
-    - I am learning to programe so please make sure to explain every change made and add extra comments to each line of code implemented
-    - When a new chat is Started, please read the ReadMe to get a picture of the project before first response
-    - When making significant change, automatically update the progression part of ReadMe with changes 
-    - When a script isnt getting the exact output we want, focus on fixing that script rather than creating a new one that deals with the errors. 
-    - When there is a small error in data outputted, don't fix the error manually in the script unless I have asked. Focus on optimising the original script. 
-    - when running commands in terminal, use "python3" NOT "python"
+    - I am applying to a masters programe in applied AI soon so I need everything structured that would look good to an "examiner". 
+    - This project is basically finished. Im now just focussing on modularising correctly and applying good READMEs 
+    - As a result of the above two points, please focus on making the project readable over changing functionality of the project unless specifically asked otherwies. 
+    - Always use python3 not python

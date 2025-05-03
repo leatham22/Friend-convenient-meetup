@@ -78,8 +78,8 @@ def load_node_link_graph(filepath):
         is_directed = graph_data.get('directed', False)
         # Load the graph using networkx.node_link_graph
         # Specify directed and multigraph flags based on the loaded data
-        # Explicitly set edges="edges" to match how the data was saved and address FutureWarning
-        G = nx.node_link_graph(graph_data, directed=is_directed, multigraph=is_multigraph, edges="edges")
+        # Explicitly set edges="links" to use current standard and silence FutureWarning
+        G = nx.node_link_graph(graph_data, directed=is_directed, multigraph=is_multigraph, edges="links")
         print(f"Successfully loaded node-link graph from {filepath}")
         return G
     except FileNotFoundError:

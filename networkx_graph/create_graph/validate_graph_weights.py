@@ -28,12 +28,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Determine script directory and data directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(SCRIPT_DIR, '../graph_data') # Assumes data is one level up in graph_data
+DATA_DIR = os.path.join(SCRIPT_DIR, 'output') # Assumes data is one level up in graph_data
 
 # Define input file paths relative to DATA_DIR
-GRAPH_FILE = os.path.join(DATA_DIR, 'networkx_graph_hubs_final.json')
+GRAPH_FILE = os.path.join(DATA_DIR, 'final_networkx_graph.json')
 # Consolidated weights file for all calculated modes
-WEIGHTS_FILE = os.path.join(DATA_DIR, 'calculated_hub_edge_weights.json')
+WEIGHTS_FILE = os.path.join(DATA_DIR, 'stage4_calculated_hub_edge_weights.json')
 # OG_ELIZ_WEIGHTS_FILE = os.path.join(DATA_DIR, 'Edge_weights_overground_elizabeth.json') # Removed
 
 # Define the modes/lines considered relevant for weight calculation
@@ -143,8 +143,9 @@ def main():
     relevant_graph_edge_keys = set()
     line_modes = defaultdict(set) # Store modes associated with each line in the graph
 
-    if isinstance(graph_data.get('edges'), list):
-        graph_edges_list = graph_data['edges']
+    # Access 'links' instead of 'edges'
+    graph_edges_list = graph_data.get('links', [])
+    if isinstance(graph_edges_list, list):
         for edge in graph_edges_list:
             if not isinstance(edge, dict): continue
             try:
@@ -173,7 +174,7 @@ def main():
         logging.info(f"Found {len(graph_edge_keys)} total edges in the graph file.")
         logging.info(f"Identified {len(relevant_graph_edge_keys)} relevant edges (Tube/DLR/Overground/Elizabeth) in the graph file.")
     else:
-        logging.error("'edges' key not found or not a list in graph data. Cannot extract graph edges.")
+        logging.error("'links' key not found or not a list in graph data. Cannot extract graph edges.")
         return
 
     # Weight File Edges

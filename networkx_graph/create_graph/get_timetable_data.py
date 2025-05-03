@@ -32,7 +32,7 @@ load_dotenv()
 
 # API configuration
 API_BASE_URL = "https://api.tfl.gov.uk/Line"
-CACHE_DIR = "../graph_data/timetable_cache"
+CACHE_DIR = "../data/raw_API_data/timetable_cache"
 
 # Try to get TfL API key from environment variables *after* loading .env
 TFL_API_KEY = os.environ.get("TFL_API_KEY")

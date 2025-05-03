@@ -1,3 +1,7 @@
+"""
+This script was used to debug the difference in journey times between the graph time and returned journey time from the TfL API. 
+"""
+
 import json
 import networkx as nx
 import heapq
@@ -8,7 +12,7 @@ import math
 from dotenv import load_dotenv
 
 # --- Configuration ---
-GRAPH_PATH = "networkx_graph/graph_data/networkx_graph_hubs_final_weighted.json"
+GRAPH_PATH = "networkx_graph/create_graph/output/final_networkx_graph.json"
 TFL_API_BASE_URL = "https://api.tfl.gov.uk/Journey/JourneyResults/"
 
 

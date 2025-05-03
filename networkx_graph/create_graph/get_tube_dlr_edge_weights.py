@@ -40,9 +40,9 @@ from datetime import datetime # Import datetime
 
 # --- Configuration ---
 # Relative paths from the script's location
-CACHE_DIR_RELATIVE = "../graph_data/timetable_cache"
-HUB_GRAPH_FILE_RELATIVE = "../graph_data/networkx_graph_hubs_with_transfer_weights.json"
-OUTPUT_FILE_RELATIVE = "../graph_data/calculated_hub_edge_weights.json"
+CACHE_DIR_RELATIVE = "../data/raw_API_data/timetable_cache"
+HUB_GRAPH_FILE_RELATIVE = "output/stage3_networkx_graph_hubs_with_transfer_weights.json"
+OUTPUT_FILE_RELATIVE = "output/stage4_calculated_hub_edge_weights.json"
 
 # Threshold for averaging durations. If max - min > threshold, we warn but still average.
 DISCREPANCY_THRESHOLD_MINUTES = 2

@@ -1,6 +1,6 @@
 # Slim Stations
 
-This directory contains optimized versions of the station data files. These files are:
+This directory contains optimized versions of the station data files. This file was used as the primary datasource until our final implementation. These files are:
 - Smaller in size
 - Contain only essential information
 - Optimized for quick loading and processing

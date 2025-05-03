@@ -17,13 +17,13 @@ load_dotenv() # Load environment variables
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Input files from the previous script
-INPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_with_transfers.json'
-INPUT_TRANSFER_LIST_FILE = 'networkx_graph/graph_data/inter_hub_transfers_to_weight.json'
+INPUT_GRAPH_FILE = 'output/stage2_networkx_graph_hubs_with_transfers.json'
+INPUT_TRANSFER_LIST_FILE = 'output/inter_hub_transfers_to_weight.json'
 # Final output graph file
-OUTPUT_GRAPH_FILE = 'networkx_graph/graph_data/networkx_graph_hubs_with_transfer_weights.json'
+OUTPUT_GRAPH_FILE = 'output/stage3_networkx_graph_hubs_with_transfer_weights.json'
 
-# Ensure the output directory exists
-os.makedirs(os.path.dirname(OUTPUT_GRAPH_FILE), exist_ok=True)
+# Ensure the output directory exists (handled by earlier scripts)
+# os.makedirs(os.path.dirname(OUTPUT_GRAPH_FILE), exist_ok=True)
 
 # TFL API endpoint for Journey Planner
 TFL_API_JOURNEY_URL = "https://api.tfl.gov.uk/Journey/JourneyResults/{from_id}/to/{to_id}"

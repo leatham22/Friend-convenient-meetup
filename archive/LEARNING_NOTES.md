@@ -1,6 +1,6 @@
 # Learning Notes: Working with London Underground Station Data
 
-This document explains key concepts and challenges faced when working with real-world transportation data, particularly in the context of the London Underground station network.
+This document explains key concepts and challenges faced when working with real-world transportation data, particularly in the context of the London Underground station network. 
 
 ## The Problem of Inconsistent Data Formats
 

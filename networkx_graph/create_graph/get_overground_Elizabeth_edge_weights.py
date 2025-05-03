@@ -25,17 +25,17 @@ import statistics # Added for averaging journey times
 
 # --- Configuration ---
 # Determine the directory of the current script
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 # Define the data directory relative to the script's directory
-DATA_DIR = os.path.join(SCRIPT_DIR, "../graph_data")
+# DATA_DIR = os.path.join(SCRIPT_DIR, "../graph_data") # Removed DATA_DIR
 
-# Define filenames (relative to DATA_DIR)
-GRAPH_DATA_FILE = "networkx_graph_hubs_with_transfer_weights.json"
-OUTPUT_FILE = "calculated_hub_edge_weights.json"
+# Define filenames relative to script location in create_graph/
+GRAPH_DATA_FULL_PATH = "output/stage3_networkx_graph_hubs_with_transfer_weights.json"
+OUTPUT_FILE_FULL_PATH = "output/stage4_calculated_hub_edge_weights.json"
 
 # Construct full paths using the absolute DATA_DIR
-GRAPH_DATA_FULL_PATH = os.path.join(DATA_DIR, GRAPH_DATA_FILE)
-OUTPUT_FILE_FULL_PATH = os.path.join(DATA_DIR, OUTPUT_FILE)
+# GRAPH_DATA_FULL_PATH = os.path.join(DATA_DIR, GRAPH_DATA_FILE) # Replaced by direct path
+# OUTPUT_FILE_FULL_PATH = os.path.join(DATA_DIR, OUTPUT_FILE) # Replaced by direct path
 
 # Lines to process in this script
 LINES_TO_PROCESS = [
@@ -418,7 +418,7 @@ def main():
     failed_edges = []
 
     # Iterate through the edges loaded from the graph data file
-    print(f"\nProcessing edges from {GRAPH_DATA_FILE} for lines: {', '.join(LINES_TO_PROCESS)}")
+    print(f"\nProcessing edges from {GRAPH_DATA_FULL_PATH} for lines: {', '.join(LINES_TO_PROCESS)}")
     total_edges_in_file = len(graph_edges)
     for i, edge_info in enumerate(graph_edges):
 
