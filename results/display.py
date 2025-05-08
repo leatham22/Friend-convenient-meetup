@@ -43,7 +43,9 @@ def display_results(best_meeting_station_attributes, people_data, tfl_results, a
         print(f"Coordinates: {best_lat}, {best_lon}")
         print(f"Using Naptan ID for final checks: {best_id_for_api if best_id_for_api else 'Error: Could not determine ID'}") 
         print(f"\nTotal combined TFL travel time: {min_total_time if min_total_time != float('inf') else 'N/A'} minutes")
-        print(f"Average TFL travel time per person: {min_avg_time:.1f if min_avg_time != float('inf') else 'N/A'} minutes")
+        # Fix the f-string formatting error by separating the formatting from the conditional
+        avg_time_display = f"{min_avg_time:.1f}" if min_avg_time != float('inf') else "N/A"
+        print(f"Average TFL travel time per person: {avg_time_display} minutes")
         print("\nBreakdown by person (TFL API times for best station):")
 
         if not best_id_for_api:
