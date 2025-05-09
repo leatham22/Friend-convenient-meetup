@@ -8,7 +8,6 @@ A command-line tool that helps groups find the most convenient meeting point in 
 As part of my journey toward applied AI proficiency, I realized I needed more experience working with APIs, large real-world datasets, and implementing algorithms in a practical context. This project combined all three, while also solving a real-life problem: helping friends settle weekly debates over where to meet in London.
 
 ## Development Approach & Relevance to Applied AI
-
 This project was developed using the Cursor AI coding assistant throughout. The goal was not to simplify the problem, but to stay focused on structuring the logic, working with real-world data, and building a robust solution without getting bogged down in syntax.
 
 Using Cursor shifted my development mindset toward systems design: defining architecture, refining logic through iterative prompting, and verifying everything through manual and automated testing. I initially used Claude 3.7 (Sonnet) for its broad-context reasoning, later transitioning to Gemini 2.5 Pro as my prompts became more implementation-focused.
@@ -39,6 +38,54 @@ This approach directly supports my AI learning goals. It strengthened my ability
 ├── main.py    # Application entry point
 └── requirements.txt    # Dependencies
 ```
+
+
+## Graph Construction Overview 
+
+This section outlines the seven-stage process used to construct the final `MultiDiGraph` representing the London transport network. Each script is modular and reflects a clear phase in the pipeline. All references to data paths (e.g., `.json` files) are relative to the project root.
+
+### 1. Build Base Hub Graph
+- Loads the only manually created data file: `root/networkx_graph/data/manually_created/terminal_stations.json`, which lists all terminal stations in the transport network. These are required parameters for using the `Line` endpoint effectively.
+- Sequentially calls the TfL `Line` endpoint for all modes of transport, using terminal stations to retrieve line structures.
+- Handles known TfL inconsistencies (e.g., Willesden Green appearing on the Metropolitan Line, which hasn’t operated since 1979).
+- Constructs the base `MultiDiGraph` with nodes (including hub and individual station metadata) and initial edges between stations on the same line.
+
+### 2. Add Proximity Transfers
+- Uses the `StopPoint` endpoint to find stations located within 250 meters of each **hub node**.
+- For each valid proximity match, identifies the corresponding node in the graph (converting individual stations to hub identifiers).
+- Stores each valid proximity pair as a list of station ID pairs in a JSON file for later walking time lookups.
+
+
+### 3. Calculate Transfer Weights
+- Loads the proximity pairs JSON and makes a `JourneyTime` API request for each pair using `mode=walking`.
+- For each valid walking time, adds a directional `transfer` edge between the relevant graph nodes with the appropriate travel time as the edge weight.
+
+
+### 4. Fetch Timetable Data
+- For each **Tube** and **DLR** line, fetches full timetable data via the `TimeTable` API endpoint.
+- Caches timetable responses locally for reuse in travel time calculations.
+
+### 5. Calculate Tube/DLR Edge Weights from Timetables
+- Reads in all non-transfer edges for Tube and DLR modes.
+- Calculates travel times between connected stations using the cached timetable data.
+- For any edges missing from the timetable data (e.g., known gaps like Earl’s Court → Kensington Olympia), falls back to direct `JourneyTime` API queries.
+- Appends all edge weights (both from timetables and API fallbacks) into a new JSON file that mirrors the graph edge format.
+
+
+### 6. Calculate Overground/Elizabeth Line Weights Using JourneyTime API
+- Reads all non-transfer edges for Overground and Elizabeth Line.
+- Since no timetable data exists for these modes, uses the `JourneyTime` API directly for every edge.
+- Appends results to the same JSON file created in Step 5.
+
+### 6.5. Validate Collected Edge Weights
+- Ensures consistency between the graph and collected edge data:
+  - Confirms that all non-transfer edges in the graph exist in the weight JSON, and vice versa.
+  - Checks for any invalid edge weights (e.g., negative or zero durations).
+
+### 7. Update Graph with Final Weights
+- If validation in Step 6.5 passes, updates the original `MultiDiGraph` with travel time weights from the JSON file.
+- The result is a fully weighted, directionally accurate transport graph ready for pathfinding and optimization logic.
+
 
 ## Setup & Execution
 ### Prerequisites
@@ -96,17 +143,22 @@ After launching, the application will:
 3. Calculate optimal meeting points
 4. Display the results along with alternative options, sorted by total travel time 
 
+
 ## Future Improvements
+
 - Handle other modes of transport (cycle and bus) to make project more complete.
 - Create a more granular node system where each station-line pair is treated as a distinct node (eg Kings X Northern and Piccadilly Line = two separate nodes). This will make the transfer times between lines far more accurate. 
 - Once final station is found, output a visualisation using NetworkX that shows how each person arrives to the location along the graph path edge by edge. As nodes (stations) in graph have coordinate attributes, this will be accurate and a fun visual for UX. 
-- Re-implement the deprecated sync script with our current structure so that we can guarentee up-to-date data each time the tool is run. 
+- Write validation scripts that sits between each step of the graph creation process, this will make sure external users can be sure the graph they created is corrrect. 
+- Re-implement the deprecated sync script with our current structure so that we can guarantee up-to-date data each time the tool is run. 
+- Build a basic web front-end to allow users to interact with the tool through a browser rather than the terminal.
+
 
 ## Example Terminal Outputs
 
-Note: Full logs are printed to the terminal for debugging purposes, including API responses and journey resolution steps. The below only shows initial output indicating when API key and Graph loaded correctly, and a portion of example final results.
+Note: Full logs are printed to the terminal for debugging purposes, including API responses and journey resolution steps. The below only shows initial output indicating when API key and Graph loaded correctly, and final results.
 
-### Example Correct initialisation
+### Example Output: initialisation
 ```
 Using TfL API key from environment variable.
 
@@ -117,10 +169,9 @@ Created station lookup for 420 stations from graph nodes.
 Please enter the details for each person.
 Enter the name of their NEAREST Tube/Overground/DLR/Rail station.
 Type 'done' or leave blank when finished.
-
 ```
 
-### Example Results Output (with alternatives taken away)
+### Example Output: Results 
 ```
 ================================================================================
                                     FINAL RESULT (based on TFL API for top NetworkX estimates)
